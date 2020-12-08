@@ -1,23 +1,35 @@
-Networking (2 hours)
+# Networking
 
-	Ipconfig
+## NCMLI
 
-		What IP am I?
+1. Read https://fedoraproject.org/wiki/Networking/CLI.
 
-nmcli
+1. What is my IP?
 
-	How to connect Wifi.
-	
-ssh
+1. Disconnect from WiFi.
 
-ssh to a demo server via a password (make 100 accounts)
+1. Connect to WiFi.
 
-ssh via key
+## SSH
 
-	sftp
+1. Connect via SSH to xyz.liferay.com. Log in as user  ***userXYZ*** with password is ***1234***.
 
-		delete ssh key/readd key
+1. Make an SSH key.
+ 	
+1. Connect via an SSH key.
 
-		cd/ upload / download
+## SFTP
 
-	telnet (to understand ports)
+1. SFTP to xyz.liferay.com with and without an SSH key.
+
+2.	List files and change directories.
+
+3.	Upload and download files.
+
+## Telnet
+
+1. Telnet to localhost port 22.
+
+1. Telnet to localhost port 23.
+
+1. Why are the results different?

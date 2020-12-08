@@ -2,58 +2,76 @@
 
 ## Day 1
 
-Welcome!  (5 minutes)
+Welcome! (1 hour)
 
-[Goal Setting](goal-setting) (15 minutes)
+[Goal Setting](goal-setting) (20 minutes)
 
-[Posture](posture) (5 minutes)
+[Posture](posture) (20 minutes)
 
-[Basic Apps](basic-apps) (20 minutes)
+[Basic Apps](basic-apps) (30 minutes)
 
-[Typing](typing) (15 minutes)
+[Typing](typing) (20 minutes)
+
+[Fedora](fedora) (2 hours)
+
+## Day 2
 
 [Fedora](fedora) (2 hours)
 
 [Networking](networking) (2 hours)
 
-[Virtualization](virtualization) (1 hour)
-
-## Day 2
-
-[Editors](editors) (30 minutes)
-
-[Git](git) (5.5 hours)
-
 ## Day 3
 
-[Databases](databases) (6 hours)
+[Virtualization](virtualization) (1 hour)
+
+[Editors](editors) (1 hour)
+
+[Git](git) (2 hours)
 
 ## Day 4
 
-[Search Engines](search-engines) (6 hours)
+[Git](git) (4 hours)
 
 ## Day 5
 
-[Web Servers](web-servers) (2 hours)
-
-[HTML/CSS](html-css) (4 hours)
+[Databases](databases) (4 hours)
 
 ## Day 6
 
-[JavaScript](javascript) (6 hours)
+[Search Engines](search-engines) (4 hours)
 
 ## Day 7
 
-[Java](java) (6 hours)
+[Web Servers](web-servers) (2 hours)
+
+[Markdown](markdown) (1 hour)
+
+[HTML/CSS](html-css) (1 hour)
 
 ## Day 8
 
-[Poshi](poshi) (6 hours)
+[HTML/CSS](html-css) (4 hours)
 
-## Days 9-10
+## Day 9
+
+[JavaScript](javascript) (6 hours)
+
+## Day 10
+
+[Java](java) (4 hours)
+
+## Day 11
+
+[OSGi](osgi) (4 hours)
+
+## Day 12
+
+[Poshi](poshi) (4 hours)
+
+## Days 13-15
 
 Buffer.
 
-## Days 11-45
+## Days 15-45
 
 [Problem Based Learning](problem-based-learning)

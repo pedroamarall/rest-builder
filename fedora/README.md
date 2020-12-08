@@ -1,19 +1,55 @@
-Fedora (2 hours)
+# Fedora
 
-Terminator
+## Terminator
 
-echo $SHELL
+1. Launch Terminator.
 
-passwd
+1. Type <Control+Shift+I>.
 
-cd, mkdir, ls, thunar
+1. Type <Control+Alt+Left> and <Control+Alt+Right>
 
-curl, wget
+## Password
 
-rsync (especially /)
+## Navigating the File System
 
-sudo
+1. ls
 
-dnf
+1. cd
 
-PATH
+1. mkdir
+
+1. touch
+
+1. Launch Thunar.
+
+1. thunar <directory>.
+
+## Downloading Files
+
+1. curl
+
+1. wget
+
+## Syncing Files
+
+1. rsync
+
+1. Watch out for the tailing slash.
+
+## Security
+
+1. sudo
+
+## Managing Packages
+
+1. dnf install gitg
+
+1. rpm -ql gitg
+
+1. dnf remove gitg
+
+## Understanding PATH
+
+1. Add a shell script to PATH.
+
+2. Modify .bashrc.
