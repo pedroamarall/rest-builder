@@ -10,7 +10,7 @@
 
 ## Password
 
-## Navigating the File System
+## Navigating the File System with Terminal
 
 1. ls
 
@@ -20,9 +20,13 @@
 
 1. touch
 
+## Navigating the File System with Thunar
+
 1. Launch Thunar.
 
 1. thunar <directory>.
+
+1. Search with Thunar.
 
 ## Downloading Files
 
