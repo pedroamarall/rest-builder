@@ -1,0 +1,154 @@
+[global_config]
+	dbus = False
+	putty_paste_style = True
+	suppress_multiple_term_dialog = True
+	window_state = maximise
+[keybindings]
+	close_term = <Ctrl>W
+	close_window = <Ctrl>Q
+	new_tab = <Ctrl>T
+	next_tab = <Ctrl><Super>Right
+	paste = <Ctrl>V
+	prev_tab = <Ctrl><Super>Left
+[layouts]
+	[[default]]
+		[[[child1]]]
+			parent = window0
+			type = Terminal
+		[[[window0]]]
+			parent = ""
+			type = Window
+	[[Main]]
+		[[[child0]]]
+			fullscreen = True
+			last_active_window = True
+			maximised = False
+			order = 0
+			parent = ""
+			position = 0:0
+			size = 2688, 1512
+			title = Portal
+			type = Window
+		[[[child1]]]
+			active_page = 0
+			labels = Portal, Portal EE, master-private, 7.3.x, 7.3.x-private, 7.2.x, 7.2.x-private, 7.1.x, 7.1.x-private, 7.0.x, 7.0.x-private, None, None, None, None
+			last_active_term = ""
+			order = 0
+			parent = child0
+			type = Notebook
+		[[[terminal10]]]
+			#command = echo terminal10 ; bash
+			order = 8
+			parent = child1
+			profile = default
+			type = Terminal
+			uuid = 9ca55e97-5dd9-4cb1-8e4c-030694df6409
+		[[[terminal11]]]
+			#command = echo terminal11 ; bash
+			order = 9
+			parent = child1
+			profile = default
+			type = Terminal
+			uuid = f0f9f7fd-d930-4fda-9e4a-1192b139217d
+		[[[terminal12]]]
+			command = cd ~/dev/projects/liferay-portal-master-private ; bash
+			order = 10
+			parent = child1
+			profile = default
+			type = Terminal
+			uuid = 1cde3d7e-2d65-4929-9e11-25564d007c71
+		[[[terminal13]]]
+			command = cd ~/dev/projects/liferay-portal-7.3.x ; bash
+			order = 11
+			parent = child1
+			profile = default
+			type = Terminal
+			uuid = f2ef003c-479e-4db4-b264-e3f92e5d7cd7
+		[[[terminal14]]]
+			command = cd ~/dev/projects/liferay-portal-7.3.x-private ; bash
+			order = 12
+			parent = child1
+			profile = default
+			type = Terminal
+			uuid = ca09b0a7-a15a-45b6-ac85-1aa3933f8432
+		[[[terminal15]]]
+			command = cd ~/dev/projects/liferay-portal-7.2.x ; bash
+			order = 13
+			parent = child1
+			profile = default
+			type = Terminal
+			uuid = 55e3b5b1-8837-4490-9037-6cbc3d13c448
+		[[[terminal16]]]
+			command = cd ~/dev/projects/liferay-portal-7.2.x-private ; bash
+			order = 14
+			parent = child1
+			profile = default
+			type = Terminal
+			uuid = 7863bc3f-bb20-e10b-23aa-7947647eae54
+		[[[terminal2]]]
+			command = cd ~/dev/projects/liferay-portal ; bash
+			order = 0
+			parent = child1
+			profile = default
+			type = Terminal
+			uuid = d9a2847f-03a9-4673-9af6-cef00b26945d
+		[[[terminal3]]]
+			command = cd ~/dev/projects/liferay-portal-ee ; bash
+			order = 1
+			parent = child1
+			profile = default
+			type = Terminal
+			uuid = 37c128d2-785e-49f7-87a0-3e69e93a4d5e
+		[[[terminal4]]]
+			command = cd ~/dev/projects/liferay-portal-7.1.x ; bash
+			order = 2
+			parent = child1
+			profile = default
+			type = Terminal
+			uuid = 974f5739-6c55-4e19-af72-eb451b01f69e
+		[[[terminal5]]]
+			command = cd ~/dev/projects/liferay-portal-7.1.x-private ; bash
+			order = 3
+			parent = child1
+			profile = default
+			type = Terminal
+			uuid = c8d42348-d80d-47b2-bb80-d2e573c502b6
+		[[[terminal6]]]
+			command = cd ~/dev/projects/liferay-portal-7.0.x ; bash
+			order = 4
+			parent = child1
+			profile = default
+			type = Terminal
+			uuid = 2b2e21e0-2e27-426a-8e53-6a4e71a7b1c6
+		[[[terminal7]]]
+			command = cd ~/dev/projects/liferay-portal-7.0.x-private ; bash
+			order = 5
+			parent = child1
+			profile = default
+			type = Terminal
+			uuid = fc26c22f-2b2a-49fa-a459-31c22c48dbed
+		[[[terminal8]]]
+			#command = echo terminal8 ; bash
+			order = 6
+			parent = child1
+			profile = default
+			type = Terminal
+			uuid = 5913435f-cef8-4023-9a1e-6a6c21545666
+		[[[terminal9]]]
+			#command = echo terminal9 ; bash
+			order = 7
+			parent = child1
+			profile = default
+			type = Terminal
+			uuid = 07360097-48f7-4d2c-af76-6df867d87554
+[plugins]
+[profiles]
+	[[default]]
+		copy_on_selection = True
+		cursor_blink = False
+		cursor_color = "#aaaaaa"
+		cursor_shape = ibeam
+		font = "Source Code Pro 10"
+		scrollback_infinite = True
+		show_titlebar = False
+		use_system_font = False

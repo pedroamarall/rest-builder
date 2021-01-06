@@ -1,0 +1,20 @@
+[
+	{
+		"command": "next_view",
+		"keys": [
+			"ctrl+super+right"
+		]
+	},
+	{
+		"command": "prev_view",
+		"keys": [
+			"ctrl+super+left"
+		]
+	},
+	{
+		"command": "reset_font_size",
+		"keys": [
+			"ctrl+0"
+		]
+	}
+]

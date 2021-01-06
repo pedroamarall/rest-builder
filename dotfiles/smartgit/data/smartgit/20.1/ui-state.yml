@@ -1,0 +1,149 @@
+conflictSolverFrame: {sLayout: left-merge-right}
+gitAnnotateLayout: '[+1611x840:document ][+1611x140:line-history ]'
+gitProjectLayout.main: (([+384x661:directories ][+384x441:branches ])(([+1764x439:files
+  ][-2x1:message ])[+1764x440:changes ]([+1764x220:outgoing ][-3x1:output ])))
+gitProjectLayout.review: ([+358x275:directories ][+1251x275:files ][+536x275:message
+  ])[+2151x827:changes ]([-1x1:branches ][-3x1:outgoing ][-3x1:output ])
+gitProjectLayout.mainIsDefault: true
+gitLogRootLayout.main: (([+384x550:repositories ][+384x553:branches ])(([+934x550:graph
+  ]([+827x155:details -1x1:output details ][+827x392:files +827x392:comments files
+  ]))[+1764x553:changes ]))[-1x1:debug-log ]
+gitLogRootLayout.review: (([+1x1:repositories ][+1x1:branches ])(([+4x1:graph ]([+2x1:details
+  -1x1:output details ][+2x2:files +2x1:comments files ]))[+4x4:changes ]))[-1x1:debug-log
+  ]
+gitLogRootLayout.mainIsDefault: true
+gitLogSubtreeLayout.mainIsDefault: true
+hgProjectLayout.mainIsDefault: true
+hgLogLayout.mainIsDefault: true
+gitViewFileFilter: {viewRecursive: true, viewFromSubmodules: true, viewIgnoredFiles: true,
+  viewRenameSources: true, viewSkipped: true, viewUnversionedFiles: true, viewUnchangedFiles: true,
+  viewUnchangedAssumed: true, style: 0}
+bounds:
+- {key: annotate, x: 269, y: 67, width: 1613, height: 1008}
+- {key: compare, x: 269, y: 67, width: 1613, height: 1008}
+- {key: conflictSolver, x: 268, y: 100, width: 1615, height: 1009}
+- {key: git.commit, width: 630, height: 550}
+- {key: git.commit.selectFromLog, width: 640, height: 395}
+- {key: git.discard, width: 500, height: 309}
+- {key: log, x: 0, y: 0, width: 1613, height: 1008, state: 2}
+- {key: preferences, x: 0, y: 0, width: 912, height: 549}
+- {key: project, x: 0, y: 0, width: 1613, height: 1008, state: 1}
+- {key: welcome, x: 0, y: -1, width: 521, height: 367}
+indexEditorFrame: {}
+columns:
+  git.log.commits.git:
+    columnNames: "Message\tDate\tAuthor\tAuthor (Email)\tCommit Date\tCommitter\t\
+      Committer (Email)\tID"
+    visibleColumnNames: "Author\tDate\tMessage"
+    sortOrders: []
+    columnWidths:
+    - {id: Message, width: 500, width2x: 0}
+    - {id: Date, width: 150, width2x: 0}
+    - {id: Author, width: 421, width2x: 0}
+  git.log.files:
+    columnNames: "Name\tModification\tRelative Directory\tRenamed Path\tExt.\tRelative\
+      \ Path"
+    visibleColumnNames: "Modification\tName\tRelative Directory\tRenamed Path"
+    sortOrders:
+    - {id: Relative Directory, reverse: false}
+    - {id: Name, reverse: false}
+    columnWidths:
+    - {id: Name, width: 406, width2x: 0}
+    - {id: Modification, width: 60, width2x: 0}
+    - {id: Relative Directory, width: 975, width2x: 0}
+    - {id: Renamed Path, width: 150, width2x: 0}
+    - {id: Relative Path, width: 500, width2x: 0}
+  journal.git:
+    columnNames: "Message\tAuthor\tDate\tAuthor (Email)\tID"
+    visibleColumnNames: "Author\tDate\tMessage"
+    sortOrders: []
+    columnWidths:
+    - {id: Message, width: 500, width2x: 0}
+    - {id: Author, width: 150, width2x: 0}
+    - {id: Date, width: 241, width2x: 0}
+    - {id: Author (Email), width: 200, width2x: 0}
+    - {id: ID, width: 100, width2x: 0}
+  log.comments:
+    columnNames: "Author\tText\tPath\tDate\tAssignee\tCommit"
+    visibleColumnNames: "Assignee\tAuthor\tDate\tPath\tText"
+    sortOrders:
+    - {id: Assignee, reverse: false}
+    - {id: Date, reverse: false}
+    columnWidths:
+    - {id: Author, width: 65, width2x: 0}
+    - {id: Text, width: 45, width2x: 0}
+    - {id: Path, width: 50, width2x: 0}
+    - {id: Date, width: 51, width2x: 0}
+    - {id: Assignee, width: 100, width2x: 0}
+  logdlg.commits.git:
+    columnNames: "Message\tDate\tAuthor\tAuthor (Email)\tCommit Date\tCommitter\t\
+      Committer (Email)\tID"
+    visibleColumnNames: "Author\tDate\tMessage"
+    sortOrders: []
+    columnWidths:
+    - {id: Message, width: 500, width2x: 0}
+    - {id: Date, width: 150, width2x: 0}
+    - {id: Author, width: 150, width2x: 0}
+  project.files.git:
+    columnNames: "Name\tState\tRelative Directory\tExt.\tIndex State\tLast Changed\
+      \ On\tRelative Path\tRenamed From\tSize\tWorking Tree State"
+    visibleColumnNames: "Name\tRelative Directory\tState"
+    sortOrders:
+    - {id: State, reverse: false}
+    - {id: Relative Directory, reverse: false}
+    - {id: Name, reverse: true}
+    columnWidths:
+    - {id: Name, width: 463, width2x: 0}
+    - {id: State, width: 75, width2x: 0}
+    - {id: Relative Directory, width: 1513, width2x: 0}
+    - {id: Relative Path, width: 500, width2x: 0}
+  git.log.files.mixed:
+    columnNames: "Name\tModification\tRelative Directory\tRenamed Path\tExt.\tRelative\
+      \ Path"
+    visibleColumnNames: "Modification\tName\tRelative Directory\tRenamed Path"
+    columnWidths:
+    - {id: Name, width: 304, width2x: 0}
+    - {id: Modification, width: 109, width2x: 0}
+    - {id: Relative Directory, width: 416, width2x: 0}
+    - {id: Renamed Path, width: 150, width2x: 0}
+    - {id: Relative Path, width: 500, width2x: 0}
+    sortOrders:
+    - {id: Name, reverse: false}
+    - {id: Relative Directory, reverse: false}
+  git.log.files.wt:
+    columnNames: "Name\tState\tRelative Directory\tRenamed Path\tExt.\tRelative Path"
+    visibleColumnNames: "Name\tRelative Directory\tRenamed Path\tState"
+    columnWidths:
+    - {id: Name, width: 200, width2x: 0}
+    - {id: State, width: 60, width2x: 0}
+    - {id: Relative Directory, width: 200, width2x: 0}
+    - {id: Renamed Path, width: 150, width2x: 0}
+    - {id: Relative Path, width: 500, width2x: 0}
+    sortOrders:
+    - {id: Name, reverse: false}
+    - {id: Relative Directory, reverse: false}
+  git.log.files.index:
+    columnNames: "Name\tState\tRelative Directory\tRenamed Path\tExt.\tRelative Path"
+    visibleColumnNames: "Name\tRelative Directory\tRenamed Path\tState"
+    columnWidths:
+    - {id: Name, width: 200, width2x: 0}
+    - {id: State, width: 60, width2x: 0}
+    - {id: Relative Directory, width: 200, width2x: 0}
+    - {id: Renamed Path, width: 150, width2x: 0}
+    - {id: Relative Path, width: 500, width2x: 0}
+    sortOrders:
+    - {id: Name, reverse: false}
+    - {id: Relative Directory, reverse: false}
+hgViewFileFilter: {}
+deepGitUiConfiguration: {}
+confirmations: {conflictSolver.showConflictWarning: true, docking.closed: true, remove.repositoryOrGroup: false}
+gitLogRootLayout.mainIsdefault: true
+lastRepositoryPath: /home/brian/dev/projects/github/com-liferay-osb-faro-private
+commit.expandOptions: false
+gitLogSubtreeLayout.main: ((([+306x735:branches ][+1226x735:graph ]([+613x244:details
+  -1x1:output details ][+613x488:files ]))[+2151x368:changes ]))
+gitLogSubtreeLayout.mainIsdefault: true
+gitLogSubtreeLayout.review: ((([+1x1:branches ][+4x1:graph ]([+2x1:details -1x1:output
+  details ][+2x2:files ]))[+4x4:changes ]))
+gitProjectLayout.mainIsdefault: true
+log.files.git.separateWtIndex: true

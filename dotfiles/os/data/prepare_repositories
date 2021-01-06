@@ -1,0 +1,46 @@
+#!/bin/sh
+
+function prepare_repository {
+	local branch=${2}
+	local repository=${1}
+
+	local work_dir=${repository//-ee/}
+
+	work_dir=~/dev/projects/${work_dir}-${branch}
+
+	if [ ! -e ${work_dir} ]
+	then
+		echo ""
+		echo "git new-workdir ~/dev/projects/${repository} ${work_dir} ${branch}"
+		echo ""
+
+		git new-workdir ~/dev/projects/${repository} ${work_dir} ${branch}
+	fi
+
+	local repository_dir=${work_dir}
+
+	if [ ${branch} == "master" ]
+	then
+		repository_dir=~/dev/projects/${repository}
+	fi
+
+	mkdir -p ${repository_dir}
+
+	if [[ ${branch} != *-private ]]
+	then
+		if [ ! -e "${repository_dir}/app.server.${USER}.properties" ]
+		then
+			echo "app.server.parent.dir=/home/${USER}/dev/bundles/${branch}" > ${repository_dir}/app.server.${USER}.properties
+		fi
+	fi
+}
+
+prepare_repository liferay-portal-ee 7.0.x
+prepare_repository liferay-portal-ee 7.0.x-private
+prepare_repository liferay-portal-ee 7.1.x
+prepare_repository liferay-portal-ee 7.1.x-private
+prepare_repository liferay-portal-ee 7.2.x
+prepare_repository liferay-portal-ee 7.2.x-private
+prepare_repository liferay-portal-ee 7.3.x
+prepare_repository liferay-portal-ee 7.3.x-private
+prepare_repository liferay-portal-ee master-private

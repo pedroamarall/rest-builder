@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ -n "$(DISPLAY=:0.0 xrandr | grep 3840x2160)" ]
+then
+	if [ -n "$(DISPLAY=:0.0 xrandr | grep 'DP-1 connected')" ]
+	then
+    	xrandr --output DP-1 --mode 3840x2160 --scale .56x.56
+    else
+    	xrandr --output HDMI-1 --mode 3840x2160 --scale .56x.56
+    fi
+fi

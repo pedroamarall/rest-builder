@@ -1,0 +1,10 @@
+<applications>
+	<application class="*">
+		<decor>no</decor>
+		<desktop>1</desktop>
+		<focus>yes</focus>
+		<iconic>no</iconic>
+		<layer>normal</layer>
+		<shade>no</shade>
+	</application>
+</applications>

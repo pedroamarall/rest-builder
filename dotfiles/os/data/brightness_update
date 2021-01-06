@@ -1,0 +1,17 @@
+#!/bin/bash
+
+ACTUAL=`cat /sys/class/backlight/intel_backlight/actual_brightness`
+DELTA=${1}
+MAX=`cat /sys/class/backlight/intel_backlight/max_brightness`
+
+ACTUAL=$((ACTUAL + DELTA));
+
+if [ ${ACTUAL} -gt ${MAX} ]
+then
+	ACTUAL=${MAX}
+elif [ ${ACTUAL} -lt 0 ]
+then
+	ACTUAL=1
+fi
+
+echo ${ACTUAL} > /sys/class/backlight/intel_backlight/brightness

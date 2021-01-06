@@ -1,0 +1,50 @@
+[alias]
+	br = branch
+	ci = commit
+	co = checkout
+	cp = cherry-pick
+	dc = diff --cached
+	df = diff
+	#pa = "!git lpush upstream && git lpush origin"
+	pl = pull
+	rb = rebase
+	st = status
+[color]
+	ui = auto
+[core]
+	abbrev = 7
+	autocrlf = false
+	bare = false
+	editor = vi
+	hideDotFiles = dotGitOnly
+	filemode = true
+	logallrefupdates = true
+	repositoryformatversion = 0
+[credential]
+	helper = cache --timeout=86400
+[filter "lfs"]
+	clean = git-lfs clean %f
+	required = true
+	smudge = git-lfs smudge %f
+[gc]
+	auto = 0
+	autodetach = false
+[github]
+	oauth-token = 123456789
+	token = 123456789
+	user = brianchandotcom
+[git-pull-request]
+	close-default-comment = Merged. Thank you.
+	color-display-title-user = cyan
+	color-status = cyan
+	fetch-auto-update = true
+	update-method = rebase
+[merge]
+	renameLimit = 1000
+[pull]
+	rebase = true
+[push]
+	default = matching
+[user]
+	email = brian.chan@liferay.com
+	name = Brian Chan

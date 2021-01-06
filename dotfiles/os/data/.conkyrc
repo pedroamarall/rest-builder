@@ -1,0 +1,35 @@
+conky.config = {
+	alignment = 'bottom_middle',
+	background = true,
+	border_width = 0,
+	color2 = 'gray50',
+	cpu_avg_samples = 1,
+	default_color = 'white',
+	default_outline_color = 'white',
+	default_shade_color = 'white',
+	double_buffer = true,
+	draw_borders = false,
+	draw_graph_borders = false,
+	draw_outline = false,
+	draw_shades = false,
+	font = 'DejaVu Sans Mono:size=9',
+	gap_x = 0,
+	gap_y = 0,
+	lua_draw_hook_pre = 'draw_bg',
+	lua_load = '~/.conky/draw_bg.lua',
+	net_avg_samples = 1,
+	no_buffers = false,
+	own_window = true,
+	own_window_argb_visual = true,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_transparent = true,
+	own_window_type = 'normal',
+	total_run_times = 0,
+	update_interval = 1,
+	use_spacer = 'left',
+	use_xft = true,
+}
+
+conky.text = [[
+	${color2}battery: ${color}${battery_percent}%  ${color2}up: ${color}$uptime  ${color2}cpu1: ${color}${cpu cpu1}%  ${color2}cpu2: ${color}${cpu cpu2}%  ${color2}Frec: ${color}${freq_g} Ghz  ${color2}Tcpu: ${color}${acpitemp}°C  ${color2}Thdd:${color}${hddtemp /dev/sda}°C  ${color2}ram: ${color} $memperc%  ${color2}swap: ${color}$swapperc%  ${if_existing /proc/net/route enp7s0} ${color2}ip: ${color}${addr enp7s0}  ${color2}net: dn${color} ${downspeed enp7s0} ${color2}up${color} ${upspeed enp7s0}${else}${if_up wlp4s0}${color2}ip: ${color}${addr wlp4s0}  ${color2}net: dn${color} ${downspeed wlp4s0} ${color2}up${color} ${upspeed wlp4s0}${endif}${endif}
+]]

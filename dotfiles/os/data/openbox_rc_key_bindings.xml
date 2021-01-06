@@ -1,0 +1,100 @@
+<keybind key="A-g">
+	<action name="Execute">
+		<command>bash -c 'exec google-chrome-stable https://issues.liferay.com/browse/"$(xclip -o)"'</command>
+	</action>
+</keybind>
+<keybind key="A-Tab">
+	<action name="ShowMenu">
+		<menu>client-list-combined-menu</menu>
+		<position>
+			<x>center</x>
+			<y>center</y>
+		</position>
+	</action>
+</keybind>
+<keybind key="C-A-k">
+	<action name="Execute">
+		<command>/usr/bin/slock</command>
+	</action>
+</keybind>
+<keybind key="C-A-m">
+	<action name="Execute">
+		<command><![CDATA[bash -c '/usr/local/bin/xinput_logitech_mouse ; /usr/local/bin/xinput_touchpad ; /usr/local/bin/xrandr_monitor']]></command>
+	</action>
+</keybind>
+
+<!--
+https://github.com/naelstrof/maim
+-->
+
+<keybind key="C-A-s">
+	<action name="Execute">
+		<command><![CDATA[bash -c '/usr/bin/maim /home/me/Desktop/screenshot-$(date +%s).png']]></command>
+	</action>
+</keybind>
+
+<keybind key="W-Down">
+	<action name="Iconify" />
+</keybind>
+<keybind key="W-Left">
+	<action name="UnmaximizeFull" />
+	<action name="MaximizeVert" />
+	<action name="MoveResizeTo">
+		<width>50%</width>
+	</action>
+	<action name="MoveToEdgeWest" />
+</keybind>
+<keybind key="W-m">
+	<action name="Maximize" />
+</keybind>
+<keybind key="W-Right">
+	<action name="UnmaximizeFull" />
+	<action name="MaximizeVert" />
+	<action name="MoveResizeTo">
+		<width>50%</width>
+	</action>
+	<action name="MoveToEdgeEast" />
+</keybind>
+<keybind key="W-Up">
+	<action name="MoveResizeTo">
+		<x>center</x>
+		<y>center</y>
+	</action>
+</keybind>
+
+<!--
+https://wiki.manjaro.org/index.php?title=Openbox:_Control_Speaker_Volume_Using_the_Keyboard_(ALSA)
+-->
+
+<keybind key="XF86AudioLowerVolume">
+	<action name="Execute">
+		<command>amixer set Master 10%-</command>
+	</action>
+</keybind>
+<keybind key="XF86AudioMute">
+	<action name="Execute"> 
+		<command>amixer set Master toggle</command>
+	</action>
+</keybind>
+<keybind key="XF86AudioRaiseVolume">
+	<action name="Execute"> 
+		<command>amixer set Master 10%+</command>
+	</action>
+</keybind>
+
+<!--
+https://askubuntu.com/questions/845289/openbox-execute-keybind
+https://ubuntuforums.org/archive/index.php/t-2340223.html
+https://wiki.manjaro.org/index.php?title=Openbox:_Control_Screen_Brightness_Using_the_Keyboard
+-->
+
+<keybind key="XF86MonBrightnessDown">
+	<action name="Execute"> 
+		<command>sudo brightness_update -25</command>
+	</action>
+</keybind>
+<keybind key="XF86MonBrightnessUp">
+	<action name="Execute">
+		<command>sudo brightness_update +25</command>
+	</action>
+</keybind>

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+APP_NAME=$1
+WORKSPACE=$(wmctrl -d | grep '\*' | cut -d ' ' -f1)
+
+WINDOW_IDS_AS_OPENED=$(wmctrl -lx | grep ${APP_NAME} | grep " ${WORKSPACE} " | awk '{print $1}')
+
+WINDOW_IDS_AS_USED=$(xprop -root | grep "^_NET_CLIENT_LIST_STACKING" | tr "," " ")
+WINDOW_IDS_AS_USED=(${WINDOW_IDS_AS_USED##*#})
+
+for ((windowIdsAsUsedIndex = ${#WINDOW_IDS_AS_USED[@]} - 1 ; windowIdsAsUsedIndex >= 0 ; windowIdsAsUsedIndex--))
+do
+	for windowIdsAsOpenedIndex in $WINDOW_IDS_AS_OPENED;
+	do
+		if [ $((windowIdsAsOpenedIndex)) = $((WINDOW_IDS_AS_USED[windowIdsAsUsedIndex])) ]
+		then
+			wmctrl -ia ${windowIdsAsOpenedIndex}
+
+			exit 0
+		fi
+	done
+done

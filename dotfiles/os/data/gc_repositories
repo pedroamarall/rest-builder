@@ -1,0 +1,37 @@
+#!/bin/sh
+
+function gc {
+	cd ~/dev/projects
+
+	local repositories=()
+
+	for dir in "./"*
+	do
+		if [ -e ${dir}/.git/config ] && [ ! -h ${dir}/.git/config ]
+		then
+			dir=${dir:2}
+
+			repositories+=(${dir})
+		fi
+	done
+
+	for repository in ${repositories[@]}
+	do
+		cd ~/dev/projects/${repository}
+
+		if [ -L ~/dev/projects/${repository}/.git/info ]
+		then
+			continue
+		fi
+
+		echo ""
+		echo "gc'ing ~/dev/projects/${repository}"
+		echo ""
+
+		git gc && git prune
+	done
+
+	cd ~/dev/projects
+}
+
+gc

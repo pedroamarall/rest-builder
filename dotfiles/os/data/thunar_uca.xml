@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<actions>
+	<action>
+		<icon>utilities-terminal</icon>
+		<name>Open Terminal Here</name>
+		<unique-id>1490223452538000-1</unique-id>
+		<command>terminator --working-directory=%f</command>
+		<description></description>
+		<patterns>*</patterns>
+		<startup-notify/>
+		<directories/>
+	</action>
+	<action>
+		<icon></icon>
+		<name>Search</name>
+		<unique-id>1490223935917182-4</unique-id>
+		<command>gnome-search-tool --path=%f</command>
+		<description></description>
+		<patterns>*</patterns>
+		<directories/>
+	</action>
+</actions>

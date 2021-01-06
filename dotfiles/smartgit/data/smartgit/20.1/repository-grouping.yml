@@ -1,0 +1,32 @@
+structure:
+- {name: liferay-portal, favorite: false, git: true, path: ~/dev/projects/github/liferay-portal,
+  path.absolute: /home/brian/dev/projects/github/liferay-portal, expanded: true}
+- {name: liferay-portal-7.3.x, git: true, path: ~/dev/projects/github/liferay-portal-7.3.x,
+  path.absolute: /home/brian/dev/projects/github/liferay-portal-7.3.x}
+- {name: liferay-portal-7.2.x, git: true, path: ~/dev/projects/github/liferay-portal-7.2.x,
+  path.absolute: /home/brian/dev/projects/github/liferay-portal-7.2.x}
+- {name: liferay-portal-7.0.x, favorite: false, git: true, path: ~/dev/projects/github/liferay-portal-7.0.x,
+  path.absolute: /home/brian/dev/projects/github/liferay-portal-7.0.x, expanded: true}
+- {name: liferay-portal-master-private, favorite: false, git: true, path: ~/dev/projects/github/liferay-portal-master-private,
+  path.absolute: /home/brian/dev/projects/github/liferay-portal-master-private, expanded: true}
+- {name: liferay-portal-7.1.x, favorite: false, git: true, path: ~/dev/projects/github/liferay-portal-7.1.x,
+  path.absolute: /home/brian/dev/projects/github/liferay-portal-7.1.x, expanded: true}
+- {name: liferay-portal-7.2.x-private, git: true, path: ~/dev/projects/github/liferay-portal-7.2.x-private,
+  path.absolute: /home/brian/dev/projects/github/liferay-portal-7.2.x-private}
+- {name: liferay-learn, git: true, path: ~/dev/projects/github/liferay-learn, path.absolute: /home/brian/dev/projects/github/liferay-learn}
+- {name: com-liferay-osb-asah-private, favorite: false, git: true, path: ~/dev/projects/github/com-liferay-osb-asah-private,
+  path.absolute: /home/brian/dev/projects/github/com-liferay-osb-asah-private, expanded: true}
+- {name: liferay-portal-7.0.x-private, favorite: false, git: true, path: ~/dev/projects/github/liferay-portal-7.0.x-private,
+  path.absolute: /home/brian/dev/projects/github/liferay-portal-7.0.x-private, expanded: true}
+- {name: liferay-portal-7.1.x-private, favorite: false, git: true, path: ~/dev/projects/github/liferay-portal-7.1.x-private,
+  path.absolute: /home/brian/dev/projects/github/liferay-portal-7.1.x-private, expanded: true}
+- {name: liferay-portal-7.3.x-private, git: true, path: ~/dev/projects/github/liferay-portal-7.3.x-private,
+  path.absolute: /home/brian/dev/projects/github/liferay-portal-7.3.x-private}
+- {name: com-liferay-osb-faro-private, git: true, path: ~/dev/projects/github/com-liferay-osb-faro-private,
+  path.absolute: /home/brian/dev/projects/github/com-liferay-osb-faro-private}
+recentlyUsed: [~/dev/projects/github/com-liferay-osb-faro-private, ~/dev/projects/github/liferay-learn,
+  ~/dev/projects/github/liferay-portal-7.3.x-private, ~/dev/projects/github/liferay-portal-7.3.x,
+  ~/dev/projects/github/liferay-portal, ~/dev/projects/github/liferay-portal-7.2.x-private,
+  ~/dev/projects/github/com-liferay-osb-asah-private, ~/dev/projects/github/liferay-portal-7.0.x,
+  ~/dev/projects/github/liferay-portal-7.1.x, ~/dev/projects/github/liferay-portal-7.2.x,
+  ~/dev/projects/github/liferay-portal-master-private]
