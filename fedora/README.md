@@ -261,7 +261,7 @@
 	1. The PATH environment variable contains a list of directories, separated by colons.
 
 	```
-	/opt/java/ant/bin:/opt/java/jdk/bin:/home/brian/.npm-global/bin:/opt/java/ant/bin:/opt/java/jdk/bin:/home/brian/.npm-global/bin:/home/brian/.local/bin:/home/brian/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/var/lib/snapd/snap/bin
+	/opt/java/ant/bin:/opt/java/jdk/bin:/home/me/.npm-global/bin:/home/me/.local/bin:/home/me/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
 	```
 
 	1. That means executable files in /opt/java/ant/bin, /opt/java/jdk/bin, /usr/local/bin, etc. are all available from the command line.
@@ -290,11 +290,13 @@
 
 	1. Type ***ant.bat -version***. This command fails because it is not executable.
 
-	1. Type ***sudo ant.bat -version***. This command even fails with sudo because it is not executable.
+	1. The letter ***x*** in the description -rwxr-xr-x means the file is executable.
+
+	1. Type ***sudo ant.bat -version***. This command fails even with sudo because it is not executable.
 
 1. Make a new executable file.
 
-	1. Type ***myls***. This command fails because the script ***myls*** does not exist.
+	1. Type ***myls***. This command fails because the file ***myls*** does not exist.
 
 	1. Go to ***~/test***.
 
@@ -316,17 +318,23 @@
 
 	1. Type ***./myls***. This command fails because ***myls*** is no longer in the current directory.
 
-	1. Type ***myls***. This command now works.
+	1. Type ***myls***.
 
 	1. Type ***more /usr/local/bin/myls***.
 
 	1. Type ***sudo rm /usr/local/bin/myls*** to remove the example script.
+
+	1. Type ***ls /usr/local/bin/myls***.
+
+	1. Type ***myls***.
 
 	1. Optionally, see the man pages for [chmod](https://man7.org/linux/man-pages/man1/chmod.1.html) and [mv](https://man7.org/linux/man-pages/man1/mv.1.html) for more information.
 
 1. Modify .bashrc.
 
 	1. Add an alias.
+
+	1. Add a directory to the $PATH variable.
 
 ## Password
 
