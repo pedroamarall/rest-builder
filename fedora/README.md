@@ -396,6 +396,8 @@
 		alias la2="ls --full-time"
 		```
 
+		1. Type ***<Control+S>*** to save the file.
+
 		1. Open a new Terminator tab. Type ***la2***. This works because the new alias is available in your new Bash prompt.
 
 		1. Go to your old Terminator tab that opened Sublime. Type ***la2***. That should fail.
