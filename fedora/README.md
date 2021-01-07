@@ -250,6 +250,8 @@
 
 	1. Type ***la ~/hello/add.txt*** The file is deleted.
 
+1. Optionally, see the man page for [rsync](https://man7.org/linux/man-pages/man1/rsync.1.html) for more information.
+
 ## Security
 
 1. Launch Terminator.
