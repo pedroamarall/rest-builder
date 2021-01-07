@@ -335,21 +335,3 @@
 	1. Add an alias.
 
 	1. Add a directory to the $PATH variable.
-
-## Password
-
-1. Change your user password.
-
-	1. Launch Terminator.
-
-	1. Type ***passwd***.
-
-1. Change the encrypted hard drive's passphrase.
-
-	1. Type ***sudo gnome-disks***.
-
-	1. Find the LUKS partition.
-
-	1. Click the configure icon (2 gears).
-
-	1. Click ***Change Passphrase***.
