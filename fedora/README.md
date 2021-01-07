@@ -12,11 +12,11 @@
 
 1. Shift the focused tab.
 
-	1. Type ***<Control+Alt+Left>***.
+	1. Type ***<Control+Super+Left>***.
 
 	1. Notice that a different Terminator tab is now in focus.
 
-	1. Type ***<Control+Alt+Right>***.
+	1. Type ***<Control+Super+Right>***.
 
 1. Close a Terminator tab.
 

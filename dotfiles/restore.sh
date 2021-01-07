@@ -31,3 +31,5 @@ done
 
 rm -f ~/.bash_history
 sudo rm -f /root/.bash_history
+
+#sudo shutdown -r now

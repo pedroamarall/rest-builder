@@ -224,6 +224,12 @@ function install_autokey {
 
 	cp -R data/autokey ~/.config
 
+	mkdir -p ~/.config/autostart
+
+	mv ~/.config/autokey/autokey.desktop ~/.config/autostart
+
+	sudo cp data/start_minimized.py /usr/local/bin
+
 	#
 	# https://askubuntu.com/questions/269574/wmctrl-focus-most-recent-window-of-an-app
 	#
@@ -427,14 +433,14 @@ customize_lxdm
 #customize_vi
 #disable_firewall
 #disable_selinux
-#install_autokey
+install_autokey
 #install_conky
 #install_exfat
 #install_fonts
 #install_ntpdate
 #install_terminator
 #install_thunar
-#install_ulauncher
+install_ulauncher
 #remove_unused_icons
 #swap_caps_and_control
 
