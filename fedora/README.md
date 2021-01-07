@@ -332,6 +332,42 @@
 
 1. Modify .bashrc.
 
+	1. Launch Terminator.
+
+	1. Type ***osub ~/.bashrc***.
+
+	1. Be VERY, VERY, VERY careful when editing this file. Changes do not take place until a new Terminator tab is opened. But if this file is broken, you may not be able to open a new Terminator tab. Then your computer is broken.
+
 	1. Add an alias.
 
+		1. Find the line:
+
+		```
+		alias la="ls -la --group-directories-first"
+		```
+
+		1. Add a new alias:
+
+		alias la2="ls --full-time"
+
+		1. Open a new Terminator tab. Type ***la2***. This works because the new alias is available in your new Bash prompt.
+
+		1. Go to your old Terminator tab that opened Sublime. Type ***la2***. That should fail.
+
 	1. Add a directory to the $PATH variable.
+
+		1. Add an executable file to ***~/test***.
+
+		1. Find the line:
+
+		```
+		export PATH="${ANT_HOME}/bin:${JAVA_HOME}/bin:${NPM_CONFIG_PREFIX}/bin:${PATH}"
+		```
+
+		1. Change it to:
+
+		```
+		export PATH="${ANT_HOME}/bin:${JAVA_HOME}/bin:${NPM_CONFIG_PREFIX}/bin:~/test:${PATH}"
+		```
+
+		1. Open a new Terminator tab. Show that your executable file in ***~/test*** works.
