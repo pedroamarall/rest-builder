@@ -36,7 +36,7 @@
 
 	1. This is an AutoKey shortcut to open tabs that are optimized for working on many branches of Liferay.
 
-## Navigate the File System with the Command Line.
+## Navigate the File System with the Command Line
 
 1. Launch Terminator.
 
@@ -46,7 +46,7 @@
 
 	1. Type ***ls -la --group-directories-first***.
 
-	1. ***ls*** is the command, and ***-la --group-directories-first*** are arguments for the ***ls*** command.
+	1. ***ls*** is the command and ***-la --group-directories-first*** are arguments for the ***ls*** command.
 
 	1. Type ***la***. That is an alias for the longer ***ls -la --group-directories-first*** command. I prefer ***la*** because it gives me more information and lists everything top down.
 
@@ -56,13 +56,13 @@
 
 	1. Type ***cd /*** to go to the root of the file system.
 
-	1. Notice that your Bash prompt says where you are.
+	1. Notice that your Bash prompt states where you are.
 
 	1. Type ***cd /opt*** to go to ***/opt***. List the contents of that directory.
 
-	1. Again, notice that your Bash prompt says where you are.
+	1. Again, notice that your Bash prompt states where you are.
 
-	1. Type ***cd ~*** to go to your home directory.
+	1. Type ***cd \~*** to go to your home directory.
 
 	1. Type ***cd /home/me***. Notice that nothing changed. Why? Because ***~*** is the same as ***/home/me***.
 
