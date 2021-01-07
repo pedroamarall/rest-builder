@@ -206,7 +206,25 @@
 
 1. rsync
 
+	1. Type ***mkdir ~/hello***.
+
+	1. Type ***rsync -av ~/test ~/hello***.
+
+	1. Type ***la ~/hello***
+
+1. Clear the directory for the next example.
+
+	1. Type ***rm -fr ~/hello/\* ***
+
+	1. Type ***la ~/hello***
+
 1. Watch out for the tailing slash.
+
+	1. Type ***rsync -av ~/test/ ~/hello***.
+
+	1. Type ***la ~/hello***
+
+	1. Clear the directory for the next example.
 
 ## Security
 
