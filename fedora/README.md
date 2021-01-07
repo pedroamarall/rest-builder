@@ -188,7 +188,7 @@
 
 	1. Type ***\<Up\>*** until you see the command ***wget \<URL\>*** again. This conserves on typing.
 
-	1. Once you see ***wget <URL>***, type ***<Enter>***.
+	1. Once you see ***wget \<URL\>***, type ***\<Enter\>***.
 
 	1. Type ***la***.
 
@@ -196,7 +196,7 @@
 
 	1. Type ***more copyright.txt.1***.
 
-	1. Type ***wget <URL> -O copyright3.txt***.
+	1. Type ***wget \<URL\> -O copyright3.txt***.
 
 	1. Type ***la***.
 
@@ -238,7 +238,7 @@
 
 1. Type ***sudo ls /root***. You will prompted to enter your password. The ***me*** user is an admin user and can execute commands as the ***root*** user. Once you enter in the password, the command will work.
 
-1. Type ***<Up>***, and then type ***<Enter>*** to execute ***sudo ls /root*** again. Notice that it did not ask you for your password again. It remembers your password in that Terminator tab for 15 minutes.
+1. Type ***\<Up\>***, and then type ***\<Enter\>*** to execute ***sudo ls /root*** again. Notice that it did not ask you for your password again. It remembers your password in that Terminator tab for 15 minutes.
 
 ## Managing Packages
 
