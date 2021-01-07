@@ -210,15 +210,15 @@
 
 	1. Type ***rsync -av ~/test ~/hello***.
 
-	1. Type ***la ~/hello***
+	1. Type ***la ~/hello***.
 
 1. Clear the directory for the next example.
 
-	1. Type ***rm -fr ~/hello && mkdir ~/hello***
+	1. Type ***rm -fr ~/hello && mkdir ~/hello***.
 
-	1. The symbol ***&&&*** allows you to chain two commands in one line. It is as if you typed ***rm -fr ~/hello*** and then typed ***mkdir ~/hello***.
+	1. The symbol ***&&*** allows you to chain two commands in one line. It is as if you typed ***rm -fr ~/hello*** and then typed ***mkdir ~/hello***.
 
-	1. Type ***la ~/hello***
+	1. Type ***la ~/hello***.
 
 1. Watch out for the tailing slash.
 
@@ -226,7 +226,7 @@
 
 	1. Type ***la ~/hello***
 
-	1. Notice how the contents of ***~/hello*** is very different in this second example.
+	1. Notice how the contents of ***~/hello*** are very different in this second example.
 
 	1. Clear the directory for the next example.
 
@@ -244,7 +244,7 @@
 
 	1. Type ***rsync -av ~/test/ ~/hello***.
 
-	1. Type ***la ~/hello/add.txt*** The file still exists.
+	1. Type ***la ~/hello/add.txt***. The file still exists.
 
 	1. Type ***rsync -av --delete ~/test/ ~/hello***.
 
