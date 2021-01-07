@@ -210,7 +210,15 @@
 
 ## Security
 
-1. sudo
+1. Type ***ls /root***.
+
+1. Notice that we are not allowed to because ***/root*** is the home directory belongs to the root user. The home directory for the ***me*** user is ***/home/me***. Do not confuse the root directory ***/*** with the ***root*** user or the home directory ***/root*** of the ***root*** user. Pause and think.
+
+1. If you are still confused, reread the sentence until every word means something to you. Ask someone for help if it still does not make sense.
+
+1. Type ***sudo ls /root***. You will prompted to enter your password. The ***me*** user is an admin user and can execute commands as the ***root*** user. Once you enter in the password, the command will work.
+
+1. Type ***<Up>***, and then type ***<Enter>*** to execute ***sudo ls /root*** again. Notice that it did not ask you for your password again. It remembers your password in that Terminator tab for 15 minutes.
 
 ## Managing Packages
 
