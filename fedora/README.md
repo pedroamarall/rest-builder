@@ -156,19 +156,19 @@
 
 	1. Type ***la***.
 
-	1. Type ***curl \<URL\>*** where ***<URL>*** is the URL to our sample file.
+	1. Type ***curl \<URL\>*** where ***\<URL\>*** is the URL to our sample file.
 
 	1. Type ***la***.
 
 	1. That simply printed the contents of the URL. Notice that no file was downloaded.
 
-	1. Type ***curl <URL> --output copyright1.txt***.
+	1. Type ***curl \<URL\> --output copyright1.txt***.
 
 	1. Type ***la***.
 
 	1. Type ***more copyright1.txt***.
 
-	1. Type ***curl <URL> --output copyright2.txt***.
+	1. Type ***curl \<URL\> --output copyright2.txt***.
 
 	1. Type ***la***.
 
@@ -180,13 +180,13 @@
 
 	1. Type ***la***.
 
-	1. Type ***wget <URL>***.
+	1. Type ***wget \<URL\>***.
 
 	1. Type ***la***.
 
 	1. Type ***more copyright.txt***.
 
-	1. Type ***<Up>*** until you see the command ***wget <URL*** again. This conserves on typing.
+	1. Type ***\<Up\>*** until you see the command ***wget \<URL\>*** again. This conserves on typing.
 
 	1. Once you see ***wget <URL>***, type ***<Enter>***.
 
