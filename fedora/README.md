@@ -222,11 +222,29 @@
 
 ## Managing Packages
 
-1. dnf install gitg
+1. Type ***rpm -ql sysstat***
 
-1. rpm -ql gitg
+1. This prints all the files that were installed on the system for the package ***sysstat***.
 
-1. dnf remove gitg
+1. Type ***iostat***. This works because this file is installed in ***/usr/bin/iostat***.
+
+1. Type ***ls /usr/bin/iostat***.
+
+1. Type ***dnf remove sysstat***.
+
+1. The command should fail because it requires sudo.
+
+1. Type ***sudo dnf remove sysstat***.
+
+1. Type ***iostat***. This should fail because the file ***/usr/bin/iostat*** should no longer exist.
+
+1. Type ***ls /usr/bin/iostat***.
+
+1. Type ***sudo dnf install sysstat***.
+
+1. Type ***iostat***. This works because this file is installed in ***/usr/bin/iostat***.
+
+1. Type ***ls /usr/bin/iostat***.
 
 ## Understanding PATH
 
@@ -240,10 +258,16 @@
 
 1. Change your user password.
 
-	1. Open 
+	1. Launch Terminal.
 
-	1. passwd
+	1. Type ***passwd***.
 
 1. Change the encrypted hard drive's passphrase.
 
-	1. sudo gnome-disk
+	1. Type ***sudo gnome-disks***.
+
+	1. Find the LUKS partition.
+
+	1. Click the configure icon (2 gears).
+
+	1. Click ***Change Passphrase***.
