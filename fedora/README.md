@@ -210,6 +210,8 @@
 
 ## Security
 
+1. Launch Terminator.
+
 1. Type ***ls /root***.
 
 1. Notice that we are not allowed to because ***/root*** is the home directory belongs to the root user. The home directory for the ***me*** user is ***/home/me***. Do not confuse the root directory ***/*** with the ***root*** user or the home directory ***/root*** of the ***root*** user. Pause and think.
@@ -222,33 +224,105 @@
 
 ## Managing Packages
 
+1. Launch Terminator.
+
 1. Type ***rpm -ql sysstat***
 
 1. This prints all the files that were installed on the system for the package ***sysstat***.
 
-1. Type ***iostat***. This works because this file is installed in ***/usr/bin/iostat***.
+1. Type ***iostat***. This command works because the file ***/usr/bin/iostat*** was installed as part of the package ***sysstat***.
 
 1. Type ***ls /usr/bin/iostat***.
 
 1. Type ***dnf remove sysstat***.
 
-1. The command should fail because it requires sudo.
+1. This command should fail because it requires sudo.
 
 1. Type ***sudo dnf remove sysstat***.
 
-1. Type ***iostat***. This should fail because the file ***/usr/bin/iostat*** should no longer exist.
+1. Type ***iostat***. This command fails because the file ***/usr/bin/iostat*** no longer exists.
 
 1. Type ***ls /usr/bin/iostat***.
 
 1. Type ***sudo dnf install sysstat***.
 
-1. Type ***iostat***. This works because this file is installed in ***/usr/bin/iostat***.
+1. Type ***iostat***. This command works because the file ***/usr/bin/iostat*** was just installed.
 
 1. Type ***ls /usr/bin/iostat***.
 
+1. Notice that you did not have to type ***/usr/bin/iostat***. You only had to type ***iostat***. Why? Continue to find out.
+
 ## Understanding PATH
 
-1. Add a shell script to PATH.
+1. Launch Terminator.
+
+1. Type ***echo $PATH***.
+
+	1. The PATH environment variable contains a list of directories, separated by colons.
+
+	```
+	/opt/java/ant/bin:/opt/java/jdk/bin:/home/brian/.npm-global/bin:/opt/java/ant/bin:/opt/java/jdk/bin:/home/brian/.npm-global/bin:/home/brian/.local/bin:/home/brian/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/var/lib/snapd/snap/bin
+	```
+
+	1. That means executable files in /opt/java/ant/bin, /opt/java/jdk/bin, /usr/local/bin, etc. are all available from the command line.
+
+	1. Type ***la /opt/java/ant/bin***.
+
+	```
+	-rwxr-xr-x 1 root root 11729 May 10  2020 ant
+	-rw-r--r-- 1 root root  7470 May 10  2020 ant.bat
+	-rw-r--r-- 1 root root  2855 May 10  2020 ant.cmd
+	-rw-r--r-- 1 root root  3409 May 10  2020 antenv.cmd
+	-rwxr-xr-x 1 root root   861 May 10  2020 antRun
+	-rw-r--r-- 1 root root  1532 May 10  2020 antRun.bat
+	-rwxr-xr-x 1 root root  2117 May 10  2020 antRun.pl
+	-rwxr-xr-x 1 root root  3458 May 10  2020 complete-ant-cmd.pl
+	-rw-r--r-- 1 root root  4315 May 10  2020 envset.cmd
+	-rw-r--r-- 1 root root  1112 May 10  2020 lcp.bat
+	-rwxr-xr-x 1 root root  4166 May 10  2020 runant.pl
+	-rwxr-xr-x 1 root root  3344 May 10  2020 runant.py
+	-rw-r--r-- 1 root root  1814 May 10  2020 runrc.cmd
+	```
+
+	1. Notice that ***ant*** is green and described as -rwxr-xr-x whereas ***ant.bat*** is gray and described as -rw-r--r--.
+
+	1. Type ***ant -version***. This command works because it is executable.
+
+	1. Type ***ant.bat -version***. This command fails because it is not executable.
+
+	1. Type ***sudo ant.bat -version***. This command even fails with sudo because it is not executable.
+
+1. Make a new executable file.
+
+	1. Type ***myls***. This command fails because the script ***myls*** does not exist.
+
+	1. Go to ***~/test***.
+
+	1. Type ***echo "ls --full-time" > myls***.
+
+	1. Type ***more myls***.
+
+	1. Type ***la***. Notice that ***myls*** is gray and described as -rw-rw-r--.
+
+	1. Type ***chmod a+x myls*** to make ***myls*** executable.
+
+	1. Type ***la***. Notice that ***myls*** is green and described as -rwxrwxr-x.
+
+	1. Type ***myls***. This command fails because it is not in a directory listed in the environment variable $PATH.
+
+	1. Type ***./myls***. This command works because it is executing a script from the current directory. ***./*** means the current directory.
+
+	1. Type ***sudo mv myls /usr/local/bin***. This moves ***myls*** to ***/usr/local/bin*** because that directory is specified in the environment variable $PATH. Notice that we had to use ***sudo*** because modifying the contents of ***/usr/local/bin*** is not possible without ***sudo***.
+
+	1. Type ***./myls***. This command fails because ***myls*** is no longer in the current directory.
+
+	1. Type ***myls***. This command now works.
+
+	1. Type ***more /usr/local/bin/myls***.
+
+	1. Type ***sudo rm /usr/local/bin/myls*** to remove the example script.
+
+	1. Optionally, see the man pages for [chmod](https://man7.org/linux/man-pages/man1/chmod.1.html) and [mv](https://man7.org/linux/man-pages/man1/mv.1.html) for more information.
 
 1. Modify .bashrc.
 
@@ -258,7 +332,7 @@
 
 1. Change your user password.
 
-	1. Launch Terminal.
+	1. Launch Terminator.
 
 	1. Type ***passwd***.
 
