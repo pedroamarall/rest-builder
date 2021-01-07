@@ -50,7 +50,7 @@
 
 	1. Type ***la***. That is an alias for the longer ***ls -la --group-directories-first*** command. I prefer ***la*** because it gives me more information and lists everything top down.
 
-	1. See https://man7.org/linux/man-pages/man1/ls.1.html for more information.
+	1. Optionally, see the man page for [ls](https://man7.org/linux/man-pages/man1/ls.1.html) for more information.
 
 1. Change directories.
 
@@ -66,7 +66,7 @@
 
 	1. Type ***cd /home/me***. Notice that nothing changed. Why? Because ***~*** is the same as ***/home/me***.
 
-	1. See https://man7.org/linux/man-pages/man1/cd.1p.html for more information.
+	1. Optionally, see the man page for [cd](https://man7.org/linux/man-pages/man1/cd.1p.html) for more information.
 
 1. Make directories.
 
@@ -102,7 +102,19 @@
 
 	1. Type ***more hello2.txt***.
 
-	1. See https://man7.org/linux/man-pages/man1/echo.1.html, https://man7.org/linux/man-pages/man1/more.1.html, and https://man7.org/linux/man-pages/man1/touch.1.html for more information.
+	1. Optionally, see the man pages for [echo](https://man7.org/linux/man-pages/man1/echo.1.html), [more](https://man7.org/linux/man-pages/man1/more.1.html), and [touch](https://man7.org/linux/man-pages/man1/touch.1.html) for more information.
+
+1. Remove files.
+
+	1. Type ***rm hello2.txt***.
+
+	1. Type ***la***
+
+	1. Type ***rm hello2.txt***.
+
+	1. Notice that it complained this time because the hello2.txt file no longer exists.
+
+	1. Optionally, see the man page for [rm](https://man7.org/linux/man-pages/man1/rm.1.html) for more information.
 
 1. Use the above commands to add lots of files and directories into ***~/test***. Make it at least 3 levels deep.
 
@@ -120,9 +132,75 @@
 
 ## Downloading Files
 
+1. Our sample file from the Internet is located [here](https://raw.githubusercontent.com/liferay/liferay-portal/master/copyright.txt).
+
+	1. Open the sample file with Chrome and copy the URL.
+
+	1. Use ***<Control+C>*** to copy the URL.
+
+	1. Launch Terminator.
+
+ 	1. Use ***<Control+V>*** to paste the URL.
+
+ 	1. If nothing showed up, go back to Chrome and copy that URL and then try again.
+
+	1. Right click on Terminator. Notice that right clicking also pastes the copied URL.
+
+	1. Use your best judgment on when to use ***<Control+V>*** and when to use your mouse. Be sure to optimize speed while minimizing wear and tear on your hands.
+
+	1. Once you see the URL pasted in Terminator, type ***<Control+C>*** to cancel the prompt.
+
 1. curl
 
+	1. Go to ***~/test***.
+
+	1. Type ***la***.
+
+	1. Type ***curl <URL>*** where ***<URL>*** is the URL to our sample file.
+
+	1. Type ***la***.
+
+	1. That simply printed the contents of the URL. Notice that no file was downloaded.
+
+	1. Type ***curl <URL> --output copyright1.txt***.
+
+	1. Type ***la***.
+
+	1. Type ***more copyright1.txt***.
+
+	1. Type ***curl <URL> --output copyright2.txt***.
+
+	1. Type ***la***.
+
+	1. Type ***more copyright2.txt***.
+
 1. wget
+
+	1. Go to ***~/test***.
+
+	1. Type ***la***.
+
+	1. Type ***wget <URL>***.
+
+	1. Type ***la***.
+
+	1. Type ***more copyright.txt***.
+
+	1. Type ***<Up>*** until you see the command ***wget <URL*** again. This conserves on typing.
+
+	1. Once you see ***wget <URL>***, type ***<Enter>***.
+
+	1. Type ***la***.
+
+	1. Notice copyright.txt.1 because copyright.txt already existed.
+
+	1. Type ***more copyright.txt.1***.
+
+	1. Type ***wget <URL> -O copyright3.txt***.
+
+	1. Type ***la***.
+
+	1. Type ***more copyright3.txt***.
 
 ## Syncing Files
 
