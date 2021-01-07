@@ -112,7 +112,7 @@
 
 	1. Type ***rm hello2.txt***.
 
-	1. Notice that it complained this time because the hello2.txt file no longer exists.
+	1. Notice that it complained this time because the file ***hello2.txt*** no longer exists.
 
 	1. Optionally, see the man page for [rm](https://man7.org/linux/man-pages/man1/rm.1.html) for more information.
 
@@ -214,7 +214,7 @@
 
 1. Clear the directory for the next example.
 
-	1. Type ***rm -fr ~/hello/\* ***
+	1. Type ***rm -fr ~/hello ; mkdir ~/hello***
 
 	1. Type ***la ~/hello***
 
