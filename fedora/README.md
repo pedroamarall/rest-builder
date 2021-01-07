@@ -156,7 +156,7 @@
 
 	1. Type ***la***.
 
-	1. Type ***curl <URL>*** where ***<URL>*** is the URL to our sample file.
+	1. Type ***curl \<URL\>*** where ***<URL>*** is the URL to our sample file.
 
 	1. Type ***la***.
 
