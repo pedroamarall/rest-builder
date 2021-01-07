@@ -348,7 +348,9 @@
 
 		1. Add a new alias:
 
+		```
 		alias la2="ls --full-time"
+		```
 
 		1. Open a new Terminator tab. Type ***la2***. This works because the new alias is available in your new Bash prompt.
 
@@ -356,7 +358,7 @@
 
 	1. Add a directory to the $PATH variable.
 
-		1. Add an executable file to ***~/test***.
+		1. Add an executable file in ***~/test***.
 
 		1. Find the line:
 
