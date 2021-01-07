@@ -42,7 +42,7 @@
 
 ## Security
 
-1. sudo
+1. su
 
 ## Managing Packages
 
