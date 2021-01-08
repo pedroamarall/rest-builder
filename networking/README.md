@@ -208,7 +208,7 @@
 
 	1. Ask your neighbor to use Sublime to open ***joe_bloggs.pub*** (that you just made) and ***~/.ssh/authorized_keys***. You may notice that it is difficult (or impossible) to open ***~/.ssh/authorized_keys*** from the GUI.
 
-	1. Ask your neighbor to copy the line in ***joe_bloggs.pub*** into ***~/.ssh/authorized_keys*** so that each key is in its own line.
+	1. Ask your neighbor to copy the line in ***joe_bloggs.pub*** into ***~/.ssh/authorized_keys*** so that each key is in its own line. Save the file.
 
 	1. The first line is a key for brian.chan@liferay.com. The second line is the value from ***joe_bloggs.pub***. The two lines should look similar, but with different random values.
 
