@@ -6,9 +6,9 @@
 
 1. Launch Terminator.
 
-1. ***type docker --version***.
+1. Type ***docker --version***.
 
-1. ***type d --version***.
+1. Type ***d --version***.
 
 1. The program ***docker*** located at ***/usr/bin/docker*** is aliased to ***d*** in ***~/.bashrc***. Open ***~/.bashrc*** to verify this is true.
 
