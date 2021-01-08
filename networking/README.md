@@ -282,6 +282,8 @@
 
 	1. rsync -av ***me@192.168.xxx.xxx:/home/me/\<RANDOM_FILE_2\> /home/me***
 
+1. Repeat the above two exercises by syncing over a directory with many directories and files.
+
 1. Repeat the exercise by hiding ***~/.ssh/id_rsa*** to show that you will now be prompted for a username and password.
 
 ## Ports
