@@ -198,7 +198,7 @@
 
 	1. Type ***more ~/.ssh/authorized_keys***.
 
-	1. Notice that my public key is already there. It shows up in more than one line because it is a very long line, but in reality, it is all in just one line.
+	1. Notice that there is already a public key there for brian.chan@liferay.com. It shows up in more than one line because it is a very long line, but in reality, it is all in just one line.
 
 	1. In a new Terminator tab, type ***osub ~/.ssh/id_rsa.pub***. Copy just the FIRST line.
 
