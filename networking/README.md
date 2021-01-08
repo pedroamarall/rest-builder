@@ -226,7 +226,7 @@
 
 	1. Try logging into your neighbor's computer. You are automatically logged in.
 
-	1. By adding a public key in ***~/.ssh/authorized_keys***, you are telling SSH that anyone with the corresponding secret private key can access your computer.
+	1. By adding a public key in ***~/.ssh/authorized_keys***, you are telling SSH that anyone with the corresponding private key can access your computer.
 
 1. Optionally, see the man page for [ssh](https://linux.die.net/man/1/ssh) for more information.
 
@@ -254,7 +254,7 @@
 
 	1. Type ***ls***.
 
-	1. Type ***put \<FILE_NAME_1\>*** to upload one of your files.
+	1. Type ***put \<RANDOM_FILE_1\>*** to upload one of your files.
 
 	1. Type ***ls***.
 
@@ -262,9 +262,9 @@
 
 	1. Type ***ls***.
 
-	1. Type ***get \<FILE_NAME_2\>*** to download one of your neighbor's files.
+	1. Type ***get \<RANDOM_FILE_2\>*** to download one of your neighbor's files.
 
-	1. Type ***rm \<FILE_NAME_2\>*** to delete one of your neighbor's files.
+	1. Type ***rm \<RANDOM_FILE_2\>*** to delete one of your neighbor's files.
 
 	1. Type ***exit*** to log out of SFTP.
 
@@ -276,11 +276,11 @@
 
 1. Rsync files from your computer to your neighbor's computer.
 
-	1. rsync -av ***/home/me/\<FILE_NAME_1\> me@192.168.xxx.xxx:/home/me***
+	1. rsync -av ***/home/me/\<RANDOM_FILE_1\> me@192.168.xxx.xxx:/home/me***
 
 1. Rsync files from your neighbor's computer to your computer.
 
-	1. rsync -av ***me@192.168.xxx.xxx:/home/me/\<FILE_NAME_2\> /home/me***
+	1. rsync -av ***me@192.168.xxx.xxx:/home/me/\<RANDOM_FILE_2\> /home/me***
 
 1. Repeat the exercise by hiding ***~/.ssh/id_rsa*** to show that you will now be prompted for a username and password.
 
