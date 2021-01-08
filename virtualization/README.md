@@ -26,4 +26,6 @@
 
 1. VirtualBox is already installed on your machine. Review /home/me/dev/projects/liferay-basic-training/dotfiles/virtualbox/restore.sh to see how VirtualBox was installed.
 
+1. [Download](https://developer.microsoft.com/en-us/windows/downloads/virtual-machines). Windows 10. The file may already be in your Downloads directory.
+
 1. TODO
