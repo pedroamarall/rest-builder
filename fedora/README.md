@@ -232,7 +232,7 @@
 
 1. Watch out for the tailing slash.
 
-	1. Type ***rsync -av ~/test/ ~/hello***. Notice that I did NOT ask you to type ***rsync -av ~/test ~/hello***.
+	1. Type ***rsync -av ~/test/ ~/hello***. Notice that I did NOT ask you to type ***rsync -av ~/test ~/hello***. Every character matters.
 
 	1. Type ***la ~/hello***
 
