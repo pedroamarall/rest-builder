@@ -333,11 +333,9 @@
 1. Type ***echo $PATH***.
 
 	1. The PATH environment variable contains a list of directories, separated by colons.
-
 	```
 	/opt/java/ant/bin:/opt/java/jdk/bin:/home/me/.npm-global/bin:/home/me/.local/bin:/home/me/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
 	```
-
 	1. That means executable files in /opt/java/ant/bin, /opt/java/jdk/bin, /usr/local/bin, etc. are all available from the command line.
 
 	1. Type ***la /opt/java/ant/bin***.
