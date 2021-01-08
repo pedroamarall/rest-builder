@@ -268,15 +268,17 @@
 
 1. Type ***ls /root***.
 
-1. Notice that you were not allowed to list the contents of the directory ***/root*** because ***/root*** is the home directory that belongs to the ***root*** user.
+1. Notice that you were not allowed to list the contents of the directory ***/root*** because ***/root*** is the home directory of the ***root*** user.
 
-	1. The root directory of the system is ***/***.
+	1. The root directory of the computer is ***/***.
 
 	1. That is not the same as the ***root*** user.
 
 	1. The home directory of the ***root*** user is ***/root***.
 
 	1. The home directory for the ***me*** user is ***/home/me***.
+
+	1. Pause and think.
 
 1. If you are still confused, reread the sentence until every word means something to you. Ask someone for help if it still does not make sense.
 
