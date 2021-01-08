@@ -90,7 +90,7 @@
 
 	1. Type ***la***.
 
-	1. Type ***cd test***. The command fails because you are already inside the test directory.
+	1. Type ***cd test***. This command fails because you are already inside the test directory.
 
 1. Make files.
 
@@ -311,7 +311,7 @@
 
 1. Type ***dnf remove sysstat***.
 
-1. This command should fail because it requires sudo.
+1. This command fails because ***dnf*** requires ***sudo***.
 
 1. Type ***sudo dnf remove sysstat***.
 
