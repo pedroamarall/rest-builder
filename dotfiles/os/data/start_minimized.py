@@ -10,15 +10,37 @@ command_check = command.split("/")[-1]
 
 subprocess.Popen(["/bin/bash", "-c", command])
 
-t = 1
-while t < 30:
+for count in range(0, 30):
     try:
-        w_list = [l.split() for l in subprocess.check_output(["wmctrl", "-lp"]).decode("utf-8").splitlines()]
-        proc = subprocess.check_output(["pgrep", "-f", command_check]).decode("utf-8").strip().split()
-        match = sum([[l[0] for l in w_list if p in l] for p in proc], [])
-        subprocess.Popen(["xdotool", "windowminimize", match[0]])
+        window_list = [
+            windows.split() for windows in subprocess.check_output(
+                ["wmctrl", "-lp"]
+            ).decode(
+                "utf-8"
+            ).splitlines()
+        ]
+
+        processes = subprocess.check_output(
+            ["pgrep", "-f", command_check]
+        ).decode(
+            "utf-8"
+        ).strip(
+        ).split()
+
+        window_list = sum(
+            [
+                [
+                    windows[0] for windows in window_list if process in windows
+                ] for process in processes
+            ], []
+        )
+
+        subprocess.Popen(
+            ["xdotool", "windowminimize", window_list[0]]
+        )
+
         break
     except (IndexError, subprocess.CalledProcessError):
         pass
-    t += 1
+
     time.sleep(1)
