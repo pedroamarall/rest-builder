@@ -10,7 +10,7 @@
 
 1. Type ***d --version***.
 
-1. The program ***docker*** located at ***/usr/bin/docker*** is aliased to ***d*** in ***~/.bashrc***. Open ***~/.bashrc*** to verify this is true.
+1. The program ***docker*** located at ***/usr/bin/docker*** is aliased to ***d*** in ***~/.bashrc***. Open ***~/.bashrc*** to verify this is true. Whenever possible, use the alias to minimize wear and tear on your fingers.
 
 1. Follow the tutorial in https://docker-curriculum.com. Stop after you reach the section ***Docker on AWS***.
 
