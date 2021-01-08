@@ -284,6 +284,10 @@
 
 1. Type ***\<Up\>***, and then type ***\<Enter\>*** to execute ***sudo ls /root*** again. Notice that it did not ask you for your password again. It remembers your password in that Terminator tab for 15 minutes.
 
+1. Open a new Terminator tab.
+
+1. Type ***sudo ls /root***. You will be prompted for the password again because the password is only remembered for the other tab.
+
 ## Managing Packages
 
 1. Launch Terminator.
