@@ -2,6 +2,8 @@
 
 ## Sublime
 
+1. Launch Terminator.
+
 1. Type ***osub \<FILE_NAME\>*** to open a file in Sublime.
 
 1. Type ***osub \<FILE_NAME_1\> \<FILE_NAME_2\>*** to open more than one file in Sublime.
@@ -24,9 +26,9 @@
 
 	This mode allows you to type in text. Add some random text.
 
-1. Type ***escape***. Look at the bottom left hand corner. It should be blank.
+1. Type ***escape***. Look at the bottom left hand corner. It is blank.
 
-1. Type ***:wq*** and hit ***\<Enter\>*** to save your changes and exit Vi.
+1. Type ***:wq***. Look at the buttom left hand corner. Notice it has your command ***:wq***. Then hit ***\<Enter\>*** to save your changes and exit Vi.
 
 1. Type ***more vi playing_with_vi.txt*** to see your changes.
 
@@ -44,6 +46,6 @@
 
 1. Type ***u*** to undo. Type ***u*** to undo again.
 
-1. Type ***<CONTROL+r>*** to redo.
+1. Type ***<CONTROL+r>*** to redo by.
 
 1. Get out of Vi.
