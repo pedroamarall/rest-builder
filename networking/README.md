@@ -204,9 +204,7 @@
 
 	1. Go back to the tab with your neighbor's computer and type ***echo "\<THE_LONG_LINE\>" > joe_bloggs.pub***.
 
-	1. Ask your neighbor to use Sublime to open ***joe_bloggs.pub*** (that you just made) and ***~/.ssh/authorized_keys***.
-
-	   You may notice that it is difficult (or impossible) to open ***~/.ssh/authorized_keys*** from the GUI.
+	1. Ask your neighbor to use Sublime to open ***joe_bloggs.pub*** (that you just made) and ***~/.ssh/authorized_keys***. You may notice that it is difficult (or impossible) to open ***~/.ssh/authorized_keys*** from the GUI.
 
 	1. Ask your neighbor to copy the line in ***joe_bloggs.pub*** into ***~/.ssh/authorized_keys*** so that is in two lines.
 
