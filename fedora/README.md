@@ -294,6 +294,15 @@
 
 1. Type ***rpm -ql sysstat***
 
+	```
+	/etc/profile.d/colorsysstat.csh
+	/etc/profile.d/colorsysstat.sh
+	/etc/sysconfig/sysstat
+	/etc/sysconfig/sysstat.ioconf
+	/usr/bin/cifsiostat
+	/usr/bin/iostat
+	...
+	```
 1. This prints all the files that were installed on the system for the package ***sysstat***.
 
 1. Type ***iostat***. This command works because the file ***/usr/bin/iostat*** was installed as part of the package ***sysstat***.
