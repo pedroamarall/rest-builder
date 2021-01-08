@@ -293,6 +293,7 @@
 1. Launch Terminator.
 
 1. Type ***rpm -ql sysstat***
+
 	```
 	/etc/profile.d/colorsysstat.csh
 	/etc/profile.d/colorsysstat.sh
@@ -302,6 +303,7 @@
 	/usr/bin/iostat
 	...
 	```
+
 1. This prints all the files that were installed on the system for the package ***sysstat***.
 
 1. Type ***iostat***. This command works because the file ***/usr/bin/iostat*** was installed as part of the package ***sysstat***.
@@ -342,21 +344,21 @@
 
 	1. Type ***la /opt/java/ant/bin***.
 
-	```
-	-rwxr-xr-x 1 root root 11729 May 10  2020 ant
-	-rw-r--r-- 1 root root  7470 May 10  2020 ant.bat
-	-rw-r--r-- 1 root root  2855 May 10  2020 ant.cmd
-	-rw-r--r-- 1 root root  3409 May 10  2020 antenv.cmd
-	-rwxr-xr-x 1 root root   861 May 10  2020 antRun
-	-rw-r--r-- 1 root root  1532 May 10  2020 antRun.bat
-	-rwxr-xr-x 1 root root  2117 May 10  2020 antRun.pl
-	-rwxr-xr-x 1 root root  3458 May 10  2020 complete-ant-cmd.pl
-	-rw-r--r-- 1 root root  4315 May 10  2020 envset.cmd
-	-rw-r--r-- 1 root root  1112 May 10  2020 lcp.bat
-	-rwxr-xr-x 1 root root  4166 May 10  2020 runant.pl
-	-rwxr-xr-x 1 root root  3344 May 10  2020 runant.py
-	-rw-r--r-- 1 root root  1814 May 10  2020 runrc.cmd
-	```
+		```
+		-rwxr-xr-x 1 root root 11729 May 10  2020 ant
+		-rw-r--r-- 1 root root  7470 May 10  2020 ant.bat
+		-rw-r--r-- 1 root root  2855 May 10  2020 ant.cmd
+		-rw-r--r-- 1 root root  3409 May 10  2020 antenv.cmd
+		-rwxr-xr-x 1 root root   861 May 10  2020 antRun
+		-rw-r--r-- 1 root root  1532 May 10  2020 antRun.bat
+		-rwxr-xr-x 1 root root  2117 May 10  2020 antRun.pl
+		-rwxr-xr-x 1 root root  3458 May 10  2020 complete-ant-cmd.pl
+		-rw-r--r-- 1 root root  4315 May 10  2020 envset.cmd
+		-rw-r--r-- 1 root root  1112 May 10  2020 lcp.bat
+		-rwxr-xr-x 1 root root  4166 May 10  2020 runant.pl
+		-rwxr-xr-x 1 root root  3344 May 10  2020 runant.py
+		-rw-r--r-- 1 root root  1814 May 10  2020 runrc.cmd
+		```
 
 	1. Notice that ***ant*** is green and described as -rwxr-xr-x whereas ***ant.bat*** is gray and described as -rw-r--r--.
 
@@ -416,15 +418,15 @@
 
 		1. Find the line:
 
-		```
-		alias la="ls -la --group-directories-first"
-		```
+			```
+			alias la="ls -la --group-directories-first"
+			```
 
 		1. Add a new alias:
 
-		```
-		alias la2="ls --full-time"
-		```
+			```
+			alias la2="ls --full-time"
+			```
 
 		1. Type ***<Control+S>*** to save the file.
 
@@ -438,14 +440,14 @@
 
 		1. Find the line:
 
-		```
-		export PATH="${ANT_HOME}/bin:${JAVA_HOME}/bin:${NPM_CONFIG_PREFIX}/bin:${PATH}"
-		```
+			```
+			export PATH="${ANT_HOME}/bin:${JAVA_HOME}/bin:${NPM_CONFIG_PREFIX}/bin:${PATH}"
+			```
 
 		1. Change it to:
 
-		```
-		export PATH="${ANT_HOME}/bin:${JAVA_HOME}/bin:${NPM_CONFIG_PREFIX}/bin:~/test:${PATH}"
-		```
+			```
+			export PATH="${ANT_HOME}/bin:${JAVA_HOME}/bin:${NPM_CONFIG_PREFIX}/bin:~/test:${PATH}"
+			```
 
 		1. Open a new Terminator tab. Show that your executable file in ***~/test*** works.
