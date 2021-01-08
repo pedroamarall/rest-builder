@@ -104,7 +104,7 @@
 
 	1. Try pinging your neighbor's IP. This fails because you are behind different routers. Imagine a router as a door to a room. When you are in the same room, you can ping each other and talk to each other. When you are in different rooms, you cannot ping or talk to each other.
 
-	1. Tell your neighbor to join your phone's network. Try it again. This time, it works because you are both behind the same router.
+	1. Tell your neighbor to join your phone's network. Try pinging your neighbor's IP again. It works because you are both behind the same router.
 
 1. Optionally, see the man page for [ping](https://linux.die.net/man/8/ping) for more information.
 
