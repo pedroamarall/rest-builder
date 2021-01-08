@@ -222,7 +222,7 @@
 
 	1. Type ***la ~/hello***.
 
-1. Clear the directory for the next example.
+1. Remake the directory for the next example.
 
 	1. Type ***rm -fr ~/hello && mkdir ~/hello***.
 
@@ -234,11 +234,11 @@
 
 	1. Type ***rsync -av ~/test/ ~/hello***. Notice that I did NOT ask you to type ***rsync -av ~/test ~/hello***. Every character matters.
 
-	1. Type ***la ~/hello***
+	1. Type ***la ~/hello***.
 
 	1. Notice how the contents of ***~/hello*** are very different in this second example.
 
-	1. Clear the directory for the next example.
+	1. Remake the directory for the next example.
 
 1. Add files.
 
@@ -246,7 +246,7 @@
 
 	1. Type ***rsync -av ~/test/ ~/hello***.
 
-	1. Type ***la ~/hello***
+	1. Type ***la ~/hello***.
 
 1. Delete files.
 
@@ -258,7 +258,7 @@
 
 	1. Type ***rsync -av --delete ~/test/ ~/hello***.
 
-	1. Type ***la ~/hello/add.txt*** The file is deleted.
+	1. Type ***la ~/hello/add.txt*** The file is deleted. Files are not deleted unless you add the argument ***--delete***.
 
 1. Optionally, see the man page for [rsync](https://man7.org/linux/man-pages/man1/rsync.1.html) for more information.
 
