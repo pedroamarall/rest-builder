@@ -218,11 +218,11 @@
 
 	1. On your computer, type ***mv ~/.ssh/id_rsa*** to ***mv ~/.ssh/bad_name***.
 
-	1. Try logging into your neighbor's computer. It should ask you for a username and password again.
+	1. Try logging into your neighbor's computer. You are prompted for a username and password.
 
 	1. On your computer, type ***mv ~/.ssh/bad_name*** to ***mv ~/.ssh/id_rsa***.
 
-	1. Try logging into your neighbor's computer. It should automatically log you in.
+	1. Try logging into your neighbor's computer. You are automatically logged in.
 
 1. Optionally, see the man page for [sftp](https://linux.die.net/man/1/ssh) for more information.
 
