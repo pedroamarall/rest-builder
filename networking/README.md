@@ -116,7 +116,7 @@
 
 	1. Type ***ssh 192.168.xxx.xxx*** to SSH into your neighbor's machine. You already know the username and password.
 
-	1. Notice that your Bash prompt now looks slightly different. There should be four characters that are different. Find the four characters. This should be a reminder to tell you when you are on your machine and when you are connected to your neighbor's machine.
+	1. Notice that your Bash prompt now looks slightly different. There should be four characters that are different. Find the four characters. This should be a reminder to tell you when you are on your machine and when you are connected to your neighbor's machine. For example, one may be ***me@nuc10-i7-k6d9*** and the other may be ***me@nuc10-i7-z3f5***.
 
 	1. Type ***la***.
 
