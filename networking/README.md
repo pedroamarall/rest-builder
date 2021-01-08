@@ -290,7 +290,9 @@
 
 1. Your computer has an IP and listens on many ports. Ports are numbers between 0 and 65535. Two programs on the same machine cannot listen on the same port.
 
-	1. SSH defaults to run on port 22. Apache defaults to run port 80.
+	1. SSH defaults to run on port 22.
+	
+	1. Apache defaults to run port 80.
 
 1. Telnet to localhost on port 22.
 
