@@ -112,6 +112,10 @@
 
 1. Remove files.
 
+	1. Go to ***~/test***.
+
+	1. Type ***la***
+
 	1. Type ***rm hello2.txt***.
 
 	1. Type ***la***
@@ -208,9 +212,9 @@
 
 	1. Type ***more copyright3.txt***.
 
-## Syncing Files
+## Syncing Directories and Files
 
-1. rsync
+1. Use rsync.
 
 	1. Type ***mkdir ~/hello***.
 
@@ -228,7 +232,7 @@
 
 1. Watch out for the tailing slash.
 
-	1. Type ***rsync -av ~/test/ ~/hello***.
+	1. Type ***rsync -av ~/test/ ~/hello***. Notice that I did NOT ask you to type ***rsync -av ~/test ~/hello***.
 
 	1. Type ***la ~/hello***
 
