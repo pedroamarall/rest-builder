@@ -110,11 +110,11 @@
 
 ## SSH
 
-1. Connect via SSH to a remote machine.
+1. Connect via SSH to a remote computer.
 
 	1. Launch Terminator.
 
-	1. Type ***ssh 192.168.xxx.xxx*** to SSH into your neighbor's machine. You already know the username and password.
+	1. Type ***ssh 192.168.xxx.xxx*** to SSH into your neighbor's computer. You already know the username and password.
 
 	1. Notice that your Bash prompt now looks slightly different. There should be four characters that are different. Find the four characters. This should be a reminder to tell you when you are on your machine and when you are connected to your neighbor's machine. For example, one may be ***me@nuc10-i7-k6d9*** and the other may be ***me@nuc10-i7-z3f5***.
 
@@ -132,7 +132,7 @@
 
 	1. Notice the Bash prompt changed.
 
-	1. Repeat the exercise but have your neighbor log into your machine.
+	1. Repeat the exercise but have your neighbor log into your computer.
 
 1. Connect via SSH to yourself.
 
@@ -140,7 +140,7 @@
 
 	1. In the first tab, type ***ssh localhost***.
 
-	1. Notice the Bash prompt is the same because you are still on your machine.
+	1. Notice the Bash prompt is the same because you are still on your computer.
 
 	1. Type ***la***.
 
@@ -228,20 +228,98 @@
 
 ## SFTP
 
-1. SFTP to 192.168.111.128 with and without an SSH key.
+1. SFTP to your neighbor's computer with and without an SSH key.
 
-2.	List files and change directories.
+	1. Type ***ssh 192.168.xxx.xxx*** to SFTP into your neighbor's computer. You are automatically logged in.
 
-3.	Upload and download files.
+	1. Type **exit** to log out of your neighbor's computer.
+
+	1. On your computer, type ***mv ~/.ssh/id_rsa*** to ***mv ~/.ssh/bad_name***.
+
+	1. Type ***ssh 192.168.xxx.xxx*** to SFTP into your neighbor's computer. You are prompted for a username and password.
+
+	1. On your computer, type ***mv ~/.ssh/bad_name*** to ***mv ~/.ssh/id_rsa***.
+
+1.	Upload, download, and delete files.
+
+	1. Make some random files on your machine.
+
+	1. Type ***la***.
+
+	1. SFTP to your neighbor's computer.
+
+	1. Type ***ls***.
+
+	1. Type ***put \<FILE_NAME_1\>*** to upload one of your files.
+
+	1. Type ***ls***.
+
+	1. Ask your neighbor to make some random files on his machine.
+
+	1. Type ***ls***.
+
+	1. Type ***get \<FILE_NAME_2\>*** to download one of your neighbor's files.
+
+	1. Type ***rm \<FILE_NAME_2\>*** to delete one of your neighbor's files.
+
+	1. Type ***exit*** to log out of SFTP.
+
+	1. Type ***la*** to verify that you downloaded your neighbor's file.
 
 1. Optionally, see the man page for [sftp](https://linux.die.net/man/1/sftp) for more information.
 
-## Telnet
+## Rsync
 
-1. Telnet to localhost port 22.
+1. Rsync files from your computer to your neighbor's computer.
+
+	1. rsync -av ***/home/me/\<FILE_NAME_1\> me@192.168.xxx.xxx:/home/me***
+
+1. Rsync files from your neighbor's computer to your computer.
+
+	1. rsync -av ***me@192.168.xxx.xxx:/home/me/\<FILE_NAME_2\> /home/me***
+
+1. Repeat the exercise by hiding ***~/.ssh/id_rsa*** to show that you will now be prompted for a username and password.
+
+## Ports
+
+1. Your computer has an IP and listens on many ports. Ports are numbers between 0 and 65535. Two programs on the same machine cannot listen on the same port.
+
+	1. SSH defaults to run on port 22. Apache defaults to run port 80.
+
+1. Telnet to localhost on port 22.
+
+	1. Type ***telnet localhost 22***.
+
+		```
+		$ telnet localhost 22
+		Trying ::1...
+		Connected to localhost.
+		Escape character is '^]'.
+		SSH-2.0-OpenSSH_8.4
+		```
+
+	1. The reply shows that SSH is running on port 22.
+
+	1. Type ***<CONTROL+]>*** and then type ***quit*** to exit out of telnet on port 22.
 
 1. Telnet to localhost port 23.
 
-1. Why are the results different?
+	1. Type ***telnet localhost 23***. This command fails because nothing is running on port 23.
+
+1. Telnet to your neighbor's computer.
+
+	1. Type ***telnet 192.168.xxx.xxx 22***.
+
+	1. Type ***<CONTROL+]>*** and then type ***quit*** to exit out of telnet on port 22.
+
+	1. Ask your neighbor to turn off his WiFi by typing ***nmcli radio wifi off***.
+
+	1. Type ***telnet 192.168.xxx.xxx 22***. This fails because your neighbor's computer is not connected to the network.
+
+	1. Ask your neighbor to turn on his WiFi by typing ***nmcli radio wifi on***.
+
+	1. Type ***telnet 192.168.xxx.xxx 22***. This works because your neighbor's computer is connected to the network.
+
+1. Telnet is a quick way to verify if you can communicate with another computer on a specific port.
 
 1. Optionally, see the man page for [telnet](https://linux.die.net/man/1/telnet) for more information.
