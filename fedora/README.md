@@ -293,7 +293,6 @@
 1. Launch Terminator.
 
 1. Type ***rpm -ql sysstat***
-
 	```
 	/etc/profile.d/colorsysstat.csh
 	/etc/profile.d/colorsysstat.sh
