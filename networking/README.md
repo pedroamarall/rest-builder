@@ -182,7 +182,7 @@
 
 	1. Type ***chmod 700 ~/.ssh*** to change that directory's permission to a value of 700. There is no need to understand what 700 means for now. But it will not work without that permission.
 
-	1. Type ***la ~/.ssh***. There is already a file there named authorized_keys that would not exist in a vanilla installation.
+	1. Type ***la ~/.ssh***. There is already a file there named authorized_keys that would normally not exist in a fresh installation but was installed on your computer earlier.
 
 	1. Type ***mv joe_bloggs ~/.ssh/id_rsa***.
 
