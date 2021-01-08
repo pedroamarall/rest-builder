@@ -218,11 +218,11 @@
 
 	1. Type ***exit*** to log out of your neighbor's computer. Keep this tab to quickly test logging in and out of your neighbor's computer.
 
-	1. On your computer, type ***mv ~/.ssh/id_rsa*** to ***mv ~/.ssh/bad_name***.
+	1. On your computer, type ***mv ~/.ssh/id_rsa ~/.ssh/bad_name***.
 
 	1. Try logging into your neighbor's computer. You are prompted for a username and password.
 
-	1. On your computer, type ***mv ~/.ssh/bad_name*** to ***mv ~/.ssh/id_rsa***.
+	1. On your computer, type ***mv ~/.ssh/bad_name ~/.ssh/id_rsa***.
 
 	1. Try logging into your neighbor's computer. You are automatically logged in.
 
@@ -238,11 +238,11 @@
 
 	1. Type **exit** to log out of your neighbor's computer.
 
-	1. On your computer, type ***mv ~/.ssh/id_rsa*** to ***mv ~/.ssh/bad_name***.
+	1. On your computer, type ***mv ~/.ssh/id_rsa ~/.ssh/bad_name***.
 
 	1. Type ***ssh 192.168.xxx.xxx*** to SFTP into your neighbor's computer. You are prompted for a username and password.
 
-	1. On your computer, type ***mv ~/.ssh/bad_name*** to ***mv ~/.ssh/id_rsa***.
+	1. On your computer, type ***mv ~/.ssh/bad_name ~/.ssh/id_rsa***.
 
 1.	Upload, download, and delete files.
 
