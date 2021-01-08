@@ -1,77 +1,41 @@
 # Liferay Basic Training
 
-## Day 1
+1. Welcome!
 
-Welcome! (1 hour)
+1. [Goal Setting](goal-setting)
 
-[Goal Setting](goal-setting) (20 minutes)
+1. [Posture](posture)
 
-[Posture](posture) (20 minutes)
+1. [Basic Apps](basic-apps)
 
-[Basic Apps](basic-apps) (30 minutes)
+1. [Typing](typing)
 
-[Typing](typing) (20 minutes)
+1. [Fedora](fedora)
 
-[Fedora](fedora) (2 hours)
+1. [Networking](networking)
 
-## Day 2
+1. [Editors](editors)
 
-[Fedora](fedora) (2 hours)
+1. [Virtualization](virtualization)
 
-[Networking](networking) (2 hours)
+1. [Git](git)
 
-## Day 3
+1. [Databases](databases)
 
-[Virtualization](virtualization) (1 hour)
+1. [Search Engines](search-engines)
 
-[Editors](editors) (1 hour)
+1. [Web Servers](web-servers)
 
-[Git](git) (2 hours)
+1. [Markdown](markdown)
 
-## Day 4
+1. [HTML/CSS](html-css)
 
-[Git](git) (4 hours)
+1. [JavaScript](javascript)
 
-## Day 5
+1. [Java](java)
 
-[Databases](databases) (4 hours)
+1. [OSGi](osgi)
 
-## Day 6
+1. [Poshi](poshi)
 
-[Search Engines](search-engines) (4 hours)
-
-## Day 7
-
-[Web Servers](web-servers) (2 hours)
-
-[Markdown](markdown) (1 hour)
-
-[HTML/CSS](html-css) (1 hour)
-
-## Day 8
-
-[HTML/CSS](html-css) (4 hours)
-
-## Day 9
-
-[JavaScript](javascript) (6 hours)
-
-## Day 10
-
-[Java](java) (4 hours)
-
-## Day 11
-
-[OSGi](osgi) (4 hours)
-
-## Day 12
-
-[Poshi](poshi) (4 hours)
-
-## Days 13-15
-
-Buffer.
-
-## Days 15-45
-
-[Problem Based Learning](problem-based-learning)
+1. [Problem Based Learning](problem-based-learning)
