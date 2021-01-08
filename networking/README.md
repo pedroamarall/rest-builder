@@ -160,7 +160,7 @@
 
 	1. Type ***ssh-keygen -t rsa -C "\<YOUR_EMAIL_ADDRESS\>"***.
 
-		1. For the file name, type your full name in lower case without spaces. For example, let's use ***joe_bloggs***.
+		1. For the file name, type your full name in lower case without spaces. For this tutorial, the file name is ***joe_bloggs***.
 
 		1. Do not use a passphrase.
 
