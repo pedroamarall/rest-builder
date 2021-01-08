@@ -212,7 +212,7 @@
 
 	1. The first line is a key for brian.chan@liferay.com. The second line is the value from ***joe_bloggs.pub***. The two lines should look similar, but with different random values.
 
-	1. Go back to the tab where you are logged into neighbor's computer and type ***chmod 640 ~/.ssh/authorized_keys*** to ensure the right permissions.
+	1. Go back to the tab where you are logged into neighbor's computer and type ***chmod 640 ~/.ssh/authorized_keys*** to ensure the right permissions. Type ***more ~/.ssh/authorized_keys*** to ensure it contains the new key.
 
 	1. Open a new Terminator tab and SSH into your neighbor's computer. Notice that you no longer have to type in a username or password.
 
