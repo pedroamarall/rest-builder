@@ -278,7 +278,7 @@
 
 	1. The home directory for the ***me*** user is ***/home/me***.
 
-	1. Pause and think.
+	1. Pause and think to make sure you fully understand this.
 
 1. Type ***sudo ls /root***. You will prompted to enter your password. The ***me*** user is an admin user and can execute commands as the ***root*** user. Once you enter in the password, the command will work.
 
