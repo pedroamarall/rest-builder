@@ -164,7 +164,7 @@
 
 		1. Do not use a passphrase.
 
-	1. Two files were just randomly created: ***joe_bloggs*** and ***joe_bloggs.pub***.
+	1. Two files were randomly created: ***joe_bloggs*** and ***joe_bloggs.pub***.
 
 		1. Type ***more joe_bloggs***.
 
@@ -174,7 +174,7 @@
 
 	1. The public file is named ***joe_bloggs.pub*** and is safe to give to anyone.
 
-1. Move the SSH key to the right place.
+1. Move the SSH key to the right directory.
 
 	1. Type ***mkdir -p ~/.ssh***.
 
@@ -182,7 +182,7 @@
 
 	1. Type ***chmod 700 ~/.ssh*** to change that directory's permission to a value of 700. There is no need to understand what 700 means for now. But it will not work without that permission.
 
-	1. Type ***la ~/.ssh***. There is already a file there because I put it there earlier.
+	1. Type ***la ~/.ssh***. There is already a file there named authorized_keys that would not exist in a vanilla installation.
 
 	1. Type ***mv joe_bloggs ~/.ssh/id_rsa***.
 
@@ -190,7 +190,7 @@
 
 	1. Type ***la ~/.ssh***
 
-	1. Notice that I renamed ***joe_bloggs*** to ***id_rsa*** and ***joe_bloggs.pub*** to ***joe_bloggs.pub*** and moved the files to ***~/.ssh***.
+	1. Notice that you renamed ***joe_bloggs*** to ***id_rsa*** and ***joe_bloggs.pub*** to ***joe_bloggs.pub*** and moved the files to ***~/.ssh***.
 
 1. Connect via an SSH key.
 
