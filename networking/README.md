@@ -198,15 +198,15 @@
 
 	1. Type ***more ~/.ssh/authorized_keys***.
 
-	1. Notice that there is already a public key there for brian.chan@liferay.com. It shows up in more than one line because it is a very long line, but in reality, it is all in just one line.
+	1. Notice that there is already a public key there for brian.chan@liferay.com. It printed in more than one line because it is a very long line, but in reality, it is all in just one line.
 
-	1. In a new Terminator tab, type ***osub ~/.ssh/id_rsa.pub***. Copy just the FIRST line.
+	1. In a new tab on your computer, type ***osub ~/.ssh/id_rsa.pub***. Copy just the FIRST line.
 
 	1. Go back to the tab with your neighbor's computer and type ***echo "\<THE_LONG_LINE\>" > joe_bloggs.pub***.
 
 	1. Ask your neighbor to use Sublime to open ***joe_bloggs.pub*** (that you just made) and ***~/.ssh/authorized_keys***.
 
-		1. You may notice that it is difficult (or impossible) to open ***~/.ssh/authorized_keys*** from the GUI.
+	   You may notice that it is difficult (or impossible) to open ***~/.ssh/authorized_keys*** from the GUI.
 
 	1. Ask your neighbor to copy the line in ***joe_bloggs.pub*** into ***~/.ssh/authorized_keys*** so that is in two lines.
 
