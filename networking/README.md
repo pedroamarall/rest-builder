@@ -284,7 +284,7 @@
 
 1. Repeat the above two exercises by syncing over a directory with many directories and files.
 
-1. Repeat the exercise by hiding ***~/.ssh/id_rsa*** to show that you will now be prompted for a username and password.
+1. Repeat one of the above exercises by hiding ***~/.ssh/id_rsa*** to show that you will now be prompted for a username and password.
 
 ## Ports
 
