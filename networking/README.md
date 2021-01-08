@@ -75,6 +75,8 @@
 
 1. Ping your own computer.
 
+	1. Launch Terminator.
+
 	1. Type ***ping 127.0.0.1***.
 
 	1. Type ***ping localhost***.
