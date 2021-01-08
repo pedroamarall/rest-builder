@@ -208,7 +208,7 @@
 
 	1. Ask your neighbor to copy the line in ***joe_bloggs.pub*** into ***~/.ssh/authorized_keys*** so that is in two lines.
 
-	1. The first line is a key for brian.chan@liferay.com. The second line is the key for joe_bloggs.
+	1. The first line is a key for brian.chan@liferay.com. The second line is the key for joe_bloggs. The two lines should look similar, but with different random values.
 
 	1. Go back to the tab with your neighbor's computer and type ***chmod 640 ~/.ssh/authorized_keys*** to ensure the right permissions.
 
