@@ -202,17 +202,17 @@
 
 	1. In a new tab on your computer, type ***osub ~/.ssh/id_rsa.pub***. Copy just the FIRST line.
 
-	1. Go back to the tab with your neighbor's computer and type ***echo "\<THE_LONG_LINE\>" > joe_bloggs.pub***.
+	1. Go back to the tab where you are logged into neighbor's computer and type ***echo "\<THE_LONG_LINE\>" > joe_bloggs.pub***.
 
 	1. Ask your neighbor to use Sublime to open ***joe_bloggs.pub*** (that you just made) and ***~/.ssh/authorized_keys***. You may notice that it is difficult (or impossible) to open ***~/.ssh/authorized_keys*** from the GUI.
 
 	1. Ask your neighbor to copy the line in ***joe_bloggs.pub*** into ***~/.ssh/authorized_keys*** so that is in two lines.
 
-	1. The first line is a key for brian.chan@liferay.com. The second line is the value from joe_bloggs.pub. The two lines should look similar, but with different random values.
+	1. The first line is a key for brian.chan@liferay.com. The second line is the value from ***joe_bloggs.pub***. The two lines should look similar, but with different random values.
 
-	1. Go back to the tab with your neighbor's computer and type ***chmod 640 ~/.ssh/authorized_keys*** to ensure the right permissions.
+	1. Go back to the tab where you are logged into neighbor's computer and type ***chmod 640 ~/.ssh/authorized_keys*** to ensure the right permissions.
 
-	1. Open a new Terminator tab and SSH into your neighbor's computer. Notice that you no longer have to type in the password.
+	1. Open a new Terminator tab and SSH into your neighbor's computer. Notice that you no longer have to type in a username or password.
 
 	1. Type ***exit*** to log out of your neighbor's computer. Keep this tab to quickly test logging in and out of your neighbor's computer.
 
