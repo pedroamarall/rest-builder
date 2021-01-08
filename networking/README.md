@@ -35,6 +35,8 @@
 		        route6 ff00::/8
 		```
 
+		The command ***nmcli*** also shows a lot of other information you can ignore. Ignore the irrelevant information.
+
 		If your ethernet cable is connected, then en* will show an IP. In my case, the IP is ***192.168.111.222***.
 
 		If your WiFi is connected, then wl* will show an IP. In my case, the IP is ***192.168.110.160***.
@@ -100,25 +102,141 @@
 
 	1. Connect to your phone's network while your neighbor is connected to the Liferay network.
 
-	1. Try pinging your neighbor's IP. This fails because you are behind different routers. Imagine a router as a room. When you are in the same room, you can ping each other and talk to each other. When you are in different rooms, you cannot ping or talk to each other.
+	1. Try pinging your neighbor's IP. This fails because you are behind different routers. Imagine a router as a door to a room. When you are in the same room, you can ping each other and talk to each other. When you are in different rooms, you cannot ping or talk to each other.
 
-	1. Have both your neighbor join your phone's network. Try it again. This time, it works because you are both behind the same router.
+	1. Have your neighbor join your phone's network. Try it again. This time, it works because you are both behind the same router.
+
+1. Optionally, see the man page for [ping](https://linux.die.net/man/8/ping) for more information.
 
 ## SSH
 
-1. Connect via SSH to xyz.liferay.com. Log in as user  ***userXYZ*** with password is ***1234***.
+1. Connect via SSH to a remote machine.
+
+	1. Launch Terminator.
+
+	1. Type ***ssh 192.168.xxx.xxx*** to SSH into your neighbor's machine. You already know the username and password.
+
+	1. Notice that your Bash prompt now looks slightly different. There should be four characters that are different. Find the four characters. This should be a reminder to tell you when you are on your machine and when you are connected to your neighbor's machine.
+
+	1. Type ***la***.
+
+	1. Ask your neighbor to type ***echo "\<RANDOM_NUMBER\>" > \<RANDOM_NAME\>.txt*** where ***\<RANDOM_NUMBER\>*** is a random number he makes up and ***\<RANDOM_NAME\>*** is a random name he makes up.
+
+	1. Type ***la***. Find the newly created file.
+
+	1. Type ***more \<RANDOM_NAME\>***. Tell your neighbor the name of the file and the number in the file.
+
+	1. Type ***rm \<RANDOM_NAME\>*** to delete your neighbor's file.
+
+	1. Type ***exit***.
+
+	1. Notice the Bash prompt changed.
+
+	1. Repeat the exercise but have your neighbor log into your machine.
+
+1. Connect via SSH to yourself.
+
+	1. Launch Terminator and create two tabs.
+
+	1. In the first tab, type ***ssh localhost***.
+
+	1. Notice the Bash prompt is the same because you are still on your machine.
+
+	1. Type ***la***.
+
+	1. In the second tab, make a random file.
+
+	1. In the first tab, type ***la***.
+
+	1. In the first tab, type ***exit***. This does not close your tab, because you are just exiting from SSH.
+
+	1. Type ***exit*** again to close the tab.
+
+	1. Delete your random file.
 
 1. Make an SSH key.
- 	
+
+	1. Launch Terminator.
+
+	1. Type ***ssh-keygen -t rsa -C "\<YOUR_EMAIL_ADDRESS\>"***.
+
+		1. For the file name, type your full name in lower case without spaces. For example, let's use ***joe_bloggs***.
+
+		1. Do not use a passphrase.
+
+	1. Two files were just randomly created: ***joe_bloggs*** and ***joe_bloggs.pub***.
+
+		1. Type ***more joe_bloggs***.
+
+		1. Type ***more joe_bloggs.pub***.
+
+	1. The private file is named ***joe_bloggs*** and should NEVER be given to anyone.
+
+	1. The public file is named ***joe_bloggs.pub*** and is safe to give to anyone.
+
+1. Move the SSH key to the right place.
+
+	1. Type ***mkdir -p ~/.ssh***.
+
+		1. The ***-p*** argument in ***mkdir*** tells the program to make the directory, but if it does not exist, do not complain.
+
+	1. Type ***chmod 700 ~/.ssh*** to change that directory's permission to a value of 700. There is no need to understand what 700 means for now. But it will not work without that permission.
+
+	1. Type ***la ~/.ssh***. There is already a file there because I put it there earlier.
+
+	1. Type ***mv joe_bloggs ~/.ssh/id_rsa***.
+
+	1. Type ***mv joe_bloggs.pub ~/.ssh/id_rsa.pub***.
+
+	1. Type ***la ~/.ssh***
+
+	1. Notice that I renamed ***joe_bloggs*** to ***id_rsa*** and ***joe_bloggs.pub*** to ***joe_bloggs.pub*** and moved the files to ***~/.ssh***.
+
 1. Connect via an SSH key.
+
+	1. Connect to your neighbor's computer. You will be prompted to login with a username and password like before.
+
+	1. Type ***more ~/.ssh/authorized_keys***.
+
+	1. Notice that my public key is already there. It shows up in more than one line because it is a very long line, but in reality, it is all in just one line.
+
+	1. In a new Terminator tab, type ***osub ~/.ssh/id_rsa.pub***. Copy just the FIRST line.
+
+	1. Go back to the tab with your neighbor's computer and type ***echo "\<THE_LONG_LINE\>" > joe_bloggs.pub***.
+
+	1. Ask your neighbor to use Sublime to open ***joe_bloggs.pub*** (that you just made) and ***~/.ssh/authorized_keys***.
+
+		1. You may notice that it is difficult (or impossible) to open ***~/.ssh/authorized_keys*** from the GUI.
+
+	1. Ask your neighbor to copy the line in ***joe_bloggs.pub*** into ***~/.ssh/authorized_keys*** so that is in two lines.
+
+	1. The first line is a key for brian.chan@liferay.com. The second line is the key for joe_bloggs.
+
+	1. Go back to the tab with your neighbor's computer and type ***chmod 640 ~/.ssh/authorized_keys*** to ensure the right permissions.
+
+	1. Open a new Terminator tab and SSH into your neighbor's computer. Notice that you no longer have to type in the password.
+
+	1. Type ***exit*** to log out of your neighbor's computer. Keep this tab to quickly test logging in and out of your neighbor's computer.
+
+	1. On your computer, type ***mv ~/.ssh/id_rsa*** to ***mv ~/.ssh/bad_name***.
+
+	1. Try logging into your neighbor's computer. It should ask you for a username and password again.
+
+	1. On your computer, type ***mv ~/.ssh/bad_name*** to ***mv ~/.ssh/id_rsa***.
+
+	1. Try logging into your neighbor's computer. It should automatically log you in.
+
+1. Optionally, see the man page for [sftp](https://linux.die.net/man/1/ssh) for more information.
 
 ## SFTP
 
-1. SFTP to xyz.liferay.com with and without an SSH key.
+1. SFTP to 192.168.111.128 with and without an SSH key.
 
 2.	List files and change directories.
 
 3.	Upload and download files.
+
+1. Optionally, see the man page for [sftp](https://linux.die.net/man/1/sftp) for more information.
 
 ## Telnet
 
@@ -127,3 +245,5 @@
 1. Telnet to localhost port 23.
 
 1. Why are the results different?
+
+1. Optionally, see the man page for [telnet](https://linux.die.net/man/1/telnet) for more information.
