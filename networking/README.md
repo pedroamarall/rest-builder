@@ -61,7 +61,7 @@
 
 	1. Type ***nmcli***. Notice that your private IP is also different.
 
-1. Optionally, read [nmcli](https://fedoraproject.org/wiki/Networking/CLI) for more information.
+1. Optionally, see [nmcli](https://fedoraproject.org/wiki/Networking/CLI) for more information.
 
 ## Ping
 
