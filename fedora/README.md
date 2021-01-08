@@ -78,13 +78,19 @@
 
 	1. Type ***la***.
 
-	1. Go to ***~/test*** (also known as /home/me/test)
+	1. Go to ***~/test*** (also known as /home/me/test).
 
 	1. Type ***la***. Notice that there are no files.
 
 	1. Type ***cd ..*** to go up one directory.
 
 	1. Type ***la***.
+
+	1. Type ***cd test*** to go into test.
+
+	1. Type ***la***.
+
+	1. Type ***cd test***. The command fails because you are already inside the test directory.
 
 1. Make files.
 
@@ -258,7 +264,7 @@
 
 1. Type ***ls /root***.
 
-1. Notice that we are not allowed to because ***/root*** is the home directory belongs to the root user. The home directory for the ***me*** user is ***/home/me***. Do not confuse the root directory ***/*** with the ***root*** user or the home directory ***/root*** of the ***root*** user. Pause and think.
+1. Notice that we are not allowed to because ***/root*** is the home directory that belongs to the root user. The home directory for the ***me*** user is ***/home/me***. Do not confuse the root directory ***/*** with the ***root*** user or the home directory ***/root*** of the ***root*** user. Pause and think.
 
 1. If you are still confused, reread the sentence until every word means something to you. Ask someone for help if it still does not make sense.
 
