@@ -4,7 +4,7 @@
 
 1. What is my IP?
 
-	1. Use Chrome to open https://www.whatismyip.com.
+	1. Use Chrome to open https://www.whatismyip.com. If that site is down, try using http://ip4.me, http://ip6.me, or http://whatismyv6.com.
 
 	1. This website shows your public IP. Look at your neighbor's computer. Notice that we all share the same public IP. Why? Everyone in this room is connecting to the Internet through the same router.
 
