@@ -35,11 +35,11 @@
 		        route6 ff00::/8
 		```
 
-		The command ***nmcli*** also shows a lot of other information you can ignore. Ignore the irrelevant information.
+		The command ***nmcli*** also shows a lot of other information you can ignore.
 
-		If your ethernet cable is connected, then en* will show an IP. In my case, the IP is ***192.168.111.222***.
+		If your ethernet cable is connected, then en* will show an IP. For example, the IP above shows ***192.168.111.222***.
 
-		If your WiFi is connected, then wl* will show an IP. In my case, the IP is ***192.168.110.160***.
+		If your WiFi is connected, then wl* will show an IP. For example, the IP above shows ***192.168.110.160***.
 
 	1. Type ***ifconfig*** to get similar information through another program. Find the same IPs.
 
