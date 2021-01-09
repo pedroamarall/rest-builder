@@ -28,4 +28,22 @@
 
 1. [Download](https://developer.microsoft.com/en-us/windows/downloads/virtual-machines) Windows 10. The file ***WinDev2012Eval.VirtualBox.zip*** may already be in your ***~/Downloads*** directory.
 
-1. TODO
+1. Launch Terminator.
+
+1. Go to ***~/Downloads***.
+
+1. Type ***unzip WinDev2012Eval.VirtualBox.zip*** to unzip ***WinDev2012Eval.VirtualBox.zip***. The unzipped file is ***WinDev2012Eval.ova***.
+
+1. To ensure that VirtualBox can emulate Windows, we must disable secure boot on your computer.
+
+1. Type ***sudo shutdown -r now***.
+
+1. Press ***F12*** while the system is booting up to enter into the BIOS setup.
+
+1. Go to the ***Boot*** tab. Go to ***Secure Boot***. Disable it. Press ***F10*** to save and exit.
+
+1. After logging back into your computer, launch Virtual Box.
+
+1. Use Virtual Box to import the file ***~/Downloads/WinDev2012Eval.ova***.
+
+1. Start your Windows VM.
