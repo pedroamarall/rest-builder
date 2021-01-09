@@ -4,13 +4,15 @@
 
 1. Docker is already installed on your machine. Review /home/me/dev/projects/liferay-basic-training/dotfiles/docker/restore.sh to see how Docker was installed.
 
-1. Launch Terminator.
+1. Run Docker.
 
-1. Type ***docker --version***.
+	1. Launch Terminator.
 
-1. Type ***d --version***.
+	1. Type ***docker --version***.
 
-1. The program ***docker*** located at ***/usr/bin/docker*** is aliased to ***d*** in ***~/.bashrc***. Open ***~/.bashrc*** to verify this is true. Whenever possible, use the alias to minimize wear and tear on your fingers.
+	1. Type ***d --version***.
+
+	1. The program ***docker*** located at ***/usr/bin/docker*** is aliased to ***d*** in ***~/.bashrc***. Open ***~/.bashrc*** to verify this is true. Whenever possible, use the alias to minimize wear and tear on your fingers.
 
 1. Follow the tutorial in https://docker-curriculum.com. Stop after you reach the section ***Docker on AWS***.
 
