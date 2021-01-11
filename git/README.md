@@ -36,7 +36,7 @@
 
 		1. Call it ***Liferay GitHub Pull Request Command Line***. The exact name is not important.
 
-		1. Check every checkbox in ***repo*** and ***workflow***. The other checkboxes do not need to be checked.
+		1. Check every checkbox in ***repo*** and ***workflow***. The other checkboxes do not need to be checked. Generate token.
 
 		1. Copy the the OAuth token (e.g. 8293900a17fe51514830f3e457d7ef67415f93ca) and replace 123456789 in the ***[github]*** block. Uncomment that line by removing #.
 
