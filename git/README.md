@@ -89,7 +89,7 @@
 	drwxr-xr-x  1 me me  192 Jan  5 10:32 liferay-portal-master-private
 	```
 
-1. The directory ***/home/me/dev/projects/liferay-learn*** is a Git repository because of it contains the directory ***.git***.
+1. The directory ***/home/me/dev/projects/liferay-learn*** is a Git repository because it contains the directory ***.git***.
 
 	1. Go to ***/home/me/dev/projects/liferay-learn***.
 
@@ -117,7 +117,7 @@
 
 1. Create a repository.
 
-	1. Create a directory called to ***/home/me/dev/projects/my-first-repo***.
+	1. Create a directory called ***/home/me/dev/projects/my-first-repo***.
 
 	1. Go to ***/home/me/dev/projects/my-first-repo***.
 
@@ -134,21 +134,155 @@
 
 		nothing to commit (create/copy files and use "git add" to track)
 		```
-	1. Create a repository.
 
-	1. Modify files.
+	1. Type ***g log***.
 
-	1. Branches.
+		```
+		fatal: your current branch 'master' does not have any commits yet
+		```
 
-	1. Cherry pick.
+		This is the expected error message because there are no commits to the repository.
 
-	1. Rewrite history.
+1. Make changes to a repository.
 
-	1. Merge.
+	1. Go to your newly created repository in ***/home/me/dev/projects/my-first-repo***.
 
-	## Check out a repository.
+	1. Type ***echo "Aaaaaaaaaa" > abc.txt***.
 
-## Making Changes to a Repository
+	1. Type ***g st***.
+
+		```
+		On branch master
+
+		No commits yet
+
+		Untracked files:
+		  (use "git add <file>..." to include in what will be committed)
+			abc.txt
+
+		nothing added to commit but untracked files present (use "git add" to track)
+		```
+
+	1. Type ***echo "Dddddddddd" > def.txt***.
+
+	1. Type ***g st***.
+
+		```
+		On branch master
+
+		No commits yet
+
+		Untracked files:
+		  (use "git add <file>..." to include in what will be committed)
+			abc.txt
+			def.txt
+
+		nothing added to commit but untracked files present (use "git add" to track)
+		```
+
+	1. Type ***g add def.txt***.
+
+	1. Type ***g st***.
+
+		```
+		On branch master
+
+		No commits yet
+
+		Changes to be committed:
+		  (use "git rm --cached <file>..." to unstage)
+			new file:   def.txt
+
+		Untracked files:
+		  (use "git add <file>..." to include in what will be committed)
+			abc.txt
+
+		```
+
+	1. Type ***g log***.
+
+		```
+		fatal: your current branch 'master' does not have any commits yet
+		```
+
+		This is still the expected error message because there are no commits to the repository.
+
+	1. Type ***g ci -m "This is my first commit." -a*** to make your first commit. Only the file def.txt was added as part of that commit.
+
+	1. Type ***g log***.
+
+		```
+		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374 (HEAD -> master)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:27:13 2021 -0300
+
+		    This is my first commit.
+		```
+
+		Every commit has a different random hash that looks like dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374.
+
+	1. Type ***g show dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374***.
+
+		```
+		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374 (HEAD -> master)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:34:16 2021 -0300
+
+		    This is my first commit.
+
+		diff --git a/def.txt b/def.txt
+		new file mode 100644
+		index 0000000..b10e4c6
+		--- /dev/null
+		+++ b/def.txt
+		@@ -0,0 +1 @@
+		+Dddddddddd
+		```
+
+		This diff shows that only def.txt was added as part of that commit.
+
+	1. Type ***g add abc.txt***.
+
+	1. Type ***g st***.
+
+		```
+		On branch master
+		Changes to be committed:
+		  (use "git restore --staged <file>..." to unstage)
+			new file:   abc.txt
+		```
+
+	1. Type ***g ci -m "This is my second commit." -a*** to make your second commit. Only the file abc.txt was added as part of that commit.
+
+	1. Type ***g st***.
+
+		```
+		$ g st
+		On branch master
+		nothing to commit, working tree clean
+		```
+
+	1. Type ***g log***.
+
+		```
+		commit 8085da297e1d57911552edcfd29780648b9dae6d (HEAD -> master)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:43:13 2021 -0300
+
+		    This is my second commit.
+
+		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:34:16 2021 -0300
+
+		    This is my first commit.
+		```
+
+	1. Type ***g show 8085da297e1d57911552edcfd29780648b9dae6d*** to show the contents of the second commit.
+
+1. Working with branches.
+
+1. Check out a repository.
 
 ## Sending Changes
 
