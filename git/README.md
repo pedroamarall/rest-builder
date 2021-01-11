@@ -81,9 +81,70 @@
 	drwxr-xr-x  1 me me  192 Jan  5 10:32 liferay-portal-master-private
 	```
 
-1. Put your sample repositories in this directory along side existing repositories.
+1. The directory ***/home/me/dev/projects/liferay-learn*** is a Git repository because of it contains the directory ***.git***.
 
-## Pull Requests
+	1. Go to ***/home/me/dev/projects/liferay-learn***.
+
+	1. Verify that the directory ***.git*** exists.
+
+	1. Type ***git status***.
+
+		```
+		On branch master
+		Your branch is up to date with 'origin/master'.
+
+		nothing to commit, working tree clean
+		```
+	1. Type ***g st*** to get the same result. The alias for ***git*** to ***g*** is set in ***~/.bashrc***. The alias for ***status*** to ***st*** is set in ***~/.gitconfig***.
+
+		```
+		[alias]
+			...
+			st = status
+		```
+
+	1. Go up one directory to ***/home/me/dev/projects***.
+
+	1. Type ***g st***. Why does the command fail?
+
+1. Create a repository.
+
+	1. Create a directory called to ***/home/me/dev/projects/my-first-repo***.
+
+	1. Go to ***/home/me/dev/projects/my-first-repo***.
+
+	1. Type ***g st***. This command fails because this directory is not a Git repository.
+
+	1. Type ***g init*** to turn this directory into a Git repository.
+
+	1. Type ***g st***.
+
+		```
+		On branch master
+
+		No commits yet
+
+		nothing to commit (create/copy files and use "git add" to track)
+		```
+	1. Create a repository.
+
+	1. Modify files.
+
+	1. Branches.
+
+	1. Cherry pick.
+
+	1. Rewrite history.
+
+	1. Merge.
+
+	## Check out a repository.
+
+## Making Changes to a Repository
+
+## Sending Changes
+
+## Sending Work via Pull Requests
 
 1. Configure GitHub SSH key.
 

@@ -5,7 +5,6 @@
 	cp = cherry-pick
 	dc = diff --cached
 	df = diff
-	#pa = "!git lpush upstream && git lpush origin"
 	pl = pull
 	rb = rebase
 	st = status
