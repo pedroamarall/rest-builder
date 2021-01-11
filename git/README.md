@@ -46,7 +46,15 @@
 				user = brianchandotcom
 			```
 
-			Change the user property as well to your GitHub username. The above block should look something like the following.
+			The above block should change to something like the following.
+
+			```
+			[github]
+				oauth-token = 8293900a17fe51514830f3e457d7ef67415f93ca
+				user = brianchandotcom
+			```
+
+		1. Change the user property value to your GitHub username (e.g. joebloggs).
 
 			```
 			[github]
