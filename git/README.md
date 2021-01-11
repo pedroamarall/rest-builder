@@ -38,12 +38,20 @@
 
 		1. Check every checkbox in ***repo*** and ***workflow***. The other checkboxes do not need to be checked.
 
-		1. Copy the the OAuth token (e.g. 8293900a17fe51514830f3e457d7ef67415f93ca) and replace 123456789 in the ***[github]*** block.
+		1. Copy the the OAuth token (e.g. 8293900a17fe51514830f3e457d7ef67415f93ca) and replace 123456789 in the ***[github]*** block. Uncomment that line by removing #.
 
 			```
 			[github]
-				oauth-token = 123456789
+				#oauth-token = 123456789
 				user = brianchandotcom
+			```
+
+			Change the user property as well to your GitHub username. The above block should look something like the following.
+
+			```
+			[github]
+				oauth-token = 8293900a17fe51514830f3e457d7ef67415f93ca
+				user = joebloggs
 			```
 
 		1. Open a new tab in Terminator and type ***gi***. Notice that GitHub did not ask you for a password.

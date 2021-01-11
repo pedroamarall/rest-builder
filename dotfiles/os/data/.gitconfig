@@ -30,8 +30,7 @@
 	auto = 0
 	autodetach = false
 [github]
-	oauth-token = 123456789
-	token = 123456789
+	#oauth-token = 123456789
 	user = brianchandotcom
 [git-pull-request]
 	close-default-comment = Merged. Thank you.
