@@ -141,7 +141,7 @@
 		fatal: your current branch 'master' does not have any commits yet
 		```
 
-		This is the expected error message because there are no commits to the repository.
+		This is the expected error message because there are no commits in the repository.
 
 1. Make changes to a repository.
 
@@ -221,7 +221,7 @@
 
 		Every commit has a different random hash that looks like dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374.
 
-	1. Type ***g show dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374***.
+	1. Type ***g show dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374***. Note that your hash will not be the same hash as as in the documentation. Replace it with your hash.
 
 		```
 		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374 (HEAD -> master)
