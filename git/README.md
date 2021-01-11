@@ -221,7 +221,7 @@
 
 		Every commit has a different random hash that looks like dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374.
 
-	1. Type ***g show dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374***. Note that your hash will not be the same hash as as in the documentation. Replace it with your hash.
+	1. Type ***g show dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374***. Note that your hash will not be the same hash as as in this tutorial. Replace it with your hash.
 
 		```
 		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374 (HEAD -> master)
@@ -281,6 +281,211 @@
 	1. Type ***g show 8085da297e1d57911552edcfd29780648b9dae6d*** to show the contents of the second commit.
 
 1. Working with branches.
+
+	1. Go to your newly created repository in ***/home/me/dev/projects/my-first-repo***.
+
+	1. Notice that your Bash prompt will look something like ***me@nuc10-i7-k6d9 ~/dev/projects/my-first-repo (master)***.
+
+	1. Type ***g br*** to list all branches. There is only one branch named master for now.
+
+	1. Type ***g br 1st-branch*** to create your first branch.
+
+	1. Type ***g br***.
+
+	1. Type ***g br 2nd-branch*** to create your second branch.
+
+	1. Type ***g br***.
+
+	1. Type ***g co 1st-branch*** to go from your master branch to your first branch.
+
+	1. Notice that your Bash prompt will look something like ***me@nuc10-i7-k6d9 ~/dev/projects/my-first-repo (1st-branch)***. You can quickly tell from your Bash prompt which Git branch you are on.
+
+	1. Type ***echo "Iiiiiiiiii" > ghi.txt***.
+
+	1. Type ***g add ghi.txt***.
+
+	1. Type ***g ci -m "This is a commit to add file ghi.txt." -a***.
+
+	1. Type ***g log***.
+
+		```
+		commit d978f3de16da7b7d8227710d9c02ba0a82954401 (HEAD -> 1st-branch)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 16:03:31 2021 -0300
+
+		    This is a commit to add file ghi.txt.
+
+		commit 8085da297e1d57911552edcfd29780648b9dae6d (master, 2nd-branch)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:43:13 2021 -0300
+
+		    This is my second commit.
+
+		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:34:16 2021 -0300
+
+		    This is my first commit.
+		```
+
+	1. Notice that your first branch has three commits.
+
+	1. Type ***la*** and see that you have three files.
+
+		```
+		drwxrwxr-x 1 brian brian  144 Jan 11 16:03 .git
+		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 abc.txt
+		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 def.txt
+		-rw-rw-r-- 1 brian brian   11 Jan 11 16:03 ghi.txt
+		```
+
+	1. Type ***g co master*** to go to your master branch.
+
+	1. Type ***la*** and see that you only have two files.
+
+		```
+		drwxrwxr-x 1 brian brian   36 Jan 11 16:05 .
+		drwxrwxr-x 1 brian brian 2358 Jan 11 15:54 ..
+		drwxrwxr-x 1 brian brian  144 Jan 11 16:05 .git
+		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 abc.txt
+		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 def.txt
+		```
+
+	1. Type ***g log*** and see that you only have two commits.
+
+		```
+		commit 8085da297e1d57911552edcfd29780648b9dae6d (HEAD -> master, 2nd-branch)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:43:13 2021 -0300
+
+		    This is my second commit.
+
+		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:34:16 2021 -0300
+
+		    This is my first commit.
+		```
+
+	1. Type ***g log 1st-branch***. You can get the commit log for the first branch while on the master branch.
+
+		```
+		commit d978f3de16da7b7d8227710d9c02ba0a82954401 (1st-branch)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 16:03:31 2021 -0300
+
+		    This is a commit to add file ghi.txt.
+
+		commit 8085da297e1d57911552edcfd29780648b9dae6d (HEAD -> master, 2nd-branch)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:43:13 2021 -0300
+
+		    This is my second commit.
+
+		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:34:16 2021 -0300
+
+		    This is my first commit.
+		```
+
+	1. Type ***g cp d978f3de16da7b7d8227710d9c02ba0a82954401*** to cherry pick the commit from the first branch into master.
+
+		```
+		[master a189493] This is a commit to add file ghi.txt.
+		 Date: Mon Jan 11 16:03:31 2021 -0300
+		 1 file changed, 1 insertion(+)
+		 create mode 100644 ghi.txt
+		 ```
+
+	1. Type ***la***. Notice that you now have all three files.
+
+		```
+		drwxrwxr-x 1 brian brian   50 Jan 11 16:07 .
+		drwxrwxr-x 1 brian brian 2358 Jan 11 15:54 ..
+		drwxrwxr-x 1 brian brian  144 Jan 11 16:07 .git
+		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 abc.txt
+		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 def.txt
+		-rw-rw-r-- 1 brian brian   11 Jan 11 16:07 ghi.txt
+		```
+
+	1. Type ***g log***.
+
+		```
+		commit a189493a0883fa964830fdfedaedf0e653bcaf52 (HEAD -> master)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 16:03:31 2021 -0300
+
+		    This is a commit to add file ghi.txt.
+
+		commit 8085da297e1d57911552edcfd29780648b9dae6d (2nd-branch)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:43:13 2021 -0300
+
+		    This is my second commit.
+
+		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:34:16 2021 -0300
+
+		    This is my first commit.
+		```
+
+		Notice that the hash for the commit to add the ghi.txt file in master is a189493a0883fa964830fdfedaedf0e653bcaf52 but in the first branch it is d978f3de16da7b7d8227710d9c02ba0a82954401. Although the contents for the two branches are identical, the hashes are still different. That is because cherry pick made a copy of the commit. Technically, the two branches have now diverged and are different even though they contain the same content.
+
+	1. Type ***g co 2nd-branch***.
+
+	1. Type ***la***.
+
+	1. Type ***g log***.
+
+		```
+		commit 8085da297e1d57911552edcfd29780648b9dae6d (HEAD -> 2nd-branch)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:43:13 2021 -0300
+
+		    This is my second commit.
+
+		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:34:16 2021 -0300
+
+		    This is my first commit.
+		```
+
+	1. Type ***g merge master***.
+
+		```
+		Updating 8085da2..a189493
+		Fast-forward
+		 ghi.txt | 1 +
+		 1 file changed, 1 insertion(+)
+		 create mode 100644 ghi.txt
+		```
+
+	1. Type ***g log***.
+
+		```
+		commit a189493a0883fa964830fdfedaedf0e653bcaf52 (HEAD -> 2nd-branch, master)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 16:03:31 2021 -0300
+
+		    This is a commit to add file ghi.txt.
+
+		commit 8085da297e1d57911552edcfd29780648b9dae6d
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:43:13 2021 -0300
+
+		    This is my second commit.
+
+		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:34:16 2021 -0300
+
+		    This is my first commit.
+		```
+
+		Notice that the hash for the commit to add the ghi.txt file in the second branch is a189493a0883fa964830fdfedaedf0e653bcaf52 which is idenitcal to master. In this case, the two branches have the same content and the exact same hash.
 
 1. Check out a repository.
 
