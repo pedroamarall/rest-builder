@@ -56,6 +56,8 @@
 
 		1. Open a new tab in Terminator and type ***gi***. Notice that GitHub did not ask you for a password.
 
+		1. Try and figure out which program is executed when you type ***gi***.
+
 ## Repositories
 
 1. Go to ***/home/me/dev/projects***. List the contents of that directory.
@@ -79,9 +81,7 @@
 	drwxr-xr-x  1 me me  192 Jan  5 10:32 liferay-portal-master-private
 	```
 
-1. Put your sample repositories in this directory.
-
-## SmartGit
+1. Put your sample repositories in this directory along side existing repositories.
 
 ## Pull Requests
 
@@ -90,3 +90,9 @@
 	1. Login to GitHub. Go to ***Settings***. Go to ***SSH and GPG keys***.
 
 	1. Configure a new SSH key. The title can be anything you want it to be. The key should contain the public value in ***~/id_rsa.pub*** and not the private value in ***~/id_rsa***.
+
+## SmartGit
+
+1. Launch SmartGit.
+
+1. This tool is very useful for comparing code changed in pull requests.
