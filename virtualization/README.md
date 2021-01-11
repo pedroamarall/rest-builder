@@ -42,7 +42,7 @@
 
 	1. Type ***sudo shutdown -r now***.
 
-	1. Press ***F12*** while the system is booting up to enter into the BIOS setup.
+	1. Press ***F2*** while the system is booting up to enter into the BIOS Setup Utility.
 
 	1. Go to the ***Boot*** tab. Go to ***Secure Boot***. Disable it. Press ***F10*** to save and exit.
 
