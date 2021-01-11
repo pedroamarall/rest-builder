@@ -46,7 +46,7 @@
 				user = brianchandotcom
 			```
 
-			The above block should change to something like the following.
+			The above block should look like the following.
 
 			```
 			[github]
@@ -66,7 +66,7 @@
 
 		1. Try and figure out which program is executed when you type ***gi***.
 
-## Repositories
+## Git Repositories
 
 1. Go to ***/home/me/dev/projects***. List the contents of that directory.
 
