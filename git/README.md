@@ -1,6 +1,6 @@
 # Git
 
-## Git
+## Command Line Git
 
 1. Run Git.
 
@@ -72,6 +72,8 @@
 	```
 
 1. Put your sample repositories in this directory.
+
+## SmartGit
 
 ## Pull Requests
 
