@@ -66,6 +66,12 @@
 
 		1. Try and figure out which program is executed when you type ***gi***.
 
+	1. Configure a GitHub SSH key.
+
+		1. Login to GitHub. Go to ***Settings***. Go to ***SSH and GPG keys***.
+
+		1. Configure a new SSH key. The title can be anything you want it to be. The key should contain the public value in ***~/id_rsa.pub*** and not the private value in ***~/id_rsa***.
+
 ## Git Repositories
 
 1. Go to ***/home/me/dev/projects***. List the contents of that directory.
@@ -967,12 +973,6 @@
 		```
 
 1. Working with pull requests.
-
-	1. Configure GitHub SSH key.
-
-		1. Login to GitHub. Go to ***Settings***. Go to ***SSH and GPG keys***.
-
-		1. Configure a new SSH key. The title can be anything you want it to be. The key should contain the public value in ***~/id_rsa.pub*** and not the private value in ***~/id_rsa***.
 
 	1. Go to ***/home/me/dev/projects/clay***.
 
