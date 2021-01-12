@@ -822,7 +822,7 @@
 		-rw-rw-r-- 1 brian brian   11 Jan 12 08:30 jkl.txt
 		```
 
-		The file ghi.txt is no longer there because that commit was removed. You just rewrote history as if that file was never added.
+		The file ghi.txt is no longer there because that commit was removed. You just rewrote history and so the file was never added.
 
 	1. Type ***g reset --hard efb071540b34fffe1f2ad3e45c2e8c8d52c543a1***.
 
@@ -837,8 +837,6 @@
 	1. Type ***la***.
 
 	1. Type ***g reset --hard efb071540b34fffe1f2ad3e45c2e8c8d52c543a1***.
-
-# Rebase dbd4040..efb0715 onto dbd4040 (3 commands)
 
 1. Check out a repository.
 
