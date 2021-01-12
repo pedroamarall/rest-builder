@@ -28,6 +28,10 @@
 
 1. Right click on an empty space to bring up the menu.
 
+1. Launch Sublime.
+
+1. Type ***<Alt+Tab>***. Do not hold onto the keys. Now use the ***\<Up\>*** and ***\<Down\>*** arrow keys to select your window.
+
 ## Websites
 
 1. Go to [Google Apps](https://mail.google.com).
