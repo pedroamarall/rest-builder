@@ -785,7 +785,7 @@
 		pick efb0715 This is a commit to add file jkl.txt.
 		```
 
-		Type ***:wq!*** to save your changes.
+		Type ***:wq*** to save your changes.
 
 	1. Type ***g log***.
 
@@ -835,6 +835,93 @@
 	1. Type ***g log***.
 
 	1. Type ***la***.
+
+	1. Type ***g reset --hard efb071540b34fffe1f2ad3e45c2e8c8d52c543a1***.
+
+	1. Type ***g rb -i HEAD~3***. Using Vi, change ***pick ad7fc9e*** to ***e ad7fc9e***.
+
+		```
+		pick 8085da2 This is my second commit.
+		pick ad7fc9e This is a commit to add file ghi.txt.
+		pick efb0715 This is a commit to add file jkl.txt.
+		```
+
+		The above should look like the following.
+
+		```
+		pick 8085da2 This is my second commit.
+		e ad7fc9e This is a commit to add file ghi.txt.
+		pick efb0715 This is a commit to add file jkl.txt.
+		```
+
+		Type ***:wq*** to save your changes.
+
+		```
+		Stopped at ad7fc9e...  This is a commit to add file ghi.txt.
+		You can amend the commit now, with
+
+		  git commit --amend 
+
+		Once you are satisfied with your changes, run
+
+		  git rebase --continue
+		```
+
+	1. Type ***g ci --amend*** to change the commit message.
+
+		```
+		This is a commit to add file ghi.txt.
+		```
+
+		The above should look like the following.
+
+		```
+		This is a commit to add file ghi.txt. Hello!
+		```
+
+		Type ***:wq*** to save your changes.
+
+	1. Type ***g rb --continue*** to finish the rebase.
+
+	1. Type ***g log***.
+
+		```
+		commit 87ff95b54b5c3e70ef1f6e4cc8296f8a2db0573d (HEAD -> master)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Tue Jan 12 08:13:51 2021 -0300
+
+		    This is a commit to add file jkl.txt.
+
+		commit 1a70fa3ec59f919cbfb8592f36692e65649ac28c
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Tue Jan 12 08:04:39 2021 -0300
+
+		    This is a commit to add file ghi.txt. Hello!
+
+		commit 8085da297e1d57911552edcfd29780648b9dae6d
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:43:13 2021 -0300
+
+		    This is my second commit.
+
+		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:34:16 2021 -0300
+
+		    This is my first commit.
+		```
+
+	1. Type ***g reset --hard 7c7c7f4bb51f8747e422ec6b51b94cad048336b0***.
+
+	1. Type ***g log***.
+
+	1. Type ***g reset --hard efb071540b34fffe1f2ad3e45c2e8c8d52c543a1***.
+
+	1. Type ***g log***.
+
+	1. Type ***g reset --hard 87ff95b54b5c3e70ef1f6e4cc8296f8a2db0573d***.
+
+	1. Type ***g log***.
 
 	1. Type ***g reset --hard efb071540b34fffe1f2ad3e45c2e8c8d52c543a1***.
 
