@@ -498,7 +498,7 @@
 		    This is my first commit.
 		```
 
-		Notice that the hash for the commit to add the ghi.txt file in the second branch is ad7fc9eebb0e81df639622f847c15b9dca840ca3 which is idenitcal to master. In this case, the two branches have the same content and the exact same hash.
+		Notice that the hash for the commit to add the ghi.txt file in the second branch is ad7fc9eebb0e81df639622f847c15b9dca840ca3 which is idenitcal to master. In this case, the two branches have the same content and the exact same hash. They are not just twins. They are the same person.
 
 	1. Type ***g br 3rd-branch dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374*** to make the third branch off of the hash dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374.
 
