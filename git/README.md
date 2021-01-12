@@ -286,7 +286,7 @@
 
 	1. Notice that your Bash prompt will look something like ***me@nuc10-i7-k6d9 ~/dev/projects/my-first-repo (master)***.
 
-	1. Type ***g br*** to list all branches. There is only one branch named master for now.
+	1. Type ***g br*** to list all branches. There is only one branch and its name is master.
 
 	1. Type ***g br 1st-branch*** to create your first branch.
 
@@ -300,7 +300,7 @@
 
 	1. Notice that your Bash prompt will look something like ***me@nuc10-i7-k6d9 ~/dev/projects/my-first-repo (1st-branch)***. You can quickly tell from your Bash prompt which Git branch you are on.
 
-	1. Type ***echo "Iiiiiiiiii" > ghi.txt***.
+	1. Type ***echo "Gggggggggg" > ghi.txt***.
 
 	1. Type ***g add ghi.txt***.
 
@@ -309,7 +309,7 @@
 	1. Type ***g log***.
 
 		```
-		commit d978f3de16da7b7d8227710d9c02ba0a82954401 (HEAD -> 1st-branch)
+		commit 069f08dd8f1c07e5e4b79477b09358c179d5f675 (HEAD -> 1st-branch)
 		Author: Brian Chan <brian.chan@liferay.com>
 		Date:   Mon Jan 11 16:03:31 2021 -0300
 
@@ -370,7 +370,7 @@
 	1. Type ***g log 1st-branch***. You can get the commit log for the first branch while on the master branch.
 
 		```
-		commit d978f3de16da7b7d8227710d9c02ba0a82954401 (1st-branch)
+		commit 069f08dd8f1c07e5e4b79477b09358c179d5f675 (1st-branch)
 		Author: Brian Chan <brian.chan@liferay.com>
 		Date:   Mon Jan 11 16:03:31 2021 -0300
 
@@ -389,10 +389,10 @@
 		    This is my first commit.
 		```
 
-	1. Type ***g cp d978f3de16da7b7d8227710d9c02ba0a82954401*** to cherry pick the commit from the first branch into master.
+	1. Type ***g cp 069f08dd8f1c07e5e4b79477b09358c179d5f675*** to cherry pick the commit from the first branch into master.
 
 		```
-		[master a189493] This is a commit to add file ghi.txt.
+		[master ad7fc9e] This is a commit to add file ghi.txt.
 		 Date: Mon Jan 11 16:03:31 2021 -0300
 		 1 file changed, 1 insertion(+)
 		 create mode 100644 ghi.txt
@@ -412,7 +412,7 @@
 	1. Type ***g log***.
 
 		```
-		commit a189493a0883fa964830fdfedaedf0e653bcaf52 (HEAD -> master)
+		commit ad7fc9eebb0e81df639622f847c15b9dca840ca3 (HEAD -> master)
 		Author: Brian Chan <brian.chan@liferay.com>
 		Date:   Mon Jan 11 16:03:31 2021 -0300
 
@@ -431,9 +431,20 @@
 		    This is my first commit.
 		```
 
-		Notice that the hash for the commit to add the ghi.txt file in master is a189493a0883fa964830fdfedaedf0e653bcaf52 but in the first branch it is d978f3de16da7b7d8227710d9c02ba0a82954401. Although the contents for the two branches are identical, the hashes are still different. That is because cherry pick made a copy of the commit. Technically, the two branches have now diverged and are different even though they contain the same content.
+		Notice that the hash for the commit to add the ghi.txt file in master is ad7fc9eebb0e81df639622f847c15b9dca840ca3 but in the first branch it is 069f08dd8f1c07e5e4b79477b09358c179d5f675. Although the contents for the two branches are identical, the hashes are still different. That is because cherry pick made a copy of the commit. Technically, the two branches have now diverged and are different even though they contain the same content.
 
 		For example, think of identical twins. They look the same (have the same content), but they have different government issued IDs (hashes) because they are different people. A government ID identifies a unique person in the same way a hash identifies a unique commit.
+
+	1. Type ***g show ad7fc9eebb0e81df639622f847c15b9dca840ca3***.
+
+	1. Type ***g show ad7fc9e***. This is a short version of the longer hash. I got the shorter hash from the message a few steps above when we committed the file.
+
+		```
+		[master ad7fc9e] This is a commit to add file ghi.txt.
+		 Date: Mon Jan 11 16:03:31 2021 -0300
+		 1 file changed, 1 insertion(+)
+		 create mode 100644 ghi.txt
+		 ```
 
 	1. Type ***g co 2nd-branch***.
 
@@ -458,7 +469,7 @@
 	1. Type ***g merge master***.
 
 		```
-		Updating 8085da2..a189493
+		Updating 8085da2..ad7fc9e
 		Fast-forward
 		 ghi.txt | 1 +
 		 1 file changed, 1 insertion(+)
@@ -468,7 +479,7 @@
 	1. Type ***g log***.
 
 		```
-		commit a189493a0883fa964830fdfedaedf0e653bcaf52 (HEAD -> 2nd-branch, master)
+		commit ad7fc9eebb0e81df639622f847c15b9dca840ca3 (HEAD -> 2nd-branch, master)
 		Author: Brian Chan <brian.chan@liferay.com>
 		Date:   Mon Jan 11 16:03:31 2021 -0300
 
@@ -487,7 +498,347 @@
 		    This is my first commit.
 		```
 
-		Notice that the hash for the commit to add the ghi.txt file in the second branch is a189493a0883fa964830fdfedaedf0e653bcaf52 which is idenitcal to master. In this case, the two branches have the same content and the exact same hash.
+		Notice that the hash for the commit to add the ghi.txt file in the second branch is ad7fc9eebb0e81df639622f847c15b9dca840ca3 which is idenitcal to master. In this case, the two branches have the same content and the exact same hash.
+
+	1. Type ***g br 3rd-branch dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374*** to make the third branch off of the hash dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374.
+
+	1. Type ***g co 3rd-branch***.
+
+	1. Type ***g log***.
+
+		```
+		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374 (HEAD -> 3rd-branch)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:34:16 2021 -0300
+
+		    This is my first commit.
+		```
+
+		Notice that it only has the first commit.
+
+	1. Type ***la***.
+
+		```
+		drwxrwxr-x 1 brian brian   22 Jan 12 08:12 .
+		drwxrwxr-x 1 brian brian 2358 Jan 11 15:54 ..
+		drwxrwxr-x 1 brian brian  162 Jan 12 08:12 .git
+		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 def.txt
+		```
+
+	1. Type ***echo "Jjjjjjjjjj" > jkl.txt***.
+
+	1. Type ***g add jkl.txt***.
+
+	1. Type ***g ci -m "This is a commit to add file jkl.txt." -a***.
+
+	1. Type ***la***.
+
+		```
+		drwxrwxr-x 1 brian brian   36 Jan 12 08:13 .
+		drwxrwxr-x 1 brian brian 2358 Jan 11 15:54 ..
+		drwxrwxr-x 1 brian brian  162 Jan 12 08:13 .git
+		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 def.txt
+		-rw-rw-r-- 1 brian brian   11 Jan 12 08:13 jkl.txt
+		```
+
+	1. Type ***g merge master***. You are taken to a Vi screen to enter a description. Notice how this behavior is different from when you typed ***g merge master*** earlier.
+
+		```
+		Merge branch 'master' into 3rd-branch
+		# Please enter a commit message to explain why this merge is necessary,
+		# especially if it merges an updated upstream into a topic branch.
+		#
+		# Lines starting with '#' will be ignored, and an empty message aborts
+		# the commit.
+		```
+
+		Type ***:wq*** to use the default message ***Merge branch 'master' into 3rd-branch***. You can also edit that text if you want to, but it will require more Vi ninja skills.
+
+		```
+		Merge made by the 'recursive' strategy.
+		 abc.txt | 1 +
+		 ghi.txt | 1 +
+		 2 files changed, 2 insertions(+)
+		 create mode 100644 abc.txt
+		 create mode 100644 ghi.txt
+		```
+
+	1. Type ***la***.
+
+		```
+		drwxrwxr-x 1 brian brian   64 Jan 12 08:14 .
+		drwxrwxr-x 1 brian brian 2358 Jan 11 15:54 ..
+		drwxrwxr-x 1 brian brian  162 Jan 12 08:15 .git
+		-rw-rw-r-- 1 brian brian   11 Jan 12 08:14 abc.txt
+		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 def.txt
+		-rw-rw-r-- 1 brian brian   11 Jan 12 08:14 ghi.txt
+		-rw-rw-r-- 1 brian brian   11 Jan 12 08:13 jkl.txt
+		```
+
+		Notice that it has all the files from before. Git did its best to merge the two branches. At Liferay, we consider merge commits an anti-pattern and generally avoid using it. How can we avoid this?
+
+	1. Type ***g co master***.
+
+	1. Type ***g log***.
+
+		```
+		commit ad7fc9eebb0e81df639622f847c15b9dca840ca3 (HEAD -> master, 2nd-branch)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Tue Jan 12 08:04:39 2021 -0300
+
+		    This is a commit to add file ghi.txt.
+
+		commit 8085da297e1d57911552edcfd29780648b9dae6d
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:43:13 2021 -0300
+
+		    This is my second commit.
+
+		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:34:16 2021 -0300
+
+		    This is my first commit.
+		```
+
+	1. Type ***la***.
+
+		```
+		drwxrwxr-x 1 brian brian   50 Jan 12 08:20 .
+		drwxrwxr-x 1 brian brian 2358 Jan 11 15:54 ..
+		drwxrwxr-x 1 brian brian  162 Jan 12 08:21 .git
+		-rw-rw-r-- 1 brian brian   11 Jan 12 08:20 abc.txt
+		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 def.txt
+		-rw-rw-r-- 1 brian brian   11 Jan 12 08:20 ghi.txt
+
+		```
+
+	1. Type ***g log 3rd-branch***.
+
+		```
+		commit 2f1ac22b6ecac3c6132cfbe4c66c26fcf5440246 (3rd-branch)
+		Merge: 515ec5d ad7fc9e
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Tue Jan 12 08:14:14 2021 -0300
+
+		    Merge branch 'master' into 3rd-branch
+
+		commit 515ec5d44665d2e6939136bb0c9c91c376fb3275
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Tue Jan 12 08:13:51 2021 -0300
+
+		    This is a commit to add file jkl.txt.
+
+		commit ad7fc9eebb0e81df639622f847c15b9dca840ca3 (HEAD -> master, 2nd-branch)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Tue Jan 12 08:04:39 2021 -0300
+
+		    This is a commit to add file ghi.txt.
+
+		commit 8085da297e1d57911552edcfd29780648b9dae6d
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:43:13 2021 -0300
+
+		    This is my second commit.
+
+		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:34:16 2021 -0300
+
+		    This is my first commit.
+		```
+
+	1. Type ***g cp 515ec5d44665d2e6939136bb0c9c91c376fb3275*** to cherry pick just the changes from that one commit.
+
+		```
+		[master efb0715] This is a commit to add file jkl.txt.
+		 Date: Tue Jan 12 08:13:51 2021 -0300
+		 1 file changed, 1 insertion(+)
+		 create mode 100644 jkl.txt
+		 ```
+
+	1. Type ***g log***.
+
+		```
+		commit efb071540b34fffe1f2ad3e45c2e8c8d52c543a1 (HEAD -> master)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Tue Jan 12 08:13:51 2021 -0300
+
+		    This is a commit to add file jkl.txt.
+
+		commit ad7fc9eebb0e81df639622f847c15b9dca840ca3 (2nd-branch)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Tue Jan 12 08:04:39 2021 -0300
+
+		    This is a commit to add file ghi.txt.
+
+		commit 8085da297e1d57911552edcfd29780648b9dae6d
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:43:13 2021 -0300
+
+		    This is my second commit.
+
+		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:34:16 2021 -0300
+
+		    This is my first commit.
+		```
+
+	1. Type ***la***.
+
+		```
+		drwxrwxr-x 1 brian brian   64 Jan 12 08:22 .
+		drwxrwxr-x 1 brian brian 2358 Jan 11 15:54 ..
+		drwxrwxr-x 1 brian brian  162 Jan 12 08:22 .git
+		-rw-rw-r-- 1 brian brian   11 Jan 12 08:20 abc.txt
+		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 def.txt
+		-rw-rw-r-- 1 brian brian   11 Jan 12 08:20 ghi.txt
+		-rw-rw-r-- 1 brian brian   11 Jan 12 08:22 jkl.txt
+		```
+
+		Notice that all four files are there.
+
+1. Rewriting history.
+
+	1. Go to ***/home/me/dev/projects/my-first-repo***.
+
+	1. Type ***g log***.
+
+		```
+		commit efb071540b34fffe1f2ad3e45c2e8c8d52c543a1 (HEAD -> master)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Tue Jan 12 08:13:51 2021 -0300
+
+		    This is a commit to add file jkl.txt.
+
+		commit ad7fc9eebb0e81df639622f847c15b9dca840ca3 (2nd-branch)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Tue Jan 12 08:04:39 2021 -0300
+
+		    This is a commit to add file ghi.txt.
+
+		commit 8085da297e1d57911552edcfd29780648b9dae6d
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:43:13 2021 -0300
+
+		    This is my second commit.
+
+		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:34:16 2021 -0300
+
+		    This is my first commit.
+		```
+
+	1. Type ***g rb -i HEAD~1*** to rebase up to one commit.
+
+		```
+		pick efb0715 This is a commit to add file jkl.txt.
+
+		# Rebase ad7fc9e..efb0715 onto ad7fc9e (1 command)
+		```
+
+		Type ***:q!*** to exit without doing anything.
+
+	1. Type ***g rb -i HEAD~2*** to rebase up to two commits.
+
+		```
+		pick ad7fc9e This is a commit to add file ghi.txt.
+		pick efb0715 This is a commit to add file jkl.txt.
+
+		# Rebase 8085da2..efb0715 onto 8085da2 (2 commands)
+		```
+
+		Type ***:q!*** to exit without doing anything.
+
+	1. Type ***g rb -i HEAD~3*** to rebase up to three commits.
+
+		```
+		pick 8085da2 This is my second commit.
+		pick ad7fc9e This is a commit to add file ghi.txt.
+		pick efb0715 This is a commit to add file jkl.txt.
+		```
+
+		Type ***:q!*** to exit without doing anything.
+
+	1. Type ***g rb -i HEAD~4*** to rebase up to four commits.
+
+		```
+		fatal: invalid upstream 'HEAD~4'
+		```
+
+		This command fails because you only have four commits.
+
+	1. Type ***g rb -i HEAD~3***. Using Vi, remove the line with the hash ad7fc9e.
+
+		```
+		pick 8085da2 This is my second commit.
+		pick ad7fc9e This is a commit to add file ghi.txt.
+		pick efb0715 This is a commit to add file jkl.txt.
+		```
+
+		The above should look like the following.
+
+		```
+		pick 8085da2 This is my second commit.
+		pick efb0715 This is a commit to add file jkl.txt.
+		```
+
+		Type ***:wq!*** to save your changes.
+
+	1. Type ***g log***.
+
+		```
+		commit 7c7c7f4bb51f8747e422ec6b51b94cad048336b0 (HEAD -> master)
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Tue Jan 12 08:13:51 2021 -0300
+
+		    This is a commit to add file jkl.txt.
+
+		commit 8085da297e1d57911552edcfd29780648b9dae6d
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:43:13 2021 -0300
+
+		    This is my second commit.
+
+		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:34:16 2021 -0300
+
+		    This is my first commit.
+		```
+
+		Notice that you only have three commits now and that the hash to last commit changed from efb071540b34fffe1f2ad3e45c2e8c8d52c543a1 to 7c7c7f4bb51f8747e422ec6b51b94cad048336b0.
+
+	1. Type ***la***.
+
+		```
+		drwxrwxr-x 1 brian brian   50 Jan 12 08:32 .
+		drwxrwxr-x 1 brian brian 2358 Jan 11 15:54 ..
+		drwxrwxr-x 1 brian brian  162 Jan 12 08:32 .git
+		-rw-rw-r-- 1 brian brian   11 Jan 12 08:20 abc.txt
+		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 def.txt
+		-rw-rw-r-- 1 brian brian   11 Jan 12 08:30 jkl.txt
+		```
+
+		The file ghi.txt is no longer there because that commit was removed. You just rewrote history as if that file was never added.
+
+	1. Type ***g reset --hard efb071540b34fffe1f2ad3e45c2e8c8d52c543a1***.
+
+	1. Type ***g log***.
+
+	1. Type ***la***.
+
+	1. Type ***g reset --hard 7c7c7f4bb51f8747e422ec6b51b94cad048336b0***.
+
+	1. Type ***g log***.
+
+	1. Type ***la***.
+
+	1. Type ***g reset --hard efb071540b34fffe1f2ad3e45c2e8c8d52c543a1***.
+
+# Rebase dbd4040..efb0715 onto dbd4040 (3 commands)
 
 1. Check out a repository.
 
