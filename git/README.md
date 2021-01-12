@@ -439,7 +439,7 @@
 		    This is my first commit.
 		```
 
-		Notice that the hash for the commit to add the ghi.txt file in master is ad7fc9eebb0e81df639622f847c15b9dca840ca3 but in the first branch it is 069f08dd8f1c07e5e4b79477b09358c179d5f675. Although the contents for the two branches are identical, the hashes are still different. That is because cherry pick made a copy of the commit. Technically, the two branches have now diverged and are different even though they contain the same content.
+		Notice that the hash for the commit to add the ghi.txt file in master is ad7fc9eebb0e81df639622f847c15b9dca840ca3 but in the first branch it is 069f08dd8f1c07e5e4b79477b09358c179d5f675. Although the contents for the two branches are identical, the hashes are still different. That is because cherry picking a commit makes a copy of the commit. Technically, the two branches have now diverged and are different even though they contain the same content.
 
 		For example, think of identical twins. They look the same (have the same content), but they have different government issued IDs (hashes) because they are different people. A government ID identifies a unique person in the same way a hash identifies a unique commit.
 
