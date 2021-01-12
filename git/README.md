@@ -306,7 +306,7 @@
 
 	1. Type ***g co 1st-branch*** to go from your master branch to your first branch.
 
-	1. Notice that your Bash prompt will look something like ***me@nuc10-i7-k6d9 ~/dev/projects/my-first-repo (1st-branch)***. You can quickly tell from your Bash prompt which Git branch you are on.
+	1. Notice that your Bash prompt will look something like ***me@nuc10-i7-k6d9 ~/dev/projects/my-first-repo (1st-branch)***. You can quickly tell from your Bash prompt which Git branch you are on (or if you are even in a Git repository).
 
 	1. Type ***echo "Gggggggggg" > ghi.txt***.
 
