@@ -445,7 +445,7 @@
 
 	1. Type ***g show ad7fc9eebb0e81df639622f847c15b9dca840ca3***.
 
-	1. Type ***g show ad7fc9e***. This is a short version of the longer hash. The shorter hash was displayed in the message when we committed the file a few steps above.
+	1. Type ***g show ad7fc9e***. This is a short version of the longer hash. The shorter hash was displayed in the message when you committed the file a few steps above.
 
 		```
 		[master ad7fc9e] This is a commit to add file ghi.txt.
@@ -538,6 +538,22 @@
 	1. Type ***g add jkl.txt***.
 
 	1. Type ***g ci -m "This is a commit to add file jkl.txt." -a***.
+
+	1. Type ***g log***.
+
+		```
+		commit 515ec5d44665d2e6939136bb0c9c91c376fb3275
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Tue Jan 12 08:13:51 2021 -0300
+
+		    This is a commit to add file jkl.txt.
+
+		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374
+		Author: Brian Chan <brian.chan@liferay.com>
+		Date:   Mon Jan 11 15:34:16 2021 -0300
+
+		    This is my first commit.
+		```
 
 	1. Type ***la***.
 
