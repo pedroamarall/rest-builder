@@ -30,7 +30,9 @@
 
 1. Launch Sublime.
 
-1. Type ***<Alt+Tab>*** and immediately let go of the keys. Do not hold down on ***<Alt+Tab>***. Use the ***\<Up\>*** and ***\<Down\>*** arrow keys to select your window.
+1. Type ***<Alt+Tab>*** and immediately let go of the keys. Do not hold down on ***<Alt+Tab>***. Use the ***\<Up\>*** and ***\<Down\>*** arrow keys to select either Chrome or Sublime.
+
+1. Type ***<Alt+Tab>*** again. If you do not wish to choose a window, hit ***\<Escape\>***.
 
 ## Websites
 
