@@ -833,7 +833,7 @@
 		    This is my first commit.
 		```
 
-		Notice that you only have three commits now and that the hash to last commit changed from efb071540b34fffe1f2ad3e45c2e8c8d52c543a1 to 7c7c7f4bb51f8747e422ec6b51b94cad048336b0.
+		Notice that you only have three commits now and that the hash to last commit changed from efb071540b34fffe1f2ad3e45c2e8c8d52c543a1 to 7c7c7f4bb51f8747e422ec6b51b94cad048336b0. A hash does not just contain information about the changes of a commit, but is a representation of all the contents of that branch at that specific commit.
 
 	1. Type ***la***.
 
