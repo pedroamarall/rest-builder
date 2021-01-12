@@ -433,6 +433,8 @@
 
 		Notice that the hash for the commit to add the ghi.txt file in master is a189493a0883fa964830fdfedaedf0e653bcaf52 but in the first branch it is d978f3de16da7b7d8227710d9c02ba0a82954401. Although the contents for the two branches are identical, the hashes are still different. That is because cherry pick made a copy of the commit. Technically, the two branches have now diverged and are different even though they contain the same content.
 
+		For example, think of identical twins. They look the same (have the same content), but they have different government issued IDs (hashes) because they are different people. A government ID identifies a unique person in the same way a hash identifies a unique commit.
+
 	1. Type ***g co 2nd-branch***.
 
 	1. Type ***la***.
