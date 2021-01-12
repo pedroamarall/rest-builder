@@ -846,7 +846,7 @@
 		-rw-rw-r-- 1 brian brian   11 Jan 12 08:30 jkl.txt
 		```
 
-		The file ghi.txt is no longer there because that commit was removed. You just rewrote history and so the file was never added.
+		The file ghi.txt is no longer there because that commit was removed. You just rewrote history and so the file ghi.txt was never added.
 
 	1. Type ***g reset --hard efb071540b34fffe1f2ad3e45c2e8c8d52c543a1***.
 
@@ -957,7 +957,7 @@
 
 	1. Launch Terminator and go to ***/home/me/dev/projects***.
 
-	1. Type ***g clone git@github.com:brianchandotcom/clay.git*** to clone the Clay repository to your local machine.
+	1. Type ***g clone git@github.com:brianchandotcom/clay.git*** to clone the Clay repository to your computer.
 
 	1. There are three copies of the Clay repository that concern you. The first copy is located at https://github.com/liferay/clay and we will call that ***upstream*** for short. The second copy is located at ***https://github.com/brianchandotcom/clay*** and we will call that ***origin*** for short. The third copy is located on your computer at ***/home/me/dev/projects/clay***.
 
