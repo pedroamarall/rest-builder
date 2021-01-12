@@ -64,7 +64,7 @@
 
 		1. Open a new tab in Terminator and type ***gi***. Notice that GitHub did not ask you for a password.
 
-		1. Try and figure out which program is executed when you type ***gi***.
+		1. Try and figure out which program is executed when you type ***gi***. Slack your instructor with the information of how ***gi*** is available.
 
 	1. Configure a GitHub SSH key.
 
