@@ -599,7 +599,7 @@
 		-rw-rw-r-- 1 brian brian   11 Jan 12 08:13 jkl.txt
 		```
 
-		Notice that it has all the files from before. Git did its best to merge the two branches. At Liferay, we consider merge commits an anti-pattern and generally avoid using it. How can we avoid this?
+		Notice that it has all the files from before. Git did its best to merge the two branches. At Liferay, merge commits are considered an anti-pattern and generally avoided.
 
 	1. Type ***g co master***.
 
