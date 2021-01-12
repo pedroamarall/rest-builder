@@ -445,7 +445,7 @@
 
 	1. Type ***g show ad7fc9eebb0e81df639622f847c15b9dca840ca3***.
 
-	1. Type ***g show ad7fc9e***. This is a short version of the longer hash. I got the shorter hash from the message a few steps above when we committed the file.
+	1. Type ***g show ad7fc9e***. This is a short version of the longer hash. The shorter hash was displayed in the message when we committed the file a few steps above.
 
 		```
 		[master ad7fc9e] This is a commit to add file ghi.txt.
