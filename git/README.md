@@ -72,7 +72,7 @@
 
 		1. Configure a new SSH key. The title can be anything you want it to be. The key should contain the public value in ***~/id_rsa.pub*** and not the private value in ***~/id_rsa***.
 
-		1. TODO: Write an example showing when an SSH key is required.
+		1. ~~TODO: Write an example showing when an SSH key is required.~~
 
 ## Git Repositories
 
