@@ -1000,7 +1000,7 @@
 
 	1. Add some files. Commit those files.
 
-	1. Your neighbor also has a fork of Clay at https://github.com/<YOUR_NEIGHBORS_GITHUB_USER_NAME>/clay and a copy of the repository on his computer.
+	1. Your neighbor also has a fork of Clay at https://github.com/<YOUR_NEIGHBORS_GITHUB_USER_NAME>/clay and a copy of the Clay repository on his computer.
 
 	1. Type **gpr submit -u <YOUR_NEIGHBORS_GITHUB_USER_NAME>*** to send him your changes. Ask your neighbor to also send you a pull request.
 
