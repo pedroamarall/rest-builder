@@ -925,20 +925,79 @@
 
 	1. Type ***g reset --hard efb071540b34fffe1f2ad3e45c2e8c8d52c543a1***.
 
-1. Check out a repository.
+1. Clone a repository.
 
-## Sending Changes
+	1. Go to https://github.com/liferay/clay. Fork this repository to your username. For example, a fork for brianchandotcom would be at https://github.com/brianchandotcom/clay.
 
-## Sending Work via Pull Requests
+	1. Go to https://github.com/brianchandotcom/clay. Replace brianchandotcom with your username for the rest of this tutorial.
 
-1. Configure GitHub SSH key.
+	1. Launch Terminator and go to ***/home/me/dev/projects***.
 
-	1. Login to GitHub. Go to ***Settings***. Go to ***SSH and GPG keys***.
+	1. Type ***g clone git@github.com:brianchandotcom/clay.git*** to clone the Clay repository to your local machine.
 
-	1. Configure a new SSH key. The title can be anything you want it to be. The key should contain the public value in ***~/id_rsa.pub*** and not the private value in ***~/id_rsa***.
+	1. There are three copies of the Clay repository that concern you. The first copy is located at https://github.com/liferay/clay and we will call that ***upstream*** for short. The second copy is located at ***https://github.com/brianchandotcom/clay*** and we will call that ***origin*** for short. The third copy is located on your computer at ***/home/me/dev/projects/clay***.
+
+	1. Type ***osub /home/me/dev/projects/clay/.git/config***.
+
+		```
+		[core]
+			repositoryformatversion = 0
+			filemode = true
+			bare = false
+		[remote "origin"]
+			url = git@github.com:brianchandotcom/clay.git
+			fetch = +refs/heads/*:refs/remotes/origin/*
+		[branch "master"]
+			remote = origin
+			merge = refs/heads/master
+		```
+
+		Change the above to look like the following. Replace brianchandotcom with your username.
+
+		```
+		[branch "master"]
+			merge = refs/heads/master
+			remote = origin
+		[remote "origin"]
+			fetch = +refs/heads/*:refs/remotes/origin/*
+			url = git@github.com:brianchandotcom/clay.git
+		[remote "upstream"]
+			fetch = +refs/heads/*:refs/remotes/upstream/*
+			url = git@github.com:liferay/clay.git
+		```
+
+1. Working with pull requests.
+
+	1. Configure GitHub SSH key.
+
+		1. Login to GitHub. Go to ***Settings***. Go to ***SSH and GPG keys***.
+
+		1. Configure a new SSH key. The title can be anything you want it to be. The key should contain the public value in ***~/id_rsa.pub*** and not the private value in ***~/id_rsa***.
+
+	1. Go to ***/home/me/dev/projects/clay***.
+
+	1. Create a new branch called clay-1234 where 1234 are four random numbers (e.g. clay-7893 or clay-8934). Any four numbers you make up will do.
+
+	1. Checkout that branch.
+
+	1. Add some files. Commit those files.
+
+	1. Your neighbor also has a fork of Clay at https://github.com/<YOUR_NEIGHBORS_GITHUB_USER_NAME>/clay and a copy of the repository on his computer.
+
+	1. Type **gpr submit -u <YOUR_NEIGHBORS_GITHUB_USER_NAME>*** to send him your changes. Ask your neighbor to also send you a pull request.
+
+	1. Type ***gpr***. You will see a list of open pull requests that you have for your fork of the Clay repository.
+
+	1. Type ***gi*** to see the total number of open requests that you have across all your forks.
+
+	1. Type ***gpr 1*** to checkout the branch that contains the contents of pull request 1 (assuming the ID is 1).
 
 ## SmartGit
 
 1. Launch SmartGit.
 
-1. This tool is very useful for comparing code changed in pull requests.
+1. Add the Clay repository.
+
+1. Go to Window and use the ***Show Log Window***. If the Window menu says ***Show Working Tree Window*** then you are already in the Log Window. If not, switch to the Log Window because it is faster.
+
+1. Use SmartGit to changes in commits.
