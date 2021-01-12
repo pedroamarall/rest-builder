@@ -229,7 +229,7 @@
 
 		Every commit has a different random hash that looks like dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374.
 
-	1. Type ***g show dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374***. Note that your hash will not be the same hash as as in this tutorial. Replace it with your hash.
+	1. Type ***g show dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374***. The hash on your computer will not be the same hash as as in this tutorial. Replace it with your hash.
 
 		```
 		commit dbd40402b41ef3dd4f5f7469dd6ac03a0ff9a374 (HEAD -> master)
