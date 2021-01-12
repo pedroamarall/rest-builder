@@ -1016,6 +1016,6 @@
 
 1. Add the Clay repository.
 
-1. Go to Window and use the ***Show Log Window***. If the Window menu says ***Show Working Tree Window*** then you are already in the Log Window. If not, switch to the Log Window because it is faster.
+1. Go to the Window menu and use ***Show Log Window***. If the Window menu says ***Show Working Tree Window*** then you are already in the Log Window. If not, switch to the Log Window because it is faster. Close the Working Tree Window if it is open.
 
-1. Use SmartGit to changes in commits.
+1. Use SmartGit to see changes in commits in the central graph.
