@@ -474,7 +474,11 @@
 
 ## Challenge 2
 
-1. Neither the command ***d run --rm -it mysql:8.0.22 mysql -hlocalhost -uroot -p*** nor the command ***d run --rm -it mysql:8.0.22 mysql -h127.0.0.1 -uroot -p*** is allowed to authenticate. Update MySQL to allow localhost connections.
+1. Explain why the command ***d run --rm -it mysql:8.0.22 mysql -h127.0.0.1 -uroot -p*** does not work.
+
+	1. Type ***sudo dnf install mysql*** to install the MySQL client on your local machine.
+
+	1. Type ***mysql -h127.0.0.1 -uroot -p***. This command works. Why does this work? As a clue, type ***d ps*** to list all the running Docker containers.
 
 ## Challenge 3
 
