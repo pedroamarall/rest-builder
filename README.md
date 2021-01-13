@@ -36,6 +36,10 @@
 
 1. [OSGi](osgi)
 
+1. [Blade](blade)
+
+1. [IDE](ide)
+
 1. [Poshi](poshi)
 
 1. [Problem Based Learning](problem-based-learning)
