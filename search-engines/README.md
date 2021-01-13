@@ -11,3 +11,11 @@
 1. Follow the tutorial in https://lucene.apache.org/solr/guide/8_7/solr-tutorial.html.
 
 1. Stop after you see the section ***Where to next?***.
+
+## Further Thinking
+
+1. How are databases and search engines similar?
+
+1. How are databases and search engines different?
+
+1. When is it appropriate to use one versus another?
