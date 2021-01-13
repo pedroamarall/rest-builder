@@ -60,9 +60,21 @@
 
 ## Apps
 
-1. Launch Pinta Image Editor.
+1. Launch Bluetooth Manager.
+
+	1. Use Bluetooth Manager to pair with bluetooth devices.
+
+	1. Type ***<Alt+F4>*** to quit.
+
+1. Launch Pinta.
 
 	1. Use Pinta for basic image editing.
+
+	1. Type ***<Control+Q>*** to quit. Some apps will quit with either ***<Alt+F4>*** and ***<Control+Q>***. Some apps will only quit with one of the commands.
+
+1. Launch PulseAudio Volume Control.
+
+	1. Use PulseAudio Volume Control to adjust your audio settings.
 
 	1. Type ***<Control+Q>*** to quit.
 

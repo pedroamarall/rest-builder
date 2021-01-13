@@ -237,6 +237,19 @@ function install_autokey {
 	sudo cp data/wmctrl_focus_on_app /usr/local/bin
 }
 
+function install_bluetooth {
+
+	#
+	# https://www.maketecheasier.com/setup-bluetooth-in-linux
+	#
+
+	dnf_install blueman
+
+	sudo systemctl enable bluetooth.service
+
+	sudo systemctl start bluetooth.service
+}
+
 function install_conky {
 	dnf_install conky
 
@@ -423,7 +436,7 @@ function update_packages {
 #customize_bash
 #customize_git
 #customize_hostname
-customize_lxdm
+#customize_lxdm
 #customize_openbox
 #customize_screensaver
 #customize_ssh
@@ -433,14 +446,15 @@ customize_lxdm
 #customize_vi
 #disable_firewall
 #disable_selinux
-install_autokey
+#install_autokey
+install_bluetooth
 #install_conky
 #install_exfat
 #install_fonts
 #install_ntpdate
 #install_terminator
 #install_thunar
-install_ulauncher
+#install_ulauncher
 #remove_unused_icons
 #swap_caps_and_control
 
