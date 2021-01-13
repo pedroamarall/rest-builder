@@ -12,7 +12,7 @@
 
 1. Openbox is a minimalist Linux window manager.
 
-1. We are going to move Chrome using keyboard shorcuts.
+1. Move Chrome using keyboard shorcuts.
 
 	1. Find your Super key. The Super key usually looks like the Windows key.
 
@@ -28,13 +28,19 @@
 
 1. Right click on an empty space to bring up the menu.
 
-1. Launch Sublime.
+1. Switch between Chrome and Sublime.
 
-1. Type ***<Alt+Tab>*** and immediately let go of the keys. Do not hold down on ***<Alt+Tab>***. Use the ***\<Up\>*** and ***\<Down\>*** arrow keys to select either Chrome or Sublime.
+	1. Launch Sublime.
 
-1. Type ***<Alt+Tab>*** again. If you do not wish to choose a window, hit ***\<Escape\>***.
+	1. Type ***<Alt+Tab>*** and immediately let go of the keys. Do not hold down on ***<Alt+Tab>***. Use the ***\<Up\>*** and ***\<Down\>*** arrow keys to select either Chrome or Sublime.
 
-1. Type ***<Control+Alt+K>*** to lock your computer. The screen will turn black. The screen will turn blue as soon as you start typing your password. Hit ***\<Enter\>***. If you typed your password incorrectly, the screen will turn red. Retype your password and hit ***\<Enter\>*** again. If you typed password was correctly, the screen will be unlocked.
+	1. Type ***<Alt+Tab>*** again. If you do not wish to choose a window, hit ***\<Escape\>***.
+
+1. Lock and unlock your computer.
+
+	1. Type ***<Control+Alt+K>*** to lock your computer. The screen will turn black.
+
+	1. The screen will turn blue as soon as you start typing your password. Hit ***\<Enter\>***. If you typed your password incorrectly, the screen will turn red. Retype your password and hit ***\<Enter\>*** again. If you typed password was correctly, the screen will be unlocked.
 
 ## Websites
 
