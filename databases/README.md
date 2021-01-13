@@ -372,6 +372,8 @@
 
 	1. Type ***update Author set description = "Matthias was chosen by lot to replace Judas in Acts 1:26.", name = "Matthias" where authorId = 4;***
 
+	1. Type ***select * from Author;***.
+
 		```
 		+----------+-----------------------------------------------------------+----------+
 		| authorId | description                                               | name     |
