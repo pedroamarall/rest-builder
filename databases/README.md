@@ -471,8 +471,8 @@
 1. Write a SQL statement that returns the name of all the authors and the number of books they wrote.
 
 	<details> 
-		<summary>Q1: What is the best Language in the World? </summary>
-		A1: JavaScript 
+		<summary>Show answer.</summary>
+		...
 	</details>
 
 1. Write a SQL statement that returns the name of all the authors who wrote more than one book.
