@@ -12,10 +12,10 @@
 
 1. Stop after you see the section ***Where to next?***.
 
-## Further Thinking
+## Challenges
 
-1. How are databases and search engines similar?
+1. Explain how databases and search engines are similar.
 
-1. How are databases and search engines different?
+1. Explain how databases and search engines are different.
 
-1. When is it appropriate to use one versus another?
+1. Explain when is it appropriate to use one versus another.
