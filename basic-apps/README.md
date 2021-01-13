@@ -60,7 +60,11 @@
 
 ## Apps
 
-1. Launch Pinta Image Editor for basic image editing.
+1. Launch Pinta Image Editor.
+
+	1. Use Pinta for basic image editing.
+
+	1. Type ***<Control+Q>*** to quit.
 
 1. Launch Slack.
 
