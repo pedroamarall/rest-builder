@@ -70,7 +70,7 @@
 
 	1. Use Pinta for basic image editing.
 
-	1. Type ***<Control+Q>*** to quit. Some apps will quit with either ***<Alt+F4>*** and ***<Control+Q>***. Some apps will only quit with one of the commands.
+	1. Type ***<Control+Q>*** to quit. Some apps will quit with either ***<Alt+F4>*** or ***<Control+Q>***. Some apps will only quit with one of the commands.
 
 1. Launch PulseAudio Volume Control.
 
