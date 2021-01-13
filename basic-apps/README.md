@@ -28,6 +28,8 @@
 
 1. Right click on an empty space to bring up the menu.
 
+	![](images/01.jpg)
+
 1. Switch between Chrome and Sublime.
 
 	1. Launch Sublime.
@@ -41,6 +43,12 @@
 	1. Type ***<Control+Alt+K>*** to lock your computer. The screen will turn black.
 
 	1. The screen will turn blue as soon as you start typing your password. Hit ***\<Enter\>***. If you typed your password incorrectly, the screen will turn red. Retype your password and hit ***\<Enter\>*** again. If you typed password was correctly, the screen will be unlocked.
+
+1. Take a screenshot.
+
+	1. Type ***<Control+Alt+S>*** to take a screen shot.
+
+	1. Your file will be saved to a file like ***/home/me/Desktop/screenshot-1610537598.png***.
 
 ## Websites
 
