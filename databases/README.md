@@ -474,7 +474,7 @@
 
 ## Challenge 2
 
-1. Neither the command ***d run --rm -it mysql:8.0.22 mysql -hlocalhost -uroot -p*** nor the command ***d run --rm -it mysql:8.0.22 mysql -h127.0.0.1 -uroot -p*** works. Make one of them work.
+1. Neither the command ***d run --rm -it mysql:8.0.22 mysql -hlocalhost -uroot -p*** nor the command ***d run --rm -it mysql:8.0.22 mysql -h127.0.0.1 -uroot -p*** is allowed to authenticate. Update MySQL to allow localhost connections.
 
 ## Challenge 3
 
