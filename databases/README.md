@@ -466,20 +466,16 @@
 
 	1. Type ***select distinct Author.name from Author inner join Book on Book.authorId = Author.authorId where Book.description like "%letter%";***
 
-## Challenge 1
+## Challenges
 
 1. Write a SQL statement that returns the name of all the authors and the number of books they wrote.
 
 1. Write a SQL statement that returns the name of all the authors who wrote more than one book.
-
-## Challenge 2
 
 1. Explain why the command ***d run --rm -it mysql:8.0.22 mysql -h127.0.0.1 -uroot -p*** does not work.
 
 	1. Type ***sudo dnf install mysql*** to install the MySQL client on your local machine.
 
 	1. Type ***mysql -h127.0.0.1 -uroot -p***. This command works. Why does this work? As a clue, type ***d ps*** to list all the running Docker containers.
-
-## Challenge 3
 
 1. Repeat the MySQL tutorial but for PostgreSQL and send the instructor your tutorial.
