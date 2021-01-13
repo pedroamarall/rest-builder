@@ -316,7 +316,7 @@
 		+----------+----------+
 		```
 
-	1. Type ***select count(*) from Author;***
+	1. Type ***select count(\*) from Author;***
 
 		```
 		+----------+
