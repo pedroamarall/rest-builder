@@ -478,4 +478,4 @@
 
 ## Challenge 3
 
-1. Repeat the MySQL with PostgreSQL and send the instructor your tutorial.
+1. Repeat the MySQL tutorial but for PostgreSQL and send the instructor your tutorial.
