@@ -34,7 +34,7 @@
 
 1. Type ***<Alt+Tab>*** again. If you do not wish to choose a window, hit ***\<Escape\>***.
 
-1. Type ***<Control+Alt+K>*** to lock your computer. The screen will turn black. The screen will turn blue as soon as you start typing your password. Hit ***\<Enter\>***. If you type your password was incorrect, the screen will turn red. If your password was correct, your screen will be unlocked.
+1. Type ***<Control+Alt+K>*** to lock your computer. The screen will turn black. The screen will turn blue as soon as you start typing your password. Hit ***\<Enter\>***. If you typed your password incorrectly, the screen will turn red. Retype your password and hit ***\<Enter\>*** again. If you typed password was correctly, the screen will be unlocked.
 
 ## Websites
 
