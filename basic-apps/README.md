@@ -28,7 +28,7 @@
 
 1. Right click on an empty space to bring up the menu.
 
-	![](images/01.jpg)
+	![](images/01.png)
 
 1. Switch between Chrome and Sublime.
 
