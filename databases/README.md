@@ -468,9 +468,9 @@
 
 ## Challenge 1
 
-1. Give me a SQL statement that gives you the name of all the authors and the number of books they wrote.
+1. Write a SQL statement that returns the name of all the authors and the number of books they wrote.
 
-1. Give me a SQL statement that gives you the name of all the authors who wrote more than one book.
+1. Write a SQL statement that returns the name of all the authors who wrote more than one book.
 
 ## Challenge 2
 
