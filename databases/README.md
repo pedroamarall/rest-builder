@@ -472,10 +472,21 @@
 
 	<details> 
 		<summary>Show answer.</summary>
-		...
+
+		```
+		select Author.name from Author inner join Book on Author.authorId = Book.authorId group by Author.authorId having count(Book.authorId) > 1;
+		```
 	</details>
 
 1. Write a SQL statement that returns the name of all the authors who wrote more than one book.
+
+	<details> 
+		<summary>Show answer.</summary>
+
+		```
+		select Author.name, count(Book.authorId) from Author inner join Book on Author.authorId = Book.authorId group by Author.authorId;
+		```
+	</details>
 
 1. Explain why the command ***d run --rm -it mysql:8.0.22 mysql -h127.0.0.1 -uroot -p*** does not work.
 
