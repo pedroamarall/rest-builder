@@ -470,6 +470,11 @@
 
 1. Write a SQL statement that returns the name of all the authors and the number of books they wrote.
 
+	<details> 
+		<summary>Q1: What is the best Language in the World? </summary>
+		A1: JavaScript 
+	</details>
+
 1. Write a SQL statement that returns the name of all the authors who wrote more than one book.
 
 1. Explain why the command ***d run --rm -it mysql:8.0.22 mysql -h127.0.0.1 -uroot -p*** does not work.
