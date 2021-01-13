@@ -60,6 +60,8 @@
 
 ## Apps
 
+1. Launch Pinta Image Editor for basic image editing.
+
 1. Launch Slack.
 
 	1. Type ***<Alt+Space>*** and then type ***Slack***.
