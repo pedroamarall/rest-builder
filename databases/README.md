@@ -49,7 +49,7 @@
 
 	1. Type ***d exec -it galatians mysql -uroot -p*** to run the MySQL client that exists on the MySQL server. Your password is ***lovethepoor***.
 
-		1. The command can be split into two parts. The first part, ***d exec -it galatians***, tells Docker to execute a command on the ***galatians*** container. The second part, ***mysql -uroot -p***, is the command that is run on the container itself.
+		1. The command can be split into two parts. The first part, ***d exec -it galatians***, tells Docker to execute a command on the ***galatians*** container. The second part, ***mysql -uroot -p***, is the command that is run on the container itself. The argument ***-uroot*** signifies the root user for MySQL and not the root user for the computer. That is why the password is ***lovethepoor*** and not the password you used to login to your computer.
 
 	1. Type ***show databases;***. This lists the databases available in MySQL.
 
