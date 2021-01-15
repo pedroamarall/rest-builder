@@ -20,7 +20,7 @@
 
 1. Update your website.
 
-	1. Type ***d ps*** to get the hash of your Apache server.
+	1. Type ***d ps*** to get the container ID of your Apache server.
 
 		```
 		CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                               NAMES
