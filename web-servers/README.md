@@ -85,8 +85,10 @@
 
 	1. Type ***<Control+C>*** on the Terminator tab that started Apache.
 
-## Challenges
+1. Repeat the above steps, but this time, give a name to your Apache Docker container and run it in the background. Use ***d kill*** instead of ***<Control+C>*** to stop your container.
 
-1. Repeat the above tutorial, but name your Apache Docker container and run it in the background.
+## Nginx.
 
-1. Repeat the Apache above tutorial for Nginx.
+1. Nginx is an alternative to Apache. It is faster, but less configurable.
+
+1. Repeat the Apache tutorial, but for Nginx.
