@@ -4,7 +4,7 @@
 
 Go to https://www.typing.com/student/tests. Take the one minute test.
 
-At minimum, a developer needs to be able to type faster than 70 words per minute. The good developer can type faster than 90 words per minute.
+At minimum, a developer needs to be able to type faster than 70 words per minute. An average developer can type faster than 90 words per minute.
 
 ## Learn to Type Faster
 
