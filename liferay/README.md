@@ -12,7 +12,7 @@
 
 1. Go to ***/home/me/dev/projects/liferay-portal***.
 
-1. Type ***more /home/me/dev/projects/liferay-portal/app.server.me.properties***. The source code is configured to deploy its modules to ***/home/me/dev/bundles/master***.
+1. Type ***more /home/me/dev/projects/liferay-portal/app.server.me.properties***. The source code is configured to deploy to ***/home/me/dev/bundles/master***.
 
 1. Type ***la ~/dev/bundles/master/osgi/modules***.
 
