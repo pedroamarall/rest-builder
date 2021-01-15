@@ -16,14 +16,20 @@ https://www.amazon.com/Happy-Hacking-Keyboard-Professional2-White/dp/B000EXZ0V2
 ![](images/01.jpg)
 ![](images/02.jpg)
 
+## The Recommended Keyboard
+
+This is the recommended keyboard. The location of the keys, with a US layout, is optimal for coding.
+
+![](images/03.jpg)
+
 ## Use a Keyboard and Mouse Properly
 
 <!--
 https://www.cmd-ltd.com/advice-centre/ergonomics/why-is-typing-ergonomics-important
 -->
 
-![](images/03.jpg)
 ![](images/04.jpg)
+![](images/05.jpg)
 
 ## Sit Properly
 
@@ -31,4 +37,4 @@ https://www.cmd-ltd.com/advice-centre/ergonomics/why-is-typing-ergonomics-import
 https://www.work-fit.com/blog/how-to-sit-properly-at-your-desk
 -->
 
-![](images/05.jpg)
+![](images/06.jpg)
