@@ -20,7 +20,7 @@
 
 1. Type ***la ~/dev/bundles/master/osgi/modules***. Notice that files were removed.
 
-1. Type ***ant all***.
+1. Type ***ant all***. This command can take a while. Generally, you do not have to run this more than once a day.
 
 1. Type ***la ~/dev/bundles/master/osgi/modules***. Notice that files were copied there.
 
