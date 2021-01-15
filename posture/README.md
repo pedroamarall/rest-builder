@@ -18,7 +18,7 @@ https://www.amazon.com/Happy-Hacking-Keyboard-Professional2-White/dp/B000EXZ0V2
 
 ## The Recommended Keyboard
 
-Perixx [PERIBOARD-407B](https://smile.amazon.com/Perixx-PERIBOARD-407B-Mini-Keyboard-Dimension/dp/B0053O9ZNQ) is the recommended keyboard. The location of the keys, with a US layout, is optimal for coding.
+The Perixx [PERIBOARD-407B](https://smile.amazon.com/Perixx-PERIBOARD-407B-Mini-Keyboard-Dimension/dp/B0053O9ZNQ) is the recommended keyboard. The location of the keys, with a US layout, is optimal for coding.
 
 ![](images/03.jpg)
 

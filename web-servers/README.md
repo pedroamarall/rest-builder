@@ -33,7 +33,7 @@
 
 	1. Type ***ls***.
 
-	1. Type ***la***. This command fails because this alias is only setup on your computer.
+	1. Type ***la***. This command fails because the alias ***la*** is only setup on your computer.
 
 	1. Type ***cd htdocs*** to go to ***/usr/local/apache2/htdocs***.
 
