@@ -2,8 +2,6 @@
 
 1. Welcome!
 
-1. [Goal Setting](goal-setting)
-
 1. [Posture](posture)
 
 1. [Basic Apps](basic-apps)
