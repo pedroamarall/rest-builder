@@ -28,9 +28,9 @@
 
 1. [HTML/CSS](html-css)
 
-1. [JavaScript](javascript)
-
 1. [Markdown](markdown)
+
+1. [JavaScript](javascript)
 
 1. [Java](java)
 
