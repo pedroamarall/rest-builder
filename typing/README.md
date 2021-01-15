@@ -18,4 +18,4 @@ Use the correct fingers! You cannot type fast if you type with the wrong fingers
 
 Practice 10 minutes a day until you break out of the bad habit of using the wrong fingers.
 
-You must know how to type letters, numbers, and symbols while using all 10 fingers and not looking at your keyboard.
+You must learn to type letters, numbers, and symbols while using all 10 fingers correctly without looking at your keyboard.
