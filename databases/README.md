@@ -153,40 +153,40 @@
 
 1. Insert into a table.
 
-	1. Type ***create table Author (authorId bigint primary key, description varchar(75), name varchar(75));***.
+	1. Type ***create table Author (authorId bigint primary key, birthday datetime(6), description varchar(75), name varchar(75), original12 tinyint);***.
 
 	1. Type ***show tables;***
 
 	1. Type ***desc Author;***
 
-	1. Type ***insert into Author values (1, "Paul was the least of the apostles.", "Paul");***
+	1. Type ***insert into Author values (1, "0001-1-31", "Paul was the least of the apostles.", "Paul", 0);***
 
 1. Select from a table.
 
 	1. Type ***select * from Author;***
 
 		```
-		+----------+-------------------------------------+------+
-		| authorId | description                         | name |
-		+----------+-------------------------------------+------+
-		|        1 | Paul was the least of the apostles. | Paul |
-		+----------+-------------------------------------+------+
+		+----------+----------------------------+-------------------------------------+------+------------+
+		| authorId | birthday                   | description                         | name | original12 |
+		+----------+----------------------------+-------------------------------------+------+------------+
+		|        1 | 0001-01-31 00:00:00.000000 | Paul was the least of the apostles. | Paul |          0 |
+		+----------+----------------------------+-------------------------------------+------+------------+
 		```
 
-	1. Type ***insert into Author values (2, "John was the beloved disciple.", "John");***
+	1. Type ***insert into Author values (2, "0015-1-31", "John was the beloved disciple.", "John", 1);***
 
 	1. Type ***select * from Author;***
 
 		```
-		+----------+-------------------------------------+------+
-		| authorId | description                         | name |
-		+----------+-------------------------------------+------+
-		|        1 | Paul was the least of the apostles. | Paul |
-		|        2 | John was the beloved disciple.      | John |
-		+----------+-------------------------------------+------+
+		+----------+----------------------------+-------------------------------------+------+------------+
+		| authorId | birthday                   | description                         | name | original12 |
+		+----------+----------------------------+-------------------------------------+------+------------+
+		|        1 | 0001-01-31 00:00:00.000000 | Paul was the least of the apostles. | Paul |          0 |
+		|        2 | 0015-01-31 00:00:00.000000 | John was the beloved disciple.      | John |          1 |
+		+----------+----------------------------+-------------------------------------+------+------------+
 		```
 
-	1. Type ***insert into Author values (2, "Peter betrayed Jesus three times.", "Peter");***
+	1. Type ***insert into Author values (2, "0003-1-31", "Peter betrayed Jesus three times.", "Peter", 1);***
 
 		```
 		ERROR 1062 (23000): Duplicate entry '2' for key 'Author.PRIMARY'
@@ -194,102 +194,103 @@
 
 		This command fails because John was already assigned ***2*** as the primary key. The primary key is unique per row in the table.
 
-	1. Type ***insert into Author values (3, "Peter betrayed Jesus three times.", "Peter");***
+	1. Type ***insert into Author values (3, "0003-1-31", "Peter betrayed Jesus three times.", "Peter", 1);***
 
-	1. Type ***insert into Author values (4, "Judas was in charge of the moneybag.", "Judas");***
+	1. Type ***insert into Author values (4, "0016-1-31", "Judas was in charge of the moneybag.", "Judas", 1);***
 
 	1. Type ***select * from Author;***.
 
 		```
-		+----------+--------------------------------------+-------+
-		| authorId | description                          | name  |
-		+----------+--------------------------------------+-------+
-		|        1 | Paul was the least of the apostles.  | Paul  |
-		|        2 | John was the beloved disciple.       | John  |
-		|        3 | Peter betrayed Jesus three times.    | Peter |
-		|        4 | Judas was in charge of the moneybag. | Judas |
-		+----------+--------------------------------------+-------+
+		+----------+----------------------------+--------------------------------------+-------+------------+
+		| authorId | birthday                   | description                          | name  | original12 |
+		+----------+----------------------------+--------------------------------------+-------+------------+
+		|        1 | 0001-01-31 00:00:00.000000 | Paul was the least of the apostles.  | Paul  |          0 |
+		|        2 | 0015-01-31 00:00:00.000000 | John was the beloved disciple.       | John  |          1 |
+		|        3 | 0003-01-31 00:00:00.000000 | Peter betrayed Jesus three times.    | Peter |          1 |
+		|        4 | 0016-01-31 00:00:00.000000 | Judas was in charge of the moneybag. | Judas |          1 |
+		+----------+----------------------------+--------------------------------------+-------+------------+
 		```
+
 	1. Type ***select * from Author where authorId = 4;***.
 
 		```
-		+----------+--------------------------------------+-------+
-		| authorId | description                          | name  |
-		+----------+--------------------------------------+-------+
-		|        4 | Judas was in charge of the moneybag. | Judas |
-		+----------+--------------------------------------+-------+
+		+----------+----------------------------+--------------------------------------+-------+------------+
+		| authorId | birthday                   | description                          | name  | original12 |
+		+----------+----------------------------+--------------------------------------+-------+------------+
+		|        4 | 0016-01-31 00:00:00.000000 | Judas was in charge of the moneybag. | Judas |          1 |
+		+----------+----------------------------+--------------------------------------+-------+------------+
 		```
 
 	1. Type ***select * from Author where name = "John";***.
 
 		```
-		+----------+--------------------------------+------+
-		| authorId | description                    | name |
-		+----------+--------------------------------+------+
-		|        2 | John was the beloved disciple. | John |
-		+----------+--------------------------------+------+
+		+----------+----------------------------+--------------------------------+------+------------+
+		| authorId | birthday                   | description                    | name | original12 |
+		+----------+----------------------------+--------------------------------+------+------------+
+		|        2 | 0015-01-31 00:00:00.000000 | John was the beloved disciple. | John |          1 |
+		+----------+----------------------------+--------------------------------+------+------------+
 		```
 
 	1. Type ***select * from Author where description like "%was%";***.
 
 		```
-		+----------+--------------------------------------+-------+
-		| authorId | description                          | name  |
-		+----------+--------------------------------------+-------+
-		|        1 | Paul was the least of the apostles.  | Paul  |
-		|        2 | John was the beloved disciple.       | John  |
-		|        4 | Judas was in charge of the moneybag. | Judas |
-		+----------+--------------------------------------+-------+
+		+----------+----------------------------+--------------------------------------+-------+------------+
+		| authorId | birthday                   | description                          | name  | original12 |
+		+----------+----------------------------+--------------------------------------+-------+------------+
+		|        1 | 0001-01-31 00:00:00.000000 | Paul was the least of the apostles.  | Paul  |          0 |
+		|        2 | 0015-01-31 00:00:00.000000 | John was the beloved disciple.       | John  |          1 |
+		|        4 | 0016-01-31 00:00:00.000000 | Judas was in charge of the moneybag. | Judas |          1 |
+		+----------+----------------------------+--------------------------------------+-------+------------+
 		```
 
 	1. Type ***select * from Author where name like "%a%";***.
 
 		```
-		+----------+--------------------------------------+-------+
-		| authorId | description                          | name  |
-		+----------+--------------------------------------+-------+
-		|        1 | Paul was the least of the apostles.  | Paul  |
-		|        4 | Judas was in charge of the moneybag. | Judas |
-		+----------+--------------------------------------+-------+
+		+----------+----------------------------+--------------------------------------+-------+------------+
+		| authorId | birthday                   | description                          | name  | original12 |
+		+----------+----------------------------+--------------------------------------+-------+------------+
+		|        1 | 0001-01-31 00:00:00.000000 | Paul was the least of the apostles.  | Paul  |          0 |
+		|        4 | 0016-01-31 00:00:00.000000 | Judas was in charge of the moneybag. | Judas |          1 |
+		+----------+----------------------------+--------------------------------------+-------+------------+
 		```
 
 	1. Type ***select * from Author order by name;***
 
 		```
-		+----------+-----------------------------------------------------------+----------+
-		| authorId | description                                               | name     |
-		+----------+-----------------------------------------------------------+----------+
-		|        2 | John was the beloved disciple.                            | John     |
-		|        4 | Matthias was chosen by lot to replace Judas in Acts 1:26. | Matthias |
-		|        1 | Paul was the least of the apostles.                       | Paul     |
-		|        3 | Peter betrayed Jesus three times.                         | Peter    |
-		+----------+-----------------------------------------------------------+----------+
+		+----------+----------------------------+--------------------------------------+-------+------------+
+		| authorId | birthday                   | description                          | name  | original12 |
+		+----------+----------------------------+--------------------------------------+-------+------------+
+		|        2 | 0015-01-31 00:00:00.000000 | John was the beloved disciple.       | John  |          1 |
+		|        4 | 0016-01-31 00:00:00.000000 | Judas was in charge of the moneybag. | Judas |          1 |
+		|        1 | 0001-01-31 00:00:00.000000 | Paul was the least of the apostles.  | Paul  |          0 |
+		|        3 | 0003-01-31 00:00:00.000000 | Peter betrayed Jesus three times.    | Peter |          1 |
+		+----------+----------------------------+--------------------------------------+-------+------------+
 		```
 
 	1. Type ***select * from Author order by name desc;***
 
 		```
-		+----------+-----------------------------------------------------------+----------+
-		| authorId | description                                               | name     |
-		+----------+-----------------------------------------------------------+----------+
-		|        3 | Peter betrayed Jesus three times.                         | Peter    |
-		|        1 | Paul was the least of the apostles.                       | Paul     |
-		|        4 | Matthias was chosen by lot to replace Judas in Acts 1:26. | Matthias |
-		|        2 | John was the beloved disciple.                            | John     |
-		+----------+-----------------------------------------------------------+----------+
+		+----------+----------------------------+--------------------------------------+-------+------------+
+		| authorId | birthday                   | description                          | name  | original12 |
+		+----------+----------------------------+--------------------------------------+-------+------------+
+		|        3 | 0003-01-31 00:00:00.000000 | Peter betrayed Jesus three times.    | Peter |          1 |
+		|        1 | 0001-01-31 00:00:00.000000 | Paul was the least of the apostles.  | Paul  |          0 |
+		|        4 | 0016-01-31 00:00:00.000000 | Judas was in charge of the moneybag. | Judas |          1 |
+		|        2 | 0015-01-31 00:00:00.000000 | John was the beloved disciple.       | John  |          1 |
+		+----------+----------------------------+--------------------------------------+-------+------------+
 		```
 
 	1. Type ***select * from Author order by name asc;***
 
 		```
-		+----------+-----------------------------------------------------------+----------+
-		| authorId | description                                               | name     |
-		+----------+-----------------------------------------------------------+----------+
-		|        2 | John was the beloved disciple.                            | John     |
-		|        4 | Matthias was chosen by lot to replace Judas in Acts 1:26. | Matthias |
-		|        1 | Paul was the least of the apostles.                       | Paul     |
-		|        3 | Peter betrayed Jesus three times.                         | Peter    |
-		+----------+-----------------------------------------------------------+----------+
+		+----------+----------------------------+--------------------------------------+-------+------------+
+		| authorId | birthday                   | description                          | name  | original12 |
+		+----------+----------------------------+--------------------------------------+-------+------------+
+		|        2 | 0015-01-31 00:00:00.000000 | John was the beloved disciple.       | John  |          1 |
+		|        4 | 0016-01-31 00:00:00.000000 | Judas was in charge of the moneybag. | Judas |          1 |
+		|        1 | 0001-01-31 00:00:00.000000 | Paul was the least of the apostles.  | Paul  |          0 |
+		|        3 | 0003-01-31 00:00:00.000000 | Peter betrayed Jesus three times.    | Peter |          1 |
+		+----------+----------------------------+--------------------------------------+-------+------------+
 		```
 
 	1. Type ***select name from Author;***
@@ -333,58 +334,60 @@
 	1. Type ***select * from Author;***.
 
 		```
-		+----------+--------------------------------------+-------+
-		| authorId | description                          | name  |
-		+----------+--------------------------------------+-------+
-		|        1 | Paul was the least of the apostles.  | Paul  |
-		|        2 | John was the beloved disciple.       | John  |
-		|        3 | Peter betrayed Jesus three times.    | Peter |
-		|        4 | Judas was in charge of the moneybag. | Judas |
-		+----------+--------------------------------------+-------+
+		+----------+----------------------------+--------------------------------------+-------+------------+
+		| authorId | birthday                   | description                          | name  | original12 |
+		+----------+----------------------------+--------------------------------------+-------+------------+
+		|        1 | 0001-01-31 00:00:00.000000 | Paul was the least of the apostles.  | Paul  |          0 |
+		|        2 | 0015-01-31 00:00:00.000000 | John was the beloved disciple.       | John  |          1 |
+		|        3 | 0003-01-31 00:00:00.000000 | Peter betrayed Jesus three times.    | Peter |          1 |
+		|        4 | 0016-01-31 00:00:00.000000 | Judas was in charge of the moneybag. | Judas |          1 |
+		+----------+----------------------------+--------------------------------------+-------+------------+
 		```
 
 	1. Type ***delete from Author where name = "Judas";***.
 
+	1. Type ***select * from Author;***.
+
 		```
-		+----------+-------------------------------------+-------+
-		| authorId | description                         | name  |
-		+----------+-------------------------------------+-------+
-		|        1 | Paul was the least of the apostles. | Paul  |
-		|        2 | John was the beloved disciple.      | John  |
-		|        3 | Peter betrayed Jesus three times.   | Peter |
-		+----------+-------------------------------------+-------+
+		+----------+----------------------------+-------------------------------------+-------+------------+
+		| authorId | birthday                   | description                         | name  | original12 |
+		+----------+----------------------------+-------------------------------------+-------+------------+
+		|        1 | 0001-01-31 00:00:00.000000 | Paul was the least of the apostles. | Paul  |          0 |
+		|        2 | 0015-01-31 00:00:00.000000 | John was the beloved disciple.      | John  |          1 |
+		|        3 | 0003-01-31 00:00:00.000000 | Peter betrayed Jesus three times.   | Peter |          1 |
+		+----------+----------------------------+-------------------------------------+-------+------------+
 		```
 
 1. Update from a table.
 
-	1. Type ***insert into Author values (4, "Judas was in charge of the moneybag.", "Judas");***
+	1. Type ***insert into Author values (4, "0016-1-31", "Judas was in charge of the moneybag.", "Judas", 1);***
 
 	1. Type ***select * from Author;***.
 
 		```
-		+----------+--------------------------------------+-------+
-		| authorId | description                          | name  |
-		+----------+--------------------------------------+-------+
-		|        1 | Paul was the least of the apostles.  | Paul  |
-		|        2 | John was the beloved disciple.       | John  |
-		|        3 | Peter betrayed Jesus three times.    | Peter |
-		|        4 | Judas was in charge of the moneybag. | Judas |
-		+----------+--------------------------------------+-------+
+		+----------+----------------------------+--------------------------------------+-------+------------+
+		| authorId | birthday                   | description                          | name  | original12 |
+		+----------+----------------------------+--------------------------------------+-------+------------+
+		|        1 | 0001-01-31 00:00:00.000000 | Paul was the least of the apostles.  | Paul  |          0 |
+		|        2 | 0015-01-31 00:00:00.000000 | John was the beloved disciple.       | John  |          1 |
+		|        3 | 0003-01-31 00:00:00.000000 | Peter betrayed Jesus three times.    | Peter |          1 |
+		|        4 | 0016-01-31 00:00:00.000000 | Judas was in charge of the moneybag. | Judas |          1 |
+		+----------+----------------------------+--------------------------------------+-------+------------+
 		```
 
-	1. Type ***update Author set description = "Matthias was chosen by lot to replace Judas in Acts 1:26.", name = "Matthias" where authorId = 4;***
+	1. Type ***update Author set birthday = "0014-1-31", description = "Matthias was chosen by lot to replace Judas in Acts 1:26.", name = "Matthias", original12 = 0 where authorId = 4;***
 
 	1. Type ***select * from Author;***.
 
 		```
-		+----------+-----------------------------------------------------------+----------+
-		| authorId | description                                               | name     |
-		+----------+-----------------------------------------------------------+----------+
-		|        1 | Paul was the least of the apostles.                       | Paul     |
-		|        2 | John was the beloved disciple.                            | John     |
-		|        3 | Peter betrayed Jesus three times.                         | Peter    |
-		|        4 | Matthias was chosen by lot to replace Judas in Acts 1:26. | Matthias |
-		+----------+-----------------------------------------------------------+----------+
+		+----------+----------------------------+-----------------------------------------------------------+----------+------------+
+		| authorId | birthday                   | description                                               | name     | original12 |
+		+----------+----------------------------+-----------------------------------------------------------+----------+------------+
+		|        1 | 0001-01-31 00:00:00.000000 | Paul was the least of the apostles.                       | Paul     |          0 |
+		|        2 | 0015-01-31 00:00:00.000000 | John was the beloved disciple.                            | John     |          1 |
+		|        3 | 0003-01-31 00:00:00.000000 | Peter betrayed Jesus three times.                         | Peter    |          1 |
+		|        4 | 0014-01-31 00:00:00.000000 | Matthias was chosen by lot to replace Judas in Acts 1:26. | Matthias |          0 |
+		+----------+----------------------------+-----------------------------------------------------------+----------+------------+
 		```
 
 1. Join tables.
@@ -468,8 +471,6 @@
 
 	1. Type ***select distinct Author.name from Author inner join Book on Book.authorId = Author.authorId where Book.description like "%letter%";***
 
-## Challenges
-
 1. Write a SQL statement that returns the name of all the authors and the number of books they wrote.
 
 	<details> 
@@ -492,4 +493,8 @@
 
 	1. Type ***mysql -h127.0.0.1 -uroot -p***. This command works. Why does this work? As a clue, type ***d ps*** to list all the running Docker containers.
 
-1. Repeat the MySQL tutorial but for PostgreSQL and send the instructor your tutorial.
+## PostgreSQL
+
+1. PostgreSQL is an alternative to MySQL.
+
+1. Repeat the PostgreSQL tutorial, but for MySQL.
