@@ -6,6 +6,8 @@
 
 1. Go to http://localhost:8080 after Liferay has started.
 
+1. Type ***<Control+C>*** to stop Liferay.
+
 ## Building Liferay from Source
 
 1. Go to ***/home/me/dev/projects/liferay-portal***.
