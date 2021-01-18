@@ -18,6 +18,26 @@
 
 	1. Liferay also has a private repository at https://github.com/liferay/liferay-portal-ee that is aleady cloned on your computer at ***/home/me/dev/projects/liferay-portal-ee***. That clone and its work directories at ***/home/me/dev/projects/liferay-portal-\**** will be explained later. For now, they are not relevant.
 
+1. Update your local clone of https://github.com/liferay/liferay-portal.
+
+	1. Go to ***/home/me/dev/projects/liferay-portal***.
+
+	1. Type ***g log*** to view the existing Git log.
+
+	1. Type ***g pull upstream*** to download the latest code on upstream.
+
+	1. Open a new Terminator tab and type ***g log***. Notice that the Git log will be updated if your local repository was updated.
+
+1. Push changes from upstream to your origin.
+
+	1. Running ***g pull upstream*** pulls the code from https://github.com/liferay/liferay-portal to your local machine. You also forked https://github.com/liferay/liferay-portal at https://github.com/<YOUR_GITHUB_USERNAME>/liferay-portal.
+
+		New code that is pushed to https://github.com/liferay/liferay-portal is not automatically pushed to https://github.com/<YOUR_GITHUB_USERNAME>/liferay-portal. You have to do it.
+
+	1. Type ***g log origin*** to see the commits in your origin. 
+
+	1. Type ***g push origin*** to push the commits in your local clone up to https://github.com/<YOUR_GITHUB_USERNAME>/liferay-portal.
+
 1. Type ***more /home/me/dev/projects/liferay-portal/app.server.me.properties***. The source code is configured to deploy to ***/home/me/dev/bundles/master***.
 
 	1. Type ***la ~/dev/bundles/master/osgi/modules***.
