@@ -16,7 +16,7 @@
 
 	1. Update /home/me/dev/projects/liferay-portal/.git/config and change all the references from ***brianchandotcom*** to your GitHub username.
 
-	1. Liferay also has a private repository at https://github.com/liferay/liferay-portal-ee that is aleady cloned on your computer at ***/home/me/dev/projects/liferay-portal-ee***. That clone and its work directories at ***/home/me/dev/projects/liferay-portal-\**** will be explained later. For now, they are not relevant.
+	1. Liferay also has a private repository at https://github.com/liferay/liferay-portal-ee that is also aleady cloned on your computer at ***/home/me/dev/projects/liferay-portal-ee***. That clone and its work directories at ***/home/me/dev/projects/liferay-portal-\**** will be explained later. For now, they are not relevant.
 
 1. Update your local clone of https://github.com/liferay/liferay-portal.
 
