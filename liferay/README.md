@@ -32,7 +32,7 @@
 
 	1. Running ***g pull upstream*** pulls the code from https://github.com/liferay/liferay-portal to your local machine. You also forked https://github.com/liferay/liferay-portal at https://github.com/<YOUR_GITHUB_USERNAME>/liferay-portal.
 
-		New code that is pushed to https://github.com/liferay/liferay-portal is not automatically pushed to https://github.com/<YOUR_GITHUB_USERNAME>/liferay-portal. You have to do it.
+		New code that is pushed to https://github.com/liferay/liferay-portal is not automatically pushed to https://github.com/<YOUR_GITHUB_USERNAME>/liferay-portal.
 
 	1. Type ***g log origin*** to see the commits in your origin. 
 
