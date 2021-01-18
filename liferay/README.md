@@ -26,7 +26,7 @@
 
 	1. Type ***g pull upstream*** to download the latest code on upstream.
 
-	1. Open a new Terminator tab and type ***g log***. Notice that the Git log will be updated if your local repository was updated.
+	1. Open a new Terminator tab and type ***g log***. Notice that the Git log will be updated if your local clone was updated.
 
 1. Push changes from upstream to your origin.
 
