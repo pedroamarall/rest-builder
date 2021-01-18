@@ -28,7 +28,7 @@
 
 	1. Open a new Terminator tab and type ***g log***. Notice that the Git log will be updated if your local clone was updated.
 
-1. Push changes from upstream to your origin.
+1. Push changes from your local clone to your origin.
 
 	1. Running ***g pull upstream*** pulls the code from https://github.com/liferay/liferay-portal to your local machine. You also forked https://github.com/liferay/liferay-portal at https://github.com/<YOUR_GITHUB_USERNAME>/liferay-portal.
 
