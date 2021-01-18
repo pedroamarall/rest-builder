@@ -24,13 +24,13 @@
 
 	1. Type ***g log*** to view the existing Git log.
 
-	1. Type ***g pull upstream*** to download the latest code on upstream.
+	1. Type ***g pull upstream master*** to pull the master branch from upstream (i.e. to download the latest commits on the master branch from https://github.com/liferay/liferay-portal).
 
 	1. Open a new Terminator tab and type ***g log***. Notice that the Git log will be updated if your local clone was updated.
 
 1. Push changes from your local clone to your origin.
 
-	1. Running ***g pull upstream*** pulls the code from https://github.com/liferay/liferay-portal to your local machine. You also forked https://github.com/liferay/liferay-portal at https://github.com/<YOUR_GITHUB_USERNAME>/liferay-portal.
+	1. Running ***g pull upstream master*** pulls the code from https://github.com/liferay/liferay-portal to your local machine. You also forked https://github.com/liferay/liferay-portal at https://github.com/<YOUR_GITHUB_USERNAME>/liferay-portal.
 
 		New code that is pushed to https://github.com/liferay/liferay-portal is not automatically pushed to https://github.com/<YOUR_GITHUB_USERNAME>/liferay-portal.
 
