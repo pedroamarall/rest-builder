@@ -48,57 +48,57 @@
     1. Create a file MyTestFile.testcase
     1. Add the following code snippet:
 
-    ```
-    @component-name = "app-builder"
-    definition {
-        property testray.main.component.name = "App Builder";
+        ```
+        @component-name = "app-builder"
+        definition {
+            property testray.main.component.name = "App Builder";
 
-        setUp {
-            TestCase.setUpPortalInstance();
+            setUp {
+                TestCase.setUpPortalInstance();
 
-            User.firstLoginPG();
+                User.firstLoginPG();
 
-            Navigator.openURL();
+                Navigator.openURL();
+            }
+
+            tearDown {
+                User.logoutAndLoginPG(
+                    userLoginEmailAddress = "test@liferay.com",
+                    userLoginFullName = "Test Test");
+            }
+
+            @description = "Access Portal Global Menu and validate CONFIGURATION string at Control Panel"
+            @priority = "5"
+            test ValidateConfigurationStringAtControlPanel {
+
+
+            }
+
+            @description = "Set Screen size to custom and validate values"
+            @priority = "5"
+            test SetScreenSizeAndValidateValues {
+
+
+            }
         }
-
-        tearDown {
-            User.logoutAndLoginPG(
-                userLoginEmailAddress = "test@liferay.com",
-                userLoginFullName = "Test Test");
-        }
-
-        @description = "Access Portal Global Menu and validate CONFIGURATION string at Control Panel"
-        @priority = "5"
-        test ValidateConfigurationStringAtControlPanel {
-
-
-        }
-
-        @description = "Set Screen size to custom and validate values"
-        @priority = "5"
-        test SetScreenSizeAndValidateValues {
-
-
-        }
-    }
-    ```
+        ```
     1. Open the terminal and execute the following command: ***ant -f build-test.xml run-selenium-test -Dtest.class=MyTestFile#ValidateConfigurationStringAtControlPanel*** or
     ***ant -f build-test.xml run-selenium-test -Dtest.class=MyTestFile#SetScreenSizeAndValidateValues***
     1. Implement the tests (next topic)
 
 1. Creating sample tests (based on file created in the previous topic) 
     1. Validating a string
-    1. Open the portal;
-    1. Open the Global Menu (top right corner - );
-    1. Switch to Control Panel option;
-    1. Assert "CONFIGURATION" section is shown.
+        1. Open the portal;
+        1. Open the Global Menu (top right corner - );
+        1. Switch to Control Panel option;
+        1. Assert "CONFIGURATION" section is shown.
 
-1. Inputting values
-    1. Open the portal;
-    1. Open the Simulation menu (top right corner - );
-    1. Change the Screen Size to Custom;
-    1. Set the Height (px) to 1920 px  and Width (px) to 1080 px;
-    1. Close the Simulation menu;
-    1. Reopen the Simulation menu;
-    1. Assert the values previously set are persisted.
+    1. Inputting values
+        1. Open the portal;
+        1. Open the Simulation menu (top right corner - );
+        1. Change the Screen Size to Custom;
+        1. Set the Height (px) to 1920 px  and Width (px) to 1080 px;
+        1. Close the Simulation menu;
+        1. Reopen the Simulation menu;
+        1. Assert the values previously set are persisted.
 
