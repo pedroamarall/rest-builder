@@ -7,15 +7,15 @@ source /home/me/dev/projects/liferay-basic-training/dotfiles/_common.sh
 PACKAGE_NAMES=(
 	os
 	#
-	#java
+	java
 	#
-	#chrome
-	#docker
-	#slack
-	#smartgit
-	#sublime
-	#virtualbox
-	#zoom
+	chrome
+	docker
+	slack
+	smartgit
+	sublime
+	virtualbox
+	zoom
 )
 
 for PACKAGE_NAME in ${PACKAGE_NAMES[@]}

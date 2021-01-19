@@ -429,33 +429,33 @@ function update_packages {
 	sudo dnf update -y
 }
 
-#update_packages
+update_packages
 
-#install_rpm_fusion
+install_rpm_fusion
 
-#customize_bash
-#customize_git
-#customize_hostname
-#customize_lxdm
-#customize_openbox
-#customize_screensaver
-#customize_ssh
-#customize_sysctl
-#customize_xinput
-#customize_xrandr
-#customize_vi
-#disable_firewall
-#disable_selinux
-#install_autokey
+customize_bash
+customize_git
+customize_hostname
+customize_lxdm
+customize_openbox
+customize_screensaver
+customize_ssh
+customize_sysctl
+customize_xinput
+customize_xrandr
+customize_vi
+disable_firewall
+disable_selinux
+install_autokey
 install_bluetooth
-#install_conky
-#install_exfat
-#install_fonts
-#install_ntpdate
-#install_terminator
-#install_thunar
-#install_ulauncher
-#remove_unused_icons
-#swap_caps_and_control
+install_conky
+install_exfat
+install_fonts
+install_ntpdate
+install_terminator
+install_thunar
+install_ulauncher
+remove_unused_icons
+swap_caps_and_control
 
-#customize_login
+customize_login
