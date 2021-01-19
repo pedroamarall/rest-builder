@@ -35,6 +35,8 @@ function prepare_repository {
 	fi
 }
 
+echo "app.server.parent.dir=/home/me/dev/bundles/master" > ~/dev/projects/liferay-portal/app.server.me.properties && rm ~/dev/projects/liferay-portal/*.brian.*
+
 prepare_repository liferay-portal-ee 7.0.x
 prepare_repository liferay-portal-ee 7.0.x-private
 prepare_repository liferay-portal-ee 7.1.x
