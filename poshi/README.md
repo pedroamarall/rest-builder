@@ -5,10 +5,8 @@
 1. Follow the tutorial in https://qa-compendium.readthedocs.io/en/latest/poshi/index-poshi.html. Your portal is already located at ***/home/me/dev/projects/liferay-portal***.
 
 1. Understanding and explaining what the following scripts do (level: 4.1 to 4.4 = easy, 4.5 to 4.8 = moderate)
-
-Go to https://github.com/liferay/liferay-portal/tree/master/modules/apps/app-builder/app-builder-test/src/testFunctional/tests 
-
-Some of these tests are available in ```AppBuilder.testcase``` or ```shared/SharedAppBuilder.testcase```
+    Go to https://github.com/liferay/liferay-portal/tree/master/modules/apps/app-builder/app-builder-test/src/testFunctional/tests 
+    Some of these tests are available in ```AppBuilder.testcase``` or ```shared/SharedAppBuilder.testcase```
 
     1. test ValidateEmptyStateOfAppsListingScreen
     1. test AddSimpleFormViewWithDateField
@@ -37,6 +35,12 @@ Some of these tests are available in ```AppBuilder.testcase``` or ```shared/Shar
     1. Go to the portal home;
     1. Run ***ant -f build-test.xml run-selenium-test -Dtest.class=FILE#TEST_METHOD*** where ***FILE*** is the name of the file where the ***TEST_METHOD*** is located
     1. Example: ***ant -f build-test.xml run-selenium-test -Dtest.class=AppBuilder#AddSimpleFormViewWithDateField***
+
+1. Download IDE according to your preference
+    1. Sublime Text 3 or VS Code;
+    1. We recommend scoping your portalweb folder into a project;
+    1. Set the language association of ```*.testcases```, ```*.macros``` to Groovy and ```*.paths``` to XML for a better content visualization.
+
 
 1. Steps to create a new test
     1. Go to portal-web/test/functional/com/liferay/portalweb/tests/
