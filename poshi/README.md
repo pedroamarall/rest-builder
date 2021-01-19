@@ -20,7 +20,7 @@
 
 1. How to speed up your test execution (tip):
     1. Go to the portal home;
-    1. Create the following file: test.<your-user-name>.properties
+    1. Create the following file: ```test.<your-user-name>.properties```
     1. Add the following code snippet: 
     ```
     timeout.explicit.wait=10
@@ -39,7 +39,7 @@
 1. Download IDE according to your preference
     1. Sublime Text 3 or VS Code;
     1. We recommend scoping your portalweb folder into a project;
-    1. Set the language association of ```*.testcases```, ```*.macros``` to Groovy and ```*.paths``` to XML for a better content visualization.
+    1. Set the [language association](https://code.visualstudio.com/docs/languages/overview#_changing-the-language-for-the-selected-file) of ```*.testcases```, ```*.macros``` to Groovy and ```*.paths``` to XML for a better content visualization.
 
 
 1. Steps to create a new test
