@@ -48,41 +48,41 @@
     1. Create a file MyTestFile.testcase
     1. Add the following code snippet:
 
-```
-@component-name = "app-builder"
-definition {
-    property testray.main.component.name = "App Builder";
+    ```
+    @component-name = "app-builder"
+    definition {
+        property testray.main.component.name = "App Builder";
 
-    setUp {
-        TestCase.setUpPortalInstance();
+        setUp {
+            TestCase.setUpPortalInstance();
 
-        User.firstLoginPG();
+            User.firstLoginPG();
 
-        Navigator.openURL();
+            Navigator.openURL();
+        }
+
+        tearDown {
+            User.logoutAndLoginPG(
+                userLoginEmailAddress = "test@liferay.com",
+                userLoginFullName = "Test Test");
+        }
+
+        @description = "Access Portal Global Menu and validate CONFIGURATION string at Control Panel"
+        @priority = "5"
+        test ValidateConfigurationStringAtControlPanel {
+
+
+        }
+
+        @description = "Set Screen size to custom and validate values"
+        @priority = "5"
+        test SetScreenSizeAndValidateValues {
+
+
+        }
     }
-
-    tearDown {
-        User.logoutAndLoginPG(
-            userLoginEmailAddress = "test@liferay.com",
-            userLoginFullName = "Test Test");
-    }
-
-    @description = "Access Portal Global Menu and validate CONFIGURATION string at Control Panel"
-    @priority = "5"
-    test ValidateConfigurationStringAtControlPanel {
-
-
-    }
-
-    @description = "Set Screen size to custom and validate values"
-    @priority = "5"
-    test SetScreenSizeAndValidateValues {
-
-
-    }
-}
-```
-   1. Open the terminal and execute the following command: ***ant -f build-test.xml run-selenium-test -Dtest.class=MyTestFile#ValidateConfigurationStringAtControlPanel*** or
+    ```
+    1. Open the terminal and execute the following command: ***ant -f build-test.xml run-selenium-test -Dtest.class=MyTestFile#ValidateConfigurationStringAtControlPanel*** or
     ***ant -f build-test.xml run-selenium-test -Dtest.class=MyTestFile#SetScreenSizeAndValidateValues***
     1. Implement the tests (next topic)
 
