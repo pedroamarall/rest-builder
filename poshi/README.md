@@ -16,6 +16,9 @@ Some of these tests are available in ```AppBuilder.testcase``` or ```shared/Shar
     1. test FormViewSearchByTerm
     1. test AddSimpleTableView
     1. test CreateRemoveUpdateDeleteEntriesOfStandaloneApp
+    1. test DeployAppChoosingBetweenDifferentTableViews
+    1. test PublishAppAsWidgetAndSubmitEntry
+
 
 1. How to speed up your test execution (tip):
     1. Go to the portal home;
@@ -42,44 +45,41 @@ Some of these tests are available in ```AppBuilder.testcase``` or ```shared/Shar
     1. Add the following code snippet:
 
 ```
-    @component-name = "app-builder"
-    definition {
-        property testray.main.component.name = "App Builder";
+@component-name = "app-builder"
+definition {
+    property testray.main.component.name = "App Builder";
 
-        setUp {
-            TestCase.setUpPortalInstance();
+    setUp {
+        TestCase.setUpPortalInstance();
 
-            User.firstLoginPG();
+        User.firstLoginPG();
 
-            Navigator.openURL();
-        }
-
-        tearDown {
-            User.logoutAndLoginPG(
-                userLoginEmailAddress = "test@liferay.com",
-                userLoginFullName = "Test Test");
-        }
-
-        @description = "Access Portal Global Menu and validate CONFIGURATION string at Control Panel"
-        @priority = "5"
-        test ValidateConfigurationStringAtControlPanel {
-
-
-        }
-
-        @description = "Set Screen size to custom and validate values"
-        @priority = "5"
-        test SetScreenSizeAndValidateValues {
-
-
-        }
+        Navigator.openURL();
     }
 
-```
+    tearDown {
+        User.logoutAndLoginPG(
+            userLoginEmailAddress = "test@liferay.com",
+            userLoginFullName = "Test Test");
+    }
 
-    1. Open the terminal and execute the following command: ***ant -f build-test.xml run-selenium-test -Dtest.class=MyTestFile#ValidateConfigurationStringAtControlPanel***
-    or
-    ant -f build-test.xml run-selenium-test -Dtest.class=MyTestFile#SetScreenSizeAndValidateValues
+    @description = "Access Portal Global Menu and validate CONFIGURATION string at Control Panel"
+    @priority = "5"
+    test ValidateConfigurationStringAtControlPanel {
+
+
+    }
+
+    @description = "Set Screen size to custom and validate values"
+    @priority = "5"
+    test SetScreenSizeAndValidateValues {
+
+
+    }
+}
+```
+   1. Open the terminal and execute the following command: ***ant -f build-test.xml run-selenium-test -Dtest.class=MyTestFile#ValidateConfigurationStringAtControlPanel*** or
+    ***ant -f build-test.xml run-selenium-test -Dtest.class=MyTestFile#SetScreenSizeAndValidateValues***
     1. Implement the tests (next topic)
 
 1. Creating sample tests (based on file created in the previous topic) 
@@ -89,12 +89,12 @@ Some of these tests are available in ```AppBuilder.testcase``` or ```shared/Shar
     1. Switch to Control Panel option;
     1. Assert "CONFIGURATION" section is shown.
 
-Inputting values
-Open the portal;
-Open the Simulation menu (top right corner - );
-Change the Screen Size to Custom;
-Set the Height (px) to 1920 px  and Width (px) to 1080 px;
-Close the Simulation menu;
-Reopen the Simulation menu;
-Assert the values previously set are persisted.
+1. Inputting values
+    1. Open the portal;
+    1. Open the Simulation menu (top right corner - );
+    1. Change the Screen Size to Custom;
+    1. Set the Height (px) to 1920 px  and Width (px) to 1080 px;
+    1. Close the Simulation menu;
+    1. Reopen the Simulation menu;
+    1. Assert the values previously set are persisted.
 
