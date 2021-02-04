@@ -41,10 +41,6 @@ function customize_login {
 	sudo bash -c "echo \"/bin/bash /usr/local/bin/xinput_logitech_mouse\" >> /etc/lxdm/PostLogin"
 	sudo bash -c "echo \"/bin/bash /usr/local/bin/xrandr_monitor\" >> /etc/lxdm/PostLogin"
 	sudo bash -c "echo \"/bin/bash /usr/local/bin/xset_disable_screensaver\" >> /etc/lxdm/PostLogin"
-
-	#sudo_restore_from_original /etc/lxdm/PostLogin
-
-	sudo bash -c "echo \"/usr/libexec/notification-daemon start &\" >> /etc/lxdm/PostLogin"
 }
 
 function customize_lxdm {
@@ -52,6 +48,12 @@ function customize_lxdm {
 
 	sudo sed -i "s@disable=0@disable=1@" /etc/lxdm/lxdm.conf
 	sudo sed -i "s@lang=1@lang=0@" /etc/lxdm/lxdm.conf
+}
+
+function customize_notifications {
+	sudo bash -c "echo \"[D-BUS Service]\" > /usr/share/dbus-1/services/org.freedesktop.Notifications.service"
+	sudo bash -c "echo \"Exec=/usr/libexec/notification-daemon\" >> /usr/share/dbus-1/services/org.freedesktop.Notifications.service"
+	sudo bash -c "echo \"Name=org.freedesktop.Notifications\" >> /usr/share/dbus-1/services/org.freedesktop.Notifications.service"
 }
 
 function customize_openbox {
@@ -437,6 +439,7 @@ customize_bash
 customize_git
 customize_hostname
 customize_lxdm
+customize_notifications
 customize_openbox
 customize_screensaver
 customize_ssh
