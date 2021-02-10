@@ -415,6 +415,7 @@ function update_packages {
 		python2 \
 		s3cmd \
 		screen \
+		simplescreenrecorder \
 		slock \
 		sysstat \
 		tigervnc \

@@ -78,6 +78,12 @@
 
 	1. Type ***<Control+Q>*** to quit.
 
+1. Launch SimpleScreenRecorder.
+
+	1. Use SimpleScreenRecorder to record your screen.
+
+	1. Type ***<Alt+F4>*** to quit.
+
 1. Launch Slack.
 
 	1. Type ***<Alt+Space>*** and then type ***Slack***.
