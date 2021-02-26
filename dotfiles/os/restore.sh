@@ -417,6 +417,7 @@ function update_packages {
 		screen \
 		simplescreenrecorder \
 		slock \
+		sshpass \
 		sysstat \
 		tigervnc \
 		wget \
