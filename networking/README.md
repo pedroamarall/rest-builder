@@ -192,7 +192,7 @@
 
 	1. Type ***la ~/.ssh***
 
-	1. Notice that you renamed ***joe_bloggs*** to ***id_rsa*** and ***joe_bloggs.pub*** to ***joe_bloggs.pub*** and moved the files to ***~/.ssh***.
+	1. Notice that you renamed ***joe_bloggs*** to ***id_rsa*** and ***joe_bloggs.pub*** to ***id_rsa.pub*** and moved the files to ***~/.ssh***.
 
 1. Connect via an SSH key.
 
