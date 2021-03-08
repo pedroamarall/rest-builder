@@ -8,8 +8,11 @@ function prepare_repository {
 
 	work_dir=~/dev/projects/${work_dir}-${branch}
 
-	if [ ! -e ${work_dir} ]
+	if [ ! -e ${work_dir} ] ||
+	   [ ! -e ${work_dir}/.git ]
 	then
+		rm -fr ${work_dir}
+
 		echo ""
 		echo "git new-workdir ~/dev/projects/${repository} ${work_dir} ${branch}"
 		echo ""
