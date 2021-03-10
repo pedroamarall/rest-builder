@@ -116,7 +116,7 @@
 
 	1. Check if the service is active (running) using ***systemctl status sshd.service***. If it is not, you should start it with ***systemctl start sshd.service***. You may also set it to startup automatically on boot using ***systemctl enable sshd.service***.
 
-	1. Notice that the ***systemctl \<ACTION\> \<SERVICE\>*** is a very important tool to control some of linux services. You'd may like to check more about it [here](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)
+	1. Notice that the ***systemctl \<ACTION\> \<SERVICE\>*** is a very important tool to control some of linux services. You'd may like to check more about it [here](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units).
 
 1. Connect via SSH to a remote computer.
 
@@ -302,7 +302,7 @@
 
 ## Yum
 
-1. Yum is a package-management utility where you can install and manage several linux packages. Its basic sintax is ***yum \<COMMAND\> \<SUBCOMMAND\>***.
+1. Yum is a package-management utility where you can install and manage several linux packages. Its basic sintax is ***yum \<COMMAND\> \<SUBCOMMAND\>**.
 
 	1. Use it yo install telnet using ***sudo yum install telnet*** and, type your user password and then answer the Yum prompt with 'Yes'.
 
