@@ -473,7 +473,7 @@
 
 1. Write a SQL statement that returns the name of all the authors and the number of books they wrote.
 
-	<details> 
+	<details>
 		<summary>Show answer.</summary>
 
 		select Author.name from Author inner join Book on Author.authorId = Book.authorId group by Author.authorId having count(Book.authorId) > 1;
@@ -481,7 +481,7 @@
 
 1. Write a SQL statement that returns the name of all the authors who wrote more than one book.
 
-	<details> 
+	<details>
 		<summary>Show answer.</summary>
 
 		select Author.name, count(Book.authorId) from Author inner join Book on Author.authorId = Book.authorId group by Author.authorId;

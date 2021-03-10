@@ -16,7 +16,7 @@
 
 1. Send a Git pull request to ***brianchandotcom***, replacing the PLACEHOLDER text below with the JavaScript commands.
 
-	<details> 
+	<details>
 		<summary>Show JavaScript commands.</summary>
 
 		PLACEHOLDER
@@ -26,7 +26,7 @@
 
 1. Send a Git pull request to ***brianchandotcom***, replacing the PLACEHOLDER text below with the JavaScript commands.
 
-	<details> 
+	<details>
 		<summary>Show JavaScript commands.</summary>
 
 		PLACEHOLDER
