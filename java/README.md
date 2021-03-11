@@ -27,9 +27,9 @@
 1. Type ***la***.
 
 	```
-	drwxrwxr-x 1 brian brian  18 Mar 11 12:05 .
-	drwxrwxr-x 1 brian brian 404 Mar 11 12:05 ..
-	-rw-rw-r-- 1 brian brian   0 Mar 11 12:05 Test.java
+	drwxrwxr-x 1 me me  18 Mar 11 12:05 .
+	drwxrwxr-x 1 me me 404 Mar 11 12:05 ..
+	-rw-rw-r-- 1 me me   0 Mar 11 12:05 Test.java
 	```
 
 1. Type ***javac *.java***.
@@ -37,10 +37,10 @@
 1. Type ***la***.
 
 	```
-	drwxrwxr-x 1 brian brian  38 Mar 11 12:07 .
-	drwxrwxr-x 1 brian brian 402 Mar 11 12:07 ..
-	-rw-rw-r-- 1 brian brian 415 Mar 11 12:07 Test.class
-	-rw-rw-r-- 1 brian brian 107 Mar 11 12:07 Test.java
+	drwxrwxr-x 1 me me  38 Mar 11 12:07 .
+	drwxrwxr-x 1 me me 402 Mar 11 12:07 ..
+	-rw-rw-r-- 1 me me 415 Mar 11 12:07 Test.class
+	-rw-rw-r-- 1 me me 107 Mar 11 12:07 Test.java
 	```
 
 1. Notice the new Test.class file. Type ***osub Test.class***.

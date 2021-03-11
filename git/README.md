@@ -341,10 +341,10 @@
 	1. Type ***la*** and see that you have three files.
 
 		```
-		drwxrwxr-x 1 brian brian  144 Jan 11 16:03 .git
-		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 abc.txt
-		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 def.txt
-		-rw-rw-r-- 1 brian brian   11 Jan 11 16:03 ghi.txt
+		drwxrwxr-x 1 me me  144 Jan 11 16:03 .git
+		-rw-rw-r-- 1 me me   11 Jan 11 15:33 abc.txt
+		-rw-rw-r-- 1 me me   11 Jan 11 15:33 def.txt
+		-rw-rw-r-- 1 me me   11 Jan 11 16:03 ghi.txt
 		```
 
 	1. Type ***g co master*** to go to your master branch.
@@ -352,11 +352,11 @@
 	1. Type ***la*** and see that you only have two files.
 
 		```
-		drwxrwxr-x 1 brian brian   36 Jan 11 16:05 .
-		drwxrwxr-x 1 brian brian 2358 Jan 11 15:54 ..
-		drwxrwxr-x 1 brian brian  144 Jan 11 16:05 .git
-		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 abc.txt
-		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 def.txt
+		drwxrwxr-x 1 me me   36 Jan 11 16:05 .
+		drwxrwxr-x 1 me me 2358 Jan 11 15:54 ..
+		drwxrwxr-x 1 me me  144 Jan 11 16:05 .git
+		-rw-rw-r-- 1 me me   11 Jan 11 15:33 abc.txt
+		-rw-rw-r-- 1 me me   11 Jan 11 15:33 def.txt
 		```
 
 	1. Type ***g log*** and see that you only have two commits.
@@ -409,12 +409,12 @@
 	1. Type ***la***. Notice that you now have all three files.
 
 		```
-		drwxrwxr-x 1 brian brian   50 Jan 11 16:07 .
-		drwxrwxr-x 1 brian brian 2358 Jan 11 15:54 ..
-		drwxrwxr-x 1 brian brian  144 Jan 11 16:07 .git
-		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 abc.txt
-		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 def.txt
-		-rw-rw-r-- 1 brian brian   11 Jan 11 16:07 ghi.txt
+		drwxrwxr-x 1 me me   50 Jan 11 16:07 .
+		drwxrwxr-x 1 me me 2358 Jan 11 15:54 ..
+		drwxrwxr-x 1 me me  144 Jan 11 16:07 .git
+		-rw-rw-r-- 1 me me   11 Jan 11 15:33 abc.txt
+		-rw-rw-r-- 1 me me   11 Jan 11 15:33 def.txt
+		-rw-rw-r-- 1 me me   11 Jan 11 16:07 ghi.txt
 		```
 
 	1. Type ***g log***.
@@ -527,10 +527,10 @@
 	1. Type ***la***.
 
 		```
-		drwxrwxr-x 1 brian brian   22 Jan 12 08:12 .
-		drwxrwxr-x 1 brian brian 2358 Jan 11 15:54 ..
-		drwxrwxr-x 1 brian brian  162 Jan 12 08:12 .git
-		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 def.txt
+		drwxrwxr-x 1 me me   22 Jan 12 08:12 .
+		drwxrwxr-x 1 me me 2358 Jan 11 15:54 ..
+		drwxrwxr-x 1 me me  162 Jan 12 08:12 .git
+		-rw-rw-r-- 1 me me   11 Jan 11 15:33 def.txt
 		```
 
 	1. Type ***echo "Jjjjjjjjjj" > jkl.txt***.
@@ -558,11 +558,11 @@
 	1. Type ***la***.
 
 		```
-		drwxrwxr-x 1 brian brian   36 Jan 12 08:13 .
-		drwxrwxr-x 1 brian brian 2358 Jan 11 15:54 ..
-		drwxrwxr-x 1 brian brian  162 Jan 12 08:13 .git
-		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 def.txt
-		-rw-rw-r-- 1 brian brian   11 Jan 12 08:13 jkl.txt
+		drwxrwxr-x 1 me me   36 Jan 12 08:13 .
+		drwxrwxr-x 1 me me 2358 Jan 11 15:54 ..
+		drwxrwxr-x 1 me me  162 Jan 12 08:13 .git
+		-rw-rw-r-- 1 me me   11 Jan 11 15:33 def.txt
+		-rw-rw-r-- 1 me me   11 Jan 12 08:13 jkl.txt
 		```
 
 	1. Type ***g merge master***. You are taken to a Vi screen to enter a description. Notice how this behavior is different from when you typed ***g merge master*** earlier.
@@ -590,13 +590,13 @@
 	1. Type ***la***.
 
 		```
-		drwxrwxr-x 1 brian brian   64 Jan 12 08:14 .
-		drwxrwxr-x 1 brian brian 2358 Jan 11 15:54 ..
-		drwxrwxr-x 1 brian brian  162 Jan 12 08:15 .git
-		-rw-rw-r-- 1 brian brian   11 Jan 12 08:14 abc.txt
-		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 def.txt
-		-rw-rw-r-- 1 brian brian   11 Jan 12 08:14 ghi.txt
-		-rw-rw-r-- 1 brian brian   11 Jan 12 08:13 jkl.txt
+		drwxrwxr-x 1 me me   64 Jan 12 08:14 .
+		drwxrwxr-x 1 me me 2358 Jan 11 15:54 ..
+		drwxrwxr-x 1 me me  162 Jan 12 08:15 .git
+		-rw-rw-r-- 1 me me   11 Jan 12 08:14 abc.txt
+		-rw-rw-r-- 1 me me   11 Jan 11 15:33 def.txt
+		-rw-rw-r-- 1 me me   11 Jan 12 08:14 ghi.txt
+		-rw-rw-r-- 1 me me   11 Jan 12 08:13 jkl.txt
 		```
 
 		Notice that it has all the files from before. Git did its best to merge the two branches. At Liferay, merge commits are considered an anti-pattern and generally avoided.
@@ -628,12 +628,12 @@
 	1. Type ***la***.
 
 		```
-		drwxrwxr-x 1 brian brian   50 Jan 12 08:20 .
-		drwxrwxr-x 1 brian brian 2358 Jan 11 15:54 ..
-		drwxrwxr-x 1 brian brian  162 Jan 12 08:21 .git
-		-rw-rw-r-- 1 brian brian   11 Jan 12 08:20 abc.txt
-		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 def.txt
-		-rw-rw-r-- 1 brian brian   11 Jan 12 08:20 ghi.txt
+		drwxrwxr-x 1 me me   50 Jan 12 08:20 .
+		drwxrwxr-x 1 me me 2358 Jan 11 15:54 ..
+		drwxrwxr-x 1 me me  162 Jan 12 08:21 .git
+		-rw-rw-r-- 1 me me   11 Jan 12 08:20 abc.txt
+		-rw-rw-r-- 1 me me   11 Jan 11 15:33 def.txt
+		-rw-rw-r-- 1 me me   11 Jan 12 08:20 ghi.txt
 
 		```
 
@@ -712,13 +712,13 @@
 	1. Type ***la***.
 
 		```
-		drwxrwxr-x 1 brian brian   64 Jan 12 08:22 .
-		drwxrwxr-x 1 brian brian 2358 Jan 11 15:54 ..
-		drwxrwxr-x 1 brian brian  162 Jan 12 08:22 .git
-		-rw-rw-r-- 1 brian brian   11 Jan 12 08:20 abc.txt
-		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 def.txt
-		-rw-rw-r-- 1 brian brian   11 Jan 12 08:20 ghi.txt
-		-rw-rw-r-- 1 brian brian   11 Jan 12 08:22 jkl.txt
+		drwxrwxr-x 1 me me   64 Jan 12 08:22 .
+		drwxrwxr-x 1 me me 2358 Jan 11 15:54 ..
+		drwxrwxr-x 1 me me  162 Jan 12 08:22 .git
+		-rw-rw-r-- 1 me me   11 Jan 12 08:20 abc.txt
+		-rw-rw-r-- 1 me me   11 Jan 11 15:33 def.txt
+		-rw-rw-r-- 1 me me   11 Jan 12 08:20 ghi.txt
+		-rw-rw-r-- 1 me me   11 Jan 12 08:22 jkl.txt
 		```
 
 		Notice that all four files are there.
@@ -838,12 +838,12 @@
 	1. Type ***la***.
 
 		```
-		drwxrwxr-x 1 brian brian   50 Jan 12 08:32 .
-		drwxrwxr-x 1 brian brian 2358 Jan 11 15:54 ..
-		drwxrwxr-x 1 brian brian  162 Jan 12 08:32 .git
-		-rw-rw-r-- 1 brian brian   11 Jan 12 08:20 abc.txt
-		-rw-rw-r-- 1 brian brian   11 Jan 11 15:33 def.txt
-		-rw-rw-r-- 1 brian brian   11 Jan 12 08:30 jkl.txt
+		drwxrwxr-x 1 me me   50 Jan 12 08:32 .
+		drwxrwxr-x 1 me me 2358 Jan 11 15:54 ..
+		drwxrwxr-x 1 me me  162 Jan 12 08:32 .git
+		-rw-rw-r-- 1 me me   11 Jan 12 08:20 abc.txt
+		-rw-rw-r-- 1 me me   11 Jan 11 15:33 def.txt
+		-rw-rw-r-- 1 me me   11 Jan 12 08:30 jkl.txt
 		```
 
 		The file ghi.txt is no longer there because that commit was removed. You just rewrote history and so the file ghi.txt was never added.
