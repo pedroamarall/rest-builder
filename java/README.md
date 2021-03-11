@@ -76,6 +76,29 @@
 
 	This is bytecode (a machine representation) of your Test.java file.
 
+1. Modify Test.java and remove a semicolon.
+
+	```
+	System.out.println("Hello, World!");
+	```
+
+	The above block should look like the following.
+
+	```
+	System.out.println("Hello, World!")
+	```
+
+1. Type ***javac \*.java***.
+
+	```
+	Test.java:4: error: ';' expected
+			System.out.println("Hello, World!")
+			                                   ^
+	1 error
+	```
+
+1. Readd your semicolon and type ***javac \*.java***.
+
 ## Run
 
 1. Type ***java Test***.
@@ -101,6 +124,8 @@
 	```
 	Hello, Bob!
 	```
+
+1. You use the program ***javac*** to compile Java files and you use the program ***java*** to run the compiled classes.
 
 ## Imports
 
