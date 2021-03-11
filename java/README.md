@@ -32,7 +32,7 @@
 	-rw-rw-r-- 1 me me   0 Mar 11 12:05 Test.java
 	```
 
-1. Type ***javac *.java***.
+1. Type ***javac \*.java***.
 
 1. Type ***la***.
 
@@ -94,7 +94,7 @@
 
 	Why did it still print out ***Hello, World!***?
 
-1. Type ***javac *.java***.
+1. Type ***javac \*.java***.
 
 1. Type ***java Test***.
 
