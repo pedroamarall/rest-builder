@@ -28,6 +28,10 @@
 
 1. [Markdown](markdown)
 
+1. [Liferay](liferay)
+
+1. [Poshi](poshi)
+
 1. [JavaScript](javascript)
 
 1. [Java](java)
@@ -37,9 +41,5 @@
 1. [Blade](blade)
 
 1. [IDE](ide)
-
-1. [Liferay](liferay)
-
-1. [Poshi](poshi)
 
 1. [Problem Based Learning](problem-based-learning)
