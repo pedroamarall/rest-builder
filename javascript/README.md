@@ -31,3 +31,19 @@
 
 		PLACEHOLDER
 	</details>
+
+## React and REST
+
+1. Type ***sudo dnf install nodejs npm*** to install Node and NPM.
+
+1. Download https://github.com/brianchandotcom/liferay-learn/blob/master/docs/_template/js/setup_tutorial.sh.
+
+1. Execute ***setup_tutorial.sh*** to ensure Node and NPM is setup correctly.
+
+1. Follow the tutorial in https://github.com/ethib137/liferay-react-example.
+
+	1. Do not follow the tutorial blindly. You have already executed some of the steps.
+
+	1. Deploy the app to a Liferay docker image using the ***docker cp*** command.
+
+		1. Read [Installing Apps and Other Artifacts to Containers](https://learn.liferay.com/dxp/7.x/en/installation-and-upgrades/installing-liferay/using-liferay-docker-images/installing-apps-and-other-artifacts-to-containers.html) to learn how to use ***docker cp***.
