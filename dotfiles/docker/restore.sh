@@ -23,9 +23,12 @@ sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
 
 if [ -e /var/lib/docker ]
 then
-	sudo mv /var/lib/docker /home
+	if [ ! -e /home/docker ]
+	then
+		sudo mv /var/lib/docker /home
 
-	sudo ln -s /home/docker /var/lib/docker
+		sudo ln -s /home/docker /var/lib/docker
+	fi
 else
 	sudo mkdir /home/docker
 
