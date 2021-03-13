@@ -406,6 +406,7 @@ function update_packages {
 		maim \
 		NetworkManager-vpnc \
 		NetworkManager-vpnc-gnome \
+		nmap \
 		npm \
 		notification-daemon \
 		p7zip \

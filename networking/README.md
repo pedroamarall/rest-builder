@@ -300,8 +300,6 @@
 	
 	1. Apache defaults to run port 80.
 
-## Telnet
-
 1. Telnet to localhost on port 22.
 
 	1. Type ***telnet localhost 22***.
@@ -338,4 +336,4 @@
 
 1. Telnet is a quick way to verify if you can communicate with another computer on a specific port.
 
-1. Optionally, see the man page for [telnet](https://linux.die.net/man/1/telnet) for more information.
+1. Optionally, see the man page for [telnet](https://linux.die.net/man/1/telnet) and this [tutorial](http://www.linuxandubuntu.com/home/what-are-ports-how-to-find-open-ports-in-linux) for more information.
