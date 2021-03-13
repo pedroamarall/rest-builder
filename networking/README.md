@@ -300,13 +300,7 @@
 	
 	1. Apache defaults to run port 80.
 
-## Yum
-
-1. Yum is a package-management utility where you can install and manage several linux packages. Its basic sintax is ***yum \<COMMAND\> \<SUBCOMMAND\>**.
-
-	1. Use it yo install telnet using ***sudo yum install telnet*** and, type your user password and then answer the Yum prompt with 'Yes'.
-
-## Telnet	
+## Telnet
 
 1. Telnet to localhost on port 22.
 

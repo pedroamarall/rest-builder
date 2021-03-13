@@ -419,6 +419,7 @@ function update_packages {
 		slock \
 		sshpass \
 		sysstat \
+		telnet \
 		tigervnc \
 		wget \
 		WoeUSB \
