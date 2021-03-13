@@ -112,15 +112,13 @@
 
 ## SSH
 
-1. The sshd is the interface we'll use to listen connections using SSH. It must be running and accessible to allow your teamates to SSH connect into your machine.
-
-	1. Check if the service is active (running) using ***systemctl status sshd.service***. If it is not, you should start it with ***systemctl start sshd.service***. You may also set it to startup automatically on boot using ***systemctl enable sshd.service***.
-
-	1. Notice that the ***systemctl \<ACTION\> \<SERVICE\>*** is a very important tool to control some of linux services. You'd may like to check more about it [here](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units).
-
-1. Connect via SSH to a remote computer.
+1. Start the SSH daemon.
 
 	1. Launch Terminator.
+
+	1. Type ***sudo systemctl start sshd.service*** to start the SSH daemon so that other people can SSH into your computer.
+
+1. Connect via SSH to a remote computer.
 
 	1. Type ***ssh 192.168.xxx.xxx*** to SSH into your neighbor's computer. You already know the username and password.
 
@@ -337,3 +335,33 @@
 1. Telnet is a quick way to verify if you can communicate with another computer on a specific port.
 
 1. Optionally, see the man page for [telnet](https://linux.die.net/man/1/telnet) and this [tutorial](http://www.linuxandubuntu.com/home/what-are-ports-how-to-find-open-ports-in-linux) for more information.
+
+## Systemctl
+
+1. Type ***systemctl status sshd.service***.
+
+1. Type ***sudo systemctl stop sshd.service*** to stop the SSH daemon.
+
+1. Type ***systemctl status sshd.service***.
+
+1. Type ***telnet localhost 22***. Why did this command fail?
+
+1. Type ***sudo systemctl start sshd.service***.
+
+1. Type ***systemctl status sshd.service***.
+
+1. Type ***telnet localhost 22***. Why did this command succeed?
+
+1. Type ***sudo systemctl disable sshd.service***.
+
+1. Type ***systemctl status sshd.service***.
+
+1. Restart your computer. After logging back in, type ***telnet localhost 22***. Why did this command fail?
+
+1. Type ***sudo systemctl enable sshd.service***.
+
+1. Type ***systemctl status sshd.service***.
+
+1. Restart your computer. After logging back in, type ***telnet localhost 22***. Why did this command succeed?
+
+1. Optionally, see this [tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units) for more information.
