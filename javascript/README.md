@@ -45,3 +45,13 @@
 	1. Do not follow the tutorial blindly. You have already executed some of the steps.
 
 	1. Deploy the app to a Liferay docker image using the ***docker cp*** command. Read [Installing Apps and Other Artifacts to Containers](https://learn.liferay.com/dxp/7.x/en/installation-and-upgrades/installing-liferay/using-liferay-docker-images/installing-apps-and-other-artifacts-to-containers.html) to learn how to use ***docker cp***.
+
+## Clay
+
+1. Familiarize yourself with all the components in [Clay](https://clayui.com/docs/components/index.html).
+
+## Clay, React, and REST
+
+1. Write a custom [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) app for Blogs, Documents and Media, and Knowledge Base using Clay, React, and REST.
+
+1. Send a Git pull request to ***brianchandotcom*** that contains your custom app.
