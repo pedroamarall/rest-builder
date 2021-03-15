@@ -52,6 +52,6 @@
 
 ## Clay, React, and REST
 
-1. Write a new Liferay app using what you learned from this [tutorial](https://github.com/ethib137/liferay-react-example) to demonstrate [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations of Blogs, Documents and Media, and Knowledge Base using Clay, React, and REST.
+1. Write a new Liferay app to demonstrate [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations of Blogs, Documents and Media, and Knowledge Base using Clay, React, and REST.
 
 1. Send a Git pull request to ***brianchandotcom*** that contains your custom app.
