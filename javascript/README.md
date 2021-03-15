@@ -54,4 +54,4 @@
 
 1. Write a new Liferay app to demonstrate [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations of Blogs, Documents and Media, and Knowledge Base using Clay, React, and REST.
 
-1. Send a Git pull request to ***brianchandotcom*** that contains your custom app.
+1. Send a Git pull request to ***brianchandotcom*** that contains your new app.
