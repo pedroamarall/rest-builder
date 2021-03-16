@@ -52,7 +52,7 @@
 
 ## Websites
 
-1. Login to the following websites. If you have any problems, contact IT. Skip this section.
+1. Login to the following websites. If you have any problems, contact IT and skip this section.
 
 	1. Go to [Google Apps](https://mail.google.com).
 
