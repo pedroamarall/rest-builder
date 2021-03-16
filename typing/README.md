@@ -4,6 +4,8 @@
 
 Go to https://www.typing.com/student/tests. Take the one minute test.
 
+Slack ***Brian Chan*** your score.
+
 At minimum, a developer must type faster than 70 words per minute. An average developer can type faster than 90 words per minute.
 
 ## Learn to Type Faster
