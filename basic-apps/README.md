@@ -92,4 +92,6 @@ Login to the following websites. If you have any problems, contact IT and skip t
 
 	1. Login to liferay.slack.com.
 
+	1. Verify that you are logged into the Slack app and not just the Slack website. The app will not be a Chrome tab.
+
 	1. Install Slack on your phone. Notice that messages that are sent from your phone and from the Slack app on your computer are synchronized.
