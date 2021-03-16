@@ -40,9 +40,9 @@
 
 1. Lock and unlock your computer.
 
-	1. Type ***<Control+Alt+K>*** to lock your computer. The screen will turn black.
+	1. The screen will turn black if you type ***<Control+Alt+K>*** to lock your computer. To unlock your computer, start typing your password and then hit ***\<Enter\>***. If you typed your password incorrectly, the screen will turn red. Retype your password and hit ***\<Enter\>*** again. The screen will unlock when you type your password correctly.
 
-	1. The screen will turn blue as soon as you start typing your password. Hit ***\<Enter\>***. If you typed your password incorrectly, the screen will turn red. Retype your password and hit ***\<Enter\>*** again. If you typed password was correctly, the screen will be unlocked.
+	1. Lock your computer. Then, unlock your computer.
 
 1. Take a screenshot.
 
@@ -89,3 +89,5 @@
 	1. Type ***<Alt+Space>*** and then type ***Slack***.
 
 	1. Login to liferay.slack.com.
+
+	1. Install Slack on your phone. Notice that messages that are sent from your phone and from the Slack app on your computer are synchronized.
