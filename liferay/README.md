@@ -36,7 +36,7 @@
 
 	1. Type ***g log origin/master*** to see the commits in your origin. 
 
-	1. Type ***g push origin*** to push the commits in your local clone up to https://github.com/<YOUR_GITHUB_USERNAME>/liferay-portal.
+	1. Type ***g push origin master*** to push the commits in your local clone up to https://github.com/<YOUR_GITHUB_USERNAME>/liferay-portal.
 
 1. Type ***more /home/me/dev/projects/liferay-portal/app.server.me.properties***. The source code is configured to deploy to ***/home/me/dev/bundles/master***.
 
