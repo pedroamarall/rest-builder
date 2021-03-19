@@ -22,7 +22,7 @@
 		PLACEHOLDER
 	</details>
 
-1. Post documents to Documents and Media using JavaScript.
+1. Post documents to Documents and Media first using curl and then with JavaScript.
 
 1. Send a Git pull request to ***brianchandotcom***, replacing the PLACEHOLDER text below with the JavaScript commands.
 
