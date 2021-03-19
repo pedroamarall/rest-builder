@@ -14,7 +14,7 @@
 
 1. Repeat the curl commands, but this time, using HTML/JavaScript. There is no need to use Node for this. Create a HTML page and use JavaScript to replicate the curl commmands.
 
-1. Send a Git pull request to ***brianchandotcom***, replacing the PLACEHOLDER text below with the JavaScript commands.
+1. Send a pull request to ***brianchandotcom***, replacing the PLACEHOLDER text below with the JavaScript commands.
 
 	<details>
 		<summary>Show JavaScript commands.</summary>
@@ -24,7 +24,7 @@
 
 1. Post documents to Documents and Media first using curl and then with JavaScript.
 
-1. Send a Git pull request to ***brianchandotcom***, replacing the PLACEHOLDER text below with the JavaScript commands.
+1. Send a pull request to ***brianchandotcom***, replacing the PLACEHOLDER text below with the JavaScript commands.
 
 	<details>
 		<summary>Show JavaScript commands.</summary>
@@ -54,8 +54,8 @@
 
 1. Write a new Liferay app to demonstrate [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations of Blogs, Documents and Media, and Knowledge Base using Clay, React, and REST.
 
-1. Send a Git pull request to your neighbor that contains your new app. Your neighbor should be able to deploy your app to Liferay with a single command. The app should also work when your neighbor adds it to any site in Liferay. That means the app must not contain hard coded IDs or URLs.
+1. Send a pull request to your neighbor that contains your new app. Your neighbor should be able to deploy your app to Liferay with a single command. The app should also work when your neighbor adds it to any site in Liferay. That means the app must not contain hard coded IDs or URLs.
 
 1. Review your neighbor's app that was sent to you. Compare and contrast your implementation with your neighbor's implementation.
 
-1. Send a Git pull request to ***brianchandotcom*** that contains your new app.
+1. Send a pull request to ***brianchandotcom*** that contains your new app.
