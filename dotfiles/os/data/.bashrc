@@ -32,7 +32,7 @@ function customize_path {
 
 	export NPM_CONFIG_PREFIX=~/.npm-global
 
-	export PATH="${ANT_HOME}/bin:${JAVA_HOME}/bin:${NPM_CONFIG_PREFIX}/bin:${PATH}"
+	export PATH="${ANT_HOME}/bin:${JAVA_HOME}/bin:${NPM_CONFIG_PREFIX}/bin:/opt/java/maven/bin:${PATH}"
 }
 
 function customize_prompt {
