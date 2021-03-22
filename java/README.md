@@ -252,18 +252,18 @@
 	2 errors
 	```
 
-	This failed to compile because ***org.apache.commons.math3.util*** is a third party package. This package is available inside a Java library called ***commons-math3-3.6.1.jar***.
+	This failed to compile because ***org.apache.commons.math3.util*** is a third party package. This package is available inside a Java library called ***commons-math3-3.6.1.jar***. [Javadocs](https://commons.apache.org/proper/commons-math/javadocs/api-3.6.1/) for ***commons-math3-3.6.1.jar*** document available packages and classes.
 
 1. Type ***wget https://repo1.maven.org/maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar*** to download commons-math3-3.6.1.jar.
 
 1. Type ***la***.
 
 	```
-	drwxrwxr-x 1 brian brian      84 Mar 21 21:54 .
-	drwxrwxr-x 1 brian brian     402 Mar 18 15:16 ..
-	-rw-rw-r-- 1 brian brian 2213560 Mar 17  2016 commons-math3-3.6.1.jar
-	-rw-rw-r-- 1 brian brian     672 Mar 21 21:46 Test.class
-	-rw-rw-r-- 1 brian brian     169 Mar 21 21:51 Test.java
+	drwxrwxr-x 1 me me      84 Mar 21 21:54 .
+	drwxrwxr-x 1 me me     402 Mar 18 15:16 ..
+	-rw-rw-r-- 1 me me 2213560 Mar 17  2016 commons-math3-3.6.1.jar
+	-rw-rw-r-- 1 me me     672 Mar 21 21:46 Test.class
+	-rw-rw-r-- 1 me me     169 Mar 21 21:51 Test.java
 	```
 
 1. Type ***javac \*.java***.
@@ -287,11 +287,11 @@
 1. Type ***la***. Notice that the date of Test.class was modified.
 
 	```
-	drwxrwxr-x 1 brian brian      84 Mar 21 21:59 .
-	drwxrwxr-x 1 brian brian     402 Mar 21 21:59 ..
-	-rw-rw-r-- 1 brian brian 2213560 Mar 17  2016 commons-math3-3.6.1.jar
-	-rw-rw-r-- 1 brian brian     712 Mar 21 22:08 Test.class
-	-rw-rw-r-- 1 brian brian     199 Mar 21 22:00 Test.java
+	drwxrwxr-x 1 me me      84 Mar 21 21:59 .
+	drwxrwxr-x 1 me me     402 Mar 21 21:59 ..
+	-rw-rw-r-- 1 me me 2213560 Mar 17  2016 commons-math3-3.6.1.jar
+	-rw-rw-r-- 1 me me     712 Mar 21 22:08 Test.class
+	-rw-rw-r-- 1 me me     199 Mar 21 22:00 Test.java
 	```
 
 1. Type ***java Test***.
@@ -388,9 +388,9 @@
 1. Type ***la com/acme/able***.
 
 	```
-	drwxrwxr-x 1 brian brian  18 Mar 21 22:34 .
-	drwxrwxr-x 1 brian brian  32 Mar 21 22:30 ..
-	-rw-r--r-- 1 brian brian 130 Mar 21 22:34 Test.java
+	drwxrwxr-x 1 me me  18 Mar 21 22:34 .
+	drwxrwxr-x 1 me me  32 Mar 21 22:30 ..
+	-rw-r--r-- 1 me me 130 Mar 21 22:34 Test.java
 	```
 
 1. Type ***javac \*.java***.
@@ -398,9 +398,9 @@
 1. Type ***la com/acme/able***.
 
 	```
-	drwxrwxr-x 1 brian brian  18 Mar 21 22:34 .
-	drwxrwxr-x 1 brian brian  32 Mar 21 22:30 ..
-	-rw-r--r-- 1 brian brian 130 Mar 21 22:34 Test.java
+	drwxrwxr-x 1 me me  18 Mar 21 22:34 .
+	drwxrwxr-x 1 me me  32 Mar 21 22:30 ..
+	-rw-r--r-- 1 me me 130 Mar 21 22:34 Test.java
 	```
 
 1. Type ***javac com/acme/able/\*.java***.
@@ -408,10 +408,10 @@
 1. Type ***la com/acme/able***.
 
 	```
-	drwxrwxr-x 1 brian brian  38 Mar 21 22:37 .
-	drwxrwxr-x 1 brian brian  32 Mar 21 22:30 ..
-	-rw-rw-r-- 1 brian brian 428 Mar 21 22:37 Test.class
-	-rw-r--r-- 1 brian brian 130 Mar 21 22:34 Test.java
+	drwxrwxr-x 1 me me  38 Mar 21 22:37 .
+	drwxrwxr-x 1 me me  32 Mar 21 22:30 ..
+	-rw-rw-r-- 1 me me 428 Mar 21 22:37 Test.class
+	-rw-r--r-- 1 me me 130 Mar 21 22:34 Test.java
 	```
 
 1. Type ***java com.acme.able.Test***.
@@ -659,3 +659,340 @@
 1. Read this [post](https://stackoverflow.com/questions/40480/is-java-pass-by-reference-or-pass-by-value) for more information.
 
 ## Gradle
+
+1. Working with Java libraries and packages is tedious with native ***javac***. Let's use Gradle to make our lives easier.
+
+1. Type ***mkdir my-gradle-project && cd my-gradle-project***.
+
+1. Type ***wget https://github.com/brianchandotcom/liferay-learn/raw/master/docs/_template/java/gradlew && chmod u+x gradlew*** to download the ***gradlew*** script.
+
+1. Type ***mkdir -p gradle/wrapper***.
+
+1. Type ***wget https://github.com/brianchandotcom/liferay-learn/raw/master/docs/_template/java/gradle/wrapper/gradle-wrapper.jar -P gradle/wrapper***.
+
+1. Type ***wget https://github.com/brianchandotcom/liferay-learn/raw/master/docs/_template/java/gradle/wrapper/gradle-wrapper.properties -P gradle/wrapper***.
+
+1. Type ***la***. You should see the following.
+
+	```
+	drwxrwxr-x 1 me me   40 Mar 21 23:51 .
+	drwxrwxr-x 1 me me  460 Mar 21 23:36 ..
+	drwxrwxr-x 1 me me   12 Mar 21 23:50 .gradle
+	drwxrwxr-x 1 me me   14 Mar 21 23:51 gradle
+	-rwxrw-r-- 1 me me 5844 Mar 21 23:51 gradlew
+	```
+
+1. Type ***la gradle/wrapper***. You should see the following.
+
+	```
+	drwxrwxr-x 1 me me    86 Mar 21 23:53 .
+	drwxrwxr-x 1 me me    14 Mar 21 23:51 ..
+	-rw-rw-r-- 1 me me 59203 Mar 21 23:53 gradle-wrapper.jar
+	-rw-rw-r-- 1 me me   201 Mar 21 23:53 gradle-wrapper.properties
+	```
+
+1. Type ***./gradlew*** to download Gradle.
+
+	```
+	Downloading https://services.gradle.org/distributions/gradle-6.6.1-bin.zip
+	.........10%..........20%..........30%..........40%.........50%..........60%..........70%..........80%..........90%.........100%
+
+	Welcome to Gradle 6.6.1!
+
+	Here are the highlights of this release:
+	 - Experimental build configuration caching
+	 - Built-in conventions for handling credentials
+	 - Java compilation supports --release flag
+
+	For more details see https://docs.gradle.org/6.6.1/release-notes.html
+
+	Starting a Gradle Daemon (subsequent builds will be faster)
+
+	> Task :help
+
+	Welcome to Gradle 6.6.1.
+
+	To run a build, run gradlew <task> ...
+
+	To see a list of available tasks, run gradlew tasks
+
+	To see a list of command-line options, run gradlew --help
+
+	To see more detail about a task, run gradlew help --task <task>
+
+	For troubleshooting, visit https://help.gradle.org
+
+	Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+	Use '--warning-mode all' to show the individual deprecation warnings.
+	See https://docs.gradle.org/6.6.1/userguide/command_line_interface.html#sec:command_line_warnings
+	```
+
+1. Type ***la***. You should now have an additional ***.gradle*** directory. Yes, this is confusing because the names all look the same.
+
+	```
+	drwxrwxr-x 1 me me   40 Mar 21 23:51 .
+	drwxrwxr-x 1 me me  460 Mar 21 23:36 ..
+	drwxrwxr-x 1 me me  188 Mar 21 23:55 .gradle
+	drwxrwxr-x 1 me me   14 Mar 21 23:51 gradle
+	-rwxrw-r-- 1 me me 5844 Mar 21 23:51 gradlew
+	```
+
+1. Type ***la .gradle***. The ***gradlew*** script used ***gradle/wrapper/gradle-wrapper.jar*** and ***gradle/wrapper/gradle-wrapper.properties*** to downloaded Gradle into ***.gradle***.
+
+	```
+	drwxrwxr-x 1 me me 188 Mar 21 23:55 .
+	drwxrwxr-x 1 me me  40 Mar 21 23:51 ..
+	drwxrwxr-x 1 me me 126 Mar 21 23:55 6.6.1
+	drwxrwxr-x 1 me me  78 Mar 21 23:55 buildOutputCleanup
+	drwxrwxr-x 1 me me  82 Mar 21 23:55 caches
+	drwxrwxr-x 1 me me  28 Mar 21 23:55 checksums
+	drwxrwxr-x 1 me me  26 Mar 21 23:55 configuration-cache
+	drwxrwxr-x 1 me me  10 Mar 21 23:50 daemon
+	drwxrwxr-x 1 me me 138 Mar 21 23:55 native
+	drwxrwxr-x 1 me me  10 Mar 21 23:55 notifications
+	drwxrwxr-x 1 me me  26 Mar 21 23:55 vcs-1
+	drwxrwxr-x 1 me me  10 Mar 21 23:55 wrapper
+	```
+
+1. Type ***mkdir -p src/main/java/com/acme/able***.
+
+1. Type ***osub src/main/java/com/acme/able/Test.java*** and paste the following code.
+
+	```
+	package com.acme.able;
+
+	public class Test {
+
+		public static void main(String[] args) {
+			System.out.println("Hello, Able!");
+		}
+
+	}
+	```
+
+1. Type ***osub build.gradle*** and paste the following code.
+
+	```
+	apply plugin: "java"
+	```
+
+	This applies the Java plugin for Gradle so that Gradle knows how to compile Java files.
+
+1. Type ***la***.
+
+	```
+	drwxrwxr-x 1 me me   70 Mar 22 00:28 .
+	drwxrwxr-x 1 me me  460 Mar 21 23:36 ..
+	drwxrwxr-x 1 me me  188 Mar 22 00:12 .gradle
+	drwxrwxr-x 1 me me   14 Mar 21 23:51 gradle
+	drwxrwxr-x 1 me me    8 Mar 22 00:13 src
+	-rw-rw-r-- 1 me me  249 Mar 22 00:22 build.gradle
+	-rwxrw-r-- 1 me me 5844 Mar 21 23:51 gradlew
+	```
+
+1. Type ***./gradlew classes*** to compile.
+
+1. Type ***la***. Notice the new ***build*** directory.
+
+	```
+	drwxrwxr-x 1 me me   80 Mar 22 00:28 .
+	drwxrwxr-x 1 me me  460 Mar 21 23:36 ..
+	drwxrwxr-x 1 me me   38 Mar 22 00:28 build
+	drwxrwxr-x 1 me me  188 Mar 22 00:12 .gradle
+	drwxrwxr-x 1 me me   14 Mar 21 23:51 gradle
+	drwxrwxr-x 1 me me    8 Mar 22 00:13 src
+	-rw-rw-r-- 1 me me  249 Mar 22 00:22 build.gradle
+	-rwxrw-r-- 1 me me 5844 Mar 21 23:51 gradlew
+	```
+
+1. Type ***build/classes/java/main/com/acme/able***. Notice the location of the Java class.
+
+	```
+	drwxrwxr-x 1 me me  20 Mar 22 00:28 .
+	drwxrwxr-x 1 me me   8 Mar 22 00:28 ..
+	-rw-rw-r-- 1 me me 544 Mar 22 00:28 Test.class
+	```
+
+1. Type ***osub build.gradle*** and paste the following code.
+
+	```
+	apply plugin: "java"
+
+	task runWithJavaExec(type: JavaExec) {
+		classpath = sourceSets.main.runtimeClasspath
+		main = "com.acme.able.Test"
+	}
+	```
+
+1. Type ***./gradlew runWithJavaExec***.
+
+	```
+	> Task :runWithJavaExec
+	Hello, Able!
+
+	BUILD SUCCESSFUL in 439ms
+	2 actionable tasks: 1 executed, 1 up-to-date
+	```
+
+1. Make ***com.acme.baker.Test*** and modify build.gradle so that it prints out "Hello, Baker!" Do not simplify modify ***com.acme.able.Test***.
+
+1. Change the task ***runWithJavaExec*** to run ***com.acme.able.Test***.
+
+1. Type ***osub src/main/java/com/acme/able/Test.java*** and paste the following code.
+
+	```
+	package com.acme.able;
+
+	import org.apache.commons.math3.util.ArithmeticUtils;
+
+	public class Test {
+
+		public static void main(String[] args) {
+			System.out.println(
+				"1 + 2 is equal to " + ArithmeticUtils.addAndCheck(1, 2) + ".");
+		}
+
+	}
+	```
+
+1. Type ***./gradlew classes***.
+
+	```
+	> Task :compileJava FAILED
+	/home/brian/dev/projects/github/liferay-basic-training/my-gradle-project/src/main/java/com/acme/able/Test.java:3: error: package org.apache.commons.math3.util does not exist
+	import org.apache.commons.math3.util.ArithmeticUtils;
+	                                    ^
+	/home/brian/dev/projects/github/liferay-basic-training/my-gradle-project/src/main/java/com/acme/able/Test.java:9: error: cannot find symbol
+	                        "1 + 2 is equal to " + ArithmeticUtils.addAndCheck(1, 2) + ".");
+	                                               ^
+	  symbol:   variable ArithmeticUtils
+	  location: class Test
+	2 errors
+
+	FAILURE: Build failed with an exception.
+
+	* What went wrong:
+	Execution failed for task ':compileJava'.
+	> Compilation failed; see the compiler error output for details.
+
+	* Try:
+	Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+	* Get more help at https://help.gradle.org
+
+	BUILD FAILED in 415ms
+	1 actionable task: 1 executed
+	```
+
+1. Type ***osub build.gradle*** and paste the following code.
+
+	```
+	apply plugin: "java"
+
+	repositories {
+	    mavenCentral()
+	}
+
+	task runWithJavaExec(type: JavaExec) {
+		classpath = sourceSets.main.runtimeClasspath
+		main = "com.acme.able.Test"
+	}
+
+	dependencies {
+		implementation "org.apache.commons:commons-math3:3.6.1"
+	}
+	```
+
+	The ***repositories*** block tells Gradle to look at [Maven Central](https://mvnrepository.com/repos/central) to look for JAR files.
+
+	The ***dependencies*** block tells Gradle that we depend on [Apache Commons Math 3.6.1](https://mvnrepository.com/artifact/org.apache.commons/commons-math3/3.6.1).
+
+1. Type ***./gradlew classes***.
+
+1. Type ***./gradlew runWithJavaExec***.
+
+	```
+	> Task :runWithJavaExec
+	1 + 2 is equal to 3.
+
+	BUILD SUCCESSFUL in 423ms
+	2 actionable tasks: 1 executed, 1 up-to-date	
+	```
+
+1. Type ***osub src/main/java/com/acme/able/Test.java*** and paste the following code.
+
+	```
+	package com.acme.able;
+
+	import org.apache.commons.math3.util.ArithmeticUtils;
+	import org.apache.commons.text.WordUtils;
+
+	public class Test {
+
+		public static void main(String[] args) {
+			System.out.println(
+				"1 + 2 is equal to " + ArithmeticUtils.addAndCheck(1, 2) + ".");
+			System.out.println(WordUtils.capitalize("aaa, bbb!"));
+		}
+
+	}
+	```
+
+1. Type ***./gradlew runWithJavaExec***. Notice that I did not ask you to type ***./gradlew classes***. The task ***runWithJavaExec*** is smart enough to call ***classes***.
+
+	```
+		> Task :compileJava FAILED
+	/home/brian/dev/projects/github/liferay-basic-training/my-gradle-project/src/main/java/com/acme/able/Test.java:4: error: package org.apache.commons.text does not exist
+	import org.apache.commons.text.WordUtils;
+	                              ^
+	/home/brian/dev/projects/github/liferay-basic-training/my-gradle-project/src/main/java/com/acme/able/Test.java:11: error: cannot find symbol
+	                System.out.println(WordUtils.capitalize("Hello, World!"));
+	                                   ^
+	  symbol:   variable WordUtils
+	  location: class Test
+	2 errors
+
+	FAILURE: Build failed with an exception.
+
+	* What went wrong:
+	Execution failed for task ':compileJava'.
+	> Compilation failed; see the compiler error output for details.
+
+	* Try:
+	Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+	* Get more help at https://help.gradle.org
+
+	BUILD FAILED in 380ms
+	1 actionable task: 1 executed
+	```
+
+	Why did the task fail?
+
+1. Add the dependency for [Apache Commons Text 1.9](https://mvnrepository.com/artifact/org.apache.commons/commons-text/1.9).
+
+	```
+	dependencies {
+		implementation "org.apache.commons:commons-math3:3.6.1"
+	}
+	```
+
+	The above block should look like the following.	
+
+	```
+	dependencies {
+		implementation "org.apache.commons:commons-math3:3.6.1"
+		implementation "org.apache.commons:commons-text:1.9"
+	}
+	```	
+
+1. Type ***./gradlew runWithJavaExec***.
+
+	```
+	> Task :runWithJavaExec
+	1 + 2 is equal to 3.
+	Aaa, Bbb!
+
+	BUILD SUCCESSFUL in 436ms
+	2 actionable tasks: 2 executed
+	```
