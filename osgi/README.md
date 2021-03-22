@@ -74,7 +74,6 @@
 
 	Notice that even though you told Gradle to compile, no build directory was created.
 
-
 1. Type ***osub basic-training-able-impl/bnd.bnd*** and paste the following code.
 
 	```
@@ -98,10 +97,6 @@
 	Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
 
 	* Get more help at https://help.gradle.org
-
-	Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
-	Use '--warning-mode all' to show the individual deprecation warnings.
-	See https://docs.gradle.org/6.6.1/userguide/command_line_interface.html#sec:command_line_warnings
 
 	BUILD FAILED in 1s
 	```
@@ -135,15 +130,13 @@
 
 	Notice the newly created build directory.
 
+	The compiled Java classes are located in ***basic-training-able-impl/build/classes/java/main***.
+
 1. Type ***./gradlew deploy*** to deploy your new module.
 
 	```
 	> Task :basic-training-able-impl:deploy
 	Files of project ':basic-training-able-impl' deployed to /home/me/dev/projects/github/liferay-basic-training/my-osgi-project/bundles/osgi/modules
-
-	Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
-	Use '--warning-mode all' to show the individual deprecation warnings.
-	See https://docs.gradle.org/6.6.1/userguide/command_line_interface.html#sec:command_line_warnings
 
 	BUILD SUCCESSFUL in 1s
 	4 actionable tasks: 3 executed, 1 up-to-date
@@ -196,7 +189,7 @@
 
 1. Type ***d exec -it ephesians-liferay /bin/ls /opt/liferay/osgi/modules*** to see that the directory contains the file ***com.liferay.basic.training.able.impl-1.0.0.jar*** and the file ***com.liferay.basic.training.able.impl.jar***.
 
-	This is very BAD and makes it so the OSGi container behaves unpredictably. We should avoid ever having two versions of the same JAR.
+	This is very BAD and makes it so that the OSGi container behaves unpredictably. We should avoid ever having two versions of the same JAR file.
 
 	Type ***<Control+C>*** to stop Liferay.
 
@@ -272,10 +265,6 @@
 
 	* Get more help at https://help.gradle.org
 
-	Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
-	Use '--warning-mode all' to show the individual deprecation warnings.
-	See https://docs.gradle.org/6.6.1/userguide/command_line_interface.html#sec:command_line_warnings
-
 	BUILD FAILED in 1s
 	1 actionable task: 1 executed
 	```
@@ -314,7 +303,7 @@
 
 1. Type ***./gradlew deploy -Ddeploy.docker.container.id=ephesians-liferay***.
 
-1. Verify on the console basic.training.able.impl*** was started.
+1. Verify on the console ***basic.training.able.impl*** was started.
 
 	```
 	2021-03-22 16:14:59.567 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:46] STARTED com.liferay.basic.training.able.impl_1.0.0 [1356]
@@ -337,6 +326,8 @@
 		```
 
 		Notice that MD5 hashes are the same.
+
+	1. Type ***./gradlew deploy -Ddeploy.docker.container.id=ephesians-liferay*** again. Run the ***md5sum*** commands again and notice that the hashes did not change. Gradle checks for staleness before making a new JAR file.
 
 	1. Type ***rm basic-training-able-impl/build/libs/com.liferay.basic.training.able.impl-1.0.0.jar*** to force Gradle to recompile.
 
@@ -394,7 +385,7 @@
 	2021-03-22 16:19:15.159 INFO  [Refresh Thread: Equinox Container: 82f33af4-b229-4921-a9cc-cd5350b6759e][BundleStartStopLogger:46] STARTED com.liferay.basic.training.able.impl_1.0.0 [1356]
 	```
 
-	This time, the statement ***Stopping AbleBundleActivator*** was printed.
+	This time, the statement ***Stopping AbleBundleActivator*** was printed. Why?
 
 1. Type ***./gradlew clean deploy -Ddeploy.docker.container.id=ephesians-liferay***.
 
@@ -480,7 +471,7 @@
 1. Verify on the console that the module ***com.liferay.basic.training.baker.web*** was started.
 
 	```
-	2021-03-22 16:55:14.559 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:46] STARTED com.liferay.basic.training.baker.web_1.0.0 [1356]
+	2021-03-22 16:55:14.559 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:46] STARTED com.liferay.basic.training.baker.web_1.0.0 [1357]
 	Constructing BakerPortlet
 	```
 
@@ -488,18 +479,388 @@
 
 1. Go to http://localhost:8080. Add a ***widget page***. Add the widget ***Basic Training Baker*** to the page. It will be available under the ***Sample*** category.
 
-	The portlet will print out ***Hello, Basic Training Baker!*** on the page.
+	The widget will print out ***Hello, Basic Training Baker!*** on the page.
 
 	Every time you refresh the page, the portlet will render, and will print out the statement ***Invoking BakerPortlet#doView*** on the console.
 
 ## API and Impl
 
-## Call Service Builder
+1. Write the API interface.
 
-## Call Headless
+	1. Type ***mkdir -p basic-training-able-api/src/main/java/com/liferay/basic/training/able/number/generator***.
+
+	1. Type ***osub basic-training-able-api/src/main/java/com/liferay/basic/training/able/number/generator/AbleNumberGenerator.java*** and paste the following code.
+
+		```
+		package com.liferay.basic.training.able.number.generator;
+
+		public interface AbleNumberGenerator {
+
+			public long generate();
+
+		}
+		```
+
+	1. Type ***osub basic-training-able-api/bnd.bnd*** and paste the following code.
+
+		```
+		Bundle-Name: Liferay Basic Training Able API
+		Bundle-SymbolicName: com.liferay.basic.training.able.api
+		Bundle-Version: 1.0.0
+		```
+
+	1. Type ***osub basic-training-able-api/build.gradle*** and paste the following code.
+
+		```
+		dependencies {
+			compileOnly group: "com.liferay.portal", name: "release.portal.api"
+		}
+		```
+
+	1. Type ***./gradlew basic-training-able-api:deploy -Ddeploy.docker.container.id=ephesians-liferay***.
+
+	1. Verify on the console that the module ***com.liferay.basic.training.able.api*** was started.
+
+		```
+		2021-03-22 17:42:14.450 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:46] STARTED com.liferay.basic.training.able.api_1.0.0 [1358]
+		```
+
+1. Write the implementation class.
+
+	1. Type ***mkdir -p basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/number/generator***.
+
+	1. Type ***osub basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/number/generator/AbleNumberGeneratorImpl.java*** and paste the following code.
+
+		```
+		package com.liferay.basic.training.able.internal.number.generator;
+
+		import com.liferay.basic.training.able.number.generator.AbleNumberGenerator;
+
+		import org.osgi.service.component.annotations.Component;
+
+		@Component(
+			immediate = true, service = {AbleNumberGenerator.class}
+		)
+		public class AbleNumberGeneratorImpl implements AbleNumberGenerator {
+
+			public long generate() {
+				return 30624700;
+			}
+
+		}
+		```
+
+	1. Type ***./gradlew basic-training-able-impl:classes***.
+
+		```
+		> Task :basic-training-able-impl:compileJava FAILED
+		/home/brian/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/number/generator/AbleNumberGeneratorImpl.java:3: error: package com.liferay.basic.training.able.number.generator does not exist
+		import com.liferay.basic.training.able.number.generator.AbleNumberGenerator;
+		                                                       ^
+		/home/brian/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/number/generator/AbleNumberGeneratorImpl.java:10: error: cannot find symbol
+		public class AbleNumberGeneratorImpl implements AbleNumberGenerator {
+		                                                ^
+		  symbol: class AbleNumberGenerator
+		/home/brian/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/number/generator/AbleNumberGeneratorImpl.java:8: error: cannot find symbol
+		        immediate = true, service = {AbleNumberGenerator.class}
+		                                     ^
+		  symbol: class AbleNumberGenerator
+		3 errors
+
+		FAILURE: Build failed with an exception.
+
+		* What went wrong:
+		Execution failed for task ':basic-training-able-impl:compileJava'.
+		> Compilation failed; see the compiler error output for details.
+
+		* Try:
+		Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+		* Get more help at https://help.gradle.org
+
+		BUILD FAILED in 1s
+		1 actionable task: 1 executed
+		```
+
+	1. Type ***osub basic-training-able-impl/build.gradle*** and paste the following code.
+
+		```
+		dependencies {
+			compileOnly group: "com.liferay.portal", name: "release.portal.api"
+			compileOnly project(":basic-training-able-api")
+		}
+		```
+
+		The new line states that the module ***basic-training-able-impl*** depends on ***basic-training-able-api***.
+
+	1. Type ***./gradlew basic-training-able-impl:classes***.
+
+	1. Type ***./gradlew basic-training-able-impl:deploy -Ddeploy.docker.container.id=ephesians-liferay***.
+
+		```
+		2021-03-22 18:17:13.235 ERROR [fileinstall-directory-watcher][DirectoryWatcher:1136] Unable to start bundle: file:/opt/liferay/osgi/modules/com.liferay.basic.training.able.impl-1.0.0.jar
+		org.osgi.framework.BundleException: Could not resolve module: com.liferay.basic.training.able.impl [1355]_  Unresolved requirement: Import-Package: com.liferay.basic.training.able.number.generator_ [Sanitized]
+			at org.eclipse.osgi.container.Module.start(Module.java:444)
+			at org.eclipse.osgi.internal.framework.EquinoxBundle.start(EquinoxBundle.java:428)
+			at com.liferay.portal.file.install.internal.DirectoryWatcher._startBundle(DirectoryWatcher.java:1119)
+			at com.liferay.portal.file.install.internal.DirectoryWatcher._startBundles(DirectoryWatcher.java:1152)
+			at com.liferay.portal.file.install.internal.DirectoryWatcher._startAllBundles(DirectoryWatcher.java:1097)
+			at com.liferay.portal.file.install.internal.DirectoryWatcher._process(DirectoryWatcher.java:1009)
+			at com.liferay.portal.file.install.internal.DirectoryWatcher.run(DirectoryWatcher.java:265)
+		```
+
+	1. Configure ***basic-training-able-api*** to export the package ***com.liferay.basic.training.able.number.generator*** by adding following line to the very bottom of bnd.bnd.
+
+		```
+		Export-Package: com.liferay.basic.training.able.number.generator
+		```
+
+		Without it, ***basic-training-able-impl*** will not resolve because it requires the package ***com.liferay.basic.training.able.number.generator***.
+
+	1. Type ***./gradlew basic-training-able-api:deploy -Ddeploy.docker.container.id=ephesians-liferay***.
+
+		```
+		2021-03-22 20:26:40.986 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:49] STOPPED com.liferay.basic.training.able.api_1.0.0 [1358]
+		Constructing AbleBundleActivator
+		Starting AbleBundleActivator
+		2021-03-22 20:26:41.035 INFO  [Refresh Thread: Equinox Container: b1089b7d-7ea7-4eb1-82df-655d020b9288][BundleStartStopLogger:46] STARTED com.liferay.basic.training.able.impl_1.0.0 [1356]
+		2021-03-22 20:26:41.036 INFO  [Refresh Thread: Equinox Container: b1089b7d-7ea7-4eb1-82df-655d020b9288][BundleStartStopLogger:46] STARTED com.liferay.basic.training.able.api_1.0.0 [1358]
+		```
+
+		Once the new version of ***com.liferay.basic.training.able.api*** started, the package ***com.liferay.basic.training.able.number.generator*** became available, and so ***com.liferay.basic.training.able.impl*** was able to resolve.
+
+1. Invoke the implementation via the API.
+
+	1. Type ***osub basic-training-baker-web/src/main/java/com/liferay/basic/training/baker/web/internal/portlet/BakerPortlet.java*** and paste the following code.
+
+		```
+		package com.liferay.basic.training.baker.web.internal.portlet;
+
+		import com.liferay.basic.training.able.number.generator.AbleNumberGenerator;
+
+		import java.io.IOException;
+		import java.io.PrintWriter;
+
+		import javax.portlet.GenericPortlet;
+		import javax.portlet.Portlet;
+		import javax.portlet.RenderRequest;
+		import javax.portlet.RenderResponse;
+
+		import org.osgi.service.component.annotations.Component;
+		import org.osgi.service.component.annotations.Reference;
+
+		@Component(
+			property = {
+				"com.liferay.portlet.display-category=category.sample",
+				"javax.portlet.display-name=Basic Training Baker"
+			},
+			service = Portlet.class
+		)
+		public class BakerPortlet extends GenericPortlet {
+
+			public BakerPortlet() {
+				System.out.println("Constructing BakerPortlet");
+			}
+
+			@Override
+			protected void doView(
+					RenderRequest renderRequest, RenderResponse renderResponse)
+				throws IOException {
+
+				System.out.println(
+					"Invoking BakerPortlet#doView " + _ableNumberGenerator.generate());
+
+				PrintWriter printWriter = renderResponse.getWriter();
+
+				printWriter.println("Hello, Basic Training Baker!");
+			}
+
+			@Reference
+			private AbleNumberGenerator _ableNumberGenerator;
+
+		}
+		```
+
+	1. Type ***./gradlew :basic-training-baker-web:classes***.
+
+		```
+		> Task :basic-training-baker-web:compileJava FAILED
+		/home/brian/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-baker-web/src/main/java/com/liferay/basic/training/baker/web/internal/portlet/BakerPortlet.java:3: error: package com.liferay.basic.training.able.number.generator does not exist
+		import com.liferay.basic.training.able.number.generator.AbleNumberGenerator;
+		                                                       ^
+		/home/brian/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-baker-web/src/main/java/com/liferay/basic/training/baker/web/internal/portlet/BakerPortlet.java:43: error: cannot find symbol
+		        private AbleNumberGenerator _ableNumberGenerator;
+		                ^
+		  symbol:   class AbleNumberGenerator
+		  location: class BakerPortlet
+		2 errors
+
+		FAILURE: Build failed with an exception.
+
+		* What went wrong:
+		Execution failed for task ':basic-training-baker-web:compileJava'.
+		> Compilation failed; see the compiler error output for details.
+
+		* Try:
+		Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+		* Get more help at https://help.gradle.org
+
+		BUILD FAILED in 1s
+		1 actionable task: 1 executed
+		```
+
+		This task failed because ***basic-training-baker-web*** cannot see a package that is only available in ***basic-training-able-api***.
+
+	1. Fix the failure above so that ***basic-training-baker-web*** compiles successfully.
+
+	1. Type ***./gradlew basic-training-baker-web:deploy -Ddeploy.docker.container.id=ephesians-liferay***.
+
+	1. Verify on the console that the module ***com.liferay.basic.training.baker.web*** was restarted.
+
+		```
+		2021-03-23 00:43:20.394 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:49] STOPPED com.liferay.basic.training.baker.web_1.0.0 [1357]
+		Constructing BakerPortlet
+		2021-03-23 00:43:20.507 INFO  [Refresh Thread: Equinox Container: aa880d54-e655-4715-9d9e-496fe3109448][BundleStartStopLogger:46] STARTED com.liferay.basic.training.baker.web_1.0.0 [1357]
+		```
+
+	1. Hit refresh on the page with the ***Basic Training Baker*** portlet.
+
+		```
+		Invoking BakerPortlet#doView 30624700
+		```
+
+1. Why separate the API from the implementation?
+
+	1. Type ***osub basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/number/generator/AbleNumberGeneratorImpl.java*** and paste the following code.
+
+		```
+		package com.liferay.basic.training.able.internal.number.generator;
+
+		import com.liferay.basic.training.able.number.generator.AbleNumberGenerator;
+
+		import org.apache.commons.math3.util.ArithmeticUtils;
+
+		import org.osgi.service.component.annotations.Component;
+
+		@Component(
+			immediate = true, service = {AbleNumberGenerator.class}
+		)
+		public class AbleNumberGeneratorImpl implements AbleNumberGenerator {
+
+			public long generate() {
+				return ArithmeticUtils.mulAndCheck(30624700, 2);
+			}
+
+		}
+		```
+
+		The new implementation uses Apache Commons Math. Let's use [ArithmeticUtils](http://commons.apache.org/proper/commons-math/javadocs/api-3.6.1/org/apache/commons/math3/util/ArithmeticUtils.html) to multiply 30624700 by 2.
+
+	1. Type ***./gradlew :basic-training-able-impl:classes***.
+
+		```
+		> Task :basic-training-able-impl:compileJava FAILED
+		/home/brian/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/number/generator/AbleNumberGeneratorImpl.java:5: error: package org.apache.commons.math3.util does not exist
+		import org.apache.commons.math3.util.ArithmeticUtils;
+		                                    ^
+		/home/brian/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/number/generator/AbleNumberGeneratorImpl.java:15: error: cannot find symbol
+		                return ArithmeticUtils.mulAndCheck(30624700, 2);
+		                       ^
+		  symbol:   variable ArithmeticUtils
+		  location: class AbleNumberGeneratorImpl
+		2 errors
+
+		FAILURE: Build failed with an exception.
+
+		* What went wrong:
+		Execution failed for task ':basic-training-able-impl:compileJava'.
+		> Compilation failed; see the compiler error output for details.
+
+		* Try:
+		Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+		* Get more help at https://help.gradle.org
+
+		Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+		Use '--warning-mode all' to show the individual deprecation warnings.
+		See https://docs.gradle.org/6.6.1/userguide/command_line_interface.html#sec:command_line_warnings
+
+		BUILD FAILED in 1s
+		3 actionable tasks: 1 executed, 2 up-to-date
+
+		```
+
+		How can we fix this compile error? The Apache Commons Math JAR file is available on [Maven Central](https://mvnrepository.com/artifact/org.apache.commons/commons-math3). Use version 3.6.1.
+
+	1. Type ***osub basic-training-able-impl/build.gradle*** and paste the following code.
+
+		```
+		dependencies {
+			compileOnly group: "com.liferay.portal", name: "release.portal.api"
+			compileOnly group: "org.apache.commons", name: "commons-math3", version: "3.6.1"
+			compileOnly project(":basic-training-able-api")
+		}
+		```
+
+	1. Type ***./gradlew basic-training-able-impl:deploy -Ddeploy.docker.container.id=ephesians-liferay***.
+
+		```
+		2021-03-23 01:46:12.570 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:49] STOPPED com.liferay.basic.training.able.impl_1.0.0 [1356]
+		2021-03-23 01:46:12.586 ERROR [fileinstall-directory-watcher][DirectoryWatcher:1136] Unable to start bundle: file:/opt/liferay/osgi/modules/com.liferay.basic.training.able.impl-1.0.0.jar
+		org.osgi.framework.BundleException: Could not resolve module: com.liferay.basic.training.able.impl [1356]_  Unresolved requirement: Import-Package: org.apache.commons.math3.util; version="[3.6.0,4.0.0)"_ [Sanitized]
+			at org.eclipse.osgi.container.Module.start(Module.java:444)
+			at org.eclipse.osgi.internal.framework.EquinoxBundle.start(EquinoxBundle.java:428)
+			at com.liferay.portal.file.install.internal.DirectoryWatcher._startBundle(DirectoryWatcher.java:1119)
+			at com.liferay.portal.file.install.internal.DirectoryWatcher._startBundles(DirectoryWatcher.java:1152)
+			at com.liferay.portal.file.install.internal.DirectoryWatcher._startAllBundles(DirectoryWatcher.java:1097)
+			at com.liferay.portal.file.install.internal.DirectoryWatcher._process(DirectoryWatcher.java:1009)
+			at com.liferay.portal.file.install.internal.DirectoryWatcher.run(DirectoryWatcher.java:265)
+		```
+
+		How can we fix this?
+
+	1. Type ***osub basic-training-able-impl/build.gradle*** and paste the following code.
+
+		```
+		dependencies {
+			compileInclude group: "org.apache.commons", name: "commons-math3", version: "3.6.1"
+			compileOnly group: "com.liferay.portal", name: "release.portal.api"
+			compileOnly project(":basic-training-able-api")
+		}
+		```
+
+	1. Type ***xarchiver basic-training-able-impl/build/libs/com.liferay.basic.training.able.impl-1.0.0.jar***. Notice that the three root directories are com, META-INF, and OSGI-INF.
+
+	1. Type ***rm basic-training-able-impl/build/libs/com.liferay.basic.training.able.impl-1.0.0.jar***.
+
+	1. Type ***./gradlew basic-training-able-impl:jar***.
+
+	1. Type ***xarchiver basic-training-able-impl/build/libs/com.liferay.basic.training.able.impl-1.0.0.jar***. Notice the new ***lib*** directory contains the JAR for Apache Commons Math..
+
+	1. Type ***./gradlew basic-training-able-impl:deploy -Ddeploy.docker.container.id=ephesians-liferay***.
+
+		```
+		Constructing AbleBundleActivator
+		Starting AbleBundleActivator
+		Constructing BakerPortlet
+		2021-03-23 01:48:07.910 INFO  [Refresh Thread: Equinox Container: aa880d54-e655-4715-9d9e-496fe3109448][BundleStartStopLogger:46] STARTED com.liferay.basic.training.able.impl_1.0.0 [1356]
+		```
+
+		Notice that it not only started ***com.liferay.basic.training.able.impl***, but it also reconstructed BakerPortlet? Why? Because BakerPortlet references AbleNumberGenerator.
+
+	1. Go to http://localhost:8080. Refresh the page that contains the widget ***Basic Training Baker***. Verify the console output.
+
+		```
+		Invoking BakerPortlet#doView 61249400
+		```
+
+	1. Separating the API from the implementation allows developers to hide implementation details (i.e. The BakerPortlet class does not to know that the AbleNumberGenerator class uses Apache Commons Math).
+
+## MVC Portlet
 
 ## Liferay with MySQL
 
-## New Service Builder
+## Service Builder
 
-## New Headless
+## Headless
