@@ -677,7 +677,6 @@
 	```
 	drwxrwxr-x 1 me me   40 Mar 21 23:51 .
 	drwxrwxr-x 1 me me  460 Mar 21 23:36 ..
-	drwxrwxr-x 1 me me   12 Mar 21 23:50 .gradle
 	drwxrwxr-x 1 me me   14 Mar 21 23:51 gradle
 	-rwxrw-r-- 1 me me 5844 Mar 21 23:51 gradlew
 	```
@@ -805,7 +804,7 @@
 	-rwxrw-r-- 1 me me 5844 Mar 21 23:51 gradlew
 	```
 
-1. Type ***build/classes/java/main/com/acme/able***. Notice the location of the Java class.
+1. Type ***la build/classes/java/main/com/acme/able***. Notice the location of the Java class.
 
 	```
 	drwxrwxr-x 1 me me  20 Mar 22 00:28 .
