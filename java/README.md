@@ -664,13 +664,13 @@
 
 1. Type ***mkdir my-gradle-project && cd my-gradle-project***.
 
-1. Type ***wget https://github.com/brianchandotcom/liferay-learn/raw/master/docs/_template/java/gradlew && chmod u+x gradlew*** to download the ***gradlew*** script.
+1. Type ***wget https://github.com/liferay/liferay-learn/raw/master/docs/_template/java/gradlew && chmod u+x gradlew*** to download the ***gradlew*** script.
 
 1. Type ***mkdir -p gradle/wrapper***.
 
-1. Type ***wget https://github.com/brianchandotcom/liferay-learn/raw/master/docs/_template/java/gradle/wrapper/gradle-wrapper.jar -P gradle/wrapper***.
+1. Type ***wget https://github.com/liferay/liferay-learn/raw/master/docs/_template/java/gradle/wrapper/gradle-wrapper.jar -P gradle/wrapper***.
 
-1. Type ***wget https://github.com/brianchandotcom/liferay-learn/raw/master/docs/_template/java/gradle/wrapper/gradle-wrapper.properties -P gradle/wrapper***.
+1. Type ***wget https://github.com/liferay/liferay-learn/raw/master/docs/_template/java/gradle/wrapper/gradle-wrapper.properties -P gradle/wrapper***.
 
 1. Type ***la***. You should see the following.
 
@@ -859,10 +859,10 @@
 
 	```
 	> Task :compileJava FAILED
-	/home/brian/dev/projects/github/liferay-basic-training/my-gradle-project/src/main/java/com/acme/able/Test.java:3: error: package org.apache.commons.math3.util does not exist
+	/home/me/dev/projects/github/liferay-basic-training/my-gradle-project/src/main/java/com/acme/able/Test.java:3: error: package org.apache.commons.math3.util does not exist
 	import org.apache.commons.math3.util.ArithmeticUtils;
 	                                    ^
-	/home/brian/dev/projects/github/liferay-basic-training/my-gradle-project/src/main/java/com/acme/able/Test.java:9: error: cannot find symbol
+	/home/me/dev/projects/github/liferay-basic-training/my-gradle-project/src/main/java/com/acme/able/Test.java:9: error: cannot find symbol
 	                        "1 + 2 is equal to " + ArithmeticUtils.addAndCheck(1, 2) + ".");
 	                                               ^
 	  symbol:   variable ArithmeticUtils
@@ -942,10 +942,10 @@
 
 	```
 		> Task :compileJava FAILED
-	/home/brian/dev/projects/github/liferay-basic-training/my-gradle-project/src/main/java/com/acme/able/Test.java:4: error: package org.apache.commons.text does not exist
+	/home/me/dev/projects/github/liferay-basic-training/my-gradle-project/src/main/java/com/acme/able/Test.java:4: error: package org.apache.commons.text does not exist
 	import org.apache.commons.text.WordUtils;
 	                              ^
-	/home/brian/dev/projects/github/liferay-basic-training/my-gradle-project/src/main/java/com/acme/able/Test.java:11: error: cannot find symbol
+	/home/me/dev/projects/github/liferay-basic-training/my-gradle-project/src/main/java/com/acme/able/Test.java:11: error: cannot find symbol
 	                System.out.println(WordUtils.capitalize("Hello, World!"));
 	                                   ^
 	  symbol:   variable WordUtils

@@ -1,1 +1,505 @@
 # OSGi
+
+## Set Up an OSGi Project
+
+1. Launch Terminator.
+
+1. Type ***mkdir my-osgi-project && cd my-osgi-project***.
+
+1. Install Gradle.
+
+	1. Type ***wget https://github.com/liferay/liferay-learn/raw/master/docs/_template/java/gradlew && chmod u+x gradlew && mkdir -p gradle/wrapper && wget https://github.com/liferay/liferay-learn/raw/master/docs/_template/java/gradle/wrapper/gradle-wrapper.jar -P gradle/wrapper && wget https://github.com/liferay/liferay-learn/raw/master/docs/_template/java/gradle/wrapper/gradle-wrapper.properties -P gradle/wrapper***.
+
+1. Configure Gradle for your project.
+
+	1. Type ***wget https://github.com/liferay/liferay-learn/raw/master/docs/_template/java/settings.gradle***.
+
+	1. Type ***more settings.gradle***.
+
+		```
+		buildscript {
+			dependencies {
+				classpath group: "com.liferay", name: "com.liferay.gradle.plugins.workspace", version: "latest.release"
+			}
+
+			repositories {
+				mavenLocal()
+
+				maven {
+					url "https://repository-cdn.liferay.com/nexus/content/groups/public"
+				}
+			}
+		}
+
+		apply plugin: "com.liferay.workspace"
+		```
+
+		This settings file applies the ***com.liferay.workspace*** Gradle plugin. That means this OSGi project is a Liferay Workspace project.
+
+		The ***repositories*** block also configures Maven Central and Liferay's Maven repository for third party JAR files.
+
+	1. Type ***echo "liferay.workspace.product=portal-7.3-ga7" > gradle.properties*** to configure Liferay Workspace to work with a specific version of Liferay.
+
+## My First Module
+
+1. Type ***mkdir -p basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/activator***.
+
+1. Type ***osub basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/activator/AbleBundleActivator.java*** and paste the following code.
+
+	```
+	package com.liferay.basic.training.able.internal.activator;
+
+	public class AbleBundleActivator {
+
+		public AbleBundleActivator() {
+			System.out.println("Constructing AbleBundleActivator");
+		}
+
+	}
+	```
+
+1. Type ***./gradlew classes***.
+
+	```
+	Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+	Use '--warning-mode all' to show the individual deprecation warnings.
+	See https://docs.gradle.org/6.6.1/userguide/command_line_interface.html#sec:command_line_warnings
+
+	BUILD SUCCESSFUL in 1s
+	```
+
+	You can ignore the deprecation warnings.
+
+1. Type ***la*** and ***la basic-training-able-impl***.
+
+	Notice that even though you told Gradle to compile, no build directory was created.
+
+
+1. Type ***osub basic-training-able-impl/bnd.bnd*** and paste the following code.
+
+	```
+	Bundle-Name: Liferay Basic Training Able Implementation
+	Bundle-SymbolicName: com.liferay.basic.training.able.impl
+	Bundle-Version: 1.0.0
+	```
+
+	This contains basic metadata required for OSGi modules.
+
+1. Type ***./gradlew classes***.
+
+	```
+	FAILURE: Build failed with an exception.
+
+	* What went wrong:
+	A problem occurred configuring project ':basic-training-able-impl'.
+	> Extension of type 'LiferayExtension' does not exist. Currently registered extension types: [ExtraPropertiesExtension, BundleExtension]
+
+	* Try:
+	Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+	* Get more help at https://help.gradle.org
+
+	Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+	Use '--warning-mode all' to show the individual deprecation warnings.
+	See https://docs.gradle.org/6.6.1/userguide/command_line_interface.html#sec:command_line_warnings
+
+	BUILD FAILED in 1s
+	```
+
+1. Type ***touch basic-training-able-impl/build.gradle***.
+
+	A build.gradle file tells Liferay Workspace that this directory is a Java module.
+
+1. Type ***la basic-training-able-impl***.
+
+	```
+	drwxrwxr-x 1 me me  54 Mar 22 09:34 .
+	drwxrwxr-x 1 me me 152 Mar 22 09:19 ..
+	drwxrwxr-x 1 me me   8 Mar 22 09:18 src
+	-rw-r--r-- 1 me me 135 Mar 22 09:31 bnd.bnd
+	-rw-rw-r-- 1 me me   0 Mar 22 09:34 build.gradle
+	```
+
+1. Type ***./gradlew classes***.
+
+1. Type ***la basic-training-able-impl***.
+
+	```
+	drwxrwxr-x 1 me me  54 Mar 22 09:34 .
+	drwxrwxr-x 1 me me 152 Mar 22 09:19 ..
+	drwxrwxr-x 1 me me  38 Mar 22 09:34 build
+	drwxrwxr-x 1 me me   8 Mar 22 09:18 src
+	-rw-r--r-- 1 me me 135 Mar 22 09:31 bnd.bnd
+	-rw-rw-r-- 1 me me   0 Mar 22 09:34 build.gradle
+	```
+
+	Notice the newly created build directory.
+
+1. Type ***./gradlew deploy*** to deploy your new module.
+
+	```
+	> Task :basic-training-able-impl:deploy
+	Files of project ':basic-training-able-impl' deployed to /home/me/dev/projects/github/liferay-basic-training/my-osgi-project/bundles/osgi/modules
+
+	Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+	Use '--warning-mode all' to show the individual deprecation warnings.
+	See https://docs.gradle.org/6.6.1/userguide/command_line_interface.html#sec:command_line_warnings
+
+	BUILD SUCCESSFUL in 1s
+	4 actionable tasks: 3 executed, 1 up-to-date
+	```
+
+	Where is your new module?
+
+1. Your newly created module ***com.liferay.basic.training.able.impl.jar*** is not yet read by Liferay.
+
+1. Type ***d run --name ephesians-liferay --rm -it -p 8080:8080 liferay/portal:7.3.6-ga7*** to start Liferay.
+
+	The ***--name*** flag means the Liferay container can be referenced as ***ephesians-liferay***.
+
+	The ***--rm*** flag means that this Docker image is transient and will be removed (and not remembered) as soon as you kill the process.
+
+1. Type ***d exec -it ephesians-liferay /bin/ls /opt/liferay/osgi***. Notice that this command lists the directories and files in ***/opt/liferay/osgi*** on the container.
+
+	1. You can even SSH into the container by typing ***d exec -it ephesians-liferay /bin/bash***.
+
+		```
+		liferay@30f7e46500b9 /opt/liferay
+		```
+
+		The long hash ***30f7e46500b9*** is the container ID. The name ***ephesians-liferay*** is mapped to the long hash ***30f7e46500b9***.
+
+	1. Type ***exit*** to get out of the container.
+
+	1. Type ***d ps***.
+
+		```
+		CONTAINER ID        IMAGE                      COMMAND                  CREATED             STATUS                   PORTS                                                   NAMES
+		30f7e46500b9        liferay/portal:7.3.6-ga7   "/bin/sh -c /usr/loc…"   3 minutes ago       Up 3 minutes (healthy)   8000/tcp, 8009/tcp, 11311/tcp, 0.0.0.0:8080->8080/tcp   ephesians-liferay
+		```
+
+		Notice that the Docker process command shows that the container ***30f7e46500b9*** is mapped to the name ***ephesians-liferay***.
+
+1. Type ***d exec -it ephesians-liferay /bin/ls /opt/liferay/osgi/modules*** to see that the directory is empty.
+
+1. Type ***d cp bundles/osgi/modules/com.liferay.basic.training.able.impl.jar ephesians-liferay:/opt/liferay/osgi/modules***.
+
+1. Type ***d exec -it ephesians-liferay /bin/ls /opt/liferay/osgi/modules*** to see that the directory contains the file ***com.liferay.basic.training.able.impl.jar***.
+
+1. Go to the tab that started the Liferay docker container to verify on the console that the module ***com.liferay.basic.training.able.impl*** was started.
+
+	```
+	2021-03-22 12:59:58.258 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:46] STARTED com.liferay.basic.training.able.impl_1.0.0 [1355]
+	```
+
+1. Type ***./gradlew deploy -Ddeploy.docker.container.id=ephesians-liferay*** to deploy directly to the Liferay Docker container.
+
+1. Type ***d exec -it ephesians-liferay /bin/ls /opt/liferay/osgi/modules*** to see that the directory contains the file ***com.liferay.basic.training.able.impl-1.0.0.jar*** and the file ***com.liferay.basic.training.able.impl.jar***.
+
+	This is very BAD and makes it so the OSGi container behaves unpredictably. We should avoid ever having two versions of the same JAR.
+
+	Type ***<Control+C>*** to stop Liferay.
+
+1. Start Liferay. This is a new container.
+
+1. Type ***osub basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/activator/AbleBundleActivator.java*** and paste the following code.
+
+	```
+	package com.liferay.basic.training.able.internal.activator;
+
+	import org.osgi.framework.BundleActivator;
+	import org.osgi.framework.BundleContext;
+
+	public class AbleBundleActivator implements BundleActivator {
+
+		public AbleBundleActivator() {
+			System.out.println("Constructing AbleBundleActivator");
+		}
+
+		@Override
+		public void start(BundleContext bundleContext) throws Exception {
+			System.out.println("Starting AbleBundleActivator");
+		}
+
+		@Override
+		public void stop(BundleContext bundleContext) throws Exception {
+			System.out.println("Stopping AbleBundleActivator");
+		}
+
+	}
+	```
+
+1. Type ***./gradlew classes***.
+
+	```
+	> Task :basic-training-able-impl:compileJava FAILED
+	/home/me/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/activator/AbleBundleActivator.java:3: error: package org.osgi.framework does not exist
+	import org.osgi.framework.BundleActivator;
+	                         ^
+	/home/me/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/activator/AbleBundleActivator.java:4: error: package org.osgi.framework does not exist
+	import org.osgi.framework.BundleContext;
+	                         ^
+	/home/me/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/activator/AbleBundleActivator.java:6: error: cannot find symbol
+	public class AbleBundleActivator implements BundleActivator {
+	                                            ^
+	  symbol: class BundleActivator
+	/home/me/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/activator/AbleBundleActivator.java:13: error: cannot find symbol
+	        public void start(BundleContext bundleContext) throws Exception {
+	                          ^
+	  symbol:   class BundleContext
+	  location: class AbleBundleActivator
+	/home/me/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/activator/AbleBundleActivator.java:18: error: cannot find symbol
+	        public void stop(BundleContext bundleContext) throws Exception {
+	                         ^
+	  symbol:   class BundleContext
+	  location: class AbleBundleActivator
+	/home/me/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/activator/AbleBundleActivator.java:12: error: method does not override or implement a method from a supertype
+	        @Override
+	        ^
+	/home/me/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/activator/AbleBundleActivator.java:17: error: method does not override or implement a method from a supertype
+	        @Override
+	        ^
+	7 errors
+
+	FAILURE: Build failed with an exception.
+
+	* What went wrong:
+	Execution failed for task ':basic-training-able-impl:compileJava'.
+	> Compilation failed; see the compiler error output for details.
+
+	* Try:
+	Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+	* Get more help at https://help.gradle.org
+
+	Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+	Use '--warning-mode all' to show the individual deprecation warnings.
+	See https://docs.gradle.org/6.6.1/userguide/command_line_interface.html#sec:command_line_warnings
+
+	BUILD FAILED in 1s
+	1 actionable task: 1 executed
+	```
+
+1. Type ***osub basic-training-able-impl/build.gradle*** and paste the following code.
+
+	```
+	dependencies {
+		compileOnly group: "com.liferay.portal", name: "release.portal.api"
+	}
+	```
+
+1. Type ***./gradlew classes***.
+
+1. Type ***d exec -it ephesians-liferay /bin/ls /opt/liferay/osgi/modules*** to see that the directory is empty.
+
+1. Type ***./gradlew deploy -Ddeploy.docker.container.id=ephesians-liferay***.
+
+1. Type ***d exec -it ephesians-liferay /bin/ls /opt/liferay/osgi/modules*** to see that the directory contains only the file ***com.liferay.basic.training.able.impl-1.0.0.jar***.
+
+1. Verify on the console that the module ***com.liferay.basic.training.able.impl*** was started.
+
+	```
+	2021-03-22 16:14:09.422 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:46] STARTED com.liferay.basic.training.able.impl_1.0.0 [1355]
+	```
+
+1. Type ***d exec -it ephesians-liferay /bin/rm /opt/liferay/osgi/modules/com.liferay.basic.training.able.impl-1.0.0.jar***.
+
+1. Type ***d exec -it ephesians-liferay /bin/ls /opt/liferay/osgi/modules*** to see that the directory is empty.
+
+1. Verify on the console that the module ***com.liferay.basic.training.able.impl*** was stopped.
+
+	```
+	2021-03-22 16:14:34.462 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:49] STOPPED com.liferay.basic.training.able.impl_1.0.0 [1355]
+	```
+
+1. Type ***./gradlew deploy -Ddeploy.docker.container.id=ephesians-liferay***.
+
+1. Verify on the console basic.training.able.impl*** was started.
+
+	```
+	2021-03-22 16:14:59.567 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:46] STARTED com.liferay.basic.training.able.impl_1.0.0 [1356]
+	```
+
+1. Type ***./gradlew deploy -Ddeploy.docker.container.id=ephesians-liferay***.
+
+	1. Go to the tab that started the Liferay docker container and verify that nothing happened. Why? The OSGi container detected that the file ***/opt/liferay/osgi/modules/com.liferay.basic.training.able.impl-1.0.0.jar*** did not actually change.
+
+	1. Type ***md5sum basic-training-able-impl/build/libs/com.liferay.basic.training.able.impl-1.0.0.jar***.
+
+		```
+		35b8eb8bbfc376b01e21598c71b29faf  basic-training-able-impl/build/libs/com.liferay.basic.training.able.impl-1.0.0.jar
+		```
+
+		Type ***d exec -it ephesians-liferay /usr/bin/md5sum /opt/liferay/osgi/modules/com.liferay.basic.training.able.impl-1.0.0.jar***.
+
+		```
+		35b8eb8bbfc376b01e21598c71b29faf  /opt/liferay/osgi/modules/com.liferay.basic.training.able.impl-1.0.0.jar
+		```
+
+		Notice that MD5 hashes are the same.
+
+	1. Type ***rm basic-training-able-impl/build/libs/com.liferay.basic.training.able.impl-1.0.0.jar*** to force Gradle to recompile.
+
+	1. Type ***./gradlew deploy -Ddeploy.docker.container.id=ephesians-liferay***.
+
+	1. Type ***md5sum basic-training-able-impl/build/libs/com.liferay.basic.training.able.impl-1.0.0.jar***.
+
+		```
+		d7ffa168935514e70c3579ec957c50c8  basic-training-able-impl/build/libs/com.liferay.basic.training.able.impl-1.0.0.jar
+		```
+
+		Type ***d exec -it ephesians-liferay /usr/bin/md5sum /opt/liferay/osgi/modules/com.liferay.basic.training.able.impl-1.0.0.jar***.
+
+		```
+		d7ffa168935514e70c3579ec957c50c8  /opt/liferay/osgi/modules/com.liferay.basic.training.able.impl-1.0.0.jar
+		```
+
+		Notice that MD5 hashes are now d7ffa168935514e70c3579ec957c50c8 and not 35b8eb8bbfc376b01e21598c71b29faf. That means the file ***com.liferay.basic.training.able.impl-1.0.0.jar*** was updated.
+
+	1. Verify on the console that the module ***com.liferay.basic.training.able.impl*** was stopped and a new version of the module was started.
+
+		```
+		2021-03-22 16:16:59.772 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:49] STOPPED com.liferay.basic.training.able.impl_1.0.0 [1356]
+		2021-03-22 16:16:59.828 INFO  [Refresh Thread: Equinox Container: 82f33af4-b229-4921-a9cc-cd5350b6759e][BundleStartStopLogger:46] STARTED com.liferay.basic.training.able.impl_1.0.0 [1356]
+		```
+
+1. Configure the module to use ***com.liferay.basic.training.able.internal.activator.AbleBundleActivator*** as the bundle activator by adding following line to the very top of bnd.bnd.
+
+	```
+	Bundle-Activator: com.liferay.basic.training.able.internal.activator.AbleBundleActivator
+	```
+
+	Without it, the constructor, and the start and stop methods will not be invoked.
+
+1. Type ***./gradlew deploy -Ddeploy.docker.container.id=ephesians-liferay***.
+
+	```
+	2021-03-22 16:18:35.004 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:49] STOPPED com.liferay.basic.training.able.impl_1.0.0 [1356]
+	Constructing AbleBundleActivator
+	Starting AbleBundleActivator
+	2021-03-22 16:18:35.053 INFO  [Refresh Thread: Equinox Container: 82f33af4-b229-4921-a9cc-cd5350b6759e][BundleStartStopLogger:46] STARTED com.liferay.basic.training.able.impl_1.0.0 [1356]
+	```
+
+	Notice the statements ***Constructing AbleBundleActivator*** and ***Starting AbleBundleActivator*** were printed. The statement ***Stopping AbleBundleActivator*** was not printed becasue the earlier bundle that was stopped did not have the bundle activator wired yet via bnd.bnd.
+
+1. Type ***rm basic-training-able-impl/build/libs/com.liferay.basic.training.able.impl-1.0.0.jar*** to force Gradle to recompile.
+
+1. Type ***./gradlew deploy -Ddeploy.docker.container.id=ephesians-liferay***.
+
+	```
+	Stopping AbleBundleActivator
+	2021-03-22 16:19:15.109 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:49] STOPPED com.liferay.basic.training.able.impl_1.0.0 [1356]
+	Constructing AbleBundleActivator
+	Starting AbleBundleActivator
+	2021-03-22 16:19:15.159 INFO  [Refresh Thread: Equinox Container: 82f33af4-b229-4921-a9cc-cd5350b6759e][BundleStartStopLogger:46] STARTED com.liferay.basic.training.able.impl_1.0.0 [1356]
+	```
+
+	This time, the statement ***Stopping AbleBundleActivator*** was printed.
+
+1. Type ***./gradlew clean deploy -Ddeploy.docker.container.id=ephesians-liferay***.
+
+	```
+	Stopping AbleBundleActivator
+	2021-03-22 16:20:00.228 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:49] STOPPED com.liferay.basic.training.able.impl_1.0.0 [1356]
+	Constructing AbleBundleActivator
+	Starting AbleBundleActivator
+	2021-03-22 16:20:00.276 INFO  [Refresh Thread: Equinox Container: 82f33af4-b229-4921-a9cc-cd5350b6759e][BundleStartStopLogger:46] STARTED com.liferay.basic.training.able.impl_1.0.0 [1356]
+	```
+
+	The tasks ***clean deploy*** will first clean (delete build objects) before deploying. That means you do not have to manually type ***rm basic-training-able-impl/build/libs/com.liferay.basic.training.able.impl-1.0.0.jar*** to force Gradle to recompile.
+
+## Portlet
+
+1. Type ***mkdir -p basic-training-baker-web/src/main/java/com/liferay/basic/training/baker/web/internal/portlet***.
+
+1. Type ***osub basic-training-baker-web/src/main/java/com/liferay/basic/training/baker/web/internal/portlet/BakerPortlet.java*** and paste the following code.
+
+	```
+	package com.liferay.basic.training.baker.web.internal.portlet;
+
+	import java.io.IOException;
+	import java.io.PrintWriter;
+
+	import javax.portlet.GenericPortlet;
+	import javax.portlet.Portlet;
+	import javax.portlet.RenderRequest;
+	import javax.portlet.RenderResponse;
+
+	import org.osgi.service.component.annotations.Component;
+
+	@Component(
+		property = {
+			"com.liferay.portlet.display-category=category.sample",
+			"javax.portlet.display-name=Basic Training Baker"
+		},
+		service = Portlet.class
+	)
+	public class BakerPortlet extends GenericPortlet {
+
+		public BakerPortlet() {
+			System.out.println("Constructing BakerPortlet");
+		}
+
+		@Override
+		protected void doView(
+				RenderRequest renderRequest, RenderResponse renderResponse)
+			throws IOException {
+
+			System.out.println("Invoking BakerPortlet#doView");
+
+			PrintWriter printWriter = renderResponse.getWriter();
+
+			printWriter.println("Hello, Basic Training Baker!");
+		}
+
+	}
+	```
+
+1. Type ***osub basic-training-baker-web/bnd.bnd*** and paste the following code.
+
+	```
+	Bundle-Name: Liferay Basic Training Baker Web
+	Bundle-SymbolicName: com.liferay.basic.training.baker.web
+	Bundle-Version: 1.0.0
+	```
+
+1. Type ***osub basic-training-baker-web/build.gradle*** and paste the following code.
+
+	```
+	dependencies {
+		compileOnly group: "com.liferay.portal", name: "release.portal.api"
+	}
+	```
+
+1. Type ***./gradlew classes*** to compile both ***basic-training-able-impl*** and ***basic-training-baker-web**.
+
+1. Type ***./gradlew basic-training-baker-web:classes*** to only compile ***basic-training-baker-web***. Can you guess how you can compile only ***basic-training-able-impl***? Hint, delete ***basic-training-able-impl/build/classes***.
+
+1. Type ***./gradlew basic-training-baker-web:deploy -Ddeploy.docker.container.id=ephesians-liferay***.
+
+1. Verify on the console that the module ***com.liferay.basic.training.baker.web*** was started.
+
+	```
+	2021-03-22 16:55:14.559 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:46] STARTED com.liferay.basic.training.baker.web_1.0.0 [1356]
+	Constructing BakerPortlet
+	```
+
+	Notice that you did not have wire a bundle activator.
+
+1. Go to http://localhost:8080. Add a ***widget page***. Add the widget ***Basic Training Baker*** to the page. It will be available under the ***Sample*** category.
+
+	The portlet will print out ***Hello, Basic Training Baker!*** on the page.
+
+	Every time you refresh the page, the portlet will render, and will print out the statement ***Invoking BakerPortlet#doView*** on the console.
+
+## API and Impl
+
+## Call Service Builder
+
+## Call Headless
+
+## Liferay with MySQL
+
+## New Service Builder
+
+## New Headless
