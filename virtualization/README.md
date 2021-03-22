@@ -18,11 +18,11 @@
 
 1. Start Liferay.
 
-	1. Type ***d pull liferay/portal:7.3.5-ga6***.
+	1. Type ***d pull liferay/portal:7.3.6-ga7***.
 
-	1. Type ***d run -it -p 8080:8080 liferay/portal:7.3.5-ga6***.
+	1. Type ***d run -it -p 8080:8080 liferay/portal:7.3.6-ga7***.
 
-	1. The command ***d pull liferay/portal:7.3.5-ga6*** to pull the Docker image is not necessary. If you tell Docker to run an image, and it is not available locally, it will pull down the image automatically for you.
+	1. The command ***d pull liferay/portal:7.3.6-ga7*** to pull the Docker image is not necessary. If you tell Docker to run an image, and it is not available locally, it will pull down the image automatically for you.
 
 	1. Go to http://localhost:8080 after Liferay has started.
 
