@@ -11,8 +11,15 @@
 ## REST
 
 1. Follow the tutorial [Consuming REST Services](https://learn.liferay.com/dxp/7.x/en/headless-delivery/consuming-apis/consuming-rest-services.html).
+	1. For now only attempt to make REST calls using Basic Auth. You can ignore making calls using OAuth2.
 
-1. Repeat the curl commands, but this time, using HTML/JavaScript. There is no need to use Node for this. Create a HTML page and use JavaScript to replicate the curl commmands.
+1. Repeat the curl commands, but this time, using HTML/JavaScript. There is no need to use Node for this. Create a HTML page and use the JavaScript [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) api to replicate the curl commmands.
+
+	1. In order to call Liferay REST Services from your HTML page you will need to enable [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) in Liferay. You can enable CORS in Liferay by navigating to the `Control Panel > System Settings > Security Tools > Portal Cross-Origin Resource Sharing (CORS)`.
+
+	1. Click the button to `Add` a new Configuration Entry. Make sure it includes a `URL Pattern` section with the contents `/o/headless-delivery/*`, since the REST Services we are calling are included in this path. Save your configuration.
+
+	1. Accessing Liferay REST Services will require authentication. You can provide this to your REST call by adding a header with the key `Authorization` and the value `'Basic ' + btoa('test@liferay.com:test')`. Look up [btoa](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa) if you're not sure what it does.
 
 1. Send a pull request to ***brianchandotcom***, replacing the PLACEHOLDER text below with the JavaScript commands.
 
