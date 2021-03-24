@@ -860,7 +860,7 @@
 
 1. Go to ***/home/me/dev/projects/liferay-portal***.
 
-1. Type ***g ls-files \*\*bnd.bnd***. That uses Git to list every bnd.bnd file.
+1. Type ***g ls-files \*\*bnd.bnd***. That command uses Git to list every bnd.bnd file in the repository. A lot of bnd.bnd files were listed. How many?
 
 1. Type ***g ls-files \*\*bnd.bnd | wc -l*** to count the number of lines. As you can see, Liferay is made up of many OSGi modules.
 
