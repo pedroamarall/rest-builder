@@ -855,6 +855,15 @@
 
 	1. Separating the API from the implementation allows developers to hide implementation details (i.e. The BakerPortlet class does not to know that the AbleNumberGenerator class uses Apache Commons Math).
 
+
+## Liferay and OSGi
+
+1. Go to ***/home/me/dev/projects/liferay-portal***.
+
+1. Type ***g ls-files \*\*bnd.bnd***. That uses Git to list every bnd.bnd file.
+
+1. Type ***g ls-files \*\*bnd.bnd | wc -l*** to count the number of lines. As you can see, Liferay is made up of many OSGi modules.
+
 ## Apache Felix
 
 1. Under the hood, Liferay uses Apache Felix to provide OSGi capabilities. Download [Apache Felix](https://felix.apache.org/documentation/subprojects/apache-felix-framework/apache-felix-framework-usage-documentation.html) and follow the [tutorial examples](https://felix.apache.org/documentation/tutorials-examples-and-presentations/apache-felix-osgi-tutorial.html).
