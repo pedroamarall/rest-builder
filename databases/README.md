@@ -112,9 +112,9 @@
 		+--------------------+
 		```
 
-	1. Type ***use mydata;*** to go into your newly created database;
+	1. Type ***use mydata;*** to go into your newly created database.
 
-	1. Type ***show tables;*** to see that there are no tables;
+	1. Type ***show tables;*** to see that there are no tables.
 
 1. Create a table.
 
