@@ -854,3 +854,7 @@
 		```
 
 	1. Separating the API from the implementation allows developers to hide implementation details (i.e. The BakerPortlet class does not to know that the AbleNumberGenerator class uses Apache Commons Math).
+
+## Apache Felix
+
+1. Under the hood, Liferay uses Apache Felix to provide OSGi capabilities. Follow the tutorials in https://felix.apache.org/documentation/subprojects/apache-felix-framework/apache-felix-framework-usage-documentation.html and https://felix.apache.org/documentation/tutorials-examples-and-presentations/apache-felix-osgi-tutorial.html to learn more about OSGi and Apache Felix.
