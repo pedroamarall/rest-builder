@@ -79,4 +79,4 @@
 
 ## service.xml
 
-1. Create and go to a directory called ***my-service-builder-project***. Follow the steps in [Set Up an OSGi Project](../osgi).
+1. Create and go to a directory called ***my-service-builder-project***. Follow the steps in [Set Up an OSGi Project](../osgi#set-up-an-osgi-project).
