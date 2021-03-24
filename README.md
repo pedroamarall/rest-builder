@@ -38,6 +38,10 @@
 
 1. [OSGi](osgi)
 
+1. [Service Builder](service-builder)
+
+1. [REST Builder](rest-builder)
+
 1. [Blade](blade)
 
 1. [IDE](ide)

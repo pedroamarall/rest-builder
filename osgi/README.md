@@ -2,8 +2,6 @@
 
 ## Set Up an OSGi Project
 
-1. Launch Terminator.
-
 1. Type ***mkdir my-osgi-project && cd my-osgi-project***.
 
 1. Install Gradle.
@@ -856,11 +854,3 @@
 		```
 
 	1. Separating the API from the implementation allows developers to hide implementation details (i.e. The BakerPortlet class does not to know that the AbleNumberGenerator class uses Apache Commons Math).
-
-## MVC Portlet
-
-## Liferay with MySQL
-
-## Service Builder
-
-## Headless
