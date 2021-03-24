@@ -19,7 +19,7 @@
 		--collation-server=utf8mb4_unicode_ci
 	```
 
-	Notice the name given for the MySQL container.
+	Notice the name given to the MySQL container.
 
 1. Type ***d exec -it ephesians-mysql mysql -utest -ptest*** to connect to MySQL.
 
@@ -43,7 +43,7 @@
 		liferay/portal:7.3.6-ga7
 	```
 
-	Notice the name given for the Liferay container and how it is linked to the MySQL container.
+	Notice the name given to the Liferay container and how it is linked to the MySQL container.
 
 1. Verify on the Liferay console that it is connected to MySQL.
 
@@ -52,7 +52,7 @@
 	2021-03-24 01:03:33.409 INFO  [main][DBInitUtil:132] Create tables and populate with default data
 	```
 
-1. Go to the MySQL client and type ***show tables;*** to see that many tables were created.
+1. Type ***show tables;*** to see that many tables were created.
 
 1. Notice that it took longer for Liferay to startup.
 
@@ -75,4 +75,4 @@
 	2021-03-24 01:04:04.481 INFO  [main][LoggingTimer:83] Starting com.liferay.portal.verify.VerifyProperties#verifyDocumentLibrary
 	```
 
-1. Type ***<Control+C>*** to stop Liferay. Type ***\<Up\>*** and ***\<Enter>\*** to restart Liferay. Notice that Liferay started faster this time and that there are fewer log messages. Why?
+1. Type ***<Control+C>*** to stop Liferay. Type ***\<Up\>*** and ***\<Enter\>*** to restart Liferay. Notice that Liferay started faster this time and that there are fewer log messages. Why?
