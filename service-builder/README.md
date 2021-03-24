@@ -76,3 +76,7 @@
 	```
 
 1. Type ***<Control+C>*** to stop Liferay. Type ***\<Up\>*** and ***\<Enter\>*** to restart Liferay. Notice that Liferay started faster this time and that there are fewer log messages. Why?
+
+## service.xml
+
+1. Create and go to a directory called ***my-service-builder-project***. Follow the steps in [Set Up an OSGi Project](../osgi).
