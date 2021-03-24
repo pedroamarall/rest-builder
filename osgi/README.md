@@ -857,4 +857,4 @@
 
 ## Apache Felix
 
-1. Under the hood, Liferay uses Apache Felix to provide OSGi capabilities. Follow the tutorials in https://felix.apache.org/documentation/subprojects/apache-felix-framework/apache-felix-framework-usage-documentation.html and https://felix.apache.org/documentation/tutorials-examples-and-presentations/apache-felix-osgi-tutorial.html to learn more about OSGi and Apache Felix.
+1. Under the hood, Liferay uses Apache Felix to provide OSGi capabilities. Download [Apache Felix](https://felix.apache.org/documentation/subprojects/apache-felix-framework/apache-felix-framework-usage-documentation.html) and follow the [tutorial examples](https://felix.apache.org/documentation/tutorials-examples-and-presentations/apache-felix-osgi-tutorial.html to learn more about OSGi).
