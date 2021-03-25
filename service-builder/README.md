@@ -833,7 +833,7 @@
 	}
 	```
 
-	For now, ignore ModelResourcePermissionUtil (and just use the email address check I already showed you).
+	For now, ignore ModelResourcePermissionUtil and use the simple email address check in your code.
 
 	The main thing to understand is that local services contain CRUD logic while remote services contain permission logic.
 
