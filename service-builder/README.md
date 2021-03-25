@@ -864,8 +864,8 @@
 
 1. Use curl to call H7G5EntryServiceImpl.
 
-1. Send a pull request to ***brianchandotcom*** with just the modified Java files and a shell script containing all curl commands.
+1. Send a pull request to ***brianchandotcom*** with your custom Java files (not the generated Java files) and a shell script containing all your curl commands.
 
 1. Explore [DynamicQuery](https://help.liferay.com/hc/en-us/articles/360017882032-Dynamic-Query) to replace the usage of the finder methods above. Finder methods create unique SQL indexes that perform better than dynamic queries. Dynamic queries are useful because they provide more ways for developers to retrieve data.
 
-1. Send a pull request to ***brianchandotcom*** with just the modified Java files and a shell script containing all curl commands. Make sure the usage is exhaustive.
+1. Send a pull request to ***brianchandotcom*** with your custom Java files (not the generated Java files) and a shell script containing all your curl commands.
