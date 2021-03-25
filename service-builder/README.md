@@ -176,7 +176,7 @@
 			<finder name="Name" return-type="Collection">
 				<finder-column name="name" />
 			</finder>
-			<finder name="H_D_N" return-type="MemberRequest">
+			<finder name="H_D_N" return-type="H7G5Entry">
 				<finder-column name="h7g5FolderId" />
 				<finder-column name="description" />
 				<finder-column name="name" />
@@ -736,3 +736,136 @@
 	1. Fix the compile errors. Regenerate. Deploy it to Liferay.
 
 	1. Use a curl command to invoke ***addMyCustomH7G5FolderWithPermissionCheck*** as ***test@liferay.com*** and see that it works. Add a new user to Liferay. Run the curl command as the other user and verify that you see the exception message `You are not test@liferay.com`.
+
+## Liferay and Service Builder
+
+1. Go to ***/home/me/dev/projects/liferay-portal***.
+
+1. Type ***g ls-files \*\*service.xml***. Liferay is made up of many service.xml files. How many?
+
+1. Type ***g ls-files \*\*service.xml | wc -l***
+
+1. Type ***osub `g ls-files \*\*service.xml`*** to open up every service.xml file. Scan through them.
+
+## Mastering Service Builder
+
+1. Contrast [BookmarksEntryServiceImpl.java](https://github.com/brianchandotcom/liferay-portal/blob/master/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryServiceImpl.java) with [BookmarksEntryLocalServiceImpl.java](https://github.com/brianchandotcom/liferay-portal/blob/master/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java).
+
+	Notice how CRUD logic is concentrated in the local service.
+
+	```
+	public BookmarksEntry addEntry(
+			long userId, long groupId, long folderId, String name, String url,
+			String description, ServiceContext serviceContext)
+		throws PortalException {
+
+		// Entry
+
+		User user = userLocalService.getUser(userId);
+
+		if (Validator.isNull(name)) {
+			name = url;
+		}
+
+		_validate(url);
+
+		long entryId = counterLocalService.increment();
+
+		BookmarksEntry entry = bookmarksEntryPersistence.create(entryId);
+
+		entry.setUuid(serviceContext.getUuid());
+		entry.setGroupId(groupId);
+		entry.setCompanyId(user.getCompanyId());
+		entry.setUserId(user.getUserId());
+		entry.setUserName(user.getFullName());
+		entry.setFolderId(folderId);
+		entry.setTreePath(entry.buildTreePath());
+		entry.setName(name);
+		entry.setUrl(url);
+		entry.setDescription(description);
+		entry.setExpandoBridgeAttributes(serviceContext);
+
+		entry = bookmarksEntryPersistence.update(entry);
+
+		// Resources
+
+		resourceLocalService.addModelResources(entry, serviceContext);
+
+		// Asset
+
+		updateAsset(
+			userId, entry, serviceContext.getAssetCategoryIds(),
+			serviceContext.getAssetTagNames(),
+			serviceContext.getAssetLinkEntryIds(),
+			serviceContext.getAssetPriority());
+
+		// Social
+
+		JSONObject extraDataJSONObject = JSONUtil.put("title", entry.getName());
+
+		socialActivityLocalService.addActivity(
+			userId, groupId, BookmarksEntry.class.getName(), entryId,
+			BookmarksActivityKeys.ADD_ENTRY, extraDataJSONObject.toString(), 0);
+
+		// Subscriptions
+
+		_notifySubscribers(userId, entry, serviceContext);
+
+		return entry;
+	}
+	```
+
+	Notice how the remote service simply calls the local service, but adds permission checking.
+
+	```
+	public BookmarksEntry addEntry(
+			long groupId, long folderId, String name, String url,
+			String description, ServiceContext serviceContext)
+		throws PortalException {
+
+		ModelResourcePermissionUtil.check(
+			_bookmarksFolderModelResourcePermission, getPermissionChecker(),
+			groupId, folderId, ActionKeys.ADD_ENTRY);
+
+		return bookmarksEntryLocalService.addEntry(
+			getUserId(), groupId, folderId, name, url, description,
+			serviceContext);
+	}
+	```
+
+	For now, ignore ModelResourcePermissionUtil (and just use the email address check I already showed you).
+
+	The main thing to understand is that local services contain CRUD logic while remote services contain permission logic.
+
+1. Modify H7G5EntryLocalServiceImpl to add getter methods that invoke the generated finder methods.
+
+	```
+	<!-- Finder methods -->
+
+	<finder name="H7G5FolderId" return-type="Collection">
+		<finder-column name="h7g5FolderId" />
+	</finder>
+	<finder name="Key" return-type="H7G5Entry">
+		<finder-column name="key" />
+	</finder>
+	<finder name="Name" return-type="Collection">
+		<finder-column name="name" />
+	</finder>
+	<finder name="H_D_N" return-type="H7G5Entry">
+		<finder-column name="h7g5FolderId" />
+		<finder-column name="description" />
+		<finder-column name="name" />
+	</finder>
+	```
+
+	Modify H7G5EntryServiceImpl to call H7G5EntryLocalServiceImpl. Add a simple permission check.
+
+1. Use H7G5Portlet to call H7G5EntryServiceImpl.
+
+1. Use curl to call H7G5EntryServiceImpl.
+
+1. Send a pull request to ***brianchandotcom*** with just the modified Java files and a shell script containing all curl commands.
+
+1. Explore [DynamicQuery](https://help.liferay.com/hc/en-us/articles/360017882032-Dynamic-Query) to replace the usage of the finder methods above. Finder methods create unique SQL indexes that perform better than dynamic queries. Dynamic queries are useful because they provide more ways for developers to retrieve data.
+
+1. Send a pull request to ***brianchandotcom*** with just the modified Java files and a shell script containing all curl commands. Make sure the usage is exhaustive.

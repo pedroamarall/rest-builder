@@ -552,14 +552,14 @@
 
 		```
 		> Task :basic-training-able-impl:compileJava FAILED
-		/home/brian/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/number/generator/AbleNumberGeneratorImpl.java:3: error: package com.liferay.basic.training.able.number.generator does not exist
+		/home/me/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/number/generator/AbleNumberGeneratorImpl.java:3: error: package com.liferay.basic.training.able.number.generator does not exist
 		import com.liferay.basic.training.able.number.generator.AbleNumberGenerator;
 		                                                       ^
-		/home/brian/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/number/generator/AbleNumberGeneratorImpl.java:10: error: cannot find symbol
+		/home/me/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/number/generator/AbleNumberGeneratorImpl.java:10: error: cannot find symbol
 		public class AbleNumberGeneratorImpl implements AbleNumberGenerator {
 		                                                ^
 		  symbol: class AbleNumberGenerator
-		/home/brian/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/number/generator/AbleNumberGeneratorImpl.java:8: error: cannot find symbol
+		/home/me/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/number/generator/AbleNumberGeneratorImpl.java:8: error: cannot find symbol
 		        immediate = true, service = {AbleNumberGenerator.class}
 		                                     ^
 		  symbol: class AbleNumberGenerator
@@ -683,10 +683,10 @@
 
 		```
 		> Task :basic-training-baker-web:compileJava FAILED
-		/home/brian/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-baker-web/src/main/java/com/liferay/basic/training/baker/web/internal/portlet/BakerPortlet.java:3: error: package com.liferay.basic.training.able.number.generator does not exist
+		/home/me/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-baker-web/src/main/java/com/liferay/basic/training/baker/web/internal/portlet/BakerPortlet.java:3: error: package com.liferay.basic.training.able.number.generator does not exist
 		import com.liferay.basic.training.able.number.generator.AbleNumberGenerator;
 		                                                       ^
-		/home/brian/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-baker-web/src/main/java/com/liferay/basic/training/baker/web/internal/portlet/BakerPortlet.java:43: error: cannot find symbol
+		/home/me/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-baker-web/src/main/java/com/liferay/basic/training/baker/web/internal/portlet/BakerPortlet.java:43: error: cannot find symbol
 		        private AbleNumberGenerator _ableNumberGenerator;
 		                ^
 		  symbol:   class AbleNumberGenerator
@@ -759,10 +759,10 @@
 
 		```
 		> Task :basic-training-able-impl:compileJava FAILED
-		/home/brian/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/number/generator/AbleNumberGeneratorImpl.java:5: error: package org.apache.commons.math3.util does not exist
+		/home/me/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/number/generator/AbleNumberGeneratorImpl.java:5: error: package org.apache.commons.math3.util does not exist
 		import org.apache.commons.math3.util.ArithmeticUtils;
 		                                    ^
-		/home/brian/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/number/generator/AbleNumberGeneratorImpl.java:15: error: cannot find symbol
+		/home/me/dev/projects/github/liferay-basic-training/my-osgi-project/basic-training-able-impl/src/main/java/com/liferay/basic/training/able/internal/number/generator/AbleNumberGeneratorImpl.java:15: error: cannot find symbol
 		                return ArithmeticUtils.mulAndCheck(30624700, 2);
 		                       ^
 		  symbol:   variable ArithmeticUtils
