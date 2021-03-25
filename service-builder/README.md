@@ -389,10 +389,10 @@
 
 1. Go to MySQL and type ***desc OHQIWTSFHL_H7G5Entry;***. The table was created.
 
-1. Type ***select * from OHQIWTSFHL_H7G5Entry;***.
+	1. Type ***select * from OHQIWTSFHL_H7G5Entry;***.
 
-1. Type ***desc OHQIWTSFHL_H7G5Folder;***.
+	1. Type ***desc OHQIWTSFHL_H7G5Folder;***.
 
-1. Type ***select * from OHQIWTSFHL_H7G5Folder;***.
+	1. Type ***select * from OHQIWTSFHL_H7G5Folder;***.
 
 ## Invoke Service Builder from a Portlet
