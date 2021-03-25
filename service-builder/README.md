@@ -125,7 +125,6 @@
 	}
 
 1. Type ***./gradlew :h7g5-service:classes && la h7g5-service/build*** to verify that h7g5-service was created properly.
-	```
 
 1. Type ***osub h7g5-service/service.xml*** and paste the following code.
 
