@@ -177,7 +177,7 @@
 
 1. Type ***d exec -it ephesians-liferay /bin/ls /opt/liferay/osgi/modules*** to see that the directory contains the file ***com.liferay.basic.training.able.impl.jar***.
 
-1. Go to the tab that started the Liferay docker container to verify on the console that the module ***com.liferay.basic.training.able.impl*** was started.
+1. Go to the tab that started the Liferay docker container to verify on the Liferay console that the module ***com.liferay.basic.training.able.impl*** was started.
 
 	```
 	2021-03-22 12:59:58.258 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:46] STARTED com.liferay.basic.training.able.impl_1.0.0 [1355]
@@ -283,7 +283,7 @@
 
 1. Type ***d exec -it ephesians-liferay /bin/ls /opt/liferay/osgi/modules*** to see that the directory contains only the file ***com.liferay.basic.training.able.impl-1.0.0.jar***.
 
-1. Verify on the console that the module ***com.liferay.basic.training.able.impl*** was started.
+1. Verify on the Liferay console that the module ***com.liferay.basic.training.able.impl*** was started.
 
 	```
 	2021-03-22 16:14:09.422 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:46] STARTED com.liferay.basic.training.able.impl_1.0.0 [1355]
@@ -293,7 +293,7 @@
 
 1. Type ***d exec -it ephesians-liferay /bin/ls /opt/liferay/osgi/modules*** to see that the directory is empty.
 
-1. Verify on the console that the module ***com.liferay.basic.training.able.impl*** was stopped.
+1. Verify on the Liferay console that the module ***com.liferay.basic.training.able.impl*** was stopped.
 
 	```
 	2021-03-22 16:14:34.462 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:49] STOPPED com.liferay.basic.training.able.impl_1.0.0 [1355]
@@ -301,7 +301,7 @@
 
 1. Type ***./gradlew deploy -Ddeploy.docker.container.id=ephesians-liferay***.
 
-1. Verify on the console ***basic.training.able.impl*** was started.
+1. Verify on the Liferay console ***basic.training.able.impl*** was started.
 
 	```
 	2021-03-22 16:14:59.567 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:46] STARTED com.liferay.basic.training.able.impl_1.0.0 [1356]
@@ -345,7 +345,7 @@
 
 		Notice that MD5 hashes are now d7ffa168935514e70c3579ec957c50c8 and not 35b8eb8bbfc376b01e21598c71b29faf. That means the file ***com.liferay.basic.training.able.impl-1.0.0.jar*** was updated.
 
-	1. Verify on the console that the module ***com.liferay.basic.training.able.impl*** was stopped and a new version of the module was started.
+	1. Verify on the Liferay console that the module ***com.liferay.basic.training.able.impl*** was stopped and a new version of the module was started.
 
 		```
 		2021-03-22 16:16:59.772 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:49] STOPPED com.liferay.basic.training.able.impl_1.0.0 [1356]
@@ -466,7 +466,7 @@
 
 1. Type ***./gradlew basic-training-baker-web:deploy -Ddeploy.docker.container.id=ephesians-liferay***.
 
-1. Verify on the console that the module ***com.liferay.basic.training.baker.web*** was started.
+1. Verify on the Liferay console that the module ***com.liferay.basic.training.baker.web*** was started.
 
 	```
 	2021-03-22 16:55:14.559 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:46] STARTED com.liferay.basic.training.baker.web_1.0.0 [1357]
@@ -479,7 +479,7 @@
 
 	The widget will print out ***Hello, Basic Training Baker!*** on the page.
 
-	Every time you refresh the page, the portlet will render, and will print out the statement ***Invoking BakerPortlet#doView*** on the console.
+	Every time you refresh the page, the portlet will render, and will print out the statement ***Invoking BakerPortlet#doView*** on the Liferay console.
 
 ## API and Impl
 
@@ -517,7 +517,7 @@
 
 	1. Type ***./gradlew basic-training-able-api:deploy -Ddeploy.docker.container.id=ephesians-liferay***.
 
-	1. Verify on the console that the module ***com.liferay.basic.training.able.api*** was started.
+	1. Verify on the Liferay console that the module ***com.liferay.basic.training.able.api*** was started.
 
 		```
 		2021-03-22 17:42:14.450 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:46] STARTED com.liferay.basic.training.able.api_1.0.0 [1358]
@@ -714,7 +714,7 @@
 
 	1. Type ***./gradlew basic-training-baker-web:deploy -Ddeploy.docker.container.id=ephesians-liferay***.
 
-	1. Verify on the console that the module ***com.liferay.basic.training.baker.web*** was restarted.
+	1. Verify on the Liferay console that the module ***com.liferay.basic.training.baker.web*** was restarted.
 
 		```
 		2021-03-23 00:43:20.394 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:49] STOPPED com.liferay.basic.training.baker.web_1.0.0 [1357]
