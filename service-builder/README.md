@@ -134,7 +134,7 @@
 
 	<service-builder auto-namespace-tables="true" dependency-injector="ds" package-path="com.liferay.h7g5">
 		<namespace>OHQIWTSFHL</namespace>
-		<entity local-service="true" name="H7G5Entry" remote-service="false">
+		<entity local-service="true" name="H7G5Entry" remote-service="true">
 
 			<!-- PK fields -->
 
@@ -186,7 +186,7 @@
 
 			<reference entity="Group" package-path="com.liferay.portal" />
 		</entity>
-		<entity local-service="true" name="H7G5Folder" remote-service="false">
+		<entity local-service="true" name="H7G5Folder" remote-service="true">
 
 			<!-- PK fields -->
 
@@ -242,6 +242,13 @@
 	Writing ../h7g5-api/src/main/java/com/liferay/h7g5/service/H7G5EntryLocalService.java
 	Writing ../h7g5-api/src/main/java/com/liferay/h7g5/service/H7G5EntryLocalServiceUtil.java
 	Writing ../h7g5-api/src/main/java/com/liferay/h7g5/service/H7G5EntryLocalServiceWrapper.java
+	Writing src/main/java/com/liferay/h7g5/service/impl/H7G5EntryServiceImpl.java
+	Writing src/main/java/com/liferay/h7g5/service/base/H7G5EntryServiceBaseImpl.java
+	Writing ../h7g5-api/src/main/java/com/liferay/h7g5/service/H7G5EntryService.java
+	Writing ../h7g5-api/src/main/java/com/liferay/h7g5/service/H7G5EntryServiceUtil.java
+	Writing ../h7g5-api/src/main/java/com/liferay/h7g5/service/H7G5EntryServiceWrapper.java
+	Writing src/main/java/com/liferay/h7g5/service/http/H7G5EntryServiceHttp.java
+	Writing src/main/java/com/liferay/h7g5/service/http/H7G5EntryServiceSoap.java
 	Building H7G5Folder
 	Writing src/main/java/com/liferay/h7g5/service/persistence/impl/H7G5FolderPersistenceImpl.java
 	Writing ../h7g5-api/src/main/java/com/liferay/h7g5/service/persistence/H7G5FolderPersistence.java
@@ -259,6 +266,13 @@
 	Writing ../h7g5-api/src/main/java/com/liferay/h7g5/service/H7G5FolderLocalService.java
 	Writing ../h7g5-api/src/main/java/com/liferay/h7g5/service/H7G5FolderLocalServiceUtil.java
 	Writing ../h7g5-api/src/main/java/com/liferay/h7g5/service/H7G5FolderLocalServiceWrapper.java
+	Writing src/main/java/com/liferay/h7g5/service/impl/H7G5FolderServiceImpl.java
+	Writing src/main/java/com/liferay/h7g5/service/base/H7G5FolderServiceBaseImpl.java
+	Writing ../h7g5-api/src/main/java/com/liferay/h7g5/service/H7G5FolderService.java
+	Writing ../h7g5-api/src/main/java/com/liferay/h7g5/service/H7G5FolderServiceUtil.java
+	Writing ../h7g5-api/src/main/java/com/liferay/h7g5/service/H7G5FolderServiceWrapper.java
+	Writing src/main/java/com/liferay/h7g5/service/http/H7G5FolderServiceHttp.java
+	Writing src/main/java/com/liferay/h7g5/service/http/H7G5FolderServiceSoap.java
 	Writing src/main/resources/META-INF/module-hbm.xml
 	Writing src/main/resources/META-INF/portlet-model-hints.xml
 	Writing ../h7g5-api/src/main/java/com/liferay/h7g5/exception/DuplicateH7G5EntryKeyException.java
@@ -383,7 +397,7 @@
 	Liferay-Service: true
 	```
 
-	This property tells Liferay to process ***com.liferay.h7g5.service*** as a Service Builder module. Be very careful not to accidentally add this line to ***h7g5-api/bnd.bnd***
+	This ***Liferay-Service*** property tells Liferay to process ***com.liferay.h7g5.service*** as a Service Builder module. Be very careful not to accidentally add this line to ***h7g5-api/bnd.bnd***
 
 1. Type ***./gradlew deploy -Ddeploy.docker.container.id=ephesians-liferay***.
 
@@ -395,4 +409,309 @@
 
 	1. Type ***select * from OHQIWTSFHL_H7G5Folder;***.
 
-## Invoke Service Builder from a Portlet
+## Invoke Services from a Portlet
+
+1. Type ***mkdir -p h7g5-web/src/main/java/com/liferay/h7g5/web/internal/portlet***.
+
+1. Type ***osub h7g5-web/src/main/java/com/liferay/h7g5/web/internal/portlet/H7G5Portlet.java*** and paste the following code.
+
+	```
+	package com.liferay.h7g5.web.internal.portlet;
+
+	import java.io.IOException;
+	import java.io.PrintWriter;
+
+	import javax.portlet.GenericPortlet;
+	import javax.portlet.Portlet;
+	import javax.portlet.RenderRequest;
+	import javax.portlet.RenderResponse;
+
+	import org.osgi.service.component.annotations.Component;
+
+	@Component(
+		property = {
+			"com.liferay.portlet.display-category=category.sample",
+			"javax.portlet.display-name=H7G5"
+		},
+		service = Portlet.class
+	)
+	public class H7G5Portlet extends GenericPortlet {
+
+		public H7G5Portlet() {
+			System.out.println("Constructing H7G5Portlet");
+		}
+
+		@Override
+		protected void doView(
+				RenderRequest renderRequest, RenderResponse renderResponse)
+			throws IOException {
+
+			System.out.println("Invoking H7G5Portlet#doView");
+
+			PrintWriter printWriter = renderResponse.getWriter();
+
+			printWriter.println("Hello, H7G5!");
+		}
+
+	}
+	```
+
+1. Type ***osub h7g5-web/bnd.bnd*** and paste the following code.
+
+	```
+	Bundle-Name: Liferay H7G5 Web
+	Bundle-SymbolicName: com.liferay.h7g5.web
+	Bundle-Version: 1.0.0
+	```
+
+1. Type ***osub h7g5-web/build.gradle*** and paste the following code.
+
+	```
+	dependencies {
+		compileOnly group: "com.liferay.portal", name: "release.portal.api"
+	}
+	```
+
+1. Type ***./gradlew deploy -Ddeploy.docker.container.id=ephesians-liferay***.
+
+	```
+	2021-03-25 11:46:37.195 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:46] STARTED com.liferay.h7g5.web_1.0.0 [1357]
+	Constructing H7G5Portlet
+	```
+
+1. Go to http://localhost:8080 and add ***H7G5*** to a widget page.
+
+	```
+	Invoking H7G5Portlet#doView
+	```
+
+1. Type ***osub h7g5-web/src/main/java/com/liferay/h7g5/web/internal/portlet/H7G5Portlet.java*** and paste the following code.
+
+	```
+	package com.liferay.h7g5.web.internal.portlet;
+
+	import com.liferay.h7g5.model.H7G5Folder;
+	import com.liferay.h7g5.service.H7G5FolderLocalService;
+	import com.liferay.portal.kernel.util.StringUtil;
+
+	import java.io.IOException;
+	import java.io.PrintWriter;
+
+	import javax.portlet.GenericPortlet;
+	import javax.portlet.Portlet;
+	import javax.portlet.RenderRequest;
+	import javax.portlet.RenderResponse;
+
+	import org.osgi.service.component.annotations.Component;
+	import org.osgi.service.component.annotations.Reference;
+
+	@Component(
+		property = {
+			"com.liferay.portlet.display-category=category.sample",
+			"javax.portlet.display-name=H7G5"
+		},
+		service = Portlet.class
+	)
+	public class H7G5Portlet extends GenericPortlet {
+
+		public H7G5Portlet() {
+			System.out.println("Constructing H7G5Portlet");
+		}
+
+		@Override
+		protected void doView(
+				RenderRequest renderRequest, RenderResponse renderResponse)
+			throws IOException {
+
+			System.out.println("Invoking H7G5Portlet#doView");
+
+			PrintWriter printWriter = renderResponse.getWriter();
+
+			printWriter.println("Hello, H7G5!");
+
+			System.out.println(
+				"There are " + _h7G5FolderLocalService.getH7G5FoldersCount() +
+					" folders.");
+
+			H7G5Folder h7g5Folder = _h7G5FolderLocalService.createH7G5Folder(
+				System.currentTimeMillis());
+
+			h7g5Folder.setDescription(StringUtil.randomString());
+			h7g5Folder.setName(StringUtil.randomString());
+
+			_h7G5FolderLocalService.addH7G5Folder(h7g5Folder);
+
+			System.out.println(
+				"After adding a new folder, there are now " +
+					_h7G5FolderLocalService.getH7G5FoldersCount() + " folders.");
+		}
+
+		@Reference
+		private H7G5FolderLocalService _h7G5FolderLocalService;
+
+	}
+	```
+
+1. Type ***./gradlew classes***. Fix the compile errors.
+
+1. Type ***./gradlew deploy -Ddeploy.docker.container.id=ephesians-liferay***.
+
+	```
+	2021-03-25 12:13:09.889 INFO  [fileinstall-directory-watcher][BundleStartStopLogger:49] STOPPED com.liferay.h7g5.web_1.0.0 [1357]
+	2021-03-25 12:13:09.939 INFO  [Refresh Thread: Equinox Container: 743d7fd3-e7c1-438a-9dee-b8ecf6e55aa2][BundleStartStopLogger:46] STARTED com.liferay.h7g5.web_1.0.0 [1357]
+	Constructing H7G5Portlet
+	```	
+
+1. Go to http://localhost:8080 and refresh the page.
+
+	```
+	java.lang.NullPointerException
+		at com.liferay.h7g5.service.base.H7G5FolderLocalServiceBaseImpl.getH7G5FoldersCount(H7G5FolderLocalServiceBaseImpl.java:346)
+		at com.liferay.portal.spring.aop.AopMethodInvocationImpl.proceed(AopMethodInvocationImpl.java:50)
+		at com.liferay.portal.spring.transaction.TransactionInterceptor.invoke(TransactionInterceptor.java:69)
+		at com.liferay.portal.spring.aop.AopMethodInvocationImpl.proceed(AopMethodInvocationImpl.java:57)
+		at com.liferay.change.tracking.internal.aop.CTTransactionAdvice.invoke(CTTransactionAdvice.java:80)
+		at com.liferay.portal.spring.aop.AopMethodInvocationImpl.proceed(AopMethodInvocationImpl.java:57)
+		at com.liferay.portal.spring.aop.AopInvocationHandler.invoke(AopInvocationHandler.java:49)
+	```
+
+	Open up ***H7G5FolderLocalServiceBaseImpl.java***. That is the base implementation wired to the ***H7G5Portlet*** via the following reference.
+
+	```
+	@Reference
+	private H7G5FolderLocalService _h7G5FolderLocalService;
+	```
+
+	You can trace the exception to the field ***h7g5FolderPersistence*** being null.
+
+	The field ***h7g5FolderPersistence*** in ***H7G5FolderLocalServiceBaseImpl.java*** should be wired by the following annotation, but is not.
+
+	```
+	@Reference
+	protected H7G5FolderPersistence h7g5FolderPersistence;
+	```
+
+1. Add the following line to ***h7g5-service/bnd.bnd***.
+
+	```
+	-dsannotations-options: inherit
+	```
+
+	The ***-dsannotations-options:*** property ensures that references are inherited. Since ***H7G5Portlet*** references ***H7G5FolderLocalService***, and the base implementation for ***H7G5FolderLocalService*** is ***H7G5FolderLocalServiceBaseImpl***, and that base implementation references ***H7G5FolderPersistence***, it too is now wired once the property is set to ***inherit***.
+
+1. Go to http://localhost:8080 and refresh the page. Look at the Liferay console. Refresh the page again a few times.
+
+	```
+	Invoking H7G5Portlet#doView
+	There are 2 folders.
+	After adding a new folder, there are now 3 folders.
+	Invoking H7G5Portlet#doView
+	There are 3 folders.
+	After adding a new folder, there are now 4 folders.
+	```
+
+1. Type ***select * from OHQIWTSFHL_H7G5Folder;***.
+
+## Local and Remote Services
+
+1. The following XML told Service Builder to generate local and remote services for ***H7G5Folder***.
+
+	```
+	<entity local-service="true" name="H7G5Folder" remote-service="true">
+	```
+
+	A local service should never check for permissions and can only be invoked by other OSGi modules.
+
+	A remote service may check for permissions and can be invoked by other OSGi modules and via [JSONWS](https://help.liferay.com/hc/en-us/articles/360017899652-Invoking-JSON-Web-Services).
+
+1. Open up ***H7G5FolderLocalService.java*** and ***H7G5FolderLocalServiceImpl.java***.
+
+	Thes files were generated because the attribute ***local-service*** was set to ***true***.
+
+	The file ***H7G5FolderLocalService.java*** contains the ***@generated*** annotation. This file is always regenerated when you run the ***buildService*** task. Do not modify this file.
+
+	The file ***H7G5FolderLocalServiceImpl.java*** does not contain the ***@generated*** annotation. This file is only generated if it does not already exist. Later, we will add custom methods to this file.
+
+1. Open up ***H7G5FolderService.java*** and ***H7G5FolderServiceImpl.java***.
+
+	Thes files were generated because the attribute ***remote-service*** was set to ***true***.
+
+	The file ***H7G5FolderService.java*** contains the ***@generated*** annotation. This file is always regenerated when you run the ***buildService*** task. Do not modify this file.
+
+	The file ***H7G5FolderServiceImpl.java*** does not contain the ***@generated*** annotation. This file is only generated if it does not already exist. Later, we will add custom methods to this file.
+
+1. Add the following code to ***H7G5FolderServiceImpl.java***.
+
+	```
+	public H7G5Folder addMyCustomH7G5Folder(String description, String name) {
+		System.out.println(
+			"Invoking H7G5FolderServiceImpl#addMyCustomH7G5Folder(" +
+				description + ", " + name + ")");
+
+		H7G5Folder h7g5Folder = h7g5FolderLocalService.createH7G5Folder(
+			System.currentTimeMillis());
+
+		h7g5Folder.setDescription(description);
+		h7g5Folder.setName(name);
+
+		h7g5FolderLocalService.addH7G5Folder(h7g5Folder);
+
+		return h7g5Folder;
+	}
+	```
+
+1. Open up ***H7G5FolderService.java*** and notice that there is no code for ***addMyCustomH7G5Folder***.
+
+1. Type ***./gradlew classes***. Fix the compile errors.
+
+1. Type ***./gradlew :h7g5-service:buildService***.
+
+	```
+	Building H7G5Entry
+	Building H7G5Folder
+	Writing ../h7g5-api/src/main/java/com/liferay/h7g5/service/H7G5FolderService.java
+	Writing ../h7g5-api/src/main/java/com/liferay/h7g5/service/H7G5FolderServiceUtil.java
+	Writing ../h7g5-api/src/main/java/com/liferay/h7g5/service/H7G5FolderServiceWrapper.java
+	Writing src/main/java/com/liferay/h7g5/service/http/H7G5FolderServiceHttp.java
+	Writing src/main/java/com/liferay/h7g5/service/http/H7G5FolderServiceSoap.java
+	Writing src/main/resources/service.properties
+	```
+
+1. Open up ***H7G5FolderService.java*** and notice that it now code for ***addMyCustomH7G5Folder***.
+
+1. Go to http://localhost:8080/api/jsonws. Under ***Context Name***, look for ***ohqiwtsfhl***. The long namespace was specified in the following block in service.xml.
+
+	```
+	<namespace>OHQIWTSFHL</namespace>
+	```
+
+	There is no mention of OHQIWTSFHL because the deployed ***com.liferay.h7g5.service** does not yet contain remote services.
+
+1. Type ***./gradlew deploy -Ddeploy.docker.container.id=ephesians-liferay***.
+
+1. Go to http://localhost:8080/api/jsonws. Under ***Context Name***, go to for ***ohqiwtsfhl***.
+
+	1. There is a JavaScript bug in 7.3 GA7 that breaks invocations. When it's fixed, you'll be able to follow the [Invoking JSON Web Services](https://help.liferay.com/hc/en-us/articles/360017899652-Invoking-JSON-Web-Services) tutorial.
+
+	1. The curl command works. Run the following.
+	
+		```
+		curl http://localhost:8080/api/jsonws/ohqiwtsfhl.h7g5folder/add-my-custom-h7-g5-folder \
+		  -d description="This is where I store all my vacation photos." \
+		  -d name="Vacation Photos" \
+		  -u test@liferay.com:test
+		```
+
+		A JSON representation of H7G5Folder is returned.
+
+		```
+		{"companyId":"20097","createDate":1616680001273,"description":"This is where I store all my vacation photos.","groupId":"0","h7g5FolderId":"1616680001273","modifiedDate":1616680001273,"name":"Vacation Photos","userId":"0","userName":""}
+		```
+
+		This is printed on the Liferay console.
+
+		```
+		Invoking H7G5FolderServiceImpl#addMyCustomH7G5Folder(This is where I store all my vacation photos., Vacation Photos)
+		```
+
+	1. Type ***select * from OHQIWTSFHL_H7G5Folder;***.
