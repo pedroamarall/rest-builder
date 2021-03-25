@@ -691,7 +691,7 @@
 
 1. Go to http://localhost:8080/api/jsonws. Under ***Context Name***, go to for ***ohqiwtsfhl***.
 
-	1. There is a JavaScript bug in 7.3 GA7 that breaks invocations. When it's fixed, you'll be able to follow the [Invoking JSON Web Services](https://help.liferay.com/hc/en-us/articles/360017899652-Invoking-JSON-Web-Services) tutorial.
+	1. There is a JavaScript bug in 7.3 GA7 that breaks invocations. When it's fixed, you'll be able to follow the [Invoking JSON Web Services](https://help.liferay.com/hc/en-us/articles/360017899652-Invoking-JSON-Web-Services) tutorial. For now, read the tutorial to get a grasp of JSONWS.
 
 	1. The curl command works. Run the following.
 	
@@ -715,3 +715,24 @@
 		```
 
 	1. Type ***select * from OHQIWTSFHL_H7G5Folder;***.
+
+1. Add the following method.
+
+	```
+	public H7G5Folder addMyCustomH7G5FolderWithPermissionCheck(
+			String description, String name)
+		throws PortalException {
+
+		User user = getUser();
+
+		if (!Objects.equals(user.getEmailAddress(), "test@liferay.com")) {
+			throw new PrincipalException("You are not test@liferay.com");
+		}
+
+		return addMyCustomH7G5Folder(description, name);
+	}
+	```
+
+	1. Fix the compile errors. Regenerate and deploy it to Liferay.
+
+	1. Use a curl command to invoke ***addMyCustomH7G5FolderWithPermissionCheck*** and see that it works. Add a new user to Liferay. Run the curl command as the other user and verify that you see the exception message ***You are not test@liferay.com***.
