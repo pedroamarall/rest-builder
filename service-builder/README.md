@@ -383,7 +383,7 @@
 	Liferay-Service: true
 	```
 
-	This property tells Liferay to process ***com.liferay.h7g5.service*** as a Service Builder module.
+	This property tells Liferay to process ***com.liferay.h7g5.service*** as a Service Builder module. Be very careful not to accidentally add this line to ***h7g5-api/bnd.bnd***
 
 1. Type ***./gradlew deploy -Ddeploy.docker.container.id=ephesians-liferay***.
 
