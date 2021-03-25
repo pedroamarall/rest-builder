@@ -16,11 +16,11 @@
 
 1. Repeat the curl commands, but this time, using HTML/JavaScript. There is no need to use Node for this. Create a HTML page and use the JavaScript [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) api to replicate the curl commmands.
 
-	1. In order to call Liferay REST Services from your HTML page, you will need to enable [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) in Liferay. You can enable CORS in Liferay by navigating to the Control Panel > System Settings > Security Tools > Portal Cross-Origin Resource Sharing (CORS).
+	1. In order to call Liferay REST services from your HTML page, you will need to enable [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). You can enable CORS in Liferay by navigating to the Control Panel > System Settings > Security Tools > Portal Cross-Origin Resource Sharing (CORS).
 
-	1. Add new configuration entry. Make sure it includes a URL pattern with the contents ***/o/headless-delivery/\**** since the REST Services we are calling are included in this path. Save your configuration.
+	1. Add new configuration entry. Make sure it includes a URL pattern ***/o/headless-delivery/\**** since the REST services we are calling are included in this path. Save your configuration.
 
-	1. Accessing Liferay REST Services will require authentication. You can provide this to your REST call by adding a header with the key ***Authorization*** and the value ***'Basic ' + btoa('test@liferay.com:test')***. Read about [btoa](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa) for more information.
+	1. Accessing Liferay REST services will require authentication. You can provide this to your REST call by adding a header with the key ***Authorization*** and the value ***'Basic ' + btoa('test@liferay.com:test')***. Read about [btoa](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa) for more information.
 
 1. Send a pull request to ***brianchandotcom***, replacing the PLACEHOLDER text below with the JavaScript commands.
 
