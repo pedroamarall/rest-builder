@@ -833,7 +833,7 @@
 	}
 	```
 
-	For now, ignore ModelResourcePermissionUtil and use the simple email address check in your code.
+	For now, ignore ModelResourcePermissionUtil and use a simple email address permission check in your code.
 
 	The main thing to understand is that local services contain CRUD logic while remote services contain permission logic.
 
@@ -858,7 +858,7 @@
 	</finder>
 	```
 
-	Modify H7G5EntryServiceImpl to call H7G5EntryLocalServiceImpl. Add a simple permission check.
+	Modify H7G5EntryServiceImpl to call H7G5EntryLocalServiceImpl. Add a simple email address permission check.
 
 1. Use H7G5Portlet to call H7G5EntryServiceImpl.
 
