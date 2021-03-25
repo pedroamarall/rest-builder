@@ -735,4 +735,4 @@
 
 	1. Fix the compile errors. Regenerate. Deploy it to Liferay.
 
-	1. Use a curl command to invoke ***addMyCustomH7G5FolderWithPermissionCheck*** as ***test@liferay.com*** and see that it works. Add a new user to Liferay. Run the curl command as the other user and verify that you see the exception message ***You are not test@liferay.com***.
+	1. Use a curl command to invoke ***addMyCustomH7G5FolderWithPermissionCheck*** as ***test@liferay.com*** and see that it works. Add a new user to Liferay. Run the curl command as the other user and verify that you see the exception message `You are not test@liferay.com`.
