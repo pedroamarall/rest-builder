@@ -418,6 +418,7 @@ function update_packages {
 		screen \
 		simplescreenrecorder \
 		slock \
+		svn \
 		sshpass \
 		sysstat \
 		telnet \
