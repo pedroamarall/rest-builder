@@ -679,7 +679,7 @@
 		}
 		```
 
-	1. Type ***./gradlew :basic-training-baker-web:classes***.
+	1. Type ***./gradlew basic-training-baker-web:classes***.
 
 		```
 		> Task :basic-training-baker-web:compileJava FAILED
@@ -755,7 +755,7 @@
 
 		The new implementation uses Apache Commons Math. Let's use [ArithmeticUtils](http://commons.apache.org/proper/commons-math/javadocs/api-3.6.1/org/apache/commons/math3/util/ArithmeticUtils.html) to multiply 30624700 by 2.
 
-	1. Type ***./gradlew :basic-training-able-impl:classes***.
+	1. Type ***./gradlew basic-training-able-impl:classes***.
 
 		```
 		> Task :basic-training-able-impl:compileJava FAILED
