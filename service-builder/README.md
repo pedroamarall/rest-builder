@@ -79,6 +79,8 @@
 
 ## service.xml
 
+1. Service Builder is a code generator. Its main input file is ***service.xml*** and it outputs Java code that makes it easier for the developer to interact with the database without having to write native SQL.
+
 1. Create and go to a directory called ***my-service-builder-project***. Follow the steps in [Set Up an OSGi Project](../osgi#set-up-an-osgi-project).
 
 1. Type ***mkdir -p h7g5-api***. The prefix ***h7g5*** is just a random name used for this tutorial.
@@ -99,7 +101,7 @@
 	}
 	```
 
-1. Type ***./gradlew :h7g5-api:classes && la h7g5-api/build*** to verify that h7g5-api was created properly.
+1. Type ***./gradlew h7g5-api:classes && la h7g5-api/build*** to verify that h7g5-api was created properly.
 
 1. Type ***mkdir -p h7g5-service/src***.
 
@@ -124,7 +126,7 @@
 		compileOnly project(":h7g5-api")
 	}
 
-1. Type ***./gradlew :h7g5-service:classes && la h7g5-service/build*** to verify that h7g5-service was created properly.
+1. Type ***./gradlew h7g5-service:classes && la h7g5-service/build*** to verify that h7g5-service was created properly.
 
 1. Type ***osub h7g5-service/service.xml*** and paste the following code.
 
@@ -222,7 +224,7 @@
 	</service-builder>
 	```
 
-1. Type ***./gradlew :h7g5-service:buildService***. The ***buildService*** task takes service.xml as the input file and generates many files.
+1. Type ***./gradlew h7g5-service:buildService***. The ***buildService*** task takes service.xml as the input file and generates many files.
 
 	```
 	Building H7G5Entry
@@ -370,7 +372,7 @@
 	2021-03-25 11:28:34.962 INFO  [Refresh Thread: Equinox Container: 743d7fd3-e7c1-438a-9dee-b8ecf6e55aa2][BundleStartStopLogger:46] STARTED com.liferay.h7g5.service_1.0.0 [1356]
 	```
 
-1. To get the ***com.liferay.h7g5.service*** to resolve, you had to modify h7g5-api/build.gradle with the following new line.
+1. To get the ***com.liferay.h7g5.service*** to resolve, you had to modify h7g5-api/bnd.bnd with the following new line.
 
  	```
  	Export-Package: com.liferay.h7g5.exception, com.liferay.h7g5.model, com.liferay.h7g5.service, com.liferay.h7g5.service.persistence
@@ -664,7 +666,7 @@
 
 1. Type ***./gradlew classes***. Fix the compile errors.
 
-1. Type ***./gradlew :h7g5-service:buildService***.
+1. Type ***./gradlew h7g5-service:buildService***.
 
 	```
 	Building H7G5Entry
@@ -693,7 +695,7 @@
 
 	1. There is a random JavaScript bug in 7.3 GA7 that breaks some browsers (load order of JavaScript modules). When it's fixed, everyone will be be able to follow the [Invoking JSON Web Services](https://help.liferay.com/hc/en-us/articles/360017899652-Invoking-JSON-Web-Services) tutorial. For now, at least read the tutorial to get a grasp of JSONWS.
 
-	1. Use curl 
+	1. Use curl to invoke JSONWS.
 	
 		```
 		curl http://localhost:8080/api/jsonws/ohqiwtsfhl.h7g5folder/add-my-custom-h7-g5-folder \
