@@ -14,7 +14,7 @@ Read about [REST and RPC](https://stackoverflow.com/questions/26830431/web-servi
  
 ## OpenAPI
 
-[OpenAPI](https://spec.openapis.org/oas/v3.1.0) is a specification for describing REST APIs. Read the introductory [tutorial](https://support.smartbear.com/swaggerhub/docs/tutorials/openapi-3-tutorial.html).
+[OpenAPI](https://spec.openapis.org/oas/v3.1.0) is a specification for describing REST APIs. Read this introductory [tutorial](https://support.smartbear.com/swaggerhub/docs/tutorials/openapi-3-tutorial.html).
 
 ## REST Builder
 
