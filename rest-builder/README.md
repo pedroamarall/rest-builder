@@ -276,4 +276,6 @@ Read about [REST and RPC](https://stackoverflow.com/questions/26830431/web-servi
 
 	1. Send a pull request to ***brianchandotcom*** of your modified Test.java file.
 
+## GraphQL
+
 ## Test
