@@ -20,13 +20,13 @@ Read about [REST and RPC](https://stackoverflow.com/questions/26830431/web-servi
 
 1. REST Builder is a code generator. Its main input files are ***rest-config.yaml*** and ***rest-openapi.yaml***. It outputs Java code that makes it easier for developers to write REST APIs.
 
-1. Type ***svn export https://github.com/liferay/liferay-learn/trunk/docs/dxp/7.x/en/headless-delivery/producing-apis-with-rest-builder/implementing-a-new-api-with-rest-builder/resources/liferay-r3b2.zip*** 
+1. Type ***svn export https://github.com/liferay/liferay-learn/trunk/docs/dxp/7.x/en/headless-delivery/producing-apis-with-rest-builder/implementing-a-new-api-with-rest-builder/resources/liferay-r3b2.zip***.
 
 	This will create a directory called liferay-r3b2.zip. It is a little confusing because this directory is not actually a zip file.
 
-1. Type ***cd liferay-r3b2.zip***. Notice that this directory already contains a lot of build.gradle and Java files. However, the directory is not yet fully setup as a Gradle project.
+	1. Type ***cd liferay-r3b2.zip***. Notice that this directory already contains a lot of build.gradle and Java files. However, the directory is not yet fully setup as a Gradle project.
 
-1. Follow the steps in [Set Up an OSGi Project](../osgi#set-up-an-osgi-project) to set up liferay-r3b2.zip.
+	1. Follow the steps in [Set Up an OSGi Project](../osgi#set-up-an-osgi-project) to set up liferay-r3b2.zip.
 
 1. Type ***osub headless-r3b2-impl/rest-config.yaml***.
 
