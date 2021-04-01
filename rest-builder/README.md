@@ -91,7 +91,7 @@ Read about [REST and RPC](https://stackoverflow.com/questions/26830431/web-servi
 
 	The file ***FooResourceImpl.java*** does not contain the ***@generated*** annotation. This file is only generated if it does not already exist. We need to implement methods in this file.
 
-	\*ResourceImpl.java files in REST Builder are similar to \*ServiceImpl.java files in Service Builder because they are not regenerated and are meant for the developer to implement. Unlike Service Builder, REST Builder only has remote implementations (remote resources are like remote services). The idea of local resources do not make sense in the REST world because the REST APIs are always meant to be consumed remotely.
+	\*ResourceImpl.java files in REST Builder are similar to \*ServiceImpl.java files in Service Builder because they are not regenerated and are meant for the developer to implement. Unlike Service Builder, REST Builder only has remote implementations (remote resources are like remote services).
 
 1. Open up ***GooResource.java*** and ***GooResourceImpl.java***.
 
@@ -115,15 +115,15 @@ Read about [REST and RPC](https://stackoverflow.com/questions/26830431/web-servi
 
 1. Type ***./gradlew headless-r3b2-impl:classes***.
 
-1. Study ***FooResourceImpl.java*** and ***GooResourceImpl.java***. Notice that every public method incluces an ***@Override*** annotation. Open up ***BaseFooResourceImpl.java*** and ***BaseGooResourceImpl.java***. Those are generated files that show map to ***rest-openapi.yaml***.
+1. Study ***FooResourceImpl.java*** and ***GooResourceImpl.java***. Notice that every public method incluces an ***@Override*** annotation. Open up ***BaseFooResourceImpl.java*** and ***BaseGooResourceImpl.java***. Those are generated files that map to ***rest-openapi.yaml***.
 
-1. Go to http://localhost:8080/o/api. Go to ***REST Applications*** and look for ***headless-r3b2/v1.0***. Not able to find it? Why not?
+1. Go to http://localhost:8080/o/api. Go to ***REST Applications*** and look for ***headless-r3b2/v1.0***. Why are you not able to find it?
 
 1. Type ***./gradlew headless-r3b2-api:deploy -Ddeploy.docker.container.id=ephesians-liferay***.
 
 	1. Type ***./gradlew headless-r3b2-impl:deploy -Ddeploy.docker.container.id=ephesians-liferay***.
 
-	1. Do not deploy the headless-r3b2-client and headless-r3b2-test yet.
+	1. Do not deploy the headless-r3b2-client and headless-r3b2-test.
 
 1. Go to http://localhost:8080/o/api. Go to ***REST Applications*** and look for ***headless-r3b2/v1.0***.
 
@@ -216,7 +216,7 @@ Read about [REST and RPC](https://stackoverflow.com/questions/26830431/web-servi
 
 	1. Click on your version number. Download com.liferay.headless.delivery.client-3.0.10.jar (replace 3.0.10 with your version number).
 
-	1. Download com.liferay.headless.delivery.client-3.0.10-sources.jar. Type ***xarchiver com.liferay.headless.delivery.client-4.0.2-sources.jar*** to examine the source code in the JAR.
+	1. Download com.liferay.headless.delivery.client-3.0.10-sources.jar. Type ***xarchiver com.liferay.headless.delivery.client-3.0.10-sources.jar*** to examine the source code in the JAR.
 
 	1. Modify Test.java to test the CRUD operations of knowledge base folders and articles.
 
@@ -234,9 +234,9 @@ Read about [REST and RPC](https://stackoverflow.com/questions/26830431/web-servi
 
 1. Client resources are invoked over HTTP. OSGi resources are invoked within the same [JVM](https://en.wikipedia.org/wiki/Java_virtual_machine). What is a [benefit](https://stackoverflow.com/questions/7538951/what-is-the-performance-difference-between-a-jvm-method-call-and-a-remote-call) of invoking within the JVM versus invoking over HTTP?
 
-1. Create headless-r3b2-web.
+1. Create ***headless-r3b2-web***.
 
-1. Create com.acme.headless.r3b2.web.internal.R3B2Portlet.
+1. Create ***com.acme.headless.r3b2.web.internal.R3B2Portlet***.
 
 1. For Test.java, we used ***com.acme.headless.r3b2.client.resource.v1_0.FooResource*** from ***headless-r3b2-client/src/main/java***. For R3B2Portlet.java, use ***com.acme.headless.r3b2.resource.v1_0.FooResource*** from ***headless-r3b2-api/src/main/java***.
 
