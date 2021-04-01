@@ -8,8 +8,6 @@
 
 	1. Type ***mkdir my-java-project && cd my-java-project***.
 
-	1. Type ***touch Test.java***.
-
 	1. Type ***osub Test.java*** and paste the following code.
 
 		```
