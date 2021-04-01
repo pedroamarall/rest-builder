@@ -238,7 +238,7 @@ Read about [REST and RPC](https://stackoverflow.com/questions/26830431/web-servi
 
 1. Create ***com.acme.headless.r3b2.web.internal.R3B2Portlet***.
 
-1. For Test.java, we used ***com.acme.headless.r3b2.client.resource.v1_0.FooResource*** from ***headless-r3b2-client/src/main/java***. For R3B2Portlet.java, use ***com.acme.headless.r3b2.resource.v1_0.FooResource*** from ***headless-r3b2-api/src/main/java***.
+1. For Test.java, we used ***com.acme.headless.r3b2.client.resource.v1_0.FooResource*** from ***headless-r3b2-client/src/main/java***. For R3B2Portlet.java, use ***com.acme.headless.r3b2.resource.v1_0.FooResource*** from ***headless-r3b2-api/src/main/java***. Notice that the Java packages are different.
 
 	1. Add a reference to ***FooResource.Factory***.
 
