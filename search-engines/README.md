@@ -12,7 +12,7 @@
 
 1. Stop after you see the section ***Where to next?***.
 
-## Challenges
+## Critical Thinking
 
 1. Explain how databases and search engines are similar.
 
