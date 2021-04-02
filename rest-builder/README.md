@@ -278,4 +278,10 @@ Read about [REST and RPC](https://stackoverflow.com/questions/26830431/web-servi
 
 ## GraphQL
 
+1. Read about [RPC, REST, and GraphQL](https://apisyouwonthate.com/blog/understanding-rpc-rest-and-graphql).
+
+1. Go to the Documentation Explorer. There are two root types: query and mutation. Click on ***query***.
+
+1. Go to http://localhost:8080. Click on GraphQL on the upper right hand corner. Read about [GraphQL](https://graphql.org/learn) and use GraphQL to access the APIs provided by REST Builder.
+
 ## Test
