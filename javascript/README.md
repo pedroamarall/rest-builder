@@ -10,7 +10,7 @@
 
 ## REST
 
-1. Follow the tutorial [Consuming REST Services](https://learn.liferay.com/dxp/7.x/en/headless-delivery/consuming-apis/consuming-rest-services.html).
+1. Follow the tutorial [Consuming REST Services](https://learn.liferay.com/dxp/latest/en/headless-delivery/consuming-apis/consuming-rest-services.html).
 
 	1. For now, only attempt to make REST calls using Basic Auth. You can ignore making calls using OAuth2.
 
@@ -52,7 +52,7 @@
 
 	1. Do not follow the tutorial blindly. You have already executed some of the steps.
 
-	1. Deploy the app to a Liferay docker image using the ***docker cp*** command. Read [Installing Apps and Other Artifacts to Containers](https://learn.liferay.com/dxp/7.x/en/installation-and-upgrades/installing-liferay/using-liferay-docker-images/installing-apps-and-other-artifacts-to-containers.html) to learn how to use ***docker cp***.
+	1. Deploy the app to a Liferay docker image using the ***docker cp*** command. Read [Installing Apps and Other Artifacts to Containers](https://learn.liferay.com/dxp/latest/en/installation-and-upgrades/installing-liferay/using-liferay-docker-images/installing-apps-and-other-artifacts-to-containers.html) to learn how to use ***docker cp***.
 
 ## Clay
 

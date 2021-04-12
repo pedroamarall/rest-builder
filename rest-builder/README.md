@@ -20,7 +20,7 @@ Read about [REST and RPC](https://stackoverflow.com/questions/26830431/web-servi
 
 1. REST Builder is a code generator. Its main input files are ***rest-config.yaml*** and ***rest-openapi.yaml***. It outputs Java code that makes it easier for developers to write REST APIs.
 
-1. Type ***svn export https://github.com/liferay/liferay-learn/trunk/docs/dxp/7.x/en/headless-delivery/producing-apis-with-rest-builder/implementing-a-new-api-with-rest-builder/resources/liferay-r3b2.zip***.
+1. Type ***svn export https://github.com/liferay/liferay-learn/trunk/docs/dxp/latest/en/headless-delivery/producing-apis-with-rest-builder/implementing-a-new-api-with-rest-builder/resources/liferay-r3b2.zip***.
 
 	This will create a directory called liferay-r3b2.zip. It is a little confusing because this directory is not actually a zip file.
 
@@ -105,11 +105,11 @@ Read about [REST and RPC](https://stackoverflow.com/questions/26830431/web-servi
 
 1. Type ***./gradlew headless-r3b2-impl:classes***. Notice the compile errors.
 
-1. Type ***wget https://github.com/liferay/liferay-learn/raw/master/docs/dxp/7.x/en/headless-delivery/producing-apis-with-rest-builder/implementing-a-new-api-with-rest-builder/resources/liferay-r3b2.zip/headless-r3b2-impl/src/main/java/com/acme/headless/r3b2/internal/resource/v1_0/FooResourceImpl.java -P headless-r3b2-impl/src/main/java/com/acme/headless/r3b2/internal/resource/v1_0***.
+1. Type ***wget https://github.com/liferay/liferay-learn/raw/master/docs/dxp/latest/en/headless-delivery/producing-apis-with-rest-builder/implementing-a-new-api-with-rest-builder/resources/liferay-r3b2.zip/headless-r3b2-impl/src/main/java/com/acme/headless/r3b2/internal/resource/v1_0/FooResourceImpl.java -P headless-r3b2-impl/src/main/java/com/acme/headless/r3b2/internal/resource/v1_0***.
 
 	Open up the new ***FooResourceImpl.java***.
 
-1. Type ***wget https://github.com/liferay/liferay-learn/raw/master/docs/dxp/7.x/en/headless-delivery/producing-apis-with-rest-builder/implementing-a-new-api-with-rest-builder/resources/liferay-r3b2.zip/headless-r3b2-impl/src/main/java/com/acme/headless/r3b2/internal/resource/v1_0/GooResourceImpl.java -P headless-r3b2-impl/src/main/java/com/acme/headless/r3b2/internal/resource/v1_0***.
+1. Type ***wget https://github.com/liferay/liferay-learn/raw/master/docs/dxp/latest/en/headless-delivery/producing-apis-with-rest-builder/implementing-a-new-api-with-rest-builder/resources/liferay-r3b2.zip/headless-r3b2-impl/src/main/java/com/acme/headless/r3b2/internal/resource/v1_0/GooResourceImpl.java -P headless-r3b2-impl/src/main/java/com/acme/headless/r3b2/internal/resource/v1_0***.
 
 	Open up the new ***GooResourceImpl.java***.
 
@@ -140,17 +140,16 @@ Read about [REST and RPC](https://stackoverflow.com/questions/26830431/web-servi
 		```
 		drwxrwxr-x 1 me me  398 Mar 31 13:29 .
 		drwxrwxr-x 1 me me   32 Mar 30 08:32 ..
+		drwxrwxr-x 1 me me  112 Mar 30 14:55 build
 		drwxrwxr-x 1 me me  112 Mar 26 21:22 .gradle
 		drwxrwxr-x 1 me me   14 Mar 26 21:22 gradle
 		drwxrwxr-x 1 me me   54 Mar 30 08:11 headless-r3b2-api
 		drwxrwxr-x 1 me me   54 Mar 30 08:28 headless-r3b2-client
 		drwxrwxr-x 1 me me  120 Mar 30 08:28 headless-r3b2-impl
 		drwxrwxr-x 1 me me   78 Mar 30 21:30 headless-r3b2-test
-		drwxrwxr-x 1 me me    0 Mar 31 13:29 not-a-gradle-project
 		-rw-rw-r-- 1 me me  645 Mar 30 21:30 .gitignore
 		-rw-rw-r-- 1 me me   40 Mar 30 14:39 gradle.properties
 		-rwxrwxr-x 1 me me 5766 Mar 30 14:39 gradlew
-		-rw-rw-r-- 1 me me 2674 Mar 30 14:39 gradlew.bat
 		-rw-rw-r-- 1 me me  301 Mar 30 14:39 settings.gradle
 		-rw-rw-r-- 1 me me  219 Mar 30 14:39 source-formatter-suppressions.xml
 		```

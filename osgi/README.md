@@ -872,6 +872,6 @@
 
 1. Go to http://localhost:8080. Navigate to Control Panel > System > Gogo Shell and type ***lb*** to see all bundles.
 
-1. Read about [Gogo Shell](https://learn.liferay.com/dxp/7.x/en/liferay-internals/fundamentals/using-the-gogo-shell/gogo-shell-commands.html) and its [available commands](http://felix.apache.org/documentation/subprojects/apache-felix-gogo.html).
+1. Read about [Gogo Shell](https://learn.liferay.com/dxp/latest/en/liferay-internals/fundamentals/using-the-gogo-shell/gogo-shell-commands.html) and its [available commands](http://felix.apache.org/documentation/subprojects/apache-felix-gogo.html).
 
-1. Figure out how to connect to Gogo Shell from the [command line](https://learn.liferay.com/dxp/7.x/en/liferay-internals/fundamentals/using-the-gogo-shell/command-line-gogo-shell.html). Use telnet to interact with Gogo Shell from the command line.
+1. Figure out how to connect to Gogo Shell from the [command line](https://learn.liferay.com/dxp/latest/en/liferay-internals/fundamentals/using-the-gogo-shell/command-line-gogo-shell.html). Use telnet to interact with Gogo Shell from the command line.
