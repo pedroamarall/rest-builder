@@ -8,6 +8,10 @@ function customize_aliases {
 	alias cdt="cd ~/dev/projects/liferay-portal"
 
 	alias d="docker"
+	alias dmysqlclient="docker exec -it galatians-mysql mysql -utest -ptest"
+	alias dmysqlserver="docker run --name galatians-mysql --rm -d -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -e MYSQL_DATABASE=lportal -e MYSQL_PASSWORD=test -e MYSQL_USER=test -p 3306:3306 mysql:8 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci"
+	alias dpsqlclient="docker exec -it galatians-psql psql -U postgres"
+	alias dpsqlserver="docker run --name galatians-psql --rm -d -e POSTGRES_PASSWORD=test -p 5432:5432 postgres:13"
 
 	alias g="git"
 	alias gi="gpr info"
