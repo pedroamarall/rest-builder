@@ -395,6 +395,7 @@ function update_packages {
 	dnf_install \
 		acpi \
 		ftp \
+		fzf \
 		genisoimage \
 		git \
 		gitk \
