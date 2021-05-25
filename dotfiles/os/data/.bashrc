@@ -1,3 +1,47 @@
+function cd_module() {
+	local git_dir="$(git rev-parse --show-toplevel)"
+
+	local module_dir="$(
+		git -C "${git_dir}" ls-files -- \
+			':!:**/src/**' \
+			\
+			'*.bnd' \
+			'*build.xml' \
+			'*pom.xml' |
+
+			#
+			# Get the directory name with sed instead of dirname because it is much faster
+			#
+
+			sed -E \
+				-e 's,[^/]*$,,g' \
+				\
+				-e 's,/$,,g' \
+				-e '/^$/d' |
+
+			#
+			# Remove duplicates because some modules have more than one *.bnd file
+			#
+
+			uniq |
+
+			#
+			# Pass the results to fzf
+			#
+			fzf \
+				--exit-0 \
+				--no-multi \
+				--query "$*" \
+				--select-1 \
+			;
+	)"
+
+	if [ -n "${module_dir}" ]
+	then
+		cd "${git_dir}/${module_dir}" || return 1
+	fi
+}
+
 function customize_aliases {
 	alias ac="ant compile"
 	alias acc="ant clean compile"
@@ -5,6 +49,7 @@ function customize_aliases {
 	alias af="ant format-source"
 	alias afcb="ant format-source-current-branch"
 
+	alias cdm="cd_module"
 	alias cdt="cd ~/dev/projects/liferay-portal"
 
 	alias d="docker"
