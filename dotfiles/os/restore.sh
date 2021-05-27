@@ -299,14 +299,6 @@ function install_fonts {
 	sudo fc-cache -f
 }
 
-function install_ntpdate {
-	dnf_install ntpdate
-
-	ntpdate -s pool.ntp.org
-
-	sudo systemctl enable ntpdate.service
-}
-
 function install_rpm_fusion {
 	if ! rpm -aq | grep -q rpmfusion-free-release
 	then
@@ -460,7 +452,6 @@ install_bluetooth
 install_conky
 install_exfat
 install_fonts
-install_ntpdate
 install_terminator
 install_thunar
 install_ulauncher
