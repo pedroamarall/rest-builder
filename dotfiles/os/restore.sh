@@ -420,7 +420,9 @@ function update_packages {
 		wget \
 		WoeUSB \
 		xbacklight \
-		xclip
+		xclip \
+		xinput \
+		xmodmap
 
 	dnf_erase abiword asunder gigolo gnomebaker gnumeric lxmusic midori pidgin pcmanfm osmo sylpheed xpad
 
