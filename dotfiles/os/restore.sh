@@ -252,12 +252,6 @@ function install_bluetooth {
 	sudo systemctl start bluetooth.service
 }
 
-function install_chrony {
-	dnf_install chrony ntpstat
-
-	sudo systemctl enable chrony
-}
-
 function install_conky {
 	dnf_install conky
 
@@ -406,8 +400,9 @@ function update_packages {
 		NetworkManager-vpnc \
 		NetworkManager-vpnc-gnome \
 		nmap \
-		npm \
 		notification-daemon \
+		npm \
+		ntpstat \
 		p7zip \
 		p7zip-plugins \
 		patch \
@@ -455,7 +450,6 @@ disable_firewall
 disable_selinux
 install_autokey
 install_bluetooth
-install_chrony
 install_conky
 install_exfat
 install_fonts
