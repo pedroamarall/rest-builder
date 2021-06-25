@@ -14,7 +14,7 @@ function install_ant {
 
 	sudo unzip -q data/apache-ant-${ANT_VERSION}-bin.zip -d /opt/java
 
-	rm data/apache-ant-${ANT_VERSION}-bin.zip
+	#rm data/apache-ant-${ANT_VERSION}-bin.zip
 
 	sudo ln -fs /opt/java/apache-ant-${ANT_VERSION} /opt/java/ant
 }
@@ -47,7 +47,7 @@ function install_maven {
 
 	sudo unzip -q data/apache-maven-${MAVEN_VERSION}-bin.zip -d /opt/java
 
-	rm data/apache-maven-${MAVEN_VERSION}-bin.zip
+	#rm data/apache-maven-${MAVEN_VERSION}-bin.zip
 
 	sudo ln -fs /opt/java/apache-maven-${MAVEN_VERSION} /opt/java/maven
 }
