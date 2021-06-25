@@ -1,6 +1,6 @@
 # Search Engines
 
-## ElasticSearch
+## Elasticsearch
 
 1. Follow the tutorial in https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-install.html. Run Elasticsearch locally. Do not create a free trial for their cloud product.
 
