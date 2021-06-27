@@ -68,21 +68,25 @@
 
 	1. Configure a GitHub SSH key.
 
-		1. [Make sure you have a public SSH key.](../networking/README.md#ssh)
-		
-		1. Go to: `/home/me/dev/projects/liferay-portal`
-		
-		1. Type: `git pull`
-		
-		1. Notice that the command fails: `Permission denied (publickey).`
+		1. Make sure you have a [public SSH key](../networking/README.md#ssh).
+
+		1. Go to ***/home/me/dev/projects/liferay-portal***.
+
+		1. Type ***git pull***.
+
+		1. Notice that the command failed.
+
+			```
+			Permission denied (publickey).
+			```
 
 		1. Login to GitHub. Go to ***Settings***. Go to ***SSH and GPG keys***.
 
 		1. Configure a new SSH key. The title can be anything you want it to be. The key should contain the public value in ***~/.ssh/id_rsa.pub*** and not the private value in ***~/.ssh/id_rsa***.
 
-		1. Return to the terminal and type again: `git pull`
+		1. Type ***git pull***.
 
-		1. Notice that the command succeeds.
+		1. Notice that the command succeeded.
 
 ## Git Repositories
 
