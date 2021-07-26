@@ -423,7 +423,8 @@ function update_packages {
 		xclip \
 		xinput \
 		xmodmap \
-		xset
+		xset \
+		xsetroot
 
 	dnf_erase abiword asunder gigolo gnomebaker gnumeric lxmusic midori pidgin pcmanfm osmo sylpheed xpad
 
