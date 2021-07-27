@@ -86,6 +86,12 @@ function customize_path {
 
 function customize_prompt {
 	PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\] \$(parse_git_current_branch_with_parantheses)\n\$ "
+
+	#
+	# https://forums.fedoraforum.org/showthread.php?326174-stop-konsole-highlighting-pasted-text
+	#
+
+	bind "set enable-bracketed-paste off"
 }
 
 function disable_history {
