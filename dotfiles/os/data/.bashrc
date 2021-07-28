@@ -89,9 +89,13 @@ function customize_prompt {
 
 	#
 	# https://forums.fedoraforum.org/showthread.php?326174-stop-konsole-highlighting-pasted-text
+	# https://newbedev.com/remote-ssh-commands-bash-bind-warning-line-editing-not-enabled
 	#
 
-	bind "set enable-bracketed-paste off"
+	if [ -t 1 ]
+	then
+		bind "set enable-bracketed-paste off"
+	fi
 }
 
 function disable_history {
