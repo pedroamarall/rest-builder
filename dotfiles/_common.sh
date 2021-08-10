@@ -64,17 +64,20 @@ function restore_from_original {
 }
 
 function rpm_install {
-	download ${1}
-
-	local file_name=${1##*/}
-
-	local file_extension=${file_name##*.}
-
-	if [ "${file_extension}" == "rpm" ]
+	if [[ -z `rpm -aq ${1}` ]]
 	then
-		sudo rpm -i data/${file_name}
+		download ${2}
 
-		rm data/${file_name}
+		local file_name=${2##*/}
+
+		local file_extension=${file_name##*.}
+
+		if [ "${file_extension}" == "rpm" ]
+		then
+			sudo rpm -i data/${file_name}
+
+			rm data/${file_name}
+		fi
 	fi
 }
 

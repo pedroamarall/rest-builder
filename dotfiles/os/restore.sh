@@ -300,10 +300,7 @@ function install_fonts {
 }
 
 function install_rpm_fusion {
-	if ! rpm -aq | grep -q rpmfusion-free-release
-	then
-		rpm_install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-	fi
+	rpm_install rpmfusion-free-release http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 }
 
 function install_terminator {
@@ -407,13 +404,13 @@ function update_packages {
 		p7zip-plugins \
 		patch \
 		pinta \
-		python2 \
+		python2.7 \
 		s3cmd \
 		screen \
 		simplescreenrecorder \
 		slock \
-		svn \
 		sshpass \
+		subversion \
 		sysstat \
 		telnet \
 		tigervnc \
