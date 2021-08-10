@@ -428,7 +428,7 @@ function update_packages {
 	rm -fr ~/.config/libfm
 	rm -fr ~/.config/pcmanfm
 
-	sudo dnf update -y
+	sudo dnf update -qy
 }
 
 update_packages

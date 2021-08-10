@@ -14,7 +14,7 @@ function dnf_erase {
 	do
 		if [[ ! -z `rpm -aq ${rpm_name}` ]]
 		then
-			sudo dnf erase -y ${@}
+			sudo dnf erase -qy ${@}
 
 			return 0
 		fi
@@ -26,7 +26,7 @@ function dnf_install {
 	do
 		if [[ -z `rpm -aq ${rpm_name}` ]]
 		then
-			sudo dnf install -y ${@}
+			sudo dnf install -qy ${@}
 
 			return 0
 		fi
