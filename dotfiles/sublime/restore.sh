@@ -37,20 +37,17 @@ cp data/License.sublime_license ~/.config/sublime-text-3/Local
 # Install Pretty JSON.
 #
 
-if [ ! -e ~/.config/sublime-text-3/Packages ]
-then
-	git clone https://github.com/dzhibas/SublimePrettyJson.git "Pretty JSON"
+git clone https://github.com/dzhibas/SublimePrettyJson.git "Pretty JSON"
 
-	cd "Pretty JSON"
+cd "Pretty JSON"
 
-	git checkout st3
+git checkout st3
 
-	cd ..
+cd ..
 
-	mkdir -p ~/.config/sublime-text-3/Packages
+mkdir -p ~/.config/sublime-text-3/Packages
 
-	mv "Pretty JSON" ~/.config/sublime-text-3/Packages
-fi
+mv "Pretty JSON" ~/.config/sublime-text-3/Packages
 
 #
 # Copy settings.
