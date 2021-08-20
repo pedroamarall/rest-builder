@@ -4,7 +4,7 @@
 
 The Caps Lock is hardly ever used. Control is used extensively for coding.
 
-Swapping Caps Lock and Control allows you to avoid wristlocks and [mão de vaca](https://en.wikipedia.org/wiki/Wristlock). You only have 2 hands.
+Swapping Caps Lock and Control allows you to avoid wristlocks and [dor de punho](https://en.wikipedia.org/wiki/Wristlock). You only have 2 hands.
 
 Your ability to work depends on your ability to avoid carpal tunnel.
 
