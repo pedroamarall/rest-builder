@@ -400,6 +400,7 @@ function update_packages {
 		notification-daemon \
 		npm \
 		ntpstat \
+		openvpn \
 		p7zip \
 		p7zip-plugins \
 		patch \
