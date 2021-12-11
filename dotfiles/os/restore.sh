@@ -432,9 +432,9 @@ function update_packages {
 	sudo dnf update -qy
 }
 
-update_packages
-
 install_rpm_fusion
+
+update_packages
 
 customize_bash
 customize_git
