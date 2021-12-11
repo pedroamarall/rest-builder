@@ -3,7 +3,7 @@
 source ../_common.sh
 
 function install_ant {
-	ANT_VERSION=1.9.15
+	ANT_VERSION=1.9.16
 
 	echo "Installing Ant ${ANT_VERSION}."
 
@@ -36,14 +36,14 @@ function install_java {
 }
 
 function install_maven {
-	MAVEN_VERSION=3.6.3
+	MAVEN_VERSION=3.8.4
 
 	echo "Installing Maven ${MAVEN_VERSION}."
 
 	sudo rm -fr /opt/java/apache-maven-*
 	sudo rm -f /opt/java/maven
 
-	download https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-${MAVEN_VERSION}-bin.zip
+	download https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.zip
 
 	sudo unzip -q data/apache-maven-${MAVEN_VERSION}-bin.zip -d /opt/java
 
