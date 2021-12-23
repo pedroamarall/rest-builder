@@ -9,9 +9,9 @@ source ../_common.sh
 sudo rm -fr ~/.config/sublime-text
 sudo rm -fr /opt/sublime_text
 
-download https://download.sublimetext.com/sublime_text_build_4121_x64.tar.xz
+download https://download.sublimetext.com/sublime_text_build_4126_x64.tar.xz
 
-sudo tar fx data/sublime_text_build_4121_x64.tar.xz -C /opt
+sudo tar fx data/sublime_text_build_4126_x64.tar.xz -C /opt
 
 #
 # Add desktop shortcut.
