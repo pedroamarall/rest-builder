@@ -391,6 +391,7 @@ function update_packages {
 		gnome-disk-utility \
 		gparted \
 		htop \
+		jq \
 		livecd-tools \
 		lshw \
 		maim \
