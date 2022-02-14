@@ -170,14 +170,14 @@ function customize_xinput {
 
 	sudo cp data/xinput_logitech_mouse /usr/local/bin
 
-	if [ -n "$(DISPLAY=:0.0 xinput --list | grep Chicony)" ]
-	then
+	#if [ -n "$(DISPLAY=:0.0 xinput --list | grep Chicony)" ]
+	#then
 		sudo localectl set-keymap us
 		sudo localectl set-x11-keymap us
-	else
-		sudo localectl set-keymap us
-		sudo localectl --no-convert set-x11-keymap br
-	fi
+	#else
+	#	sudo localectl set-keymap us
+	#	sudo localectl --no-convert set-x11-keymap br
+	#fi
 }
 
 function customize_xrandr {
