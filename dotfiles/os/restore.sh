@@ -303,6 +303,23 @@ function install_rpm_fusion {
 	rpm_install rpmfusion-free-release http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 }
 
+function install_snap {
+	dnf_install snapd
+
+	if [ ! -e /snap ]
+	then
+		sudo ln -s /var/lib/snapd/snap /snap
+	fi
+
+	#
+	# https://bugs.launchpad.net/snapd/+bug/1826662
+	#
+
+	sudo systemctl restart snapd.service
+
+	sudo snap install yq
+}
+
 function install_terminator {
 	dnf_install terminator
 
@@ -456,6 +473,7 @@ install_bluetooth
 install_conky
 install_exfat
 install_fonts
+install_snap
 install_terminator
 install_thunar
 install_ulauncher
