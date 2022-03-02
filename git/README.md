@@ -1016,7 +1016,7 @@
 
 	1. Your neighbor also has a fork of Clay at https://github.com/<YOUR_NEIGHBORS_GITHUB_USER_NAME>/clay and a copy of the Clay repository on his computer.
 
-	1. Type **gpr submit -u <YOUR_NEIGHBORS_GITHUB_USER_NAME>*** to send him your changes. Ask your neighbor to also send you a pull request.
+	1. Type ***gpr submit -u <YOUR_NEIGHBORS_GITHUB_USER_NAME>*** to send him your changes. Ask your neighbor to also send you a pull request.
 
 	1. Type ***gpr***. You will see a list of open pull requests that you have for your fork of the Clay repository.
 
