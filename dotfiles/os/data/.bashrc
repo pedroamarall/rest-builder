@@ -63,6 +63,10 @@ function customize_aliases {
 	alias gg="git_grep"
 	alias gpr="~/dev/projects/git-tools/git-pull-request/git-pull-request.sh"
 
+	alias java7="switch_to_java_7"
+	alias java8="switch_to_java_8"
+	alias java11="switch_to_java_11"
+
 	alias la="ls -la --group-directories-first"
 
 	alias osub="/opt/sublime_text/sublime_text ${@}"
@@ -187,6 +191,18 @@ function parse_git_current_branch_with_parantheses {
 
 function switch_to_java_7 {
 	export JAVA_HOME="/opt/java/jdk7"
+
+	export PATH="${JAVA_HOME}/bin:${PATH}"
+}
+
+function switch_to_java_8 {
+	export JAVA_HOME="/opt/java/jdk7"
+
+	export PATH="${JAVA_HOME}/bin:${PATH}"
+}
+
+function switch_to_java_11 {
+	export JAVA_HOME="/opt/java/jdk11"
 
 	export PATH="${JAVA_HOME}/bin:${PATH}"
 }

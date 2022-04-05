@@ -35,6 +35,18 @@ function install_java {
 	sudo ln -fs /opt/java/jdk${3} /opt/java/jdk${4}
 }
 
+function install_java_11 {
+	echo "Installing JDK 11."
+
+	sudo rm -fr /opt/java/jdk-11.0.13
+
+	download https://files.liferay.com/mirrors/download.oracle.com/otn-pub/java/jdk/11.0.13+10/bdde8881e2e3437baa70044f884d2d67/jdk-11.0.13_linux-x64_bin.tar.gz
+
+	sudo tar fxz data/jdk-11.0.13_linux-x64_bin.tar.gz -C /opt/java
+
+	sudo ln -fs /opt/java/jdk-11.0.13 /opt/java/jdk11
+}
+
 function install_maven {
 	MAVEN_VERSION=3.8.4
 
@@ -55,4 +67,5 @@ function install_maven {
 install_ant
 install_java 7u80 b15 1.7.0_80 7
 install_java 8u221 b11 1.8.0_221 8
+install_java_11
 install_maven
