@@ -404,6 +404,7 @@ function update_packages {
 		fzf \
 		genisoimage \
 		git \
+		git-lfs \
 		gitk \
 		gnome-disk-utility \
 		gparted \
