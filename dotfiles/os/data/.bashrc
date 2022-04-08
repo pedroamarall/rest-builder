@@ -196,7 +196,7 @@ function switch_to_java_7 {
 }
 
 function switch_to_java_8 {
-	export JAVA_HOME="/opt/java/jdk7"
+	export JAVA_HOME="/opt/java/jdk8"
 
 	export PATH="${JAVA_HOME}/bin:${PATH}"
 }
