@@ -413,6 +413,7 @@ function update_packages {
 		livecd-tools \
 		lshw \
 		maim \
+		mmv \
 		NetworkManager-vpnc \
 		NetworkManager-vpnc-gnome \
 		nmap \
