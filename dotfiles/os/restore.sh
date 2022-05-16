@@ -441,6 +441,7 @@ function update_packages {
 		xclip \
 		xinput \
 		xmodmap \
+		xprop \
 		xset \
 		xsetroot
 
