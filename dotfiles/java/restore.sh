@@ -48,7 +48,7 @@ function install_java_11 {
 }
 
 function install_maven {
-	MAVEN_VERSION=3.8.4
+	MAVEN_VERSION=3.8.5
 
 	echo "Installing Maven ${MAVEN_VERSION}."
 
