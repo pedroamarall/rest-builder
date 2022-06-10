@@ -39,6 +39,13 @@ function customize_login {
 	sudo_restore_from_original /etc/lxdm/PostLogin
 
 	sudo bash -c "echo \"/bin/bash /usr/local/bin/xinput_logitech_mouse\" >> /etc/lxdm/PostLogin"
+
+	if sudo dmidecode | grep -A3 '^System Information' | grep -q "Manufacturer: Dell" &&
+	   sudo dmidecode | grep -A3 '^System Information' | grep -q "Product Name: Precision"
+	then
+		sudo bash -c "echo \"/bin/bash /usr/local/bin/xrandr_laptop\" >> /etc/lxdm/PostLogin"
+	fi
+
 	sudo bash -c "echo \"/bin/bash /usr/local/bin/xrandr_monitor\" >> /etc/lxdm/PostLogin"
 	sudo bash -c "echo \"/bin/bash /usr/local/bin/xset_screensaver\" >> /etc/lxdm/PostLogin"
 }
@@ -181,6 +188,16 @@ function customize_xinput {
 }
 
 function customize_xrandr {
+	if sudo dmidecode | grep -A3 '^System Information' | grep -q "Manufacturer: Dell" &&
+	   sudo dmidecode | grep -A3 '^System Information' | grep -q "Product Name: Precision"
+	then
+		echo "xrandr --output eDP-1 --mode 3840x2160 --scale .56x.56" > xrandr_laptop
+
+		chmod 775 xrandr_laptop
+
+		sudo mv xrandr_laptop /usr/local/bin
+	fi
+
 	chmod 775 data/xrandr_monitor
 
 	sudo cp data/xrandr_monitor /usr/local/bin
