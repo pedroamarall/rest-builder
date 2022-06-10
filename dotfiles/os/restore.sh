@@ -301,6 +301,7 @@ function install_fonts {
 
 function install_rpm_fusion {
 	rpm_install rpmfusion-free-release http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+	rpm_install rpmfusion-nonfree-release http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 }
 
 function install_snap {
