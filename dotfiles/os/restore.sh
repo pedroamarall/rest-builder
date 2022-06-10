@@ -27,9 +27,10 @@ function customize_git {
 }
 
 function customize_hostname {
-	if [ $(hostname) == "localhost.localdomain" ]
+	if [ $(hostname) == "fedora" ] ||
+	   [ $(hostname) == "localhost.localdomain" ]
 	then
-		sudo hostnamectl set-hostname nuc10-i7-$(random_letter)$(random_digit)$(random_letter)$(random_digit)
+		sudo hostnamectl set-hostname liferay-$(random_letter)$(random_digit)$(random_letter)$(random_digit)
 	fi
 }
 
