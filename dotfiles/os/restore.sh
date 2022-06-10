@@ -40,7 +40,7 @@ function customize_login {
 
 	sudo bash -c "echo \"/bin/bash /usr/local/bin/xinput_logitech_mouse\" >> /etc/lxdm/PostLogin"
 	sudo bash -c "echo \"/bin/bash /usr/local/bin/xrandr_monitor\" >> /etc/lxdm/PostLogin"
-	sudo bash -c "echo \"/bin/bash /usr/local/bin/xset_disable_screensaver\" >> /etc/lxdm/PostLogin"
+	sudo bash -c "echo \"/bin/bash /usr/local/bin/xset_screensaver\" >> /etc/lxdm/PostLogin"
 }
 
 function customize_lxdm {
@@ -67,6 +67,7 @@ function customize_openbox {
 	echo "#!/bin/bash" > ~/.config/openbox/autostart.sh
 	echo "" >> ~/.config/openbox/autostart.sh
 	echo "conky" >> ~/.config/openbox/autostart.sh
+	echo "xautolock -time 5 -locker slock &" >> ~/.config/openbox/autostart.sh
 	echo "xsetroot -solid black" >> ~/.config/openbox/autostart.sh
 
 	chmod 744 ~/.config/openbox/autostart.sh
@@ -126,15 +127,14 @@ function customize_screensaver {
 	# http://www.shallowsky.com/linux/x-screen-blanking.html
 	#
 
-	echo "xset -dpms" > xset_disable_screensaver
-	echo "xset s noblank" >> xset_disable_screensaver
-	echo "xset s off" >> xset_disable_screensaver
+	echo "xset -dpms" > xset_screensaver
+	echo "xset s 300" >> xset_screensaver
 
-	chmod 775 xset_disable_screensaver
+	chmod 775 xset_screensaver
 
-	#./xset_disable_screensaver
+	#./xset_screensaver
 
-	sudo mv xset_disable_screensaver /usr/local/bin
+	sudo mv xset_screensaver /usr/local/bin
 }
 
 function customize_ssh {
@@ -437,6 +437,7 @@ function update_packages {
 		tigervnc \
 		wget \
 		WoeUSB \
+		xautolock \
 		xbacklight \
 		xclip \
 		xinput \
