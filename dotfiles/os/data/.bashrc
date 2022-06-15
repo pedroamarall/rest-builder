@@ -107,7 +107,10 @@ function disable_history {
 }
 
 function execute_gradlew {
-	if [ -e ../gradlew ]
+	if [ -e gradlew ]
+	then
+		./gradlew ${@}
+	elif [ -e ../gradlew ]
 	then
 		../gradlew ${@}
 	elif [ -e ../../gradlew ]
