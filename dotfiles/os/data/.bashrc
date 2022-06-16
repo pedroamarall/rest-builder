@@ -162,6 +162,13 @@ function gw {
 	execute_gradlew "${@//\//:}" --daemon
 }
 
+function include_custom_bashrc {
+	if [ -e ~/.bashrc.custom ]
+	then
+		. ~/.bashrc.custom
+	fi
+}
+
 function parse_git_branch {
 	GIT_DIR_NAME=$(git rev-parse --show-toplevel)
 
@@ -214,3 +221,4 @@ customize_aliases
 customize_path
 customize_prompt
 disable_history
+include_custom_bashrc
