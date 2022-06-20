@@ -89,14 +89,14 @@ function sudo {
 		user_password=${LIFERAY_DOTFILES_USER_PASSWORD}
 	fi
 
-	if [ ! -n "${LIFERAY_DOTFILES_USE_PASSWORD_SUDO}" ] && (echo ${user_password} | /usr/bin/sudo -S ls &>/dev/null)
+	if [ ! -n "${LIFERAY_DOTFILES_USE_PASSWORD_SUDO_SUCCESSFUL}" ] && (echo ${user_password} | /usr/bin/sudo -S ls &>/dev/null)
 	then
-		LIFERAY_DOTFILES_USE_PASSWORD_SUDO=true
+		LIFERAY_DOTFILES_USE_PASSWORD_SUDO_SUCCESSFUL=true
 	else
-		LIFERAY_DOTFILES_USE_PASSWORD_SUDO=false
+		LIFERAY_DOTFILES_USE_PASSWORD_SUDO_SUCCESSFUL=false
 	fi
 
-	if [ "${LIFERAY_DOTFILES_USE_PASSWORD_SUDO}" == "true" ]
+	if [ "${LIFERAY_DOTFILES_USE_PASSWORD_SUDO_SUCCESSFUL}" == "true" ]
 	then
 		echo ${user_password} | /usr/bin/sudo -S "${@}"
 	else
