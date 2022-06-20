@@ -82,19 +82,18 @@ function rpm_install {
 }
 
 function sudo {
+	if [ ! -n "${LIFERAY_DOTFILES_USE_PASSWORD_SUDO}" ] && (echo madeofdust | /usr/bin/sudo -S ls &>/dev/null)
+	then
+		LIFERAY_DOTFILES_USE_PASSWORD_SUDO=true
+	else
+		LIFERAY_DOTFILES_USE_PASSWORD_SUDO=false
+	fi
+
 	if [ "${LIFERAY_DOTFILES_USE_PASSWORD_SUDO}" == "true" ]
 	then
 		echo madeofdust | /usr/bin/sudo -S "${@}"
-	elif [ "${LIFERAY_DOTFILES_USE_PASSWORD_SUDO}" == "false" ]
-	then
-		/usr/bin/sudo "${@}"
 	else
-		if (echo madeofdust | /usr/bin/sudo -S hostname &>/dev/null)
-		then
-			LIFERAY_DOTFILES_USE_PASSWORD_SUDO=true
-		else
-			LIFERAY_DOTFILES_USE_PASSWORD_SUDO=false
-		fi
+		/usr/bin/sudo "${@}"
 	fi
 }
 
