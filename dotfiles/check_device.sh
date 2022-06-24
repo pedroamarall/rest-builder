@@ -1,4 +1,4 @@
 #!/bin/bash
 
-# TODO Check LUKS
-# TODO Check password length
+# TODO Check LUKS default/length
+# TODO Check password default/length
