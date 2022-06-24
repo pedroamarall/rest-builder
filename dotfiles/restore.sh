@@ -7,6 +7,7 @@ PACKAGE_NAMES=(
 	#
 	java
 	#
+	1password
 	chrome
 	docker
 	sentinelone

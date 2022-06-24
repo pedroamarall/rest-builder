@@ -147,18 +147,10 @@ function customize_screensaver {
 }
 
 function customize_ssh {
+	echo "Host *" > ~/.ssh/config
+	echo -e "\tIdentityAgent ~/.1password/agent.sock" >> ~/.ssh/config
 
-	#
-	# https://www.reddit.com/r/Fedora/comments/jhxbdh/no_ssh_public_key_auth_after_upgrade_to_fedora_33
-	#
-
-	#echo "Host gitlab.liferay.com lrdcom-vm-*" > ~/.ssh/config
-	#echo -e "\tPubkeyAcceptedKeyTypes=ssh-rsa" >> ~/.ssh/config
-
-	if [ -e ~/.ssh/config ]
-	then
-		chmod 600 ~/.ssh/config
-	fi
+	chmod 600 ~/.ssh/config
 }
 
 function customize_sysctl {
