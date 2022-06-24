@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO Upgrade SmartGit and license
+
 source ../_common.sh
 
 sudo rm -fr /opt/java/smartgit

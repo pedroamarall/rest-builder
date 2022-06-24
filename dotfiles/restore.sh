@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# TODO: SmartGit, autokey to autostart, remove KDE option just openbox
-
 source /home/me/dev/projects/liferay-basic-training/dotfiles/_common.sh
 
 PACKAGE_NAMES=(
@@ -11,6 +9,7 @@ PACKAGE_NAMES=(
 	#
 	chrome
 	docker
+	sentinelone
 	slack
 	smartgit
 	sublime
