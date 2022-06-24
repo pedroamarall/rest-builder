@@ -39,6 +39,7 @@ function customize_login {
 
 	sudo_restore_from_original /etc/lxdm/PostLogin
 
+	sudo bash -c "echo \"/bin/bash ~/dev/projects/github/liferay-basic-training/dotfiles/check_device.sh\" >> /etc/lxdm/PostLogin"
 	sudo bash -c "echo \"/bin/bash /usr/local/bin/xinput_logitech_mouse\" >> /etc/lxdm/PostLogin"
 
 	if sudo dmidecode | grep -A3 '^System Information' | grep -q "Manufacturer: Dell" &&
