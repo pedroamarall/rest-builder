@@ -9,3 +9,5 @@ then
     	xrandr --output HDMI-1 --mode 3840x2160 --scale .56x.56
     fi
 fi
+
+# TODO Remove xrandr_laptop in restore.sh and put logic in here for laptops that are 4k
