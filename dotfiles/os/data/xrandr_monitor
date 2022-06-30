@@ -10,4 +10,12 @@ then
 	fi
 fi
 
-# TODO Remove xrandr_laptop in restore.sh and put logic in here for laptops that are 4k
+if sudo dmidecode | grep -A3 '^System Information' | grep -q "Manufacturer: Dell" &&
+	sudo dmidecode | grep -A3 '^System Information' | grep -q "Product Name: Precision"
+then
+	echo "xrandr --output eDP-1 --mode 3840x2160 --scale .56x.56" > xrandr_laptop
+
+	chmod 775 xrandr_laptop
+
+	sudo mv xrandr_laptop /usr/local/bin
+fi

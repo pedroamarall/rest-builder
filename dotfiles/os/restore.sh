@@ -182,16 +182,6 @@ function customize_xinput {
 }
 
 function customize_xrandr {
-	if sudo dmidecode | grep -A3 '^System Information' | grep -q "Manufacturer: Dell" &&
-	   sudo dmidecode | grep -A3 '^System Information' | grep -q "Product Name: Precision"
-	then
-		echo "xrandr --output eDP-1 --mode 3840x2160 --scale .56x.56" > xrandr_laptop
-
-		chmod 775 xrandr_laptop
-
-		sudo mv xrandr_laptop /usr/local/bin
-	fi
-
 	chmod 775 data/xrandr_monitor
 
 	sudo cp data/xrandr_monitor /usr/local/bin
