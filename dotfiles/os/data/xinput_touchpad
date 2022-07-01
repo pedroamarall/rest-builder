@@ -1,6 +1,8 @@
 #!/bin/bash
 
-# TODO
+if [[ "$(xinput | grep Touchpad | awk '{print $5}')" == "Touchpad" ]]
+then
+    TOUCHPAD_DEVICE_ID="$(xinput | grep Touchpad | awk '{print $3,$4,$5}')"
 
-# xinput --set-prop "DLL07BF:01 06CB:7A13 Touchpad" "libinput Tapping Enabled" 1
-# xinput --set-prop "SYNA2393:00 06CB:7A13 Touchpad" "libinput Tapping Enabled" 1
+    xinput --set-prop "${TOUCHPAD_DEVICE_ID}" "libinput Tapping Enabled" 1
+fi
