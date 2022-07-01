@@ -68,7 +68,7 @@
 
 	1. Configure a GitHub SSH key.
 
-		1. Make sure you have a [public SSH key](../networking/README.md#ssh).
+		1. Make sure you have a [public SSH key](../networking/README.markdown#ssh).
 
 		1. Go to ***/home/me/dev/projects/liferay-portal***.
 

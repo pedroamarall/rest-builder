@@ -10,7 +10,7 @@
 
 	1. Create a new GitHub repository.
 
-	1. Modify README.md.
+	1. Modify README.markdown.
 
 	1. Embed an image.
 
