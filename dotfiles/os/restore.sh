@@ -41,13 +41,6 @@ function customize_login {
 
 	sudo bash -c "echo \"/bin/bash ~/dev/projects/github/liferay-basic-training/dotfiles/check_device.sh\" >> /etc/lxdm/PostLogin"
 	sudo bash -c "echo \"/bin/bash /usr/local/bin/xinput_logitech_mouse\" >> /etc/lxdm/PostLogin"
-
-	if sudo dmidecode | grep -A3 '^System Information' | grep -q "Manufacturer: Dell" &&
-	   sudo dmidecode | grep -A3 '^System Information' | grep -q "Product Name: Precision"
-	then
-		sudo bash -c "echo \"/bin/bash /usr/local/bin/xrandr_laptop\" >> /etc/lxdm/PostLogin"
-	fi
-
 	sudo bash -c "echo \"/bin/bash /usr/local/bin/xrandr_monitor\" >> /etc/lxdm/PostLogin"
 	sudo bash -c "echo \"/bin/bash /usr/local/bin/xset_screensaver\" >> /etc/lxdm/PostLogin"
 }
