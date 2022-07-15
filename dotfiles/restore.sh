@@ -10,6 +10,7 @@ PACKAGE_NAMES=(
 	1password
 	chrome
 	docker
+	figma
 	sentinelone
 	slack
 	smartgit
