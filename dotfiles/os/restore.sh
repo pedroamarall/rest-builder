@@ -86,7 +86,7 @@ function customize_openbox {
 	# Key Bindings
 	#
 
-	# 
+	#
 	# https://ubuntu-mate.community/t/error-cannot-autolaunch-d-bus-without-x11-display/11928
 	#
 
@@ -365,7 +365,7 @@ function install_ulauncher {
 }
 
 function random_digit {
-	echo $(((RANDOM % 10)  + 1))
+	echo $(((RANDOM % 10) + 1))
 }
 
 function random_letter {

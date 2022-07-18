@@ -1,183 +1,183 @@
 gitRootSettingsSet:
-  roots: [~/dev/projects/github/liferay-portal-7.0.x-private, ~/dev/projects/github/liferay-portal,
-    ~/dev/projects/github/liferay-portal-master-private, ~/dev/projects/github/liferay-portal-7.1.x-private,
-    ~/dev/projects/github/liferay-portal-7.0.x, ~/dev/projects/github/liferay-portal-7.1.x,
-    ~/dev/projects/github/com-liferay-osb-asah-private, ~/dev/projects/github/com-liferay-osb-faro-private]
-  root-/home/brian/dev/projects/github/com-liferay-osb-asah-private:
-    log:
-      rootSettings: {baseRoots: "!local-branches://\t!local-tags://\t!remote://origin\t\
-          !remote://upstream\tref://HEAD", extendedRoots: ''}
-      fileFilterConfiguration:
-        patterns: []
-        regularExpressions: false
-    push: {pushCurrentBranch: true}
-    commitNotes:
-      commitNotesHistory: []
-    journal:
-      lastAuxiliaryRefs: []
-      refs: []
-    databaseCleanup: {}
-    merge:
-      logRootSettings: {}
-  root-/home/brian/dev/projects/github/liferay-portal:
-    databaseCleanup: {lastKnownTimeWhereRepositoryWasOK: 1494451785727}
-    log:
-      rootSettings: {baseRoots: "!local-branches://\t!local-tags://\t!remote://origin\t\
-          !remote://upstream\tref://HEAD", extendedRoots: ''}
-      fileFilterConfiguration:
-        patterns: []
-        regularExpressions: false
-    push: {pushCurrentBranch: true}
-    commitNotes:
-      commitNotesHistory: [LPS-87741 Regen, LPS-87741 Rename entities]
-    journal:
-      lastAuxiliaryRefs: []
-      refs: []
-    merge:
-      logRootSettings: {}
-  root-/home/brian/dev/projects/github/liferay-portal-7.0.x:
-    log:
-      rootSettings: {baseRoots: "!local-branches://\t!local-tags://\t!remote://origin\t\
-          !remote://upstream\tref://HEAD", extendedRoots: ''}
-      fileFilterConfiguration: {}
-    push: {pushCurrentBranch: true}
-    commitNotes:
-      commitNotesHistory: [LPS-87961 Sync with 7.1.x]
-    journal:
-      lastAuxiliaryRefs: []
-      refs: []
-    databaseCleanup: {}
-    merge:
-      logRootSettings: {}
-  root-/home/brian/dev/projects/github/liferay-portal-7.0.x-private:
-    log:
-      rootSettings: {baseRoots: "!local-branches://\t!local-tags://\t!remote://origin\t\
-          !remote://upstream\tref://HEAD", extendedRoots: ''}
-      fileFilterConfiguration: {}
-    push: {pushCurrentBranch: true}
-    commitNotes:
-      commitNotesHistory: []
-    journal:
-      lastAuxiliaryRefs: []
-      refs: []
-    databaseCleanup: {}
-    merge:
-      logRootSettings: {}
-  root-/home/brian/dev/projects/github/liferay-portal-7.1.x:
-    log:
-      rootSettings: {baseRoots: "!local-branches://\t!local-tags://\t!remote://origin\t\
-          !remote://upstream\tref://HEAD", extendedRoots: ''}
-      fileFilterConfiguration: {}
-    push: {pushCurrentBranch: true}
-    commitNotes:
-      commitNotesHistory: [APIO-302 Sync with latest portal master]
-    journal:
-      lastAuxiliaryRefs: []
-      refs: []
-    databaseCleanup: {}
-    merge:
-      logRootSettings: {}
-  root-/home/brian/dev/projects/github/liferay-portal-7.1.x-private:
-    log:
-      rootSettings: {baseRoots: "!local-branches://\t!local-tags://\t!remote://origin\t\
-          !remote://upstream\tref://HEAD", extendedRoots: ''}
-      fileFilterConfiguration: {}
-    push: {pushCurrentBranch: true}
-    commitNotes:
-      commitNotesHistory: []
-    journal:
-      lastAuxiliaryRefs: []
-      refs: []
-    databaseCleanup: {}
-    merge:
-      logRootSettings: {}
-  root-/home/brian/dev/projects/github/liferay-portal-master-private:
-    log:
-      rootSettings: {baseRoots: "!local-branches://\t!local-tags://\t!remote://origin\t\
-          !remote://upstream\tref://HEAD", extendedRoots: ''}
-      fileFilterConfiguration: {}
-    push: {pushCurrentBranch: true}
-    commitNotes:
-      commitNotesHistory: []
-    journal:
-      lastAuxiliaryRefs: []
-      refs: []
-    databaseCleanup: {}
-    merge:
-      logRootSettings: {}
-  root/home/brian/dev/projects/github/liferay-portal-7.2.x:
-    databaseCleanup: {}
-    log:
-      rootSettings: {baseRoots: "!local-branches://\t!local-tags://\t!remote://origin\t\
-          !remote://upstream\tref://HEAD", extendedRoots: ''}
-      fileFilterConfiguration: {}
-    merge:
-      logRootSettings: {}
-    push: {}
-    commitNotes: {}
-    journal: {}
-  root/bethesda/media/source:
-    databaseCleanup: {}
-    log:
-      rootSettings: {baseRoots: "!local-branches://\tref://HEAD", extendedRoots: ''}
-      fileFilterConfiguration: {}
-    merge:
-      logRootSettings: {}
-    push: {}
-    commitNotes: {}
-    journal: {}
-  root/home/brian/dev/projects/github/liferay-portal-7.2.x-private:
-    databaseCleanup: {}
-    log:
-      rootSettings: {}
-      fileFilterConfiguration: {}
-    merge:
-      logRootSettings: {}
-    push: {}
-    commitNotes: {}
-    journal: {}
-  root/home/brian/dev/projects/github/liferay-portal-7.3.x:
-    databaseCleanup: {}
-    log:
-      rootSettings: {}
-      fileFilterConfiguration: {}
-    merge:
-      logRootSettings: {}
-    push: {}
-    commitNotes: {}
-    journal: {}
-  root/home/brian/dev/projects/github/liferay-portal-7.3.x-private:
-    databaseCleanup: {}
-    log:
-      rootSettings: {}
-      fileFilterConfiguration: {}
-    merge:
-      logRootSettings: {}
-    push: {}
-    commitNotes: {}
-    journal: {}
-  root/home/brian/dev/projects/github/liferay-learn:
-    databaseCleanup: {}
-    log:
-      rootSettings: {baseRoots: "!local-branches://\t!remote://origin\t!remote://upstream\t\
-          ref://HEAD", extendedRoots: ''}
-      fileFilterConfiguration: {}
-    merge:
-      logRootSettings: {}
-    push: {}
-    commitNotes: {}
-    journal: {}
-  root/home/brian/dev/projects/github/com-liferay-osb-faro-private:
-    databaseCleanup: {}
-    log:
-      rootSettings: {baseRoots: "!local-branches://\t!local-tags://\t!remote://origin\t\
-          !remote://upstream\tref://HEAD", extendedRoots: ''}
-      fileFilterConfiguration: {}
-    merge:
-      logRootSettings: {}
-    push: {}
-    commitNotes: {}
-    journal: {}
+    root-/home/brian/dev/projects/github/com-liferay-osb-asah-private:
+        commitNotes:
+            commitNotesHistory: []
+        databaseCleanup: {}
+        journal:
+            lastAuxiliaryRefs: []
+            refs: []
+        log:
+            fileFilterConfiguration:
+                patterns: []
+                regularExpressions: false
+            rootSettings: {baseRoots: "!local-branches://\t!local-tags://\t!remote://origin\t\
+                !remote://upstream\tref://HEAD", extendedRoots: ''}
+        merge:
+            logRootSettings: {}
+        push: {pushCurrentBranch: true}
+    root-/home/brian/dev/projects/github/liferay-portal:
+        commitNotes:
+            commitNotesHistory: [LPS-87741 Regen, LPS-87741 Rename entities]
+        databaseCleanup: {lastKnownTimeWhereRepositoryWasOK: 1494451785727}
+        journal:
+            lastAuxiliaryRefs: []
+            refs: []
+        log:
+            fileFilterConfiguration:
+                patterns: []
+                regularExpressions: false
+            rootSettings: {baseRoots: "!local-branches://\t!local-tags://\t!remote://origin\t\
+                !remote://upstream\tref://HEAD", extendedRoots: ''}
+        merge:
+            logRootSettings: {}
+        push: {pushCurrentBranch: true}
+    root-/home/brian/dev/projects/github/liferay-portal-7.0.x:
+        commitNotes:
+            commitNotesHistory: [LPS-87961 Sync with 7.1.x]
+        databaseCleanup: {}
+        journal:
+            lastAuxiliaryRefs: []
+            refs: []
+        log:
+            fileFilterConfiguration: {}
+            rootSettings: {baseRoots: "!local-branches://\t!local-tags://\t!remote://origin\t\
+                !remote://upstream\tref://HEAD", extendedRoots: ''}
+        merge:
+            logRootSettings: {}
+        push: {pushCurrentBranch: true}
+    root-/home/brian/dev/projects/github/liferay-portal-7.0.x-private:
+        commitNotes:
+            commitNotesHistory: []
+        databaseCleanup: {}
+        journal:
+            lastAuxiliaryRefs: []
+            refs: []
+        log:
+            fileFilterConfiguration: {}
+            rootSettings: {baseRoots: "!local-branches://\t!local-tags://\t!remote://origin\t\
+                !remote://upstream\tref://HEAD", extendedRoots: ''}
+        merge:
+            logRootSettings: {}
+        push: {pushCurrentBranch: true}
+    root-/home/brian/dev/projects/github/liferay-portal-7.1.x:
+        commitNotes:
+            commitNotesHistory: [APIO-302 Sync with latest portal master]
+        databaseCleanup: {}
+        journal:
+            lastAuxiliaryRefs: []
+            refs: []
+        log:
+            fileFilterConfiguration: {}
+            rootSettings: {baseRoots: "!local-branches://\t!local-tags://\t!remote://origin\t\
+                !remote://upstream\tref://HEAD", extendedRoots: ''}
+        merge:
+            logRootSettings: {}
+        push: {pushCurrentBranch: true}
+    root-/home/brian/dev/projects/github/liferay-portal-7.1.x-private:
+        commitNotes:
+            commitNotesHistory: []
+        databaseCleanup: {}
+        journal:
+            lastAuxiliaryRefs: []
+            refs: []
+        log:
+            fileFilterConfiguration: {}
+            rootSettings: {baseRoots: "!local-branches://\t!local-tags://\t!remote://origin\t\
+                !remote://upstream\tref://HEAD", extendedRoots: ''}
+        merge:
+            logRootSettings: {}
+        push: {pushCurrentBranch: true}
+    root-/home/brian/dev/projects/github/liferay-portal-master-private:
+        commitNotes:
+            commitNotesHistory: []
+        databaseCleanup: {}
+        journal:
+            lastAuxiliaryRefs: []
+            refs: []
+        log:
+            fileFilterConfiguration: {}
+            rootSettings: {baseRoots: "!local-branches://\t!local-tags://\t!remote://origin\t\
+                !remote://upstream\tref://HEAD", extendedRoots: ''}
+        merge:
+            logRootSettings: {}
+        push: {pushCurrentBranch: true}
+    root/bethesda/media/source:
+        commitNotes: {}
+        databaseCleanup: {}
+        journal: {}
+        log:
+            fileFilterConfiguration: {}
+            rootSettings: {baseRoots: "!local-branches://\tref://HEAD", extendedRoots: ''}
+        merge:
+            logRootSettings: {}
+        push: {}
+    root/home/brian/dev/projects/github/com-liferay-osb-faro-private:
+        commitNotes: {}
+        databaseCleanup: {}
+        journal: {}
+        log:
+            fileFilterConfiguration: {}
+            rootSettings: {baseRoots: "!local-branches://\t!local-tags://\t!remote://origin\t\
+                !remote://upstream\tref://HEAD", extendedRoots: ''}
+        merge:
+            logRootSettings: {}
+        push: {}
+    root/home/brian/dev/projects/github/liferay-learn:
+        commitNotes: {}
+        databaseCleanup: {}
+        journal: {}
+        log:
+            fileFilterConfiguration: {}
+            rootSettings: {baseRoots: "!local-branches://\t!remote://origin\t!remote://upstream\t\
+                ref://HEAD", extendedRoots: ''}
+        merge:
+            logRootSettings: {}
+        push: {}
+    root/home/brian/dev/projects/github/liferay-portal-7.2.x:
+        commitNotes: {}
+        databaseCleanup: {}
+        journal: {}
+        log:
+            fileFilterConfiguration: {}
+            rootSettings: {baseRoots: "!local-branches://\t!local-tags://\t!remote://origin\t\
+                !remote://upstream\tref://HEAD", extendedRoots: ''}
+        merge:
+            logRootSettings: {}
+        push: {}
+    root/home/brian/dev/projects/github/liferay-portal-7.2.x-private:
+        commitNotes: {}
+        databaseCleanup: {}
+        journal: {}
+        log:
+            fileFilterConfiguration: {}
+            rootSettings: {}
+        merge:
+            logRootSettings: {}
+        push: {}
+    root/home/brian/dev/projects/github/liferay-portal-7.3.x:
+        commitNotes: {}
+        databaseCleanup: {}
+        journal: {}
+        log:
+            fileFilterConfiguration: {}
+            rootSettings: {}
+        merge:
+            logRootSettings: {}
+        push: {}
+    root/home/brian/dev/projects/github/liferay-portal-7.3.x-private:
+        commitNotes: {}
+        databaseCleanup: {}
+        journal: {}
+        log:
+            fileFilterConfiguration: {}
+            rootSettings: {}
+        merge:
+            logRootSettings: {}
+        push: {}
+    roots: [~/dev/projects/github/liferay-portal-7.0.x-private, ~/dev/projects/github/liferay-portal,
+        ~/dev/projects/github/liferay-portal-master-private, ~/dev/projects/github/liferay-portal-7.1.x-private,
+        ~/dev/projects/github/liferay-portal-7.0.x, ~/dev/projects/github/liferay-portal-7.1.x,
+        ~/dev/projects/github/com-liferay-osb-asah-private, ~/dev/projects/github/com-liferay-osb-faro-private]
 hgRootSettingsSet:
-  roots: []
+    roots: []
 pushMultiRoot: {}

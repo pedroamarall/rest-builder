@@ -85,7 +85,7 @@
 
 1. Ping your neighbor's computer.
 
-	1. Make sure you and your neighbor are both connected to the Liferay WiFi network. 
+	1. Make sure you and your neighbor are both connected to the Liferay WiFi network.
 
 	1. Type ***ping 192.168.xxx.xxx*** where ***xxx.xxx*** is your neighbor's IP. If it works, you should get a result like this:
 
@@ -295,7 +295,7 @@
 1. Your computer has an IP and listens on many ports. Ports are numbers between 0 and 65535. Two programs on the same machine cannot listen on the same port.
 
 	1. SSH defaults to run on port 22.
-	
+
 	1. Apache defaults to run port 80.
 
 1. Telnet to localhost on port 22.

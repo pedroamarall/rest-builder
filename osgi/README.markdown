@@ -855,7 +855,6 @@
 
 	1. Separating the API from the implementation allows developers to hide implementation details (i.e. The BakerPortlet class does not to know that the AbleNumberGenerator class uses Apache Commons Math).
 
-
 ## Liferay and OSGi
 
 1. Go to ***/home/me/dev/projects/liferay-portal***.

@@ -34,7 +34,7 @@
 
 		New code that is pushed to https://github.com/liferay/liferay-portal is not automatically pushed to https://github.com/<YOUR_GITHUB_USERNAME>/liferay-portal.
 
-	1. Type ***g log origin/master*** to see the commits in your origin. 
+	1. Type ***g log origin/master*** to see the commits in your origin.
 
 	1. Type ***g push origin master*** to push the commits in your local clone up to https://github.com/<YOUR_GITHUB_USERNAME>/liferay-portal.
 

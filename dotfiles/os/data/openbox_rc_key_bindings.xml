@@ -72,12 +72,12 @@ https://wiki.manjaro.org/index.php?title=Openbox:_Control_Speaker_Volume_Using_t
 	</action>
 </keybind>
 <keybind key="XF86AudioMute">
-	<action name="Execute"> 
+	<action name="Execute">
 		<command>amixer set Master toggle</command>
 	</action>
 </keybind>
 <keybind key="XF86AudioRaiseVolume">
-	<action name="Execute"> 
+	<action name="Execute">
 		<command>amixer set Master 10%+</command>
 	</action>
 </keybind>
@@ -89,7 +89,7 @@ https://wiki.manjaro.org/index.php?title=Openbox:_Control_Screen_Brightness_Usin
 -->
 
 <keybind key="XF86MonBrightnessDown">
-	<action name="Execute"> 
+	<action name="Execute">
 		<command>sudo brightness_update -25</command>
 	</action>
 </keybind>

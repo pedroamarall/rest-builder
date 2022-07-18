@@ -1,27 +1,30 @@
 {
-    "usageCount": 0, 
-    "omitTrigger": false, 
-    "prompt": false, 
-    "description": "Second phrase", 
-    "abbreviation": {
-        "wordChars": "[\\w]", 
-        "abbreviations": [], 
-        "immediate": false, 
-        "ignoreCase": false, 
-        "backspace": true, 
-        "triggerInside": false
-    }, 
-    "hotkey": {
-        "hotKey": null, 
-        "modifiers": []
-    }, 
-    "modes": [], 
-    "showInTrayMenu": false, 
-    "matchCase": false, 
-    "filter": {
-        "regex": null, 
-        "isRecursive": false
-    }, 
-    "type": "phrase", 
-    "sendMode": "kb"
+	"abbreviation": {
+		"abbreviations": [
+		],
+		"backspace": true,
+		"ignoreCase": false,
+		"immediate": false,
+		"triggerInside": false,
+		"wordChars": "[\\w]"
+	},
+	"description": "Second phrase",
+	"filter": {
+		"isRecursive": false,
+		"regex": null
+	},
+	"hotkey": {
+		"hotKey": null,
+		"modifiers": [
+		]
+	},
+	"matchCase": false,
+	"modes": [
+	],
+	"omitTrigger": false,
+	"prompt": false,
+	"sendMode": "kb",
+	"showInTrayMenu": false,
+	"type": "phrase",
+	"usageCount": 0
 }

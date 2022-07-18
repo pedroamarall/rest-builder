@@ -1,29 +1,31 @@
 {
-    "usageCount": 0, 
-    "omitTrigger": false, 
-    "prompt": false, 
-    "description": "First phrase", 
-    "abbreviation": {
-        "wordChars": "[\\w]", 
-        "abbreviations": [], 
-        "immediate": false, 
-        "ignoreCase": false, 
-        "backspace": true, 
-        "triggerInside": false
-    }, 
-    "hotkey": {
-        "hotKey": null, 
-        "modifiers": []
-    }, 
-    "modes": [
-        2
-    ], 
-    "showInTrayMenu": false, 
-    "matchCase": false, 
-    "filter": {
-        "regex": ".* - gedit", 
-        "isRecursive": false
-    }, 
-    "type": "phrase", 
-    "sendMode": "kb"
+	"abbreviation": {
+		"abbreviations": [
+		],
+		"backspace": true,
+		"ignoreCase": false,
+		"immediate": false,
+		"triggerInside": false,
+		"wordChars": "[\\w]"
+	},
+	"description": "First phrase",
+	"filter": {
+		"isRecursive": false,
+		"regex": ".* - gedit"
+	},
+	"hotkey": {
+		"hotKey": null,
+		"modifiers": [
+		]
+	},
+	"matchCase": false,
+	"modes": [
+		2
+	],
+	"omitTrigger": false,
+	"prompt": false,
+	"sendMode": "kb",
+	"showInTrayMenu": false,
+	"type": "phrase",
+	"usageCount": 0
 }

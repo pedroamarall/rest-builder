@@ -1,21 +1,21 @@
-readNotifications: [gc.autoDetach-null, log-may-be-used-as-main-window-null, needsRestart-null,
-  update-check-info-smartgit-17.1-preview, update-check-version-10132, update-check-version-10143,
-  wipeTempDirs--180144290-null]
 dontPublishNotifications: [fileMonitor.directoriesExcluded-null, hosting-provider-could-be-configured-github-null,
-  log-may-be-used-as-main-window-null, performance.manyRefs-/home/brian/dev/projects/github/liferay-portal-7.1.x-private/.git,
-  repositories-no-favorites-null, update-check-infosmartgit-18.1-discount-null, update-check-infosmartgit-19.1-discount-null,
-  update-check-infosmartgit-20.1-preview-null, performance.manyRefs-/home/brian/dev/projects/github/liferay-portal-7.2.x,
-  performance.manyRefs-/home/brian/dev/projects/github/liferay-portal-7.1.x, performance.manyRefs-/home/brian/dev/projects/github/liferay-portal-7.0.x,
-  support-expired-20-08-17-null]
+    log-may-be-used-as-main-window-null, performance.manyRefs-/home/brian/dev/projects/github/liferay-portal-7.1.x-private/.git,
+    repositories-no-favorites-null, update-check-infosmartgit-18.1-discount-null, update-check-infosmartgit-19.1-discount-null,
+    update-check-infosmartgit-20.1-preview-null, performance.manyRefs-/home/brian/dev/projects/github/liferay-portal-7.2.x,
+    performance.manyRefs-/home/brian/dev/projects/github/liferay-portal-7.1.x, performance.manyRefs-/home/brian/dev/projects/github/liferay-portal-7.0.x,
+    support-expired-20-08-17-null]
 dontPublishUntil-fileMonitor.directoriesExcluded-null: 0
 dontPublishUntil-hosting-provider-could-be-configured-github-null: 0
 dontPublishUntil-log-may-be-used-as-main-window-null: 0
+dontPublishUntil-performance.manyRefs-/home/brian/dev/projects/github/liferay-portal-7.0.x: 0
 dontPublishUntil-performance.manyRefs-/home/brian/dev/projects/github/liferay-portal-7.1.x-private/.git: 0
+dontPublishUntil-performance.manyRefs-/home/brian/dev/projects/github/liferay-portal-7.1.x: 0
+dontPublishUntil-performance.manyRefs-/home/brian/dev/projects/github/liferay-portal-7.2.x: 0
 dontPublishUntil-repositories-no-favorites-null: 0
+dontPublishUntil-support-expired-20-08-17-null: 0
 dontPublishUntil-update-check-infosmartgit-18.1-discount-null: 0
 dontPublishUntil-update-check-infosmartgit-19.1-discount-null: 0
 dontPublishUntil-update-check-infosmartgit-20.1-preview-null: 0
-dontPublishUntil-performance.manyRefs-/home/brian/dev/projects/github/liferay-portal-7.2.x: 0
-dontPublishUntil-performance.manyRefs-/home/brian/dev/projects/github/liferay-portal-7.1.x: 0
-dontPublishUntil-performance.manyRefs-/home/brian/dev/projects/github/liferay-portal-7.0.x: 0
-dontPublishUntil-support-expired-20-08-17-null: 0
+readNotifications: [gc.autoDetach-null, log-may-be-used-as-main-window-null, needsRestart-null,
+    update-check-info-smartgit-17.1-preview, update-check-version-10132, update-check-version-10143,
+    wipeTempDirs--180144290-null]

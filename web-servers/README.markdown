@@ -47,13 +47,13 @@
 
 	1. Type ***echo "This is good!" > index.html***.
 
-	1. Type ***more index.html***.	
+	1. Type ***more index.html***.
 
 		```
 		This is good!
 		```
 
-	1. Type ***exit***.	
+	1. Type ***exit***.
 
 	1. Refresh Chrome on http://localhost.
 

@@ -1,31 +1,33 @@
 {
-    "usageCount": 7, 
-    "omitTrigger": false, 
-    "prompt": false, 
-    "description": "Terminator", 
-    "abbreviation": {
-        "wordChars": "[\\w]", 
-        "abbreviations": [], 
-        "immediate": false, 
-        "ignoreCase": false, 
-        "backspace": true, 
-        "triggerInside": false
-    }, 
-    "hotkey": {
-        "hotKey": "i", 
-        "modifiers": [
-            "<ctrl>", 
-            "<shift>"
-        ]
-    }, 
-    "modes": [
-        3
-    ], 
-    "showInTrayMenu": false, 
-    "filter": {
-        "regex": null, 
-        "isRecursive": false
-    }, 
-    "type": "script", 
-    "store": {}
+	"abbreviation": {
+		"abbreviations": [
+		],
+		"backspace": true,
+		"ignoreCase": false,
+		"immediate": false,
+		"triggerInside": false,
+		"wordChars": "[\\w]"
+	},
+	"description": "Terminator",
+	"filter": {
+		"isRecursive": false,
+		"regex": null
+	},
+	"hotkey": {
+		"hotKey": "i",
+		"modifiers": [
+			"<ctrl>",
+			"<shift>"
+		]
+	},
+	"modes": [
+		3
+	],
+	"omitTrigger": false,
+	"prompt": false,
+	"showInTrayMenu": false,
+	"store": {
+	},
+	"type": "script",
+	"usageCount": 7
 }

@@ -1,27 +1,28 @@
 {
-    "usageCount": 0, 
-    "abbreviation": {
-        "wordChars": "[\\w]", 
-        "abbreviations": [], 
-        "immediate": false, 
-        "ignoreCase": false, 
-        "backspace": true, 
-        "triggerInside": false
-    }, 
-    "modes": [
-        3
-    ], 
-    "title": "My Phrases", 
-    "hotkey": {
-        "hotKey": "<f7>", 
-        "modifiers": [
-            "<ctrl>"
-        ]
-    }, 
-    "filter": {
-        "regex": null, 
-        "isRecursive": false
-    }, 
-    "type": "folder", 
-    "showInTrayMenu": false
+	"abbreviation": {
+		"abbreviations": [
+		],
+		"backspace": true,
+		"ignoreCase": false,
+		"immediate": false,
+		"triggerInside": false,
+		"wordChars": "[\\w]"
+	},
+	"filter": {
+		"isRecursive": false,
+		"regex": null
+	},
+	"hotkey": {
+		"hotKey": "<f7>",
+		"modifiers": [
+			"<ctrl>"
+		]
+	},
+	"modes": [
+		3
+	],
+	"showInTrayMenu": false,
+	"title": "My Phrases",
+	"type": "folder",
+	"usageCount": 0
 }

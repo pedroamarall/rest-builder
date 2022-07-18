@@ -974,7 +974,7 @@
 	}
 	```
 
-	The above block should look like the following.	
+	The above block should look like the following.
 
 	```
 	dependencies {

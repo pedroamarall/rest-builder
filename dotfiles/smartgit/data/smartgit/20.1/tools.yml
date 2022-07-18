@@ -1,76 +1,76 @@
-tools:
-- name: Open in Sublime
-  fileStarter: {command: /opt/sublime_text/sublime_text, parameters: '${filePath}'}
-  useForOpen: true
-  waitUntilFinished: false
-  filePattern: '*'
-  forFilesNotDirectories: true
-- name: Open File
-  fileStarter: {command: /usr/bin/xdg-open, parameters: '${filePath}'}
-  useForOpen: true
-  waitUntilFinished: false
-  filePattern: '*'
-  forFilesNotDirectories: true
-- id: revealInNautilus
-  name: Reveal in Nautilus
-  fileStarter: {command: /usr/bin/nautilus, parameters: '${fileUri}'}
-  useForOpen: true
-  waitUntilFinished: false
-  filePattern: '*'
-- id: formatPatch
-  name: Format Patch
-  fileStarter: {command: '${smartGitDir}/lib/format-patch.sh', parameters: '${dirSelect}
-      ${commit} ${commit2}'}
-  useForOpen: false
-  waitUntilFinished: true
-  filePattern: '*'
-- id: applyPatch
-  name: Apply Patch
-  fileStarter: {command: '${git}', parameters: 'apply ${fileOpen}'}
-  useForOpen: false
-  waitUntilFinished: true
-  filePattern: '*'
-- id: verifyDatabase
-  name: Verify Database
-  fileStarter: {command: '${git}', parameters: fsck --full --no-progress}
-  useForOpen: false
-  waitUntilFinished: true
-  filePattern: '*'
-- id: fastForwardMerge
-  name: Fast-Forward Merge
-  fileStarter: {command: '${smartGitDir}/lib/ff-merge.sh', parameters: '${commit}'}
-  useForOpen: false
-  waitUntilFinished: true
-  filePattern: '*'
-  forRefsNotShas: true
-  confirmationMessage: Do you want to fast forward '${commit}' to its tracking branch?
-- id: mergeDirectlyTo
-  name: Merge Directly To
-  fileStarter: {command: /bin/python3, parameters: '"${smartGitDir}/lib/git-forward-merge.sh"
-      ${commit} ${commit2}'}
-  useForOpen: false
-  waitUntilFinished: true
-  filePattern: '*'
-  forRefsNotShas: true
-  requiresConfirmation: true
-  confirmationMessage: Do you want to merge changes to ${commit2} *without* checking
-    out?
-- id: gitVersion
-  name: Git Version
-  fileStarter: {command: '${git}', parameters: --version}
-  useForOpen: false
-  waitUntilFinished: true
-  filePattern: '*'
-- id: gitLfsVersion
-  name: Git-LFS Version
-  fileStarter: {command: '${git}', parameters: lfs --version}
-  useForOpen: false
-  waitUntilFinished: true
-  filePattern: '*'
-- id: gitConfigList
-  name: Git Config
-  fileStarter: {command: '${git}', parameters: config --list --show-origin}
-  useForOpen: false
-  waitUntilFinished: true
-  filePattern: '*'
 manuallyDeletedIds: []
+tools:
+    - filePattern: "*"
+      fileStarter: {command: /opt/sublime_text/sublime_text, parameters: '${filePath}'}
+      forFilesNotDirectories: true
+      name: Open in Sublime
+      useForOpen: true
+      waitUntilFinished: false
+    - filePattern: "*"
+      fileStarter: {command: /usr/bin/xdg-open, parameters: '${filePath}'}
+      forFilesNotDirectories: true
+      name: Open File
+      useForOpen: true
+      waitUntilFinished: false
+    - filePattern: "*"
+      fileStarter: {command: /usr/bin/nautilus, parameters: '${fileUri}'}
+      id: revealInNautilus
+      name: Reveal in Nautilus
+      useForOpen: true
+      waitUntilFinished: false
+    - filePattern: "*"
+      fileStarter: {command: '${smartGitDir}/lib/format-patch.sh', parameters: '${dirSelect}
+          ${commit} ${commit2}'}
+      id: formatPatch
+      name: Format Patch
+      useForOpen: false
+      waitUntilFinished: true
+    - filePattern: "*"
+      fileStarter: {command: '${git}', parameters: 'apply ${fileOpen}'}
+      id: applyPatch
+      name: Apply Patch
+      useForOpen: false
+      waitUntilFinished: true
+    - filePattern: "*"
+      fileStarter: {command: '${git}', parameters: fsck --full --no-progress}
+      id: verifyDatabase
+      name: Verify Database
+      useForOpen: false
+      waitUntilFinished: true
+    - confirmationMessage: Do you want to fast forward '${commit}' to its tracking branch?
+      filePattern: "*"
+      fileStarter: {command: '${smartGitDir}/lib/ff-merge.sh', parameters: '${commit}'}
+      forRefsNotShas: true
+      id: fastForwardMerge
+      name: Fast-Forward Merge
+      useForOpen: false
+      waitUntilFinished: true
+    - confirmationMessage: Do you want to merge changes to ${commit2} *without* checking
+          out?
+      filePattern: "*"
+      fileStarter: {command: /bin/python3, parameters: '"${smartGitDir}/lib/git-forward-merge.sh"
+          ${commit} ${commit2}'}
+      forRefsNotShas: true
+      id: mergeDirectlyTo
+      name: Merge Directly To
+      requiresConfirmation: true
+      useForOpen: false
+      waitUntilFinished: true
+    - filePattern: "*"
+      fileStarter: {command: '${git}', parameters: --version}
+      id: gitVersion
+      name: Git Version
+      useForOpen: false
+      waitUntilFinished: true
+    - filePattern: "*"
+      fileStarter: {command: '${git}', parameters: lfs --version}
+      id: gitLfsVersion
+      name: Git-LFS Version
+      useForOpen: false
+      waitUntilFinished: true
+    - filePattern: "*"
+      fileStarter: {command: '${git}', parameters: config --list --show-origin}
+      id: gitConfigList
+      name: Git Config
+      useForOpen: false
+      waitUntilFinished: true

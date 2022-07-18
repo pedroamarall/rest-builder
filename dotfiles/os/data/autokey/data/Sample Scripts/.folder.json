@@ -1,23 +1,26 @@
 {
-    "usageCount": 0, 
-    "abbreviation": {
-        "wordChars": "[\\w]", 
-        "abbreviations": [], 
-        "immediate": false, 
-        "ignoreCase": false, 
-        "backspace": true, 
-        "triggerInside": false
-    }, 
-    "modes": [], 
-    "title": "Sample Scripts", 
-    "hotkey": {
-        "hotKey": null, 
-        "modifiers": []
-    }, 
-    "filter": {
-        "regex": null, 
-        "isRecursive": false
-    }, 
-    "type": "folder", 
-    "showInTrayMenu": false
+	"abbreviation": {
+		"abbreviations": [
+		],
+		"backspace": true,
+		"ignoreCase": false,
+		"immediate": false,
+		"triggerInside": false,
+		"wordChars": "[\\w]"
+	},
+	"filter": {
+		"isRecursive": false,
+		"regex": null
+	},
+	"hotkey": {
+		"hotKey": null,
+		"modifiers": [
+		]
+	},
+	"modes": [
+	],
+	"showInTrayMenu": false,
+	"title": "Sample Scripts",
+	"type": "folder",
+	"usageCount": 0
 }

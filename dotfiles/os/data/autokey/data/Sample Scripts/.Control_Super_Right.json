@@ -1,31 +1,33 @@
 {
-    "usageCount": 96, 
-    "omitTrigger": false, 
-    "prompt": false, 
-    "description": "Control_Super_Right", 
-    "abbreviation": {
-        "wordChars": "[\\w]", 
-        "abbreviations": [], 
-        "immediate": false, 
-        "ignoreCase": false, 
-        "backspace": true, 
-        "triggerInside": false
-    }, 
-    "hotkey": {
-        "hotKey": "<right>", 
-        "modifiers": [
-            "<ctrl>", 
-            "<super>"
-        ]
-    }, 
-    "modes": [
-        3
-    ], 
-    "showInTrayMenu": true, 
-    "filter": {
-        "regex": null, 
-        "isRecursive": false
-    }, 
-    "type": "script", 
-    "store": {}
+	"abbreviation": {
+		"abbreviations": [
+		],
+		"backspace": true,
+		"ignoreCase": false,
+		"immediate": false,
+		"triggerInside": false,
+		"wordChars": "[\\w]"
+	},
+	"description": "Control_Super_Right",
+	"filter": {
+		"isRecursive": false,
+		"regex": null
+	},
+	"hotkey": {
+		"hotKey": "<right>",
+		"modifiers": [
+			"<ctrl>",
+			"<super>"
+		]
+	},
+	"modes": [
+		3
+	],
+	"omitTrigger": false,
+	"prompt": false,
+	"showInTrayMenu": true,
+	"store": {
+	},
+	"type": "script",
+	"usageCount": 96
 }

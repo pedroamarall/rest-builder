@@ -1,7 +1,7 @@
-completionKeyStroke: CTRL+SPACE
 annotateGit: []
 annotateHg: []
 compare: []
+completionKeyStroke: CTRL+SPACE
 conflictSolver: []
 deepGit: []
 fileEditor: []
