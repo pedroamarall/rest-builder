@@ -497,4 +497,4 @@
 
 1. PostgreSQL is an alternative to MySQL.
 
-1. Repeat the PostgreSQL tutorial, but for MySQL. Beware that PostgreSQL column types are different from MySQL column types (i.e. ***timestamp*** instead of ***datetime*** and ***bool*** instead of ***tinyint***) that will affect your SQL statements.
+1. Repeat the MySQL tutorial, but for PostgreSQL. Beware that PostgreSQL column types are different from MySQL column types (i.e. ***timestamp*** instead of ***datetime*** and ***bool*** instead of ***tinyint***) that will affect your SQL statements.
