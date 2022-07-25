@@ -1,17 +1,9 @@
 #!/bin/bash
 
-if [ -n "$(DISPLAY=:0.0 xrandr | grep 3840x2160)" ]
-then
-	if [ -n "$(DISPLAY=:0.0 xrandr | grep 'DP-1 connected')" ]
+for display in $(xrandr | awk '/connected/{print $1}')
+do
+	if xrandr | awk -v var="^$display connected" '$0~var && !f{f=1;x=$0;sub(/[^ ].*/,"",x);x=x" ";print;next} f {if (substr($0,1,length(x))==x)print; else f=0}' | grep -q "^[[:blank:]]*3840x2160"
 	then
-		xrandr --output DP-1 --mode 3840x2160 --scale .56x.56
-	else
-		xrandr --output HDMI-1 --mode 3840x2160 --scale .56x.56
+		xrandr --output $display --mode 3840x2160 --scale .56x.56
 	fi
-fi
-
-if sudo dmidecode | grep -A3 '^System Information' | grep -q "Manufacturer: Dell" &&
-   sudo dmidecode | grep -A3 '^System Information' | grep -q "Product Name: Precision"
-then
-	xrandr --output eDP-1 --mode 3840x2160 --scale .56x.56
-fi
+done
