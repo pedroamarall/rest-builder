@@ -4,6 +4,6 @@ for display in $(xrandr | awk '/connected/{print $1}')
 do
 	if xrandr | awk -v var="^$display connected" '$0~var && !f{f=1;x=$0;sub(/[^ ].*/,"",x);x=x" ";print;next} f {if (substr($0,1,length(x))==x)print; else f=0}' | grep -q "^[[:blank:]]*3840x2160"
 	then
-		xrandr --output $display --mode 3840x2160 --scale .56x.56
+		xrandr --output "$display" --mode 3840x2160 --scale .56x.56
 	fi
 done
