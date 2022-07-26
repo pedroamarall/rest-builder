@@ -3,15 +3,15 @@
 source ../_common.sh
 
 function customize_bash {
-	restore_from_original ~/.bashrc
+	me_restore_from_original /home/me/.bashrc
 
-	cat ~/.bashrc data/.bashrc > ~/.bashrc.cat
+	run_as_me bash -c "cat /home/me/.bashrc data/.bashrc > /home/me/.bashrc.cat"
 
-	mv ~/.bashrc.cat ~/.bashrc
+	run_as_me mv /home/me/.bashrc.cat /home/me/.bashrc
 }
 
 function customize_git {
-	cp data/.gitconfig ~
+	run_as_me cp data/.gitconfig /home/me
 
 	if [ ! -e /usr/local/bin/git-new-workdir ]
 	then
@@ -19,43 +19,43 @@ function customize_git {
 
 		chmod a+x data/git-new-workdir
 
-		sudo cp data/git-new-workdir /usr/local/bin
+		cp data/git-new-workdir /usr/local/bin
 	fi
 
-	cp data/gc_repositories ~/dev/projects
-	cp data/prepare_repositories ~/dev/projects
+	run_as_me cp data/gc_repositories /home/me/dev/projects
+	run_as_me cp data/prepare_repositories /home/me/dev/projects
 }
 
 function customize_hostname {
 	if [ $(hostname) == "fedora" ] ||
 	   [ $(hostname) == "localhost.localdomain" ]
 	then
-		sudo hostnamectl set-hostname liferay-$(random_letter)$(random_digit)$(random_letter)$(random_digit)
+		hostnamectl set-hostname liferay-$(random_letter)$(random_digit)$(random_letter)$(random_digit)
 	fi
 }
 
 function customize_login {
-	sudo_restore_from_original /etc/lxdm/PreLogin
+	restore_from_original /etc/lxdm/PreLogin
 
-	sudo_restore_from_original /etc/lxdm/PostLogin
+	restore_from_original /etc/lxdm/PostLogin
 
-	sudo bash -c "echo \"/bin/bash ~/dev/projects/github/liferay-basic-training/dotfiles/check_device.sh\" >> /etc/lxdm/PostLogin"
-	sudo bash -c "echo \"/bin/bash /usr/local/bin/xinput_logitech_mouse\" >> /etc/lxdm/PostLogin"
-	sudo bash -c "echo \"/bin/bash /usr/local/bin/xrandr_monitor\" >> /etc/lxdm/PostLogin"
-	sudo bash -c "echo \"/bin/bash /usr/local/bin/xset_screensaver\" >> /etc/lxdm/PostLogin"
+	echo "/bin/bash /home/me/dev/projects/github/liferay-basic-training/dotfiles/check_device.sh" >> /etc/lxdm/PostLogin
+	echo "/bin/bash /usr/local/bin/xinput_logitech_mouse" >> /etc/lxdm/PostLogin
+	echo "/bin/bash /usr/local/bin/xrandr_monitor" >> /etc/lxdm/PostLogin
+	echo "/bin/bash /usr/local/bin/xset_screensaver" >> /etc/lxdm/PostLogin
 }
 
 function customize_lxdm {
-	sudo_restore_from_original /etc/lxdm/lxdm.conf
+	restore_from_original /etc/lxdm/lxdm.conf
 
-	sudo sed -i "s@disable=0@disable=1@" /etc/lxdm/lxdm.conf
-	sudo sed -i "s@lang=1@lang=0@" /etc/lxdm/lxdm.conf
+	sed -i "s@disable=0@disable=1@" /etc/lxdm/lxdm.conf
+	sed -i "s@lang=1@lang=0@" /etc/lxdm/lxdm.conf
 }
 
 function customize_notifications {
-	sudo bash -c "echo \"[D-BUS Service]\" > /usr/share/dbus-1/services/org.freedesktop.Notifications.service"
-	sudo bash -c "echo \"Exec=/usr/libexec/notification-daemon\" >> /usr/share/dbus-1/services/org.freedesktop.Notifications.service"
-	sudo bash -c "echo \"Name=org.freedesktop.Notifications\" >> /usr/share/dbus-1/services/org.freedesktop.Notifications.service"
+	echo "[D-BUS Service]" > /usr/share/dbus-1/services/org.freedesktop.Notifications.service
+	echo "Exec=/usr/libexec/notification-daemon" >> /usr/share/dbus-1/services/org.freedesktop.Notifications.service
+	echo "Name=org.freedesktop.Notifications" >> /usr/share/dbus-1/services/org.freedesktop.Notifications.service
 }
 
 function customize_openbox {
@@ -64,23 +64,23 @@ function customize_openbox {
 	# Autostart
 	#
 
-	mkdir -p ~/.config/openbox
+	run_as_me mkdir -p /home/me/.config/openbox
 
-	echo "#!/bin/bash" > ~/.config/openbox/autostart.sh
-	echo "" >> ~/.config/openbox/autostart.sh
-	echo "conky" >> ~/.config/openbox/autostart.sh
-	echo "xautolock -time 5 -locker slock &" >> ~/.config/openbox/autostart.sh
-	echo "xsetroot -solid black" >> ~/.config/openbox/autostart.sh
+	echo "#!/bin/bash" > /home/me/.config/openbox/autostart.sh
+	echo "" >> /home/me/.config/openbox/autostart.sh
+	echo "conky" >> /home/me/.config/openbox/autostart.sh
+	echo "xautolock -time 5 -locker slock &" >> /home/me/.config/openbox/autostart.sh
+	echo "xsetroot -solid black" >> /home/me/.config/openbox/autostart.sh
 
-	chmod 744 ~/.config/openbox/autostart.sh
+	chmod a+x /home/me/.config/openbox/autostart.sh
 
 	#
 	# Desktops
 	#
 
-	cp -f /etc/xdg/openbox/rc.xml ~/.config/openbox/rc.xml
+	cp -f /etc/xdg/openbox/rc.xml /home/me/.config/openbox/rc.xml
 
-	sed -i "s@number>4</number@number>1</number@" ~/.config/openbox/rc.xml
+	sed -i "s@number>4</number@number>1</number@" /home/me/.config/openbox/rc.xml
 
 	#
 	# Key Bindings
@@ -90,28 +90,28 @@ function customize_openbox {
 	# https://ubuntu-mate.community/t/error-cannot-autolaunch-d-bus-without-x11-display/11928
 	#
 
-	sudo dbus-launch gsettings set org.gnome.desktop.wm.keybindings activate-window-menu "[]"
-
 	dbus-launch gsettings set org.gnome.desktop.wm.keybindings activate-window-menu "[]"
 
-	perl -0777 -pi -e 's@<keybind key="A-space">(\n *<[^/].*)*\n *</keybind>@<!--$&-->@' ~/.config/openbox/rc.xml
+	run_as_me dbus-launch gsettings set org.gnome.desktop.wm.keybindings activate-window-menu "[]"
 
-	sed -i "s/A-Tab/W-Tab/" ~/.config/openbox/rc.xml
-	sed -i "s/A-S-Tab/W-S-Tab/" ~/.config/openbox/rc.xml
+	perl -0777 -pi -e 's@<keybind key="A-space">(\n *<[^/].*)*\n *</keybind>@<!--$&-->@' /home/me/.config/openbox/rc.xml
+
+	sed -i "s/A-Tab/W-Tab/" /home/me/.config/openbox/rc.xml
+	sed -i "s/A-S-Tab/W-S-Tab/" /home/me/.config/openbox/rc.xml
 
 	local openboxRCKeyBindings=$(cat data/openbox_rc_key_bindings.xml | tr '\n' ';' | sed 's/;/\\n/g')
 
-	sed -i "s@</keyboard>@${openboxRCKeyBindings}\n</keyboard>@" ~/.config/openbox/rc.xml
+	sed -i "s@</keyboard>@${openboxRCKeyBindings}\n</keyboard>@" /home/me/.config/openbox/rc.xml
 
-	sudo cp data/brightness_update /usr/local/bin/brightness_update
+	cp data/brightness_update /usr/local/bin/brightness_update
 
-	sudo bash -c "echo \"ALL ALL=NOPASSWD: /usr/local/bin/brightness_update\" > /etc/sudoers.d/brightness_update"
+	echo "ALL ALL=NOPASSWD: /usr/local/bin/brightness_update" > /etc/sudoers.d/brightness_update
 
 	#
 	# Fonts
 	#
 
-	#sed -i "s/sans/Lucida Grande Medium/g" ~/.config/openbox/rc.xml
+	#sed -i "s/sans/Lucida Grande Medium/g" /home/me/.config/openbox/rc.xml
 
 	#
 	# Window Decorations
@@ -119,7 +119,7 @@ function customize_openbox {
 
 	local openboxRCWindowDecorations=$(cat data/openbox_rc_window_decorations.xml | tr '\n' ';' | sed 's/;/\\n/g')
 
-	sed -i "s@</openbox_config>@${openboxRCWindowDecorations}\n</openbox_config>@" ~/.config/openbox/rc.xml
+	sed -i "s@</openbox_config>@${openboxRCWindowDecorations}\n</openbox_config>@" /home/me/.config/openbox/rc.xml
 }
 
 function customize_screensaver {
@@ -132,18 +132,20 @@ function customize_screensaver {
 	echo "xset -dpms" > xset_screensaver
 	echo "xset s 300" >> xset_screensaver
 
-	chmod 775 xset_screensaver
+	chmod a+x xset_screensaver
 
 	#./xset_screensaver
 
-	sudo mv xset_screensaver /usr/local/bin
+	mv xset_screensaver /usr/local/bin
 }
 
 function customize_ssh {
-	echo "Host *" > ~/.ssh/config
-	echo -e "\tIdentityAgent ~/.1password/agent.sock" >> ~/.ssh/config
+	run_as_me echo "Host *" > /home/me/.ssh/config
+	run_as_me echo -e "\tIdentityAgent /home/me/.1password/agent.sock" >> /home/me/.ssh/config
 
-	chmod 600 ~/.ssh/config
+	chmod 600 /home/me/.ssh/config
+
+	chown me:me /home/me/.ssh/config
 }
 
 function customize_sysctl {
@@ -152,9 +154,9 @@ function customize_sysctl {
 	# https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/5/html/tuning_and_optimizing_red_hat_enterprise_linux_for_oracle_9i_and_10g_databases/sect-oracle_9i_and_10g_tuning_guide-large_memory_optimization_big_pages_and_huge_pages-configuring_huge_pages_in_red_hat_enterprise_linux_4_or_5
 	#
 
-	sudo_restore_from_original /etc/sysctl.conf
+	restore_from_original /etc/sysctl.conf
 
-	#sudo bash -c "echo \"vm.nr_hugepages=8192\" >> /etc/sysctl.conf"
+	#echo "vm.nr_hugepages=8192" >> /etc/sysctl.conf
 
 	#sudo sysctl -p
 }
@@ -162,7 +164,7 @@ function customize_sysctl {
 function customize_xinput {
 	chmod 775 data/xinput_logitech_mouse
 
-	sudo cp data/xinput_logitech_mouse /usr/local/bin
+	cp data/xinput_logitech_mouse /usr/local/bin
 
 	#if [ -n "$(DISPLAY=:0.0 xinput --list | grep Chicony)" ]
 	#then
@@ -177,14 +179,14 @@ function customize_xinput {
 function customize_xrandr {
 	chmod 775 data/xrandr_monitor
 
-	sudo cp data/xrandr_monitor /usr/local/bin
+	cp data/xrandr_monitor /usr/local/bin
 }
 
 function customize_vi {
-	sudo_restore_from_original /etc/virc
+	restore_from_original /etc/virc
 
-	sudo bash -c "echo \"set nofixeol\" >> /etc/virc"
-	sudo bash -c "echo \"set tabstop=4\" >> /etc/virc"
+	echo "set nofixeol" >> /etc/virc
+	echo "set tabstop=4" >> /etc/virc
 }
 
 function disable_firewall {
@@ -193,9 +195,9 @@ function disable_firewall {
 	# https://serverfault.com/questions/429991/how-to-solve-nt-status-host-unreachable-in-centos-when-connecting-to-windows-f
 	#
 
-	sudo systemctl stop firewalld
+	systemctl stop firewalld
 
-	sudo systemctl disable firewalld
+	systemctl disable firewalld
 }
 
 function disable_selinux {
@@ -206,31 +208,31 @@ function disable_selinux {
 	# https://www.cyberciti.biz/faq/disable-selinux-on-centos-7-rhel-7-fedora-linux
 	#
 
-	sudo_restore_from_original /etc/selinux/config
+	restore_from_original /etc/selinux/config
 
-	sudo sed -i "s/SELINUX=enforcing/SELINUX=disabled/" /etc/selinux/config
+	sed -i "s/SELINUX=enforcing/SELINUX=disabled/" /etc/selinux/config
 }
 
 function install_autokey {
 	dnf_install autokey-gtk gtksourceview3
 
-	rm -fr ~/.config/autokey
+	rm -fr /home/me/.config/autokey
 
-	mkdir -p ~/.config/autokey
+	run_as_me mkdir -p /home/me/.config/autokey
 
-	cp -R data/autokey ~/.config
+	run_as_me cp -R data/autokey /home/me/.config
 
-	mkdir -p ~/.config/autostart
+	run_as_me mkdir -p /home/me/.config/autostart
 
-	mv ~/.config/autokey/autokey.desktop ~/.config/autostart
+	run_as_me mv /home/me/.config/autokey/autokey.desktop /home/me/.config/autostart
 
-	sudo cp data/start_minimized.py /usr/local/bin
+	cp data/start_minimized.py /usr/local/bin
 
 	#
 	# https://askubuntu.com/questions/269574/wmctrl-focus-most-recent-window-of-an-app
 	#
 
-	sudo cp data/wmctrl_focus_on_app /usr/local/bin
+	cp data/wmctrl_focus_on_app /usr/local/bin
 }
 
 function install_bluetooth {
@@ -241,15 +243,15 @@ function install_bluetooth {
 
 	dnf_install blueman
 
-	sudo systemctl enable bluetooth.service
+	systemctl enable bluetooth.service
 
-	sudo systemctl start bluetooth.service
+	systemctl start bluetooth.service
 }
 
 function install_conky {
 	dnf_install conky
 
-	cp data/.conkyrc ~/.conkyrc
+	run_as_me cp data/.conkyrc /home/me/.conkyrc
 }
 
 function install_exfat {
@@ -272,13 +274,13 @@ function install_fonts {
 	# Mac
 	#
 
-	sudo rm -fr /usr/share/fonts/mac
+	rm -fr /usr/share/fonts/mac
 
-	sudo mkdir -p /usr/share/fonts/mac
+	mkdir -p /usr/share/fonts/mac
 
 	download http://mirrors/dl.dropbox.com/u/26209128/mac_fonts.tar.gz
 
-	sudo tar fxz data/mac_fonts.tar.gz -C /usr/share/fonts/mac --strip=1
+	tar fxz data/mac_fonts.tar.gz -C /usr/share/fonts/mac --strip=1
 
 	#
 	# Windows
@@ -290,29 +292,12 @@ function install_fonts {
 	# Cache
 	#
 
-	sudo fc-cache -f
+	fc-cache -f
 }
 
 function install_rpm_fusion {
 	rpm_install rpmfusion-free-release http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 	rpm_install rpmfusion-nonfree-release http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-}
-
-function install_snap {
-	dnf_install snapd
-
-	if [ ! -e /snap ]
-	then
-		sudo ln -s /var/lib/snapd/snap /snap
-	fi
-
-	#
-	# https://bugs.launchpad.net/snapd/+bug/1826662
-	#
-
-	sudo systemctl restart snapd.service
-
-	sudo snap install yq
 }
 
 function install_terminator {
@@ -322,29 +307,29 @@ function install_terminator {
 	# http://manpages.ubuntu.com/manpages/zesty/en/man5/terminator_config.5.html
 	#
 
-	mkdir -p ~/.config/terminator
+	run_as_me mkdir -p /home/me/.config/terminator
 
-	cp data/terminator_config ~/.config/terminator/config
+	run_as_me cp data/terminator_config /home/me/.config/terminator/config
 }
 
 function install_thunar {
 	dnf_install gnome-search-tool nautilus Thunar
 
-	sudo rm -f /usr/share/applications/Thunar-bulk-rename.desktop
-	sudo rm -f /usr/share/applications/Thunar-folder-handler.desktop
-	sudo rm -f /usr/share/applications/thunar-settings.desktop
+	rm -f /usr/share/applications/Thunar-bulk-rename.desktop
+	rm -f /usr/share/applications/Thunar-folder-handler.desktop
+	rm -f /usr/share/applications/thunar-settings.desktop
 
-	rm -fr ~/.config/Thunar
+	rm -fr /home/me/.config/Thunar
 
-	mkdir -p ~/.config/Thunar
+	run_as_me mkdir -p /home/me/.config/Thunar
 
-	cp data/thunar_uca.xml ~/.config/Thunar/uca.xml
+	run_as_me cp data/thunar_uca.xml /home/me/.config/Thunar/uca.xml
 
-	rm -fr ~/.config/xfce4
+	rm -fr /home/me/.config/xfce4
 
-	mkdir -p ~/.config/xfce4/xfconf/xfce-perchannel-xml
+	run_as_me mkdir -p /home/me/.config/xfce4/xfconf/xfce-perchannel-xml
 
-	cp data/thunar.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml
+	run_as_me cp data/thunar.xml /home/me/.config/xfce4/xfconf/xfce-perchannel-xml
 
 	#
 	# Reboot to reload Thunar's settings.
@@ -355,13 +340,13 @@ function install_thunar {
 function install_ulauncher {
 	dnf_install ulauncher
 
-	mkdir -p ~/.config/autostart
+	run_as_me mkdir -p /home/me/.config/autostart
 
-	cp data/ulauncher/ulauncher.desktop ~/.config/autostart
+	run_as_me cp data/ulauncher/ulauncher.desktop /home/me/.config/autostart
 
-	mkdir -p ~/.config/ulauncher
+	run_as_me mkdir -p /home/me/.config/ulauncher
 
-	cp data/ulauncher/settings.json ~/.config/ulauncher
+	run_as_me cp data/ulauncher/settings.json /home/me/.config/ulauncher
 }
 
 function random_digit {
@@ -373,7 +358,7 @@ function random_letter {
 }
 
 function remove_unused_icons {
-	sudo rm -f /usr/share/applications/fedora-release-notes.webapp.desktop
+	rm -f /usr/share/applications/fedora-release-notes.webapp.desktop
 }
 
 function swap_caps_and_control {
@@ -382,14 +367,14 @@ function swap_caps_and_control {
 	# http://sapiengames.com/2014/04/08/swap-control-capslock-keys-linux-openbox
 	#
 
-	echo "remove Lock = Caps_Lock" > ~/.Xmodmap
-	echo "remove Control = Control_L" >> ~/.Xmodmap
-	echo "keysym Control_L = Caps_Lock" >> ~/.Xmodmap
-	echo "keysym Caps_Lock = Control_L" >> ~/.Xmodmap
-	echo "add Lock = Caps_Lock" >> ~/.Xmodmap
-	echo "add Control = Control_L" >> ~/.Xmodmap
+	echo "remove Lock = Caps_Lock" > /home/me/.Xmodmap
+	echo "remove Control = Control_L" >> /home/me/.Xmodmap
+	echo "keysym Control_L = Caps_Lock" >> /home/me/.Xmodmap
+	echo "keysym Caps_Lock = Control_L" >> /home/me/.Xmodmap
+	echo "add Lock = Caps_Lock" >> /home/me/.Xmodmap
+	echo "add Control = Control_L" >> /home/me/.Xmodmap
 
-	xmodmap ~/.Xmodmap
+	xmodmap /home/me/.Xmodmap
 }
 
 function update_packages {
@@ -443,14 +428,21 @@ function update_packages {
 
 	dnf_erase abiword asunder gigolo gnomebaker gnumeric lxmusic midori pidgin pcmanfm osmo sylpheed xpad
 
-	rm -fr ~/.config/libfm
-	rm -fr ~/.config/pcmanfm
+	rm -fr /home/me/.config/libfm
+	rm -fr /home/me/.config/pcmanfm
 
 	sudo dnf update -qy
 }
 
 install_rpm_fusion
 
+#
+# Run the update_packages function three times. For some reason, some packages
+# do not get installed until the second time.
+#
+
+update_packages
+update_packages
 update_packages
 
 customize_bash
@@ -472,7 +464,6 @@ install_bluetooth
 install_conky
 install_exfat
 install_fonts
-install_snap
 install_terminator
 install_thunar
 install_ulauncher

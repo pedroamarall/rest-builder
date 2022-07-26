@@ -5,19 +5,19 @@ source /home/me/dev/projects/liferay-basic-training/dotfiles/_common.sh
 PACKAGE_NAMES=(
 	os
 	#
-	java
+	#java
 	#
-	1password
-	chrome
-	docker
-	figma
-	sentinelone
-	slack
-	smartgit
-	sublime
-	virtualbox
-	vscode
-	zoom
+	#1password
+	#chrome
+	#docker
+	#figma
+	#sentinelone
+	#slack
+	#smartgit
+	#sublime
+	#virtualbox
+	#vscode
+	#zoom
 )
 
 for PACKAGE_NAME in ${PACKAGE_NAMES[@]}
@@ -31,7 +31,7 @@ do
 	./restore.sh
 done
 
-rm -f ~/.bash_history
-sudo rm -f /root/.bash_history
+rm -f /home/me/.bash_history
+rm -f /root/.bash_history
 
 #sudo shutdown -r now

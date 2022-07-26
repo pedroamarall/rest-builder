@@ -2,7 +2,7 @@
 
 source ../_common.sh
 
-sudo rpm --import https://zoom.us/linux/download/pubkey
+rpm --import https://zoom.us/linux/download/pubkey
 
 dnf_install libxkbcommon-x11 xcb-util-image xcb-util-keysyms
 

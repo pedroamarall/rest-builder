@@ -5,7 +5,7 @@ function dnf_add_repo {
 
 	if [ ! -e /etc/yum.repos.d/${repo_name} ]
 	then
-		sudo dnf config-manager --add-repo=${1}
+		dnf config-manager --add-repo=${1}
 	fi
 }
 
@@ -14,7 +14,7 @@ function dnf_erase {
 	do
 		if [[ ! -z `rpm -aq ${rpm_name}` ]]
 		then
-			sudo dnf erase -qy ${@}
+			dnf erase -qy ${@}
 
 			return 0
 		fi
@@ -26,7 +26,7 @@ function dnf_install {
 	do
 		if [[ -z `rpm -aq ${rpm_name}` ]]
 		then
-			sudo dnf install -qy ${@}
+			dnf install -qy ${@}
 
 			return 0
 		fi
@@ -44,13 +44,22 @@ function download {
 
 	if [ ! -e data/${file_name} ]
 	then
-		mkdir -p data
+		run_as_me mkdir -p data
 
 		echo ""
 		echo "Downloading ${file_url}."
 		echo ""
 
-		wget -nv ${file_url} -O data/${file_name}
+		run_as_me wget -nv ${file_url} -O data/${file_name}
+	fi
+}
+
+function me_restore_from_original {
+	if [ -e ${1}.original ]
+	then
+		run_as_me cp ${1}.original ${1}
+	else
+		run_as_me cp ${1} ${1}.original
 	fi
 }
 
@@ -74,41 +83,13 @@ function rpm_install {
 
 		if [ "${file_extension}" == "rpm" ]
 		then
-			sudo rpm -i data/${file_name}
+			rpm -i data/${file_name}
 
 			rm data/${file_name}
 		fi
 	fi
 }
 
-function sudo {
-	local user_password=madeofdust
-
-	if [ -n "${LIFERAY_DOTFILES_USER_PASSWORD}" ]
-	then
-		user_password=${LIFERAY_DOTFILES_USER_PASSWORD}
-	fi
-
-	if [ ! -n "${LIFERAY_DOTFILES_USE_PASSWORD_SUDO_SUCCESSFUL}" ] && (echo ${user_password} | /usr/bin/sudo -S ls &>/dev/null)
-	then
-		LIFERAY_DOTFILES_USE_PASSWORD_SUDO_SUCCESSFUL=true
-	else
-		LIFERAY_DOTFILES_USE_PASSWORD_SUDO_SUCCESSFUL=false
-	fi
-
-	if [ "${LIFERAY_DOTFILES_USE_PASSWORD_SUDO_SUCCESSFUL}" == "true" ]
-	then
-		echo ${user_password} | /usr/bin/sudo -S "${@}"
-	else
-		/usr/bin/sudo "${@}"
-	fi
-}
-
-function sudo_restore_from_original {
-	if [ -e ${1}.original ]
-	then
-		sudo cp ${1}.original ${1}
-	else
-		sudo cp ${1} ${1}.original
-	fi
+function run_as_me {
+	sudo -g me -u me "$@"
 }

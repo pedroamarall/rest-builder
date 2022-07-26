@@ -7,44 +7,44 @@ function install_ant {
 
 	echo "Installing Ant ${ANT_VERSION}."
 
-	sudo rm -f /opt/java/ant
-	sudo rm -fr /opt/java/apache-ant-*
+	rm -f /opt/java/ant
+	rm -fr /opt/java/apache-ant-*
 
 	download https://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.zip
 
-	sudo unzip -q data/apache-ant-${ANT_VERSION}-bin.zip -d /opt/java
+	unzip -q data/apache-ant-${ANT_VERSION}-bin.zip -d /opt/java
 
 	#rm data/apache-ant-${ANT_VERSION}-bin.zip
 
-	sudo ln -fs /opt/java/apache-ant-${ANT_VERSION} /opt/java/ant
+	ln -fs /opt/java/apache-ant-${ANT_VERSION} /opt/java/ant
 }
 
 function install_java {
 	echo "Installing JDK ${3}."
 
-	sudo rm -f /opt/java/jdk
-	sudo rm -fr /opt/java/jdk${3}*
+	rm -f /opt/java/jdk
+	rm -fr /opt/java/jdk${3}*
 
 	download https://files.liferay.com/mirrors/download.oracle.com/otn-pub/java/jdk/${1}-${2}/jdk-${1}-linux-x64.tar.gz
 
-	sudo tar fxz data/jdk-${1}-linux-x64.tar.gz -C /opt/java
+	tar fxz data/jdk-${1}-linux-x64.tar.gz -C /opt/java
 
 	#rm data/jdk-${1}-linux-x64.tar.gz
 
-	sudo ln -fs /opt/java/jdk${3} /opt/java/jdk
-	sudo ln -fs /opt/java/jdk${3} /opt/java/jdk${4}
+	ln -fs /opt/java/jdk${3} /opt/java/jdk
+	ln -fs /opt/java/jdk${3} /opt/java/jdk${4}
 }
 
 function install_java_11 {
 	echo "Installing JDK 11."
 
-	sudo rm -fr /opt/java/jdk-11.0.13
+	rm -fr /opt/java/jdk-11.0.13
 
 	download https://files.liferay.com/mirrors/download.oracle.com/otn-pub/java/jdk/11.0.13+10/bdde8881e2e3437baa70044f884d2d67/jdk-11.0.13_linux-x64_bin.tar.gz
 
-	sudo tar fxz data/jdk-11.0.13_linux-x64_bin.tar.gz -C /opt/java
+	tar fxz data/jdk-11.0.13_linux-x64_bin.tar.gz -C /opt/java
 
-	sudo ln -fs /opt/java/jdk-11.0.13 /opt/java/jdk11
+	ln -fs /opt/java/jdk-11.0.13 /opt/java/jdk11
 }
 
 function install_maven {
@@ -52,16 +52,16 @@ function install_maven {
 
 	echo "Installing Maven ${MAVEN_VERSION}."
 
-	sudo rm -fr /opt/java/apache-maven-*
-	sudo rm -f /opt/java/maven
+	rm -fr /opt/java/apache-maven-*
+	rm -f /opt/java/maven
 
 	download https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.zip
 
-	sudo unzip -q data/apache-maven-${MAVEN_VERSION}-bin.zip -d /opt/java
+	unzip -q data/apache-maven-${MAVEN_VERSION}-bin.zip -d /opt/java
 
 	#rm data/apache-maven-${MAVEN_VERSION}-bin.zip
 
-	sudo ln -fs /opt/java/apache-maven-${MAVEN_VERSION} /opt/java/maven
+	ln -fs /opt/java/apache-maven-${MAVEN_VERSION} /opt/java/maven
 }
 
 install_ant
