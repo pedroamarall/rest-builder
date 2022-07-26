@@ -34,11 +34,27 @@ function prepare_repository {
 		if [ ! -e "${repository_dir}/app.server.${USER}.properties" ]
 		then
 			echo "app.server.parent.dir=/home/${USER}/dev/bundles/${branch}" > ${repository_dir}/app.server.${USER}.properties
+
+			cd ${repository_dir}
+
+			ant -f build-dist.xml unzip-tomcat
 		fi
 	fi
 }
 
+#
+# Prepare master.
+#
+
 echo "app.server.parent.dir=/home/me/dev/bundles/master" > ~/dev/projects/liferay-portal/app.server.me.properties && rm -f ~/dev/projects/liferay-portal/*.brian.*
+
+cd ~/dev/projects/liferay-portal
+
+ant -f build-dist.xml unzip-tomcat
+
+#
+# Prepare other branches.
+#
 
 prepare_repository liferay-portal-ee 7.0.x
 prepare_repository liferay-portal-ee 7.0.x-private
