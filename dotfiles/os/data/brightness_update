@@ -1,17 +1,28 @@
 #!/bin/bash
 
-ACTUAL=`cat /sys/class/backlight/intel_backlight/actual_brightness`
-DELTA=${1}
-MAX=`cat /sys/class/backlight/intel_backlight/max_brightness`
+function main {
+	local actual=`cat /sys/class/backlight/intel_backlight/actual_brightness`
+	local command=${1}
+	local max=`cat /sys/class/backlight/intel_backlight/max_brightness`
 
-ACTUAL=$((ACTUAL + DELTA));
+	local delta=$(((max / 10) + (max % 10 > 0)))
 
-if [ ${ACTUAL} -gt ${MAX} ]
-then
-	ACTUAL=${MAX}
-elif [ ${ACTUAL} -lt 0 ]
-then
-	ACTUAL=1
-fi
+	if [ ${command} == "down" ]
+	then
+		actual=$((actual - delta));
+	else
+		actual=$((actual + delta));
+	fi
 
-echo ${ACTUAL} > /sys/class/backlight/intel_backlight/brightness
+	if [ ${actual} -gt ${max} ]
+	then
+		actual=${max}
+	elif [ ${actual} -lt 0 ]
+	then
+		actual=1
+	fi
+
+	echo ${actual} > /sys/class/backlight/intel_backlight/brightness
+}
+
+main ${1}

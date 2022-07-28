@@ -90,11 +90,11 @@ https://wiki.manjaro.org/index.php?title=Openbox:_Control_Screen_Brightness_Usin
 
 <keybind key="XF86MonBrightnessDown">
 	<action name="Execute">
-		<command>sudo brightness_update -25</command>
+		<command>sudo brightness_update down</command>
 	</action>
 </keybind>
 <keybind key="XF86MonBrightnessUp">
 	<action name="Execute">
-		<command>sudo brightness_update +25</command>
+		<command>sudo brightness_update up</command>
 	</action>
 </keybind>
