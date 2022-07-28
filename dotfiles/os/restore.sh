@@ -108,6 +108,8 @@ function customize_openbox {
 
 	echo "ALL ALL=NOPASSWD: /usr/local/bin/brightness_update" > /etc/sudoers.d/brightness_update
 
+	chmod a+w /sys/class/backlight/intel_backlight/brightness
+
 	#
 	# Fonts
 	#
