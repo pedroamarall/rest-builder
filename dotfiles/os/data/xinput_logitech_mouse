@@ -1,6 +1,13 @@
 #!/bin/bash
 
 function set_property {
+
+	#
+	# https://askubuntu.com/questions/345355/xinput-list-shows-same-device-twice-device-ids-change-how-to-use-set-prop
+	# https://stackoverflow.com/questions/18755967/how-to-make-a-program-that-finds-ids-of-xinput-devices-and-sets-xinput-some-set/18756948#18756948
+	# https://wiki.archlinux.org/index.php/Mouse_acceleration
+	#
+
 	local deviceIds=$(xinput --list | grep "Logitech MX518\|Logitech USB Receiver" | sed -n 's/.*id=\([0-9]\+\).*/\1/p')
 
 	for deviceId in ${deviceIds}
