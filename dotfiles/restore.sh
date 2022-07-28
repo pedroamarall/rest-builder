@@ -3,7 +3,7 @@
 source /home/me/dev/projects/liferay-basic-training/dotfiles/_common.sh
 
 PACKAGE_NAMES=(
-	os
+	#os
 	#
 	#java
 	#
@@ -11,6 +11,7 @@ PACKAGE_NAMES=(
 	#chrome
 	#docker
 	#figma
+	mysql
 	#sentinelone
 	#slack
 	#smartgit
