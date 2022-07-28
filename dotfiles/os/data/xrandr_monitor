@@ -2,8 +2,8 @@
 
 for display in $(xrandr | awk '/ connected/{print $1}')
 do
-	if xrandr | sed "/$display/, /^[0-9a-zA-Z]/ !d" | sed '${/connected/d;}' | grep -q "^[[:blank:]]*3840x2160"
+	if xrandr | sed "/${display}/, /^[0-9a-zA-Z]/ !d" | sed '${/connected/d;}' | grep -q "^[[:blank:]]*3840x2160"
 	then
-		xrandr --output "$display" --mode 3840x2160 --scale .56x.56
+		xrandr --output "${display}" --mode 3840x2160 --scale .56x.56
 	fi
 done
