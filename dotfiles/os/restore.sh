@@ -10,6 +10,12 @@ function customize_bash {
 	run_as_me mv /home/me/.bashrc.cat /home/me/.bashrc
 }
 
+function customize_cryptsetup {
+	local default_luks_device="$(lsblk -lo PATH,FSTYPE | grep crypto_LUKS | awk '{print $1}')"
+
+	echo "ALL ALL=NOPASSWD: /sbin/cryptsetup" > /etc/sudoers.d/cryptsetup
+}
+
 function customize_git {
 	run_as_me cp data/.gitconfig /home/me
 
@@ -39,7 +45,7 @@ function customize_login {
 
 	restore_from_original /etc/lxdm/PostLogin
 
-	echo "/bin/bash /home/me/dev/projects/github/liferay-basic-training/dotfiles/check_device.sh" >> /etc/lxdm/PostLogin
+	echo "/bin/bash /home/me/dev/projects/liferay-basic-training/dotfiles/check_device.sh" >> /etc/lxdm/PostLogin
 	echo "/bin/bash /usr/local/bin/xinput_logitech_mouse" >> /etc/lxdm/PostLogin
 	echo "/bin/bash /usr/local/bin/xinput_touchpad" >> /etc/lxdm/PostLogin
 	echo "/bin/bash /usr/local/bin/xrandr_monitor" >> /etc/lxdm/PostLogin
@@ -461,6 +467,7 @@ update_packages
 update_packages
 
 customize_bash
+customize_cryptsetup
 customize_git
 customize_hostname
 customize_lxdm
