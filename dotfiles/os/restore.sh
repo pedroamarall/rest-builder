@@ -254,6 +254,14 @@ function install_conky {
 	run_as_me cp data/.conkyrc /home/me/.conkyrc
 }
 
+function install_dnf_automatic {
+	dnf_install dnf-automatic
+
+	sed -i "s@apply_updates = no@apply_updates = yes@" /etc/dnf/automatic.conf
+
+	systemctl enable --now dnf-automatic.timer
+}
+
 function install_exfat {
 	dnf_install fuse-exfat
 }
@@ -462,6 +470,7 @@ disable_selinux
 install_autokey
 install_bluetooth
 install_conky
+install_dnf_automatic
 install_exfat
 install_fonts
 install_terminator
