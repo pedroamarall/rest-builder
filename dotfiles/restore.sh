@@ -3,22 +3,22 @@
 source /home/me/dev/projects/liferay-basic-training/dotfiles/_common.sh
 
 PACKAGE_NAMES=(
-	#os
+	os
 	#
-	#java
+	java
 	#
-	#1password
-	#chrome
-	#docker
-	#figma
+	1password
+	chrome
+	docker
+	figma
 	mysql
-	#sentinelone
-	#slack
-	#smartgit
-	#sublime
-	#virtualbox
-	#vscode
-	#zoom
+	sentinelone
+	slack
+	smartgit
+	sublime
+	virtualbox
+	vscode
+	zoom
 )
 
 for PACKAGE_NAME in ${PACKAGE_NAMES[@]}
