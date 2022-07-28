@@ -41,6 +41,7 @@ function customize_login {
 
 	echo "/bin/bash /home/me/dev/projects/github/liferay-basic-training/dotfiles/check_device.sh" >> /etc/lxdm/PostLogin
 	echo "/bin/bash /usr/local/bin/xinput_logitech_mouse" >> /etc/lxdm/PostLogin
+	echo "/bin/bash /usr/local/bin/xinput_touchpad" >> /etc/lxdm/PostLogin
 	echo "/bin/bash /usr/local/bin/xrandr_monitor" >> /etc/lxdm/PostLogin
 	echo "/bin/bash /usr/local/bin/xset_screensaver" >> /etc/lxdm/PostLogin
 }
@@ -165,6 +166,10 @@ function customize_xinput {
 	chmod 775 data/xinput_logitech_mouse
 
 	cp data/xinput_logitech_mouse /usr/local/bin
+
+	chmod 775 data/xinput_touchpad
+
+	cp data/xinput_touchpad /usr/local/bin
 
 	#if [ -n "$(DISPLAY=:0.0 xinput --list | grep Chicony)" ]
 	#then
