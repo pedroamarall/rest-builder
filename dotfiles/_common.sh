@@ -83,7 +83,7 @@ function rpm_install {
 
 		if [ "${file_extension}" == "rpm" ]
 		then
-			rpm -i data/${file_name}
+			rpm --install --nodigest data/${file_name}
 
 			rm data/${file_name}
 		fi
