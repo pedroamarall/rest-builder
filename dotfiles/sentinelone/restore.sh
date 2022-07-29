@@ -71,6 +71,10 @@ function main {
 	done
 
 	echo sentinelctl management token set ${sentinelone_site_token}
+
+	#
+	# TODO Allow users to disable SentinelOne.
+	#
 }
 
 main
