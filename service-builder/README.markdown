@@ -40,7 +40,7 @@
 		-e LIFERAY_JDBC_PERIOD_DEFAULT_PERIOD_USERNAME="test" \
 		-it \
 		-p 8080:8080 \
-		liferay/portal:7.3.6-ga7
+		liferay/portal:7.4.3.35-ga35
 	```
 
 	Notice the name given to the Liferay container and how it is linked to the MySQL container.
@@ -132,7 +132,7 @@
 
 	```
 	<?xml version="1.0"?>
-	<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.3.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_3_0.dtd">
+	<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
 
 	<service-builder auto-namespace-tables="true" dependency-injector="ds" package-path="com.liferay.h7g5">
 		<namespace>OHQIWTSFHL</namespace>
@@ -693,7 +693,7 @@
 
 1. Go to http://localhost:8080/api/jsonws. Under ***Context Name***, go to for ***ohqiwtsfhl***.
 
-	1. There is a random JavaScript bug in 7.3 GA7 that breaks some browsers (load order of JavaScript modules). When it's fixed, everyone will be be able to follow the [Invoking JSON Web Services](https://help.liferay.com/hc/en-us/articles/360017899652-Invoking-JSON-Web-Services) tutorial. For now, at least read the tutorial to get a grasp of JSONWS.
+	1. Follow the [Invoking JSON Web Services](https://help.liferay.com/hc/en-us/articles/360017899652-Invoking-JSON-Web-Services) tutorial.
 
 	1. Use curl to invoke JSONWS.
 	

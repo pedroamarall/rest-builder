@@ -36,7 +36,7 @@
 
 		The ***repositories*** block also configures Maven Central and Liferay's Maven repository for third party JAR files.
 
-	1. Type ***echo "liferay.workspace.product=portal-7.3-ga7" > gradle.properties*** to configure Liferay Workspace to work with a specific version of Liferay.
+	1. Type ***echo "liferay.workspace.product=portal-7.4-ga35" > gradle.properties*** to configure Liferay Workspace to work with a specific version of Liferay.
 
 ## My First Module
 
@@ -144,7 +144,7 @@
 
 1. Your newly created module ***com.liferay.basic.training.able.impl.jar*** is not yet read by Liferay.
 
-1. Type ***d run --name ephesians-liferay --rm -it -p 8080:8080 liferay/portal:7.3.6-ga7*** to start Liferay.
+1. Type ***d run --name ephesians-liferay --rm -it -p 8080:8080 liferay/portal:7.4.3.35-ga35*** to start Liferay.
 
 	The ***--name*** flag means the Liferay container can be referenced as ***ephesians-liferay***.
 
@@ -165,8 +165,8 @@
 	1. Type ***d ps***.
 
 		```
-		CONTAINER ID        IMAGE                      COMMAND                  CREATED             STATUS                   PORTS                                                   NAMES
-		30f7e46500b9        liferay/portal:7.3.6-ga7   "/bin/sh -c /usr/loc…"   3 minutes ago       Up 3 minutes (healthy)   8000/tcp, 8009/tcp, 11311/tcp, 0.0.0.0:8080->8080/tcp   ephesians-liferay
+		CONTAINER ID   IMAGE                          COMMAND                  CREATED        STATUS                           PORTS                                     NAMES
+		20550060a23b   liferay/portal:7.4.3.35-ga35   "tini -- /usr/local/…"   1 second ago   Up 1 second (health: starting)   8000/tcp, 8009/tcp, 8080/tcp, 11311/tcp   ephesians-liferay
 		```
 
 		Notice that the Docker process command shows that the container ***30f7e46500b9*** is mapped to the name ***ephesians-liferay***.

@@ -2,7 +2,7 @@
 
 ## Running Liferay from Docker
 
-1. Type ***d run -it -p 8080:8080 liferay/portal:7.3.6-ga7***.
+1. Type ***d run -it -p 8080:8080 liferay/portal:7.4.3.35-ga35***.
 
 1. Go to http://localhost:8080 after Liferay has started.
 
