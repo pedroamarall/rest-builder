@@ -21,6 +21,7 @@ function main {
 	echo sentinelctl management customer_id set "${serial_number}"
 
 	#
+	# https://rapidapi.com/blog/ip-geolocation-api
 	# https://www.tecmint.com/find-linux-server-geographic-location
 	#
 
