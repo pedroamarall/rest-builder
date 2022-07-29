@@ -21,11 +21,18 @@ function main {
 	echo sentinelctl management customer_id set "${serial_number}"
 
 	#
+	# https://ipregistry.co/docs/filtering
 	# https://rapidapi.com/blog/ip-geolocation-api
 	# https://www.tecmint.com/find-linux-server-geographic-location
 	#
 
-	local country_code=$(curl -s https://ipwho.is/$(curl -s https://ipinfo.io/ip) | jq .country_code)
+	local country_code=$(curl -s "https://ipwho.is/$(curl -s https://ipinfo.io/ip)" | jq .country_code)
+
+	#
+	# The Ipregistry key is registered to github.com/brianchandotcom for 100k free calls per month.
+	#
+
+	#local country_code=$(curl -s "https://api.ipregistry.co/?key=xc7twk3rnen75w1p&fields=location.country" | jq .location.country.code)
 
 	#
 	# https://stackoverflow.com/questions/9733338/shell-script-remove-first-and-last-quote-from-a-variable
