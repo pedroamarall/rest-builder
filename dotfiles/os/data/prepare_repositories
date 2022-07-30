@@ -37,7 +37,7 @@ function prepare_repository {
 
 			cd ${repository_dir}
 
-			ant -f build-dist.xml unzip-tomcat
+			ant -f build-dist.xml unzip-tomcat && ant -f build-test.xml setup-testable-tomcat
 		fi
 	fi
 }
@@ -50,7 +50,7 @@ echo "app.server.parent.dir=/home/me/dev/bundles/master" > ~/dev/projects/lifera
 
 cd ~/dev/projects/liferay-portal
 
-ant -f build-dist.xml unzip-tomcat
+ant -f build-dist.xml unzip-tomcat && ant -f build-test.xml setup-testable-tomcat
 
 #
 # Prepare other branches.
