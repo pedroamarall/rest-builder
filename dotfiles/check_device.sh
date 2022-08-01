@@ -6,7 +6,7 @@ function test_luks_passphrase {
 
 	if printf "${default_luks_passphrase}" | sudo cryptsetup luksOpen --test-passphrase ${default_luks_device}
 	then
-		notify-send -t 0 -u critical "Security Compliance" "Change the default hard drive encryption password with the command:\n\n<b>sudo cryptsetup luksChangeKey ${default_luks_device}</b>"
+		notify-send -t 0 -u critical "Security Compliance" "Change the default hard drive encryption password with the command:\n\n<b>sudo cryptsetup luksChangeKey \n${default_luks_device}</b>"
 	fi
 }
 
