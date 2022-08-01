@@ -56,8 +56,18 @@ function customize_login {
 function customize_lxdm {
 	restore_from_original /etc/lxdm/lxdm.conf
 
+	sed -i "s@# session=/usr/bin/startlxde@session=/usr/bin/openbox-session@" /etc/lxdm/lxdm.conf
+	sed -i "s@bottom_pane=1@bottom_pane=0@" /etc/lxdm/lxdm.conf
 	sed -i "s@disable=0@disable=1@" /etc/lxdm/lxdm.conf
+	sed -i "s@gtk_theme=Clearlooks@gtk_theme=Adwaita-dark@" /etc/lxdm/lxdm.conf
 	sed -i "s@lang=1@lang=0@" /etc/lxdm/lxdm.conf
+	sed -i "s@theme=Industrial@theme=@" /etc/lxdm/lxdm.conf
+
+	restore_from_original /usr/share/backgrounds/default.png
+
+	download https://upload.wikimedia.org/wikipedia/commons/7/71/Black.png
+
+	mv data/Black.png /usr/share/backgrounds/default.png
 }
 
 function customize_notifications {
