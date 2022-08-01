@@ -45,6 +45,7 @@ function customize_login {
 
 	restore_from_original /etc/lxdm/PostLogin
 
+	echo "/bin/bash -c \"/usr/bin/sudo /usr/local/bin/swap_caps_and_control\"" >> /etc/lxdm/PostLogin
 	echo "/bin/bash /home/me/dev/projects/liferay-basic-training/dotfiles/check_device.sh" >> /etc/lxdm/PostLogin
 	echo "/bin/bash /usr/local/bin/xinput_logitech_mouse" >> /etc/lxdm/PostLogin
 	echo "/bin/bash /usr/local/bin/xinput_touchpad" >> /etc/lxdm/PostLogin
@@ -395,7 +396,21 @@ function swap_caps_and_control {
 	echo "add Lock = Caps_Lock" >> /home/me/.Xmodmap
 	echo "add Control = Control_L" >> /home/me/.Xmodmap
 
-	xmodmap /home/me/.Xmodmap
+	#xmodmap /home/me/.Xmodmap
+
+	chmod 700 /usr/bin/setxkbmap
+	chmod 700 /usr/bin/xmodmap
+
+	#
+	# https://askubuntu.com/questions/29603/how-do-i-clear-xmodmap-settings
+	# https://unix.stackexchange.com/questions/98849/how-can-i-write-a-idempotent-xmodmap
+	#
+
+	echo "/usr/bin/setxkbmap && /usr/bin/xmodmap /home/me/.Xmodmap" > /usr/local/bin/swap_caps_and_control
+
+	chmod u+x /usr/local/bin/swap_caps_and_control
+
+	echo "ALL ALL=NOPASSWD: /usr/local/bin/swap_caps_and_control" > /etc/sudoers.d/swap_caps_and_control
 }
 
 function update_packages {
