@@ -2,24 +2,7 @@
 
 source ../_common.sh
 
-function main {
-	#rpm_install SentinelAgent https://storage.googleapis.com/lfr-sentinelone-installer/SentinelAgent_linux_v22_2_1_3.rpm
-
-	#
-	# TODO Allow users to disable SentinelOne.
-	#
-
-	local serial_number=$(dmidecode -s system-serial-number)
-
-	if [[ -z ${serial_number} ]]
-	then
-		echo "Unable to determine the serial number."
-
-		exit 1
-	fi
-
-	echo sentinelctl management customer_id set "${serial_number}"
-
+function get_country_code {
 	#
 	# https://ipregistry.co/docs/filtering
 	# https://rapidapi.com/blog/ip-geolocation-api
@@ -29,7 +12,7 @@ function main {
 	local country_code=$(curl -s "https://ipwho.is/$(curl -s https://ipinfo.io/ip)" | jq .country_code)
 
 	#
-	# The Ipregistry key is registered to github.com/brianchandotcom for 100k free calls per month.
+	# The Ipregistry key is registered to github.com/brianchandotcom for 100k free calls.
 	#
 
 	#local country_code=$(curl -s "https://api.ipregistry.co/?key=xc7twk3rnen75w1p&fields=location.country" | jq .location.country.code)
@@ -98,9 +81,44 @@ function main {
 		exit 1
 	fi
 
-	echo "Register SentinelOne for ${country_code}."
+	echo ${country_code}
+}
 
-	echo sentinelctl management token set ${sentinelone_site_token}
+function get_serial_number {
+	local serial_number=$(dmidecode -s system-serial-number)
+
+	if [[ -z ${serial_number} ]]
+	then
+		echo "Unable to determine the serial number."
+
+		exit 1
+	fi
+
+	echo ${serial_number}
+}
+
+function main {
+	if [ -e /opt/sentinelone/bin/sentinelctl ]
+	then
+		echo exit 0
+	fi
+
+	local country_code=$(get_country_code)
+	local serial_number=$(get_serial_number)
+
+	rpm_install SentinelAgent https://storage.googleapis.com/lfr-sentinelone-installer/SentinelAgent_linux_v22_2_1_3.rpm
+
+	echo "me ALL=(root) /opt/sentinelone/bin/sentinelctl" > /etc/sudoers.d/sentinelctl
+
+	echo "Register SentinelOne with serial number ${serial_number}."
+
+	sentinelctl management customer_id set "${serial_number}"
+
+	echo "Register SentinelOne with token for country ${country_code}."
+
+	sentinelctl management token set ${sentinelone_site_token}
+
+	echo /opt/sentinelone/bin/sentinelctl control start
 }
 
 main
