@@ -31,5 +31,5 @@ conky.config = {
 }
 
 conky.text = [[
-	${color2}battery: ${color}${battery_percent}%  ${color2}up: ${color}$uptime  ${color2}cpu1: ${color}${cpu cpu1}%  ${color2}cpu2: ${color}${cpu cpu2}%  ${color2}Frec: ${color}${freq_g} Ghz  ${color2}Tcpu: ${color}${acpitemp}°C  ${color2}Thdd:${color}${hddtemp /dev/sda}°C  ${color2}ram: ${color} $memperc%  ${color2}swap: ${color}$swapperc%  ${if_existing /proc/net/route enp7s0} ${color2}ip: ${color}${addr enp7s0}  ${color2}net: dn${color} ${downspeed enp7s0} ${color2}up${color} ${upspeed enp7s0}${else}${if_up wlp4s0}${color2}ip: ${color}${addr wlp4s0}  ${color2}net: dn${color} ${downspeed wlp4s0} ${color2}up${color} ${upspeed wlp4s0}${endif}${endif}
+	${color2}battery: ${color}${battery_percent}%  ${color2}cpuf: ${color}${freq_g}ghz  ${color2}cpup: ${color}${cpu cpu0}%  ${color2}cput:${color}${acpitemp}°C  ${color2}ram: ${color}$memperc%  ${color2}up: ${color}${uptime}
 ]]
