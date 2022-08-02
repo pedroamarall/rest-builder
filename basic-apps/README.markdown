@@ -26,10 +26,6 @@
 
 	1. Type ***<Super+Tab>*** and find your app to bring it back up.
 
-1. Right click on an empty space to bring up the menu.
-
-	![](images/01.png)
-
 1. Switch between Chrome and Sublime.
 
 	1. Launch Sublime.
@@ -49,6 +45,14 @@
 	1. Type ***<Control+Alt+S>*** to take a screen shot.
 
 	1. Your file will be saved to a file like ***/home/me/Desktop/screenshot-1610537598.png***.
+
+1. Logout.
+
+	1. Launch Logout.
+
+1. Shutdown.
+
+	1. Launch Shutdown.
 
 ## Websites
 
