@@ -24,10 +24,6 @@ function get_country_code {
 	country_code="${country_code%\"}"
 	country_code="${country_code#\"}"
 
-	#
-	# TODO What about Morocco?
-	#
-
 	if [ ${country_code} == "AT" ] ||
 	   [ ${country_code} == "CN" ] ||
 	   [ ${country_code} == "IN" ] ||
@@ -40,6 +36,14 @@ function get_country_code {
 		#
 
 		sentinelone_site_token="eyJ1cmwiOiAiaHR0cHM6Ly9ldWNlMS0xMDUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImZlNzIxNTRmMjUyZGJkZTUifQ=="
+	elif [ ${country_code} == "MA" ]
+	then
+
+		#
+		# EMEA
+		#
+
+		sentinelone_site_token="eyJ1cmwiOiAiaHR0cHM6Ly9ldWNlMS0xMDUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImI4ZTUxMDkwYmMyMmIwMzkifQ=="
 	elif [ ${country_code} == "CZ" ] ||
 		 [ ${country_code} == "DE" ] ||
 		 [ ${country_code} == "ES" ] ||
