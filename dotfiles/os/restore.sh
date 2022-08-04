@@ -554,7 +554,20 @@ function update_packages {
 		xset \
 		xsetroot
 
-	dnf_erase abiword asunder gigolo gnomebaker gnumeric lxmusic midori pidgin pcmanfm osmo sylpheed xpad
+	dnf_erase \
+		abiword \
+		asunder \
+		gigolo \
+		gnomebaker \
+		gnumeric \
+		leafpad \
+		lxmusic \
+		midori \
+		pidgin \
+		pcmanfm \
+		osmo \
+		sylpheed \
+		xpad
 
 	rm -fr /home/me/.config/libfm
 	rm -fr /home/me/.config/pcmanfm
