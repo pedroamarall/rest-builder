@@ -199,6 +199,14 @@ function customize_openbox {
 	sed -i "s@</openbox_config>@${openboxRCWindowDecorations}\n</openbox_config>@" /home/me/.config/openbox/rc.xml
 }
 
+function customize_pwquality {
+	restore_from_original /etc/security/pwquality.conf
+
+	echo "lcredit=-1" >> /etc/security/pwquality.conf
+	echo "minlen=12" >> /etc/security/pwquality.conf
+	echo "ucredit=-1" >> /etc/security/pwquality.conf
+}
+
 function customize_screensaver {
 
 	#
@@ -214,6 +222,10 @@ function customize_screensaver {
 	#./xset_screensaver
 
 	mv xset_screensaver /usr/local/bin
+}
+
+function customize_shutdown {
+	echo "ALL ALL=NOPASSWD: /sbin/shutdown" > /etc/sudoers.d/shutdown
 }
 
 function customize_ssh {
@@ -568,7 +580,9 @@ customize_hostname
 customize_lxdm
 customize_notifications
 customize_openbox
+customize_pwquality
 customize_screensaver
+customize_shutdown
 customize_ssh
 customize_sysctl
 customize_xinput
