@@ -499,11 +499,23 @@ function swap_caps_and_control {
 	# https://unix.stackexchange.com/questions/98849/how-can-i-write-a-idempotent-xmodmap
 	#
 
-	echo "/usr/bin/setxkbmap && /usr/bin/xmodmap /home/me/.Xmodmap" > /usr/local/bin/swap_caps_and_control
+	echo "export DISPLAY=:0" > /usr/local/bin/swap_caps_and_control
+	echo "export XAUTHORITY=/home/me/.Xauthority" >> /usr/local/bin/swap_caps_and_control
+	echo "" >> /usr/local/bin/swap_caps_and_control
+	echo "/usr/bin/setxkbmap && /usr/bin/xmodmap /home/me/.Xmodmap" >> /usr/local/bin/swap_caps_and_control
 
 	chmod u+x /usr/local/bin/swap_caps_and_control
 
 	echo "ALL ALL=NOPASSWD: /usr/local/bin/swap_caps_and_control" > /etc/sudoers.d/swap_caps_and_control
+
+	#
+	# https://unix.stackexchange.com/questions/14854/xrandr-command-not-executed-within-shell-command-called-from-udev-rule
+	# https://www.thegeekdiary.com/how-to-run-a-script-when-usb-devices-is-attached-or-removed-using-udev
+	#
+
+	echo "ACTION==\"bind\", RUN+=\"/bin/sudo /usr/local/bin/swap_caps_and_control\", SUBSYSTEM==\"usb\"" > /etc/udev/rules.d/swapcapsandcontrol.rules
+
+	udevadm control --reload
 }
 
 function update_packages {
