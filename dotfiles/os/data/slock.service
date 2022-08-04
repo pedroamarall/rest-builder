@@ -1,0 +1,12 @@
+[Install]
+WantedBy=suspend.target
+
+[Service]
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/slock
+Type=forking
+User=me
+
+[Unit]
+Before=suspend.target
+Description=Slock

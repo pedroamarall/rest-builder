@@ -65,9 +65,11 @@ function customize_lxdm {
 
 	restore_from_original /usr/share/backgrounds/default.png
 
-	download https://upload.wikimedia.org/wikipedia/commons/7/71/Black.png
+	#
+	# https://upload.wikimedia.org/wikipedia/commons/7/71/Black.png
+	#
 
-	mv data/Black.png /usr/share/backgrounds/default.png
+	mv data/black.png /usr/share/backgrounds/default.png
 }
 
 function customize_notifications {
@@ -98,6 +100,7 @@ function customize_openbox {
 
 	cp -f /etc/xdg/openbox/rc.xml /home/me/.config/openbox/rc.xml
 
+	sed -i "s@manageDesktops>yes</manageDesktops@manageDesktops>no</manageDesktops@" /home/me/.config/openbox/rc.xml
 	sed -i "s@number>4</number@number>1</number@" /home/me/.config/openbox/rc.xml
 
 	#
@@ -132,6 +135,60 @@ function customize_openbox {
 	#
 
 	#sed -i "s/sans/Lucida Grande Medium/g" /home/me/.config/openbox/rc.xml
+
+	#
+	# Icons - Logout
+	#
+
+	#
+	# https://www.onlinewebfonts.com/icon/115458
+	#
+
+	echo "[Desktop Entry]" > /usr/share/applications/logout.desktop
+	echo "Exec=openbox --exit" >> /usr/share/applications/logout.desktop
+	echo "Icon=/usr/share/applications/logout.png" >> /usr/share/applications/logout.desktop
+	echo "Name=Logout" >> /usr/share/applications/logout.desktop
+	echo "Terminal=false" >> /usr/share/applications/logout.desktop
+	echo "Type=Application" >> /usr/share/applications/logout.desktop
+
+	cp data/logout.png /usr/share/applications
+
+	#
+	# Icons - Reboot
+	#
+
+	echo "[Desktop Entry]" > /usr/share/applications/reboot.desktop
+	echo "Exec=reboot" >> /usr/share/applications/reboot.desktop
+	echo "Icon=/usr/share/applications/reboot.png" >> /usr/share/applications/reboot.desktop
+	echo "Name=Reboot" >> /usr/share/applications/reboot.desktop
+	echo "Terminal=false" >> /usr/share/applications/reboot.desktop
+	echo "Type=Application" >> /usr/share/applications/reboot.desktop
+
+	cp data/reboot.png /usr/share/applications
+
+	#
+	# Icons - Shutdown
+	#
+
+	echo "[Desktop Entry]" > /usr/share/applications/shutdown.desktop
+	echo "Exec=systemctl poweroff -i" >> /usr/share/applications/shutdown.desktop
+	echo "Icon=/usr/share/applications/shutdown.png" >> /usr/share/applications/shutdown.desktop
+	echo "Name=Shutdown" >> /usr/share/applications/shutdown.desktop
+	echo "Terminal=false" >> /usr/share/applications/shutdown.desktop
+	echo "Type=Application" >> /usr/share/applications/shutdown.desktop
+
+	cp data/shutdown.png /usr/share/applications
+
+	#
+	# Mouse
+	#
+
+	#
+	# https://forum.slitaz.org/topic/disable-openbox-menu
+	#
+
+	sed -i "s@<action name=\"ShowMenu\"><menu>client-list-combined-menu</menu></action>@@" /home/me/.config/openbox/rc.xml
+	sed -i "s@<action name=\"ShowMenu\"><menu>root-menu</menu></action>@@" /home/me/.config/openbox/rc.xml
 
 	#
 	# Window Decorations
@@ -332,6 +389,20 @@ function install_rpm_fusion {
 	rpm_install rpmfusion-nonfree-release http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 }
 
+function install_slock {
+	dnf_install slock
+
+	#
+	# https://archived.forum.manjaro.org/t/writing-systemd-service-units/60350/40
+	# https://forum.archlabslinux.com/t/how-to-lock-and-suspend-when-lid-closed/2065/30
+	#
+
+	cp data/slock.service /etc/systemd/system
+
+	systemctl enable slock.service
+	#systemctl start slock.service
+}
+
 function install_terminator {
 	dnf_install terminator
 
@@ -455,7 +526,6 @@ function update_packages {
 		s3cmd \
 		screen \
 		simplescreenrecorder \
-		slock \
 		sshpass \
 		subversion \
 		sysstat \
@@ -512,6 +582,7 @@ install_conky
 install_dnf_automatic
 install_exfat
 install_fonts
+install_slock
 install_terminator
 install_thunar
 install_ulauncher

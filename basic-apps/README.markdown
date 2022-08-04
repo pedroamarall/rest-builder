@@ -50,6 +50,10 @@
 
 	1. Launch Logout.
 
+1. Reboot.
+
+	1. Launch Reboot.
+
 1. Shutdown.
 
 	1. Launch Shutdown.
