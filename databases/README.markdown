@@ -469,8 +469,6 @@
 		+------+
 		```
 
-	1. Type ***select distinct Author.name from Author inner join Book on Book.authorId = Author.authorId where Book.description like "%letter%";***
-
 1. Write a SQL statement that returns the name of all the authors and the number of books they wrote.
 
 	<details>
