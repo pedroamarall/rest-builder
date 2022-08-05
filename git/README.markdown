@@ -1024,6 +1024,8 @@
 
 	1. Type ***gpr 1*** to checkout the branch that contains the contents of pull request 1 (assuming the ID is 1).
 
+	1. Type ***osubg*** to quickly open all files in the branch with Sublime.
+
 ## SmartGit
 
 1. Launch SmartGit.

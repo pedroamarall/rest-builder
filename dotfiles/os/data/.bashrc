@@ -70,6 +70,7 @@ function customize_aliases {
 	alias la="ls -la --group-directories-first"
 
 	alias osub="/opt/sublime_text/sublime_text ${@}"
+	alias osubg="open_sublime_git ${@}"
 }
 
 function customize_path {
@@ -167,6 +168,49 @@ function include_custom_bashrc {
 	then
 		. ~/.bashrc.custom
 	fi
+}
+
+#
+# Usage:
+#
+#    osubg
+#    osubg <hash1>
+#    osubg <hash1> <hash2>
+#
+
+function open_sublime_git {
+	local hash1=${1}
+
+	if [ -z ${hash1} ]
+	then
+		hash1="$(git branch --show-current)"
+	fi
+
+	local repository_dir="$(git rev-parse --show-toplevel)"
+
+	local branch=$(git config --get git-pull-request.${repository_dir}.update-branch)
+
+	if [ -z ${branch} ]
+	then
+		branch="master"
+	fi
+
+	local hash2=${2}
+
+	if [ -z ${hash2} ]
+	then
+		hash2=${branch}
+	fi
+
+	local hash_range="${hash2}..${hash1}"
+
+	echo ""
+	echo "Opening files in the range ${hash_range}."
+
+	for file in $(git diff ${hash_range} --name-only | head -n 100)
+	do
+		/opt/sublime_text/sublime_text "${repository_dir}/${file}" 2>/dev/null || printf "\nUnable to open ${file}."
+	done
 }
 
 function parse_git_branch {
