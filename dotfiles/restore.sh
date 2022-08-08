@@ -10,6 +10,7 @@ PACKAGE_NAMES=(
 	1password
 	chrome
 	docker
+	idea
 	figma
 	mysql
 	sentinelone
