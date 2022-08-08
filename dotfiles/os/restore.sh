@@ -344,6 +344,12 @@ function install_bluetooth {
 function install_conky {
 	dnf_install conky
 
+	#
+	# https://bbs.archlinux.org/viewtopic.php?id=198630
+	# https://unix.stackexchange.com/questions/43347/whats-the-right-way-to-display-system-sound-volume-in-conky
+	# https://unix.stackexchange.com/questions/89571/how-to-get-volume-level-from-the-command-line
+	#
+
 	run_as_me cp data/.conkyrc /home/me/.conkyrc
 }
 
