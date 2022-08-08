@@ -17,4 +17,4 @@ echo "gpgkey=https://downloads.1password.com/linux/keys/1password.asc" >> /etc/y
 
 rpm --import https://downloads.1password.com/linux/keys/1password.asc
 
-dnf_install 1password
+dnf_install 1password 1password-cli
