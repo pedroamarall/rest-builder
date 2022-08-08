@@ -4,19 +4,19 @@
 
 source ../_common.sh
 
-rm -fr /opt/java/smartgit
+rm -fr /opt/smartgit
 
 download https://www.syntevo.com/downloads/smartgit/smartgit-linux-20_1_6.tar.gz
 
-tar fxz data/smartgit-linux-20_1_6.tar.gz -C /opt/java
+tar fxz data/smartgit-linux-20_1_6.tar.gz -C /opt
 
 #rm data/smartgit-linux-20_1_6.tar.gz
 
-echo "-Xmx8192m" > /opt/java/smartgit/bin/smartgit.vmoptions
+echo "-Xmx8192m" > /opt/smartgit/bin/smartgit.vmoptions
 
 echo "[Desktop Entry]" > /usr/share/applications/smartgit.desktop
-echo "Exec=/opt/java/smartgit/bin/smartgit.sh" >> /usr/share/applications/smartgit.desktop
-echo "Icon=/opt/java/smartgit/bin/smartgit-64.png" >> /usr/share/applications/smartgit.desktop
+echo "Exec=/opt/smartgit/bin/smartgit.sh" >> /usr/share/applications/smartgit.desktop
+echo "Icon=/opt/smartgit/bin/smartgit-64.png" >> /usr/share/applications/smartgit.desktop
 echo "Name=SmartGit" >> /usr/share/applications/smartgit.desktop
 echo "Terminal=false" >> /usr/share/applications/smartgit.desktop
 echo "Type=Application" >> /usr/share/applications/smartgit.desktop

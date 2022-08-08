@@ -107,7 +107,7 @@ spellCheck:
     activeDictionary: 0
     deleted: false
     dictionaries:
-        - {name: en_US, file: '${smartgit.install}/dictionaries/en_US.dic', file.absolute: /opt/java/smartgit/dictionaries/en_US.dic}
+        - {name: en_US, file: '${smartgit.install}/dictionaries/en_US.dic', file.absolute: /opt/smartgit/dictionaries/en_US.dic}
 ssh: {useOwnSshClient: true}
 tempDirs: [/tmp/smartgit17833597056789055586]
 uiSettings: {theme: auto, themeChanged: false, fileSearchPatternType: 1}
