@@ -2,6 +2,10 @@
 
 ## Sublime
 
+1. Launch Sublime.
+
+	1. Exit Sublime.
+
 1. Launch Terminator.
 
 1. Type ***osub \<FILE_NAME\>*** to open a file in Sublime.
@@ -49,3 +53,9 @@
 1. Type ***<CONTROL+r>*** to redo by.
 
 1. Get out of Vi.
+
+## Other Editors
+
+1. Launch IntelliJ.
+
+1. Launch Visual Studio Code.
