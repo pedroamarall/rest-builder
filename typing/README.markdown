@@ -21,3 +21,17 @@ Use the correct fingers! You cannot type fast if you type with the wrong fingers
 Practice 10 minutes a day until you break out of the bad habit of using the wrong fingers.
 
 You must learn to type letters, numbers, and symbols while using all 10 fingers correctly without looking at your keyboard.
+
+## Do you want to be a coding ninja?
+
+Your keyboard is your sword.
+
+If you cannot handle a knife like a sushi chef, you cannot handle a sword like a ninja.
+
+Watch this video https://www.youtube.com/watch?v=RjWkO9A-Ckk.
+
+Now watch him cut vegetables blind folded https://www.youtube.com/watch?v=V-xEYDT7PpI.
+
+How can you code if you do not know how to type without looking at a keyboard?
+
+Can a professional soccer player play with only one leg? How can you type when you only use two fingers and constantly look at your keyboard?
