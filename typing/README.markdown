@@ -32,6 +32,8 @@ Watch this video https://www.youtube.com/watch?v=RjWkO9A-Ckk.
 
 Now watch him cut vegetables blind folded https://www.youtube.com/watch?v=V-xEYDT7PpI.
 
-How can you code if you do not know how to type without looking at a keyboard?
+How can you code when constantly look at your keyboard?
 
-Can a professional soccer player play with only one leg? How can you type when you only use two fingers and constantly look at your keyboard?
+Can a professional soccer player play with only one leg?
+
+How can you code when you only use two fingers?
