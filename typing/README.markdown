@@ -24,16 +24,16 @@ You must learn to type letters, numbers, and symbols while using all 10 fingers 
 
 ## Do you want to be a coding ninja?
 
-Your keyboard is your sword.
+If so, then your **keyboard** is your **sword**.
 
-If you cannot handle a knife like a sushi chef, you cannot handle a sword like a ninja.
+If you cannot handle a knife like a **sushi chef**, you cannot handle a sword like a **ninja**.
 
 Watch this video https://www.youtube.com/watch?v=RjWkO9A-Ckk.
 
 Now watch him cut vegetables blind folded https://www.youtube.com/watch?v=V-xEYDT7PpI.
 
-How can you code when constantly look at your keyboard?
+***Learn*** to use a keyboard with eyes on the monitor and not the keyboard.
 
 Can a professional soccer player play with only one leg?
 
-How can you code when you only use two fingers?
+***Learn*** to use a keyboard with all ten fingers.
