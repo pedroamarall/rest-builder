@@ -22,7 +22,7 @@ Practice 10 minutes a day until you break out of the bad habit of using the wron
 
 You must learn to type letters, numbers, and symbols while using all 10 fingers correctly without looking at your keyboard.
 
-## Do you want to be a coding ninja?
+## Do you want to be a code ninja?
 
 If so, then your **keyboard** is your **sword**.
 
