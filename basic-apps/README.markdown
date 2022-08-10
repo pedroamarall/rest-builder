@@ -26,6 +26,8 @@
 
 	1. Type ***<Super+Tab>*** and find your app to bring it back up.
 
+	1. Type ***<Super+D>*** to toggle showing or minimizing all applications.
+
 1. Switch between Chrome and Sublime.
 
 	1. Launch Sublime.
