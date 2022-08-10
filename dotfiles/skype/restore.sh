@@ -9,3 +9,7 @@ source ../_common.sh
 dnf_add_repo https://repo.skype.com/data/skype-stable.repo
 
 dnf_install skypeforlinux
+
+rm -f /home/me/.config/autostart/skypeforlinux.desktop
+
+touch /home/me/.config/autostart/skypeforlinux.desktop
