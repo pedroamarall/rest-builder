@@ -19,7 +19,7 @@
 </keybind>
 <keybind key="C-A-m">
 	<action name="Execute">
-		<command><![CDATA[bash -c '/usr/local/bin/xinput_logitech_mouse ; /usr/local/bin/xinput_touchpad ; /usr/local/bin/xrandr_monitor']]></command>
+		<command><![CDATA[bash -c '/usr/local/bin/xinput_logitech_mouse ; /usr/local/bin/xinput_touchpad ; /bin/sudo /usr/local/bin/xrandr_monitor']]></command>
 	</action>
 </keybind>
 

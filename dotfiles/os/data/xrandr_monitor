@@ -1,9 +1,34 @@
 #!/bin/bash
 
-for display in $(xrandr | awk '/ connected/{print $1}')
-do
-	if xrandr | sed "/${display}/, /^[0-9a-zA-Z]/ !d" | sed '${/connected/d;}' | grep -q "^[[:blank:]]*3840x2160"
-	then
-		xrandr --output "${display}" --mode 3840x2160 --scale .56x.56
-	fi
-done
+export DISPLAY=:0
+export XAUTHORITY=/home/me/.Xauthority
+
+function main {
+
+	#
+	# https://superuser.com/questions/1243205/how-to-mirror-a-display-with-different-resolutions
+	#
+
+	local primary_display
+
+	for display in $(xrandr | awk '/ connected primary/{print $1}')
+	do
+		primary_display=${display}
+
+		xrandr --output ${display} --scale-from 1920x1080
+
+		break
+	done
+
+	for display in $(xrandr | awk '/ connected/{print $1}')
+	do
+		if [ ${display} == ${primary_display} ]
+		then
+			continue
+		fi
+
+		xrandr --output ${display} --auto --scale-from 1920x1080 --same-as ${primary_display}
+	done
+}
+
+main

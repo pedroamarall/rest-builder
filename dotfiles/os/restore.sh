@@ -46,10 +46,10 @@ function customize_login {
 	restore_from_original /etc/lxdm/PostLogin
 
 	echo "/bin/bash -c \"/usr/bin/sudo /usr/local/bin/swap_caps_and_control\"" >> /etc/lxdm/PostLogin
+	echo "/bin/bash -c \"/usr/bin/sudo /usr/local/bin/xrandr_monitor\"" >> /etc/lxdm/PostLogin
 	echo "/bin/bash /home/me/dev/projects/liferay-basic-training/dotfiles/check_device.sh" >> /etc/lxdm/PostLogin
 	echo "/bin/bash /usr/local/bin/xinput_logitech_mouse" >> /etc/lxdm/PostLogin
 	echo "/bin/bash /usr/local/bin/xinput_touchpad" >> /etc/lxdm/PostLogin
-	echo "/bin/bash /usr/local/bin/xrandr_monitor" >> /etc/lxdm/PostLogin
 	echo "/bin/bash /usr/local/bin/xset_screensaver" >> /etc/lxdm/PostLogin
 }
 
@@ -273,6 +273,22 @@ function customize_xrandr {
 	chmod 775 data/xrandr_monitor
 
 	cp data/xrandr_monitor /usr/local/bin
+
+	chmod u+x /usr/local/bin/xrandr_monitor
+
+	echo "ALL ALL=NOPASSWD: /usr/local/bin/xrandr_monitor" > /etc/sudoers.d/xrandr_monitor
+
+	echo "ACTION==\"change\", RUN+=\"/bin/sudo /usr/local/bin/xrandr_monitor\", SUBSYSTEM==\"drm\"" > /etc/udev/rules.d/xrandrmonitor.rules
+
+	udevadm control --reload
+
+	chmod g-x /bin/lxrandr
+	chmod o-x /bin/lxrandr
+
+	rm -fr /usr/share/applications/lxrandr.desktop
+
+	chmod g-x /bin/xrandr
+	chmod o-x /bin/xrandr
 }
 
 function customize_vi {
