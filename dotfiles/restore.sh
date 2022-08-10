@@ -23,6 +23,7 @@ PACKAGE_NAMES=(
 	smartgit
 	sublime
 	virtualbox
+	vlc
 	vscode
 	zoom
 )
