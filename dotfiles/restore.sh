@@ -12,6 +12,7 @@ PACKAGE_NAMES=(
 	docker
 	idea
 	figma
+	firefox
 	mysql
 	sentinelone
 	slack
