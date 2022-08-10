@@ -18,6 +18,7 @@ PACKAGE_NAMES=(
 	msteams
 	mysql
 	sentinelone
+	skype
 	slack
 	smartgit
 	sublime
