@@ -8,6 +8,7 @@ PACKAGE_NAMES=(
 	java
 	#
 	1password
+	brave
 	chrome
 	docker
 	idea
