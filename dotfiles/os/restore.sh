@@ -361,6 +361,7 @@ function install_conky {
 	dnf_install conky
 
 	#
+	# https://askubuntu.com/questions/181663/how-to-get-conky-to-stay-on-the-desktop
 	# https://bbs.archlinux.org/viewtopic.php?id=198630
 	# https://unix.stackexchange.com/questions/43347/whats-the-right-way-to-display-system-sound-volume-in-conky
 	# https://unix.stackexchange.com/questions/89571/how-to-get-volume-level-from-the-command-line
