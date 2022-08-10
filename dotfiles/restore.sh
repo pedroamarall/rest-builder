@@ -14,6 +14,8 @@ PACKAGE_NAMES=(
 	idea
 	figma
 	firefox
+	libreoffice
+	msteams
 	mysql
 	sentinelone
 	slack
