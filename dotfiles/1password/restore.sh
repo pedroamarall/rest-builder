@@ -20,8 +20,11 @@ rpm --import https://downloads.1password.com/linux/keys/1password.asc
 dnf_install 1password 1password-cli
 
 #
-# Allow the 1Password SSH Agent to use system authentication for user me
+# Allow the 1Password SSH agent to use system authentication.
+#
 # https://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html
 #
 
-sudo sed -i ':a;N;$!ba;s/<allow_active>auth_self<\/allow_active>/<allow_active>yes<\/allow_active>/3' /usr/share/polkit-1/actions/com.1password.1Password.policy
+restore_from_original /usr/share/polkit-1/actions/com.1password.1Password.policy
+
+sed -i ':a;N;$!ba;s/<allow_active>auth_self<\/allow_active>/<allow_active>yes<\/allow_active>/3' /usr/share/polkit-1/actions/com.1password.1Password.policy
