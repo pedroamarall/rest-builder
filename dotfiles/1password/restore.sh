@@ -25,6 +25,24 @@ dnf_install 1password 1password-cli
 # https://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html
 #
 
-restore_from_original /usr/share/polkit-1/actions/com.1password.1Password.policy
+policy_file="/usr/share/polkit-1/actions/com.1password.1Password.policy"
 
-sed -i ':a;N;$!ba;s/<allow_active>auth_self<\/allow_active>/<allow_active>yes<\/allow_active>/3' /usr/share/polkit-1/actions/com.1password.1Password.policy
+restore_from_original ${policy_file}
+
+#
+# Find the line number of "com.1password.1Password.authorizeSshAgent"
+#
+
+line_num_authorize=$(grep -Fn 'com.1password.1Password.authorizeSshAgent' ${policy_file} | cut -f1 -d":")
+
+#
+# Starting at the line number of "com.1password.1Password.authorizeSshAgent", find the line number of the first match of "allow_active"
+#
+
+line_num_allow_active=$(awk -v line=$line_num_authorize 'NR > line && /allow_active/{ print NR, $0 }' ${policy_file} | cut -f1 -d" ")
+
+#
+# Use sed on that line number to replace "auth_self" with "yes"
+#
+
+sed -i "${line_num_allow_active}s/auth_self/yes/" ${policy_file}
