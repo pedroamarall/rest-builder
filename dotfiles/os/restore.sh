@@ -197,6 +197,16 @@ function customize_openbox {
 	local openboxRCWindowDecorations=$(cat data/openbox_rc_window_decorations.xml | tr '\n' ';' | sed 's/;/\\n/g')
 
 	sed -i "s@</openbox_config>@${openboxRCWindowDecorations}\n</openbox_config>@" /home/me/.config/openbox/rc.xml
+
+	#
+	# Disable LXPanel
+	#
+
+	chmod g-x /bin/lxpanel
+	chmod o-x /bin/lxpanel
+
+	chmod g-x /bin/lxpanelctl
+	chmod o-x /bin/lxpanelctl
 }
 
 function customize_pwquality {
@@ -329,11 +339,11 @@ function install_autokey {
 
 	run_as_me mkdir -p /home/me/.config/autokey
 
-	run_as_me cp -R data/autokey /home/me/.config
+	cp -R data/autokey /home/me/.config
 
-	run_as_me mkdir -p /home/me/.config/autostart
+	mkdir -p /home/me/.config/autostart
 
-	run_as_me mv /home/me/.config/autokey/autokey.desktop /home/me/.config/autostart
+	mv /home/me/.config/autokey/autokey.desktop /home/me/.config/autostart
 
 	cp data/start_minimized.py /usr/local/bin
 
@@ -367,7 +377,7 @@ function install_conky {
 	# https://unix.stackexchange.com/questions/89571/how-to-get-volume-level-from-the-command-line
 	#
 
-	run_as_me cp data/.conkyrc /home/me/.conkyrc
+	cp data/.conkyrc /home/me/.conkyrc
 }
 
 function install_dnf_automatic {
@@ -480,11 +490,13 @@ function install_ulauncher {
 
 	run_as_me mkdir -p /home/me/.config/autostart
 
-	run_as_me cp data/ulauncher/ulauncher.desktop /home/me/.config/autostart
+	cp data/ulauncher/ulauncher.desktop /home/me/.config/autostart
+
+	rm -fr /home/me/.config/ulauncher
 
 	run_as_me mkdir -p /home/me/.config/ulauncher
 
-	run_as_me cp data/ulauncher/settings.json /home/me/.config/ulauncher
+	cp data/ulauncher/settings.json /home/me/.config/ulauncher
 }
 
 function random_digit {
