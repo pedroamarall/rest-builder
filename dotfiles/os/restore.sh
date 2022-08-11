@@ -137,8 +137,6 @@ function customize_openbox {
 
 	echo "ALL ALL=NOPASSWD: /usr/local/bin/brightness_update" > /etc/sudoers.d/brightness_update
 
-	chmod a+w /sys/class/backlight/intel_backlight/brightness
-
 	#
 	# Fonts
 	#
@@ -638,9 +636,14 @@ install_rpm_fusion
 # do not get installed until the second time.
 #
 
-update_packages
-update_packages
-update_packages
+for i in {1..3}
+do
+	echo ""
+	echo "Update package packages, attempt ${i}."
+	echo ""
+
+	update_packages
+done
 
 customize_bash
 customize_cryptsetup

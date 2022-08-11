@@ -1,5 +1,13 @@
 #!/bin/sh
 
+function prepare_branch {
+	#ant -Dmirrors.hostname= setup-libs
+
+	ant -f build-dist.xml unzip-tomcat
+
+	#ant -f build-test.xml setup-testable-tomcat
+}
+
 function prepare_repository {
 	local branch=${2}
 	local repository=${1}
@@ -37,7 +45,7 @@ function prepare_repository {
 
 			cd ${repository_dir}
 
-			ant -f build-dist.xml unzip-tomcat && ant -f build-test.xml setup-testable-tomcat
+			prepare_branch
 		fi
 	fi
 }
@@ -50,7 +58,7 @@ echo "app.server.parent.dir=/home/me/dev/bundles/master" > ~/dev/projects/lifera
 
 cd ~/dev/projects/liferay-portal
 
-ant -f build-dist.xml unzip-tomcat && ant -f build-test.xml setup-testable-tomcat
+prepare_branch
 
 #
 # Prepare other branches.
