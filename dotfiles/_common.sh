@@ -12,7 +12,12 @@ function dnf_add_repo {
 function dnf_erase {
 	for rpm_name in "$@"
 	do
-		if [[ ! -z `rpm -aq ${rpm_name}` ]]
+
+		#
+		# https://serverfault.com/questions/654765/how-to-fix-a-function-in-bash-that-checks-if-an-rpm-package-is-installed
+		#
+
+		if ! rpm -q ${rpm_name} &> /dev/null
 		then
 			dnf erase -qy ${@}
 
@@ -24,7 +29,7 @@ function dnf_erase {
 function dnf_install {
 	for rpm_name in "$@"
 	do
-		if [[ -z `rpm -aq ${rpm_name}` ]]
+		if ! rpm -q ${rpm_name} &> /dev/null
 		then
 			dnf install -qy ${@}
 
@@ -73,7 +78,7 @@ function restore_from_original {
 }
 
 function rpm_install {
-	if [[ -z `rpm -aq ${1}` ]]
+	if ! rpm -q ${1} &> /dev/null
 	then
 		download ${2}
 
