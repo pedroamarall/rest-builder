@@ -52,6 +52,13 @@ function prepare_work_dir {
 	fi
 }
 
+if [ ! -e /bin/git ]
+then
+	echo "Git is not installed."
+
+	exit 1
+fi
+
 prepare_branch ~/dev/projects/liferay-portal master
 
 prepare_work_dir liferay-portal-ee 7.0.x
