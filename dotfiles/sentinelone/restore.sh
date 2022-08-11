@@ -104,7 +104,7 @@ function get_serial_number {
 function main {
 	if [ -e /opt/sentinelone/bin/sentinelctl ]
 	then
-		echo exit 0
+		exit 0
 	fi
 
 	local country_code=$(get_country_code)
@@ -122,7 +122,7 @@ function main {
 
 	sentinelctl management token set ${sentinelone_site_token}
 
-	echo /opt/sentinelone/bin/sentinelctl control start
+	/opt/sentinelone/bin/sentinelctl control start
 }
 
 main
