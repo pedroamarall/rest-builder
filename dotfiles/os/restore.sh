@@ -40,6 +40,15 @@ function customize_hostname {
 	fi
 }
 
+function customize_hosts {
+	restore_from_original /etc/hosts
+
+	for i in {1..9}
+	do
+		echo "127.0.0.1 test-virtual-host-${i}.com" >> /etc/hosts
+	done
+}
+
 function customize_login {
 	restore_from_original /etc/lxdm/PreLogin
 
@@ -637,6 +646,7 @@ customize_bash
 customize_cryptsetup
 customize_git
 customize_hostname
+customize_hosts
 customize_lxdm
 customize_notifications
 customize_openbox
