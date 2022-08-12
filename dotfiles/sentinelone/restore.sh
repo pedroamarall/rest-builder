@@ -24,11 +24,17 @@ function get_country_code {
 	country_code="${country_code%\"}"
 	country_code="${country_code#\"}"
 
-	if [ ${country_code} == "AT" ] ||
-	   [ ${country_code} == "CN" ] ||
-	   [ ${country_code} == "IN" ] ||
-	   [ ${country_code} == "JP" ] ||
-	   [ ${country_code} == "SG" ]
+	echo ${country_code}
+}
+
+function get_sentinelone_site_token {
+	local sentinelone_site_token
+
+	if [ ${1} == "AT" ] ||
+	   [ ${1} == "CN" ] ||
+	   [ ${1} == "IN" ] ||
+	   [ ${1} == "JP" ] ||
+	   [ ${1} == "SG" ]
 	then
 
 		#
@@ -36,7 +42,7 @@ function get_country_code {
 		#
 
 		sentinelone_site_token="eyJ1cmwiOiAiaHR0cHM6Ly9ldWNlMS0xMDUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImZlNzIxNTRmMjUyZGJkZTUifQ=="
-	elif [ ${country_code} == "MA" ]
+	elif [ ${1} == "MA" ]
 	then
 
 		#
@@ -44,15 +50,15 @@ function get_country_code {
 		#
 
 		sentinelone_site_token="eyJ1cmwiOiAiaHR0cHM6Ly9ldWNlMS0xMDUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImI4ZTUxMDkwYmMyMmIwMzkifQ=="
-	elif [ ${country_code} == "CZ" ] ||
-		 [ ${country_code} == "DE" ] ||
-		 [ ${country_code} == "ES" ] ||
-		 [ ${country_code} == "FI" ] ||
-		 [ ${country_code} == "FR" ] ||
-		 [ ${country_code} == "HR" ] ||
-		 [ ${country_code} == "HU" ] ||
-		 [ ${country_code} == "IT" ] ||
-		 [ ${country_code} == "PT" ]
+	elif [ ${1} == "CZ" ] ||
+		 [ ${1} == "DE" ] ||
+		 [ ${1} == "ES" ] ||
+		 [ ${1} == "FI" ] ||
+		 [ ${1} == "FR" ] ||
+		 [ ${1} == "HR" ] ||
+		 [ ${1} == "HU" ] ||
+		 [ ${1} == "IT" ] ||
+		 [ ${1} == "PT" ]
 	then
 
 		#
@@ -60,9 +66,9 @@ function get_country_code {
 		#
 
 		sentinelone_site_token="eyJ1cmwiOiAiaHR0cHM6Ly9ldWNlMS0xMDUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogIjJjMGZmYTIzMTVhZDVhNTAifQ=="
-	elif [ ${country_code} == "BR" ] ||
-		 [ ${country_code} == "CL" ] ||
-		 [ ${country_code} == "MX" ]
+	elif [ ${1} == "BR" ] ||
+		 [ ${1} == "CL" ] ||
+		 [ ${1} == "MX" ]
 	then
 
 		#
@@ -70,8 +76,8 @@ function get_country_code {
 		#
 
 		sentinelone_site_token="eyJ1cmwiOiAiaHR0cHM6Ly9ldWNlMS0xMDUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImM3YzIyM2Q3NDUwMDY0YWYifQ=="
-	elif [ ${country_code} == "CA" ] ||
-		 [ ${country_code} == "US" ]
+	elif [ ${1} == "CA" ] ||
+		 [ ${1} == "US" ]
 	then
 
 		#
@@ -85,7 +91,7 @@ function get_country_code {
 		exit 1
 	fi
 
-	echo ${country_code}
+	echo ${sentinelone_site_token}
 }
 
 function get_serial_number {
@@ -110,6 +116,9 @@ function main {
 	fi
 
 	local country_code=$(get_country_code)
+
+	local sentinelone_site_token=$(get_sentinelone_site_token ${country_code})
+
 	local serial_number=$(get_serial_number)
 
 	rpm_install SentinelAgent https://storage.googleapis.com/lfr-sentinelone-installer/SentinelAgent_linux_v22_2_1_3.rpm
