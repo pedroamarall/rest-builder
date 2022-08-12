@@ -5,7 +5,7 @@ function prepare_branch {
 	then
 		echo "app.server.parent.dir=/home/me/dev/bundles/${2}" > ${1}/app.server.${USER}.properties
 
-		pushd ${1}
+		pushd ${1} > /dev/null
 
 		#ant -Dmirrors.hostname= setup-libs
 
@@ -13,7 +13,7 @@ function prepare_branch {
 
 		#ant -f build-test.xml setup-testable-tomcat
 
-		popd
+		popd > /dev/null
 	fi
 }
 
