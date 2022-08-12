@@ -120,7 +120,7 @@ function main {
 
 	sentinelctl management customer_id set "${serial_number}"
 
-	echo "Register SentinelOne with token for country ${country_code}."
+	echo "Register SentinelOne for country ${country_code} with token ${sentinelone_site_token}."
 
 	sentinelctl management token set ${sentinelone_site_token}
 
