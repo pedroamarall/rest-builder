@@ -302,7 +302,7 @@
 		| Paul     |
 		| John     |
 		| Peter    |
-		| Matthias |
+		| Judas    |
 		+----------+
 		```
 
@@ -315,7 +315,7 @@
 		|        1 | Paul     |
 		|        2 | John     |
 		|        3 | Peter    |
-		|        4 | Matthias |
+		|        4 | Judas    |
 		+----------+----------+
 		```
 
