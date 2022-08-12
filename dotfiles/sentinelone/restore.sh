@@ -28,8 +28,6 @@ function get_country_code {
 }
 
 function get_sentinelone_site_token {
-	local sentinelone_site_token
-
 	if [ ${1} == "AT" ] ||
 	   [ ${1} == "CN" ] ||
 	   [ ${1} == "IN" ] ||
@@ -41,7 +39,7 @@ function get_sentinelone_site_token {
 		# APAC
 		#
 
-		sentinelone_site_token="eyJ1cmwiOiAiaHR0cHM6Ly9ldWNlMS0xMDUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImZlNzIxNTRmMjUyZGJkZTUifQ=="
+		echo "eyJ1cmwiOiAiaHR0cHM6Ly9ldWNlMS0xMDUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImZlNzIxNTRmMjUyZGJkZTUifQ=="
 	elif [ ${1} == "MA" ]
 	then
 
@@ -49,7 +47,7 @@ function get_sentinelone_site_token {
 		# EMEA
 		#
 
-		sentinelone_site_token="eyJ1cmwiOiAiaHR0cHM6Ly9ldWNlMS0xMDUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImI4ZTUxMDkwYmMyMmIwMzkifQ=="
+		echo "eyJ1cmwiOiAiaHR0cHM6Ly9ldWNlMS0xMDUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImI4ZTUxMDkwYmMyMmIwMzkifQ=="
 	elif [ ${1} == "CZ" ] ||
 		 [ ${1} == "DE" ] ||
 		 [ ${1} == "ES" ] ||
@@ -65,7 +63,7 @@ function get_sentinelone_site_token {
 		# EU
 		#
 
-		sentinelone_site_token="eyJ1cmwiOiAiaHR0cHM6Ly9ldWNlMS0xMDUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogIjJjMGZmYTIzMTVhZDVhNTAifQ=="
+		echo "eyJ1cmwiOiAiaHR0cHM6Ly9ldWNlMS0xMDUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogIjJjMGZmYTIzMTVhZDVhNTAifQ=="
 	elif [ ${1} == "BR" ] ||
 		 [ ${1} == "CL" ] ||
 		 [ ${1} == "MX" ]
@@ -75,7 +73,7 @@ function get_sentinelone_site_token {
 		# LATAM
 		#
 
-		sentinelone_site_token="eyJ1cmwiOiAiaHR0cHM6Ly9ldWNlMS0xMDUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImM3YzIyM2Q3NDUwMDY0YWYifQ=="
+		echo "eyJ1cmwiOiAiaHR0cHM6Ly9ldWNlMS0xMDUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImM3YzIyM2Q3NDUwMDY0YWYifQ=="
 	elif [ ${1} == "CA" ] ||
 		 [ ${1} == "US" ]
 	then
@@ -84,27 +82,12 @@ function get_sentinelone_site_token {
 		# US
 		#
 
-		sentinelone_site_token="eyJ1cmwiOiAiaHR0cHM6Ly9ldWNlMS0xMDUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogIjBjMmI4ZDhmZDIzZDBmZGEifQ=="
-	else
-		echo "Unable to determine SentinelOne site token."
-
-		exit 1
+		echo "eyJ1cmwiOiAiaHR0cHM6Ly9ldWNlMS0xMDUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogIjBjMmI4ZDhmZDIzZDBmZGEifQ=="
 	fi
-
-	echo ${sentinelone_site_token}
 }
 
 function get_serial_number {
-	local serial_number=$(dmidecode -s system-serial-number)
-
-	if [[ -z ${serial_number} ]]
-	then
-		echo "Unable to determine the serial number."
-
-		exit 1
-	fi
-
-	echo ${serial_number}
+	echo $(dmidecode -s system-serial-number)
 }
 
 function main {
@@ -117,9 +100,30 @@ function main {
 
 	local country_code=$(get_country_code)
 
+	if [[ -z ${country_code} ]]
+	then
+		echo "Unable to determine the country code."
+
+		exit 1
+	fi
+
 	local sentinelone_site_token=$(get_sentinelone_site_token ${country_code})
 
+	if [[ -z ${sentinelone_site_token} ]]
+	then
+		echo "Unable to determine SentinelOne site token."
+
+		exit 1
+	fi
+
 	local serial_number=$(get_serial_number)
+
+	if [[ -z ${serial_number} ]]
+	then
+		echo "Unable to determine the serial number."
+
+		exit 1
+	fi
 
 	rpm_install SentinelAgent https://storage.googleapis.com/lfr-sentinelone-installer/SentinelAgent_linux_v22_2_1_3.rpm
 
