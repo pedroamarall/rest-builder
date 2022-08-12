@@ -104,6 +104,8 @@ function get_serial_number {
 function main {
 	if [ -e /opt/sentinelone/bin/sentinelctl ]
 	then
+		echo "SentinelOne is already installed."
+
 		exit 0
 	fi
 
