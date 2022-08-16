@@ -17,6 +17,7 @@ PACKAGE_NAMES=(
 	libreoffice
 	msteams
 	mysql
+	openvpn
 	sentinelone
 	skype
 	slack
