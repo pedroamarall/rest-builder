@@ -36,7 +36,7 @@ function customize_hostname {
 	if [ $(hostname) == "fedora" ] ||
 	   [ $(hostname) == "localhost.localdomain" ]
 	then
-		hostnamectl set-hostname liferay-$(random_letter)$(random_digit)$(random_letter)$(random_digit)
+		hostnamectl set-hostname liferay-$(random_letter)$(random_digit)$(random_letter)$(random_digit)$(random_letter)$(random_digit)$(random_letter)$(random_digit)
 	fi
 }
 
