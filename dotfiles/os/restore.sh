@@ -445,7 +445,7 @@ function install_fonts {
 	# Cache
 	#
 
-	fc-cache -f
+	#fc-cache -f
 }
 
 function install_rpm_fusion {
