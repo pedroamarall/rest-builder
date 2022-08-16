@@ -368,7 +368,7 @@
 
 	1. The letter ***x*** in the description -rwxr-xr-x means the file is executable.
 
-	1. Type ***sudo ant.bat -version***. This command fails even with sudo because it is not executable.
+	<!--1. Type ***sudo ant.bat -version***. This command fails even with sudo because it is not executable.-->
 
 1. Make a new executable file.
 
