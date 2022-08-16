@@ -267,7 +267,7 @@ function customize_sysctl {
 	#sudo sysctl -p
 }
 
-#function customize_systemd_udev_settle {
+function customize_systemd_udev_settle {
 
 	#
 	# https://bodhi.fedoraproject.org/updates/FEDORA-2020-2faf839786
@@ -276,8 +276,8 @@ function customize_sysctl {
 	# https://www.reddit.com/r/Ubuntu/comments/ilf0zg/slow_booting_systemdudevsettleservice
 	#
 
-	#systemctl mask systemd-udev-settle
-#}
+	systemctl mask systemd-udev-settle
+}
 
 function customize_xinput {
 	chmod 775 data/xinput_logitech_mouse
@@ -670,7 +670,7 @@ customize_screensaver
 customize_shutdown
 customize_ssh
 customize_sysctl
-#customize_systemd_udev_settle
+customize_systemd_udev_settle
 customize_xinput
 customize_xrandr
 customize_vi
