@@ -112,11 +112,11 @@
 
 ## SSH
 
-1. Start the SSH daemon.
+<!--1. Start the SSH daemon.
 
 	1. Launch Terminator.
 
-	1. Type ***sudo systemctl start sshd.service*** to start the SSH daemon so that other people can SSH into your computer.
+	1. Type ***sudo systemctl start sshd.service*** to start the SSH daemon so that other people can SSH into your computer.-->
 
 1. Connect via SSH to a remote computer.
 
@@ -336,7 +336,7 @@
 
 1. Optionally, see the man page for [telnet](https://linux.die.net/man/1/telnet) and this [tutorial](http://www.linuxandubuntu.com/home/what-are-ports-how-to-find-open-ports-in-linux) for more information.
 
-## Systemctl
+<!--## Systemctl
 
 1. Type ***systemctl status sshd.service***.
 
@@ -364,4 +364,4 @@
 
 1. Restart your computer. After logging back in, type ***telnet localhost 22***. Why did this command succeed?
 
-1. Optionally, see this [tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units) for more information.
+1. Optionally, see this [tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units) for more information.-->

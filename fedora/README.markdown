@@ -390,7 +390,7 @@
 
 	1. Type ***./myls***. This command works because it is executing a script from the current directory. ***./*** means the current directory.
 
-	1. Type ***sudo mv myls /usr/local/bin***. This moves ***myls*** to ***/usr/local/bin*** because that directory is specified in the environment variable $PATH. Notice that we had to use ***sudo*** because modifying the contents of ***/usr/local/bin*** is not possible without ***sudo***.
+	<!--1. Type ***sudo mv myls /usr/local/bin***. This moves ***myls*** to ***/usr/local/bin*** because that directory is specified in the environment variable $PATH. Notice that we had to use ***sudo*** because modifying the contents of ***/usr/local/bin*** is not possible without ***sudo***.
 
 	1. Type ***./myls***. This command fails because ***myls*** is no longer in the current directory.
 
@@ -404,7 +404,9 @@
 
 	1. Type ***myls***.
 
-	1. Optionally, see the man pages for [chmod](https://man7.org/linux/man-pages/man1/chmod.1.html) and [mv](https://man7.org/linux/man-pages/man1/mv.1.html) for more information.
+	1. Optionally, see the man pages for [chmod](https://man7.org/linux/man-pages/man1/chmod.1.html) and [mv](https://man7.org/linux/man-pages/man1/mv.1.html) for more information.-->
+
+	1. Optionally, see the man pages for [chmod](https://man7.org/linux/man-pages/man1/chmod.1.html) for more information.
 
 1. Modify .bashrc.
 
