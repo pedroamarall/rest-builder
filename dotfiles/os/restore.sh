@@ -519,11 +519,21 @@ function install_ulauncher {
 }
 
 function random_digit {
-	echo $(((RANDOM % 10) + 1))
+
+	#
+	# https://www.howtogeek.com/devops/how-to-generate-better-random-numbers-at-the-bash-command-line
+	#
+
+	echo $(date +%N | cut -b9-9)
 }
 
 function random_letter {
-	echo cat /dev/urandom | tr -cd 'a-z' | head -c 1
+
+	#
+	# https://gist.github.com/earthgecko/3089509
+	#
+
+	echo $(cat /dev/urandom | tr -cd 'a-z' | fold -w 32 | head -c 1)
 }
 
 function remove_unused_icons {
