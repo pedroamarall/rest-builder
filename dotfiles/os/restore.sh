@@ -651,7 +651,7 @@ install_rpm_fusion
 for i in {1..3}
 do
 	echo ""
-	echo "Update package packages, attempt ${i}."
+	echo "Update packages, attempt ${i}."
 	echo ""
 
 	update_packages
