@@ -32,12 +32,14 @@ PACKAGE_NAMES=(
 for PACKAGE_NAME in ${PACKAGE_NAMES[@]}
 do
 	echo ""
-	echo "Restoring ${PACKAGE_NAME}."
-	echo ""
+	echo "Restoring ${PACKAGE_NAME}..."
 
 	cd /home/me/dev/projects/liferay-basic-training/dotfiles/${PACKAGE_NAME}
 
 	./restore.sh
+
+	echo ""
+	echo "Restored ${PACKAGE_NAME}."
 done
 
 rm -f /home/me/.bash_history
