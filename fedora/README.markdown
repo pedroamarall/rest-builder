@@ -262,7 +262,7 @@
 
 1. Optionally, see the man page for [rsync](https://man7.org/linux/man-pages/man1/rsync.1.html) for more information.
 
-## Security
+<!--## Security
 
 1. Launch Terminator.
 
@@ -326,7 +326,7 @@
 
 1. Type ***ls /usr/bin/iostat***.
 
-1. Notice that you did not have to type ***/usr/bin/iostat***. You only had to type ***iostat***. Why? Continue to find out.
+1. Notice that you did not have to type ***/usr/bin/iostat***. You only had to type ***iostat***. Why? Continue to find out.-->
 
 ## Understanding PATH
 

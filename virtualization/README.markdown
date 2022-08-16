@@ -42,7 +42,7 @@
 
 	1. VirtualBox cannot emulate Windows unless you disable secure boot.
 
-	1. Type ***sudo shutdown -r now***.
+	1. Reboot.
 
 	1. Press ***F2*** while the system is booting up to enter into the BIOS Setup Utility.
 
