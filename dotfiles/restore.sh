@@ -32,7 +32,7 @@ PACKAGE_NAMES=(
 for PACKAGE_NAME in ${PACKAGE_NAMES[@]}
 do
 	echo ""
-	echo "Restoring ${PACKAGE_NAME}..."
+	echo "Restoring ${PACKAGE_NAME}."
 	echo ""
 
 	cd /home/me/dev/projects/liferay-basic-training/dotfiles/${PACKAGE_NAME}
