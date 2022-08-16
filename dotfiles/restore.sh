@@ -14,6 +14,7 @@ PACKAGE_NAMES=(
 	idea
 	figma
 	firefox
+	javascript
 	libreoffice
 	msteams
 	mysql

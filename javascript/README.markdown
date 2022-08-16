@@ -42,7 +42,7 @@
 
 ## React and REST
 
-1. Type ***sudo dnf install nodejs npm*** to install Node and NPM.
+<!--1. Type ***sudo dnf install nodejs npm*** to install Node and NPM.-->
 
 1. Download https://github.com/brianchandotcom/liferay-learn/blob/master/docs/_template/js/setup_tutorial.sh.
 
