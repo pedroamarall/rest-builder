@@ -19,7 +19,6 @@ PACKAGE_NAMES=(
 	msteams
 	mysql
 	openvpn
-	sentinelone
 	skype
 	slack
 	smartgit
@@ -28,6 +27,8 @@ PACKAGE_NAMES=(
 	vlc
 	vscode
 	zoom
+	#
+	sentinelone
 )
 
 for PACKAGE_NAME in ${PACKAGE_NAMES[@]}
