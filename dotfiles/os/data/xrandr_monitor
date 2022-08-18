@@ -4,30 +4,34 @@ export DISPLAY=:0
 export XAUTHORITY=/home/me/.Xauthority
 
 function main {
+	local resolution=2150x1210
+
+	#
+	# Resolutions that are exactly the same ratio as 3840x2160 sometimes gives
+	# this error: BadMatch (invalid parameter attributes)
+	#
+	# See https://askubuntu.com/questions/235507/xconfig-xrandr-badmatch
+	#
+
+	#local resolution=2160x1215
+	#local resolution=2176x1224
+	#local resolution=2192x1233
+	#local resolution=2208x1242
+	#local resolution=2224x1251
+
+	#
+	# https://askubuntu.com/questions/261122/how-to-reset-monitor-settings-to-default-through-terminal
+	#
+
+	#xrandr -s 0
 
 	#
 	# https://superuser.com/questions/1243205/how-to-mirror-a-display-with-different-resolutions
 	#
 
-	local primary_display
-
-	for display in $(xrandr | awk '/ connected primary/{print $1}')
-	do
-		primary_display=${display}
-
-		xrandr --output ${display} --scale-from 1920x1080
-
-		break
-	done
-
 	for display in $(xrandr | awk '/ connected/{print $1}')
 	do
-		if [ ${display} == ${primary_display} ]
-		then
-			continue
-		fi
-
-		xrandr --output ${display} --auto --scale-from 1920x1080 --same-as ${primary_display}
+		xrandr --output ${display} --auto --pos 0x0 --scale-from ${resolution}
 	done
 }
 
