@@ -50,7 +50,7 @@
 
 	1. Type ***la ~/dev/bundles/master/osgi/modules***. Notice that files were copied there.
 
-	1. Go to ***~/dev/bundles/master/tomcat-9.0.37/bin***.
+	1. Go to ***~/dev/bundles/master/tomcat-9.0.56/bin***.
 
 	1. Type ***./catalina.sh run*** to start Liferay.
 
