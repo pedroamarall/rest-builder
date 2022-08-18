@@ -15,6 +15,7 @@ PACKAGE_NAMES=(
 	figma
 	firefox
 	javascript
+	#kvm
 	libreoffice
 	msteams
 	mysql
