@@ -8,6 +8,7 @@ PACKAGE_NAMES=(
 	java
 	#
 	1password
+	anydesk
 	brave
 	chrome
 	docker
