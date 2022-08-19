@@ -30,7 +30,7 @@
 
 1. VirtualBox is already installed on your machine. Review /home/me/dev/projects/liferay-basic-training/dotfiles/virtualbox/restore.sh to see how VirtualBox was installed.
 
-1. [Download](https://developer.microsoft.com/en-us/windows/downloads/virtual-machines) Windows 10. The file ***WinDev2202Eval.VirtualBox.zip*** may already be in your ***~/Downloads*** directory. It is a very large 20 GB file. Conserve bandwidth and do not download the file again if you already have the file.
+1. [Download](https://developer.microsoft.com/en-us/windows/downloads/virtual-machines) Windows 11. The file ***WinDev2202Eval.VirtualBox.zip*** may already be in your ***~/Downloads*** directory. It is a very large 20 GB file. Conserve bandwidth and do not download the file again if you already have the file.
 
 	1. Launch Terminator.
 
