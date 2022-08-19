@@ -288,16 +288,16 @@ function customize_xinput {
 
 	cp data/xinput_touchpad /usr/local/bin
 
-	echo "ALL ALL=NOPASSWD: /bin/localectl" > /etc/sudoers.d/localectl
-
 	#if [ -n "$(DISPLAY=:0.0 xinput --list | grep Chicony)" ]
 	#then
-		sudo localectl set-keymap us
-		sudo localectl set-x11-keymap us
+		localectl set-keymap us
+		localectl set-x11-keymap us
 	#else
-	#	sudo localectl set-keymap us
-	#	sudo localectl --no-convert set-x11-keymap br
+	#	localectl set-keymap us
+	#	localectl --no-convert set-x11-keymap br
 	#fi
+
+	echo "ALL ALL=NOPASSWD: /bin/localectl" > /etc/sudoers.d/localectl
 }
 
 function customize_xrandr {
