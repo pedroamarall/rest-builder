@@ -1,0 +1,14 @@
+com/acme/headless/r3b2/dto/v1_0/Goo.java
+ com.acme.headless.r3b2.dto.v1_0.Goo
+com/acme/headless/r3b2/resource/v1_0/FooResource.java
+ com.acme.headless.r3b2.resource.v1_0.FooResource
+ com.acme.headless.r3b2.resource.v1_0.FooResource$Builder
+ com.acme.headless.r3b2.resource.v1_0.FooResource$Factory
+ com.acme.headless.r3b2.resource.v1_0.FooResource$FactoryHolder
+com/acme/headless/r3b2/dto/v1_0/Foo.java
+ com.acme.headless.r3b2.dto.v1_0.Foo
+com/acme/headless/r3b2/resource/v1_0/GooResource.java
+ com.acme.headless.r3b2.resource.v1_0.GooResource
+ com.acme.headless.r3b2.resource.v1_0.GooResource$Builder
+ com.acme.headless.r3b2.resource.v1_0.GooResource$Factory
+ com.acme.headless.r3b2.resource.v1_0.GooResource$FactoryHolder

@@ -1,0 +1,9 @@
+apiDir: "../headless-r3b2-api/src/main/java"
+apiPackagePath: "com.acme.headless.r3b2"
+application:
+    baseURI: "/headless-r3b2"
+    className: "HeadlessR3B2Application"
+    name: "Acme.Headless.R3B2"
+author: "Jonah the son of Amittai"
+clientDir: "../headless-r3b2-client/src/main/java"
+testDir: "../headless-r3b2-test/src/testIntegration/java"

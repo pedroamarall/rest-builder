@@ -1,0 +1,48 @@
+com/acme/headless/r3b2/internal/resource/v1_0/BaseFooResourceImpl.java
+ com.acme.headless.r3b2.internal.resource.v1_0.BaseFooResourceImpl
+ com.acme.headless.r3b2.internal.resource.v1_0.BaseFooResourceImpl$1
+com/acme/headless/r3b2/internal/graphql/servlet/v1_0/ServletDataImpl.java
+ com.acme.headless.r3b2.internal.graphql.servlet.v1_0.ServletDataImpl
+com/acme/headless/r3b2/internal/resource/v1_0/BaseGooResourceImpl.java
+ com.acme.headless.r3b2.internal.resource.v1_0.BaseGooResourceImpl
+ com.acme.headless.r3b2.internal.resource.v1_0.BaseGooResourceImpl$1
+com/acme/headless/r3b2/internal/graphql/mutation/v1_0/Mutation.java
+ com.acme.headless.r3b2.internal.graphql.mutation.v1_0.Mutation
+com/acme/headless/r3b2/internal/graphql/query/v1_0/Query.java
+ com.acme.headless.r3b2.internal.graphql.query.v1_0.Query
+ com.acme.headless.r3b2.internal.graphql.query.v1_0.Query$FooPage
+ com.acme.headless.r3b2.internal.graphql.query.v1_0.Query$GetFooGoosPageTypeExtension
+ com.acme.headless.r3b2.internal.graphql.query.v1_0.Query$GetFooTypeExtension
+ com.acme.headless.r3b2.internal.graphql.query.v1_0.Query$GooPage
+com/acme/headless/r3b2/internal/jaxrs/application/HeadlessR3B2Application.java
+ com.acme.headless.r3b2.internal.jaxrs.application.HeadlessR3B2Application
+com/acme/headless/r3b2/internal/resource/v1_0/FooResourceImpl.java
+ com.acme.headless.r3b2.internal.resource.v1_0.FooResourceImpl
+ com.acme.headless.r3b2.internal.resource.v1_0.FooResourceImpl$1
+ com.acme.headless.r3b2.internal.resource.v1_0.FooResourceImpl$1$1
+ com.acme.headless.r3b2.internal.resource.v1_0.FooResourceImpl$1$2
+ com.acme.headless.r3b2.internal.resource.v1_0.FooResourceImpl$1$3
+ com.acme.headless.r3b2.internal.resource.v1_0.FooResourceImpl$1$4
+com/acme/headless/r3b2/internal/resource/v1_0/GooResourceImpl.java
+ com.acme.headless.r3b2.internal.resource.v1_0.GooResourceImpl
+ com.acme.headless.r3b2.internal.resource.v1_0.GooResourceImpl$1
+ com.acme.headless.r3b2.internal.resource.v1_0.GooResourceImpl$1$1
+ com.acme.headless.r3b2.internal.resource.v1_0.GooResourceImpl$1$2
+ com.acme.headless.r3b2.internal.resource.v1_0.GooResourceImpl$1$3
+ com.acme.headless.r3b2.internal.resource.v1_0.GooResourceImpl$1$4
+ com.acme.headless.r3b2.internal.resource.v1_0.GooResourceImpl$1$5
+ com.acme.headless.r3b2.internal.resource.v1_0.GooResourceImpl$1$6
+ com.acme.headless.r3b2.internal.resource.v1_0.GooResourceImpl$1$7
+com/acme/headless/r3b2/internal/resource/v1_0/OpenAPIResourceImpl.java
+ com.acme.headless.r3b2.internal.resource.v1_0.OpenAPIResourceImpl
+ com.acme.headless.r3b2.internal.resource.v1_0.OpenAPIResourceImpl$1
+com/acme/headless/r3b2/internal/security/permission/LiberalPermissionChecker.java
+ com.acme.headless.r3b2.internal.security.permission.LiberalPermissionChecker
+com/acme/headless/r3b2/internal/resource/v1_0/factory/FooResourceFactoryImpl.java
+ com.acme.headless.r3b2.internal.resource.v1_0.factory.FooResourceFactoryImpl
+ com.acme.headless.r3b2.internal.resource.v1_0.factory.FooResourceFactoryImpl$1
+ com.acme.headless.r3b2.internal.resource.v1_0.factory.FooResourceFactoryImpl$AcceptLanguageImpl
+com/acme/headless/r3b2/internal/resource/v1_0/factory/GooResourceFactoryImpl.java
+ com.acme.headless.r3b2.internal.resource.v1_0.factory.GooResourceFactoryImpl
+ com.acme.headless.r3b2.internal.resource.v1_0.factory.GooResourceFactoryImpl$1
+ com.acme.headless.r3b2.internal.resource.v1_0.factory.GooResourceFactoryImpl$AcceptLanguageImpl

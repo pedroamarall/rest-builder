@@ -1,0 +1,37 @@
+-add-resource=/home/me/liferay-r3b2.zip/headless-r3b2-client/build/tmp/compileJSP,/home/me/liferay-r3b2.zip/headless-r3b2-client/build/jspc
+Bundle-Name=Acme Headless R3B2 Client
+libsDirName=libs
+Javac-Debug=on
+-plugin.liferay=com.liferay.ant.bnd.resource.AddResourceVerifierPlugin,com.liferay.ant.bnd.jsp.JspAnalyzerPlugin,com.liferay.ant.bnd.metatype.MetatypePlugin,com.liferay.ant.bnd.npm.NpmAnalyzerPlugin,com.liferay.ant.bnd.resource.bundle.ResourceBundleLoaderAnalyzerPlugin,com.liferay.ant.bnd.sass.SassAnalyzerPlugin,com.liferay.ant.bnd.service.ServiceAnalyzerPlugin,com.liferay.ant.bnd.social.SocialAnalyzerPlugin,aQute.lib.spring.SpringComponent,com.liferay.ant.bnd.spring.SpringDependencyAnalyzerPlugin,com.liferay.ant.bnd.enterprise.EnterpriseAnalyzerPlugin
+docsDirName=docs
+-contract=*
+-metatype=*
+testReportDirName=tests
+Javac-Deprecation=off
+name=headless-r3b2-client
+description=Acme Headless R3B2 Client
+liferay.workspace.product=portal-7.4-ga35
+distsDirName=distributions
+-fixupmessages.deprecated=annotations are deprecated
+group=liferay-r3b2.zip
+archivesBaseName=com.acme.headless.r3b2.client
+-donotcopy=(.*.wsdd)
+-plugin.metatype=com.liferay.ant.bnd.metatype.MetatypePlugin
+-fixupmessages.unicode.string=Invalid unicode string
+-jsp=*.jsp,*.jspf,*.jspx
+Bundle-SymbolicName=com.acme.headless.r3b2.client
+status=integration
+displayName=project '\:headless-r3b2-client'
+-consumer-policy=${replacestring;${range;[\=\=,\=\=]};.*,(.*)];$1}
+testResultsDirName=test-results
+-includeresource.compileInclude=
+path=\:headless-r3b2-client
+-noclassforname=true
+Bundle-Version=1.0.0
+-liferay-service-xml=service.xml,*/service.xml
+-cdiannotations=
+-fixupmessages.classpath.empty=Classpath is empty
+version=1.0.0
+-sass=*
+Javac-Encoding=UTF-8
+-provider-policy=${replacestring;${range;[\=\=,\=\=]};.*,(.*)];$1}

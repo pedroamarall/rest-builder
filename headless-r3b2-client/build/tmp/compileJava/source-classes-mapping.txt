@@ -1,0 +1,47 @@
+com/acme/headless/r3b2/client/pagination/Page.java
+ com.acme.headless.r3b2.client.pagination.Page
+ com.acme.headless.r3b2.client.pagination.Page$PageJSONParser
+com/acme/headless/r3b2/client/dto/v1_0/Foo.java
+ com.acme.headless.r3b2.client.dto.v1_0.Foo
+com/acme/headless/r3b2/client/serdes/v1_0/GooSerDes.java
+ com.acme.headless.r3b2.client.serdes.v1_0.GooSerDes
+ com.acme.headless.r3b2.client.serdes.v1_0.GooSerDes$GooJSONParser
+com/acme/headless/r3b2/client/permission/Permission.java
+ com.acme.headless.r3b2.client.permission.Permission
+ com.acme.headless.r3b2.client.permission.Permission$1
+ com.acme.headless.r3b2.client.permission.Permission$PermissionJSONParser
+com/acme/headless/r3b2/client/aggregation/Facet.java
+ com.acme.headless.r3b2.client.aggregation.Facet
+ com.acme.headless.r3b2.client.aggregation.Facet$FacetValue
+com/acme/headless/r3b2/client/serdes/v1_0/FooSerDes.java
+ com.acme.headless.r3b2.client.serdes.v1_0.FooSerDes
+ com.acme.headless.r3b2.client.serdes.v1_0.FooSerDes$FooJSONParser
+com/acme/headless/r3b2/client/dto/v1_0/Goo.java
+ com.acme.headless.r3b2.client.dto.v1_0.Goo
+com/acme/headless/r3b2/client/function/UnsafeSupplier.java
+ com.acme.headless.r3b2.client.function.UnsafeSupplier
+com/acme/headless/r3b2/client/problem/Problem.java
+ com.acme.headless.r3b2.client.problem.Problem
+ com.acme.headless.r3b2.client.problem.Problem$1
+ com.acme.headless.r3b2.client.problem.Problem$ProblemException
+ com.acme.headless.r3b2.client.problem.Problem$ProblemJSONParser
+com/acme/headless/r3b2/client/pagination/Pagination.java
+ com.acme.headless.r3b2.client.pagination.Pagination
+com/acme/headless/r3b2/client/aggregation/Aggregation.java
+ com.acme.headless.r3b2.client.aggregation.Aggregation
+com/acme/headless/r3b2/client/json/BaseJSONParser.java
+ com.acme.headless.r3b2.client.json.BaseJSONParser
+com/acme/headless/r3b2/client/http/HttpInvoker.java
+ com.acme.headless.r3b2.client.http.HttpInvoker
+ com.acme.headless.r3b2.client.http.HttpInvoker$HttpMethod
+ com.acme.headless.r3b2.client.http.HttpInvoker$HttpResponse
+com/acme/headless/r3b2/client/resource/v1_0/FooResource.java
+ com.acme.headless.r3b2.client.resource.v1_0.FooResource
+ com.acme.headless.r3b2.client.resource.v1_0.FooResource$1
+ com.acme.headless.r3b2.client.resource.v1_0.FooResource$Builder
+ com.acme.headless.r3b2.client.resource.v1_0.FooResource$FooResourceImpl
+com/acme/headless/r3b2/client/resource/v1_0/GooResource.java
+ com.acme.headless.r3b2.client.resource.v1_0.GooResource
+ com.acme.headless.r3b2.client.resource.v1_0.GooResource$1
+ com.acme.headless.r3b2.client.resource.v1_0.GooResource$Builder
+ com.acme.headless.r3b2.client.resource.v1_0.GooResource$GooResourceImpl
