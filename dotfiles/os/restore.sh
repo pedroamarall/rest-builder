@@ -263,8 +263,9 @@ function customize_sysctl {
 	restore_from_original /etc/sysctl.conf
 
 	#echo "vm.nr_hugepages=8192" >> /etc/sysctl.conf
+	echo "vm.max_map_count=262144" > /etc/sysctl.d/elasticsearch-docker.conf
 
-	#sudo sysctl -p
+	sysctl -p
 }
 
 function customize_systemd_udev_settle {
