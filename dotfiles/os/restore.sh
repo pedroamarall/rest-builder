@@ -641,6 +641,7 @@ function update_packages {
 		gnumeric \
 		leafpad \
 		lxmusic \
+		lxterminal \
 		midori \
 		pidgin \
 		pcmanfm \
