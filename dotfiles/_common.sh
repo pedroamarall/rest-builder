@@ -17,7 +17,7 @@ function dnf_erase {
 		# https://serverfault.com/questions/654765/how-to-fix-a-function-in-bash-that-checks-if-an-rpm-package-is-installed
 		#
 
-		if ! rpm -q ${rpm_name} &> /dev/null
+		if rpm -q ${rpm_name} &> /dev/null
 		then
 			dnf erase -qy ${@}
 
