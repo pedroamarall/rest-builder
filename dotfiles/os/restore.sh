@@ -612,6 +612,7 @@ function update_packages {
 		p7zip \
 		p7zip-plugins \
 		patch \
+		pavucontrol \
 		pinta \
 		python2.7 \
 		s3cmd \
