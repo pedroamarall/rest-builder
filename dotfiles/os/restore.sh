@@ -586,6 +586,25 @@ function swap_caps_and_control {
 }
 
 function update_packages {
+	dnf_erase \
+		abiword \
+		asunder \
+		gigolo \
+		gnomebaker \
+		gnumeric \
+		leafpad \
+		lxmusic \
+		lxterminal \
+		midori \
+		pidgin \
+		pcmanfm \
+		osmo \
+		sylpheed \
+		xpad
+
+	rm -fr /home/me/.config/libfm
+	rm -fr /home/me/.config/pcmanfm
+
 	dnf_install \
 		acpi \
 		ftp \
@@ -633,25 +652,6 @@ function update_packages {
 		xprop \
 		xset \
 		xsetroot
-
-	dnf_erase \
-		abiword \
-		asunder \
-		gigolo \
-		gnomebaker \
-		gnumeric \
-		leafpad \
-		lxmusic \
-		lxterminal \
-		midori \
-		pidgin \
-		pcmanfm \
-		osmo \
-		sylpheed \
-		xpad
-
-	rm -fr /home/me/.config/libfm
-	rm -fr /home/me/.config/pcmanfm
 
 	sudo dnf update -qy
 }
