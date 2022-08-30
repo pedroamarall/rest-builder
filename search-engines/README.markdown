@@ -6,19 +6,19 @@
 
 1. [Install](https://www.elastic.co/guide/en/elasticsearch/reference/7.17/targz.html#install-linux) Elasticsearch.
 
-1. Type ***./bin/elasticsearch*** to run Elasticsearch.
+	Type ***./bin/elasticsearch*** to run Elasticsearch.
 
 1. [Install](https://www.elastic.co/guide/en/kibana/7.17/targz.html#install-linux64) Kibana.
 
-1. Type***./bin/kibana*** to run Kibana.
+	Type***./bin/kibana*** to run Kibana.
 
-1. Go to http://localhost:5601/app/dev_tools#/console.
+	Go to http://localhost:5601/app/dev_tools#/console.
 
 1. Follow the tutorial in https://www.elastic.co/guide/en/elasticsearch/reference/7.17/getting-started.html.
 
 	Run Elasticsearch locally. Do not create a free trial for their cloud product.
 
-1.  Stop after you see the link ***What’s next?***
+	Stop after you see the link ***What’s next?***
 
 ## Solr
 
