@@ -14,7 +14,9 @@
 
 1. Go to http://localhost:5601/app/dev_tools#/console.
 
-1. Follow the tutorial in https://www.elastic.co/guide/en/elasticsearch/reference/7.17/getting-started.html. Run Elasticsearch locally. Do not create a free trial for their cloud product.
+1. Follow the tutorial in https://www.elastic.co/guide/en/elasticsearch/reference/7.17/getting-started.html.
+
+	Run Elasticsearch locally. Do not create a free trial for their cloud product.
 
 1.  Stop after you see the link ***What’s next?***
 
