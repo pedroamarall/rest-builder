@@ -68,6 +68,7 @@ function customize_aliases {
 	alias java11="switch_to_java_11"
 
 	alias la="ls -la --group-directories-first"
+	alias more="more -e"
 
 	alias osub="/opt/sublime_text/sublime_text ${@}"
 	alias osubg="open_sublime_git ${@}"
