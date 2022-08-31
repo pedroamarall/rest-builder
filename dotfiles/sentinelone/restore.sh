@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd $(dirname "${0}")
+
 source ../_common.sh
 
 function get_country_code {

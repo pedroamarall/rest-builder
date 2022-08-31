@@ -2,6 +2,8 @@
 
 # TODO Upgrade SmartGit and license
 
+cd $(dirname "${0}")
+
 source ../_common.sh
 
 rm -fr /opt/smartgit

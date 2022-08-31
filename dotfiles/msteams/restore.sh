@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd $(dirname "${0}")
+
 source ../_common.sh
 
 echo "[ms-teams]" > /etc/yum.repos.d/ms-teams.repo
